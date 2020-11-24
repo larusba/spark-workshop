@@ -1,0 +1,26 @@
+Introduzione alle architetture big data (15m)
+ - stream (Kafka) & batch (Spark)
+Apache Kafka (45m)
+ - che cos'è
+ - come funziona
+ - come viene utilizzato
+ - esempio di producer (CLI)
+ - esempio di consumer (CLI)
+ - Kafka Connect Framework
+ - come lo abbiamo usato noi: esempio contestualizzato con Neo4j
+ 	- Source
+ 	- Sink
+Apache Spark (45m)
+ - che cos'è
+ - come funziona
+ - come viene utilizzato    
+ - esempio di lettura semplice CSV con trasformazione di colonne
+  - con Dataframe APIs
+  - con SQL -> (createOrReplaceTempView)
+ - salvare il Dataframe manipolato in formato Parquet :)
+ - come lo abbiamo usato noi: esempio contestualizzato con Neo4j
+ 	- Reader
+ 	- Writer
+Blocco finale: Architettura Big Data Spark + Kafka (https://medium.com/free-code-camp/how-to-leverage-neo4j-streams-and-build-a-just-in-time-data-warehouse-64adf290f093) (45m)
+ - Spiegare bene cos'è un JIT
+ - Ripetere contenuti dell'articolo
