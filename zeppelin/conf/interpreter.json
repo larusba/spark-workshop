@@ -484,7 +484,7 @@
       "name": "java",
       "group": "java",
       "properties": {},
-      "status": "READY",
+      "status": "DOWNLOADING_DEPENDENCIES",
       "interpreterGroup": [
         {
           "name": "java",
@@ -496,10 +496,21 @@
           }
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        {
+          "groupArtifactVersion": "org.apache.kafka:kafka-clients:2.6.0",
+          "local": false
+        },
+        {
+          "groupArtifactVersion": "com.fasterxml.jackson.core:jackson-databind:2.11.3",
+          "local": false
+        }
+      ],
       "option": {
         "remote": true,
         "port": -1,
+        "perNote": "shared",
+        "perUser": "shared",
         "isExistingProcess": false,
         "setPermission": false,
         "owners": [],
@@ -1042,7 +1053,7 @@
           "type": "checkbox"
         }
       },
-      "status": "READY",
+      "status": "DOWNLOADING_DEPENDENCIES",
       "interpreterGroup": [
         {
           "name": "spark",

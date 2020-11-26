@@ -28,15 +28,20 @@ services:
       - broker
     environment:
       NEO4J_ACCEPT_LICENSE_AGREEMENT: "yes"
-      NEO4J_AUTH: neo4j/workshop
+      NEO4J_AUTH: neo4j/osw2020
       NEO4J_dbms_memory_heap_max__size: 8G
       NEO4J_dbms_security_procedures_unrestricted: "apoc.*"
       NEO4J_apoc_export_file_enabled: "true"
       NEO4J_kafka_zookeeper_connect: zookeeper:2181
-      NEO4J_kafka_bootstrap_servers: broker:9093
+      NEO4J_kafka_bootstrap_servers: broker:9093      
+      NEO4J_kafka_key_deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      NEO4J_kafka_value_deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer   
       NEO4J_streams_source_enabled: "true"
       NEO4J_streams_sink_enabled: "true"
-      NEO4J_streams_source_topic_nodes_personsource: Person{socialID,age}
+      NEO4J_streams_source_topic_nodes_user: User{name,age,nickname}
+      NEO4J_streams_source_topic_nodes_product: Product{title, price, description}
+      NEO4J_streams_source_topic_relationships_purchased: PURCHASED{*}
+      NEO4J_streams_sink_topic_cypher_shopping: "MATCH (user:User {name: event.name, age: event.age, nickname: event.nickname}) MATCH (movie:Movie {title: event.title}) WITH person,movie MERGE (person)-[:ACTED_IN]->(movie))"
     volumes:
       - ./neo4j/plugins:/plugins
 
@@ -72,6 +77,10 @@ services:
       KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      CONNECT_KEY_CONVERTER: org.apache.kafka.connect.storage.StringConverter
+      CONNECT_VALUE_CONVERTER: org.apache.kafka.connect.storage.StringConverter
+      CONNECT_INTERNAL_KEY_CONVERTER: org.apache.kafka.connect.storage.StringConverter
+      CONNECT_INTERNAL_VALUE_CONVERTER: org.apache.kafka.connect.storage.StringConverter
       CONFLUENT_METRICS_REPORTER_ZOOKEEPER_CONNECT: zookeeper:2181
       CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 1
       CONFLUENT_METRICS_ENABLE: "true"

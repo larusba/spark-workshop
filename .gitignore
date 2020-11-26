@@ -1,2 +1,5 @@
 zeppelin/data/*
 !south-park-dialogues.*
+.idea
+kafka-spark-osw2020.iml
+zeppelin/images
