@@ -1,1 +1,2 @@
-^.gitkeep
+zeppelin/data/*
+!south-park-dialogues.*
