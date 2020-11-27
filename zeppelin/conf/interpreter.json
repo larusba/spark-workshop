@@ -2295,7 +2295,7 @@
         },
         "neo4j.auth.password": {
           "name": "neo4j.auth.password",
-          "value": "workshop",
+          "value": "osw2020",
           "type": "string",
           "description": "The Neo4j user password."
         },

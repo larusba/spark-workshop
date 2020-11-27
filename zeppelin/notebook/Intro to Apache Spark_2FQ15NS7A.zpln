@@ -1,7 +1,935 @@
 {
-  "paragraphs": [],
+  "paragraphs": [
+    {
+      "text": "%md\n\n\u003cimg src\u003d\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Apache_Spark_logo.svg/1200px-Apache_Spark_logo.svg.png\" style\u003d\"height: 300px; margin: 20px auto\" /\u003e\n\n# What is Apache Spark?\n\n\u003e **Apache Spark™** is a unified analytics engine for large-scale data processing.\n\nSpark is a distributed cluster-computing framework that allows to perform data processing on a large scale across clusters. It supports Java, Scala, Rlang, and Python.",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-26 08:10:54.683",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/text",
+        "fontSize": 12.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cimg src\u003d\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Apache_Spark_logo.svg/1200px-Apache_Spark_logo.svg.png\" style\u003d\"height: 300px; margin: 20px auto\" /\u003e\n\u003ch1\u003eWhat is Apache Spark?\u003c/h1\u003e\n\u003cblockquote\u003e\n  \u003cp\u003e\u003cstrong\u003eApache Spark™\u003c/strong\u003e is a unified analytics engine for large-scale data processing.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003eSpark is a distributed cluster-computing framework that allows to perform data processing on a large scale across clusters. It supports Java, Scala, Rlang, and Python.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512336_1143900875",
+      "id": "20201123-104809_1829268030",
+      "dateCreated": "2020-11-25 09:28:32.337",
+      "dateStarted": "2020-11-26 08:10:52.802",
+      "dateFinished": "2020-11-26 08:10:52.820",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\u003cimg src\u003d\"https://s7.orientaltrading.com/is/image/OrientalTrading/FXBanner_808/mandms-milk-chocolate-candies-jar-62-oz~13966317-a02.jpg\" style\u003d\"height: 600px; margin: 30px auto\" /\u003e",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-26 08:09:45.450",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/text",
+        "fontSize": 12.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cimg src\u003d\"https://s7.orientaltrading.com/is/image/OrientalTrading/FXBanner_808/mandms-milk-chocolate-candies-jar-62-oz~13966317-a02.jpg\" style\u003d\"height: 600px; margin: 30px auto\" /\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512339_-19451050",
+      "id": "20201123-105747_1467713703",
+      "dateCreated": "2020-11-25 09:28:32.339",
+      "dateStarted": "2020-11-26 08:09:38.686",
+      "dateFinished": "2020-11-26 08:09:38.696",
+      "status": "FINISHED"
+    },
+    {
+      "title": "Create a Jar full of M\u0026Ms",
+      "text": "import scala.util.Random\n\nval colors: Seq[String] \u003d Seq(\"Blue\", \"Green\", \"Yellow\", \"Red\", \"Brown\")\n\nval random \u003d scala.util.Random\n\n// Let\u0027s create our M\u0026M\u0027s Jar\nval mmsJar \u003d Seq.tabulate(random.nextInt(250000 - 120000))(n \u003d\u003e colors(random.nextInt(colors.size))).toDF(\"color\")\n\n\nmmsJar.show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-25 16:25:31.510",
+      "config": {
+        "lineNumbers": false,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+\n| color|\n+------+\n| Green|\n| Green|\n| Brown|\n| Green|\n|   Red|\n|  Blue|\n| Green|\n|   Red|\n| Green|\n| Green|\n| Green|\n|   Red|\n| Green|\n| Brown|\n| Green|\n| Brown|\n|   Red|\n| Green|\n| Green|\n|Yellow|\n+------+\nonly showing top 20 rows\n\nimport scala.util.Random\n\u001b[1m\u001b[34mcolors\u001b[0m: \u001b[1m\u001b[32mSeq[String]\u001b[0m \u003d List(Blue, Green, Yellow, Red, Brown)\n\u001b[1m\u001b[34mrandom\u001b[0m: \u001b[1m\u001b[32mutil.Random.type\u001b[0m \u003d scala.util.Random$@7aa275c7\n\u001b[1m\u001b[34mmmsJar\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [color: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512339_-1654220217",
+      "id": "20201123-111339_1936980039",
+      "dateCreated": "2020-11-25 09:28:32.339",
+      "dateStarted": "2020-11-25 16:25:32.320",
+      "dateFinished": "2020-11-25 16:27:15.249",
+      "status": "FINISHED"
+    },
+    {
+      "title": "Let\u0027s count the M\u0026Ms",
+      "text": "mmsJar.count()",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-25 09:29:13.570",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres2\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m \u003d 2136\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512340_-1262248792",
+      "id": "20201124-175747_594954951",
+      "dateCreated": "2020-11-25 09:28:32.340",
+      "dateStarted": "2020-11-25 09:29:13.631",
+      "dateFinished": "2020-11-25 09:29:17.398",
+      "status": "FINISHED"
+    },
+    {
+      "title": "",
+      "text": "mmsJar.groupBy(\"color\").count().show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-25 09:29:17.434",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "title": false,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+-----+\n| color|count|\n+------+-----+\n| Green|  457|\n|  Blue|  413|\n| Brown|  431|\n|Yellow|  426|\n|   Red|  409|\n+------+-----+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512340_517172685",
+      "id": "20201123-151051_1373271501",
+      "dateCreated": "2020-11-25 09:28:32.340",
+      "dateStarted": "2020-11-25 09:29:17.479",
+      "dateFinished": "2020-11-25 09:29:23.189",
+      "status": "FINISHED"
+    },
+    {
+      "text": "import org.apache.spark.SparkFiles\n\nspark.sparkContext.addFile(\"https://github.com/pcm-dpc/COVID-19/raw/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv\")\n\nval covidData \u003d spark.read.format(\"csv\")\n    .option(\"inferSchema\", \"true\")\n    .option(\"header\", true)\n    .load(SparkFiles.get(\"dpc-covid19-ita-andamento-nazionale.csv\"))",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-25 09:29:23.220",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.SparkFiles\n\u001b[1m\u001b[34mcovidData\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [data: timestamp, stato: string ... 15 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512340_-1308803096",
+      "id": "20201124-132629_918156206",
+      "dateCreated": "2020-11-25 09:28:32.340",
+      "dateStarted": "2020-11-25 09:29:23.267",
+      "dateFinished": "2020-11-25 09:29:29.160",
+      "status": "FINISHED"
+    },
+    {
+      "text": "covidData.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-25 09:29:29.178",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- data: timestamp (nullable \u003d true)\n |-- stato: string (nullable \u003d true)\n |-- ricoverati_con_sintomi: integer (nullable \u003d true)\n |-- terapia_intensiva: integer (nullable \u003d true)\n |-- totale_ospedalizzati: integer (nullable \u003d true)\n |-- isolamento_domiciliare: integer (nullable \u003d true)\n |-- totale_positivi: integer (nullable \u003d true)\n |-- variazione_totale_positivi: integer (nullable \u003d true)\n |-- nuovi_positivi: integer (nullable \u003d true)\n |-- dimessi_guariti: integer (nullable \u003d true)\n |-- deceduti: integer (nullable \u003d true)\n |-- casi_da_sospetto_diagnostico: integer (nullable \u003d true)\n |-- casi_da_screening: integer (nullable \u003d true)\n |-- totale_casi: integer (nullable \u003d true)\n |-- tamponi: integer (nullable \u003d true)\n |-- casi_testati: integer (nullable \u003d true)\n |-- note: string (nullable \u003d true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512341_-1033969086",
+      "id": "20201124-140851_259852778",
+      "dateCreated": "2020-11-25 09:28:32.341",
+      "dateStarted": "2020-11-25 09:29:29.240",
+      "dateFinished": "2020-11-25 09:29:29.777",
+      "status": "FINISHED"
+    },
+    {
+      "text": "covidData.select(\"data\", \"totale_casi\", \"tamponi\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-25 09:29:29.837",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------------------+-----------+-------+\n|               data|totale_casi|tamponi|\n+-------------------+-----------+-------+\n|2020-02-24 18:00:00|        229|   4324|\n|2020-02-25 18:00:00|        322|   8623|\n|2020-02-26 18:00:00|        400|   9587|\n|2020-02-27 18:00:00|        650|  12014|\n|2020-02-28 18:00:00|        888|  15695|\n|2020-02-29 18:00:00|       1128|  18661|\n|2020-03-01 18:00:00|       1694|  21127|\n|2020-03-02 18:00:00|       2036|  23345|\n|2020-03-03 18:00:00|       2502|  25856|\n|2020-03-04 18:00:00|       3089|  29837|\n|2020-03-05 18:00:00|       3858|  32362|\n|2020-03-06 18:00:00|       4636|  36359|\n|2020-03-07 18:00:00|       5883|  42062|\n|2020-03-08 18:00:00|       7375|  49937|\n|2020-03-09 18:00:00|       9172|  53826|\n|2020-03-10 18:00:00|      10149|  60761|\n|2020-03-11 17:00:00|      12462|  73154|\n|2020-03-12 17:00:00|      15113|  86011|\n|2020-03-13 17:00:00|      17660|  97488|\n|2020-03-14 17:00:00|      21157| 109170|\n+-------------------+-----------+-------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512341_-1762556981",
+      "id": "20201124-141118_1870508736",
+      "dateCreated": "2020-11-25 09:28:32.341",
+      "dateStarted": "2020-11-25 09:29:29.905",
+      "dateFinished": "2020-11-25 09:29:31.080",
+      "status": "FINISHED"
+    },
+    {
+      "text": "import org.apache.spark.sql.functions\n\nval tamponiCasi \u003d covidData\n    .withColumn(\"rapporto_tamponi_casi\", functions.round($\"totale_casi\".divide($\"tamponi\") * 100, 2))\n    .select(\"data\", \"tamponi\", \"totale_casi\", \"rapporto_tamponi_casi\")\n\ntamponiCasi.show()\ntamponiCasi.createOrReplaceTempView(\"tamponi_casi\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-25 09:29:31.101",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------------------+-------+-----------+---------------------+\n|               data|tamponi|totale_casi|rapporto_tamponi_casi|\n+-------------------+-------+-----------+---------------------+\n|2020-02-24 18:00:00|   4324|        229|                  5.3|\n|2020-02-25 18:00:00|   8623|        322|                 3.73|\n|2020-02-26 18:00:00|   9587|        400|                 4.17|\n|2020-02-27 18:00:00|  12014|        650|                 5.41|\n|2020-02-28 18:00:00|  15695|        888|                 5.66|\n|2020-02-29 18:00:00|  18661|       1128|                 6.04|\n|2020-03-01 18:00:00|  21127|       1694|                 8.02|\n|2020-03-02 18:00:00|  23345|       2036|                 8.72|\n|2020-03-03 18:00:00|  25856|       2502|                 9.68|\n|2020-03-04 18:00:00|  29837|       3089|                10.35|\n|2020-03-05 18:00:00|  32362|       3858|                11.92|\n|2020-03-06 18:00:00|  36359|       4636|                12.75|\n|2020-03-07 18:00:00|  42062|       5883|                13.99|\n|2020-03-08 18:00:00|  49937|       7375|                14.77|\n|2020-03-09 18:00:00|  53826|       9172|                17.04|\n|2020-03-10 18:00:00|  60761|      10149|                 16.7|\n|2020-03-11 17:00:00|  73154|      12462|                17.04|\n|2020-03-12 17:00:00|  86011|      15113|                17.57|\n|2020-03-13 17:00:00|  97488|      17660|                18.12|\n|2020-03-14 17:00:00| 109170|      21157|                19.38|\n+-------------------+-------+-----------+---------------------+\nonly showing top 20 rows\n\nimport org.apache.spark.sql.functions\n\u001b[1m\u001b[34mtamponiCasi\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [data: timestamp, tamponi: int ... 2 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512341_303017586",
+      "id": "20201124-141413_1972739171",
+      "dateCreated": "2020-11-25 09:28:32.341",
+      "dateStarted": "2020-11-25 09:29:31.149",
+      "dateFinished": "2020-11-25 09:29:34.314",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\n\nSELECT * FROM tamponi_casi",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-25 09:29:34.330",
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "lineChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "data": "string",
+                      "rapporto_tamponi_casi": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "isDateFormat": true,
+                  "dateFormat": "DD/MM",
+                  "forceY": false
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "data",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "rapporto_tamponi_casi",
+                  "index": 3.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "data\ttamponi\ttotale_casi\trapporto_tamponi_casi\n2020-02-24 18:00:00.0\t4324\t229\t5.3\n2020-02-25 18:00:00.0\t8623\t322\t3.73\n2020-02-26 18:00:00.0\t9587\t400\t4.17\n2020-02-27 18:00:00.0\t12014\t650\t5.41\n2020-02-28 18:00:00.0\t15695\t888\t5.66\n2020-02-29 18:00:00.0\t18661\t1128\t6.04\n2020-03-01 18:00:00.0\t21127\t1694\t8.02\n2020-03-02 18:00:00.0\t23345\t2036\t8.72\n2020-03-03 18:00:00.0\t25856\t2502\t9.68\n2020-03-04 18:00:00.0\t29837\t3089\t10.35\n2020-03-05 18:00:00.0\t32362\t3858\t11.92\n2020-03-06 18:00:00.0\t36359\t4636\t12.75\n2020-03-07 18:00:00.0\t42062\t5883\t13.99\n2020-03-08 18:00:00.0\t49937\t7375\t14.77\n2020-03-09 18:00:00.0\t53826\t9172\t17.04\n2020-03-10 18:00:00.0\t60761\t10149\t16.7\n2020-03-11 17:00:00.0\t73154\t12462\t17.04\n2020-03-12 17:00:00.0\t86011\t15113\t17.57\n2020-03-13 17:00:00.0\t97488\t17660\t18.12\n2020-03-14 17:00:00.0\t109170\t21157\t19.38\n2020-03-15 17:00:00.0\t124899\t24747\t19.81\n2020-03-16 17:00:00.0\t137962\t27980\t20.28\n2020-03-17 17:00:00.0\t148657\t31506\t21.19\n2020-03-18 17:00:00.0\t165541\t35713\t21.57\n2020-03-19 17:00:00.0\t182777\t41035\t22.45\n2020-03-20 17:00:00.0\t206886\t47021\t22.73\n2020-03-21 17:00:00.0\t233222\t53578\t22.97\n2020-03-22 17:00:00.0\t258402\t59138\t22.89\n2020-03-23 17:00:00.0\t275468\t63927\t23.21\n2020-03-24 17:00:00.0\t296964\t69176\t23.29\n2020-03-25 17:00:00.0\t324445\t74386\t22.93\n2020-03-26 17:00:00.0\t361060\t80539\t22.31\n2020-03-27 17:00:00.0\t394079\t86498\t21.95\n2020-03-28 17:00:00.0\t429526\t92472\t21.53\n2020-03-29 17:00:00.0\t454030\t97689\t21.52\n2020-03-30 17:00:00.0\t477359\t101739\t21.31\n2020-03-31 17:00:00.0\t506968\t105792\t20.87\n2020-04-01 17:00:00.0\t541423\t110574\t20.42\n2020-04-02 17:00:00.0\t581232\t115242\t19.83\n2020-04-03 17:00:00.0\t619849\t119827\t19.33\n2020-04-04 17:00:00.0\t657224\t124632\t18.96\n2020-04-05 17:00:00.0\t691461\t128948\t18.65\n2020-04-06 17:00:00.0\t721732\t132547\t18.37\n2020-04-07 17:00:00.0\t755445\t135586\t17.95\n2020-04-08 17:00:00.0\t807125\t139422\t17.27\n2020-04-09 17:00:00.0\t853369\t143626\t16.83\n2020-04-10 17:00:00.0\t906864\t147577\t16.27\n2020-04-11 17:00:00.0\t963473\t152271\t15.8\n2020-04-12 17:00:00.0\t1010193\t156363\t15.48\n2020-04-13 17:00:00.0\t1046910\t159516\t15.24\n2020-04-14 17:00:00.0\t1073689\t162488\t15.13\n2020-04-15 17:00:00.0\t1117404\t165155\t14.78\n2020-04-16 17:00:00.0\t1178403\t168941\t14.34\n2020-04-17 17:00:00.0\t1244108\t172434\t13.86\n2020-04-18 17:00:00.0\t1305833\t175925\t13.47\n2020-04-19 17:00:00.0\t1356541\t178972\t13.19\n2020-04-20 17:00:00.0\t1398024\t181228\t12.96\n2020-04-21 17:00:00.0\t1450150\t183957\t12.69\n2020-04-22 17:00:00.0\t1513251\t187327\t12.38\n2020-04-23 17:00:00.0\t1579909\t189973\t12.02\n2020-04-24 17:00:00.0\t1642356\t192994\t11.75\n2020-04-25 17:00:00.0\t1707743\t195351\t11.44\n2020-04-26 17:00:00.0\t1757659\t197675\t11.25\n2020-04-27 17:00:00.0\t1789662\t199414\t11.14\n2020-04-28 17:00:00.0\t1846934\t201505\t10.91\n2020-04-29 17:00:00.0\t1910761\t203591\t10.65\n2020-04-30 17:00:00.0\t1979217\t205463\t10.38\n2020-05-01 17:00:00.0\t2053425\t207428\t10.1\n2020-05-02 17:00:00.0\t2108837\t209328\t9.93\n2020-05-03 17:00:00.0\t2153772\t210717\t9.78\n2020-05-04 17:00:00.0\t2191403\t211938\t9.67\n2020-05-05 17:00:00.0\t2246666\t213013\t9.48\n2020-05-06 17:00:00.0\t2310929\t214457\t9.28\n2020-05-07 17:00:00.0\t2381288\t215858\t9.06\n2020-05-08 17:00:00.0\t2445063\t217185\t8.88\n2020-05-09 17:00:00.0\t2514234\t218268\t8.68\n2020-05-10 17:00:00.0\t2565912\t219070\t8.54\n2020-05-11 17:00:00.0\t2606652\t219814\t8.43\n2020-05-12 17:00:00.0\t2673655\t221216\t8.27\n2020-05-13 17:00:00.0\t2735628\t222104\t8.12\n2020-05-14 17:00:00.0\t2807504\t223096\t7.95\n2020-05-15 17:00:00.0\t2875680\t223885\t7.79\n2020-05-16 17:00:00.0\t2944859\t224760\t7.63\n2020-05-17 17:00:00.0\t3004960\t225435\t7.5\n2020-05-18 17:00:00.0\t3041366\t225886\t7.43\n2020-05-19 17:00:00.0\t3104524\t226699\t7.3\n2020-05-20 17:00:00.0\t3171719\t227364\t7.17\n2020-05-21 17:00:00.0\t3243398\t228006\t7.03\n2020-05-22 17:00:00.0\t3318778\t228658\t6.89\n2020-05-23 17:00:00.0\t3391188\t229327\t6.76\n2020-05-24 17:00:00.0\t3447012\t229858\t6.67\n2020-05-25 17:00:00.0\t3482253\t230158\t6.61\n2020-05-26 17:00:00.0\t3539927\t230555\t6.51\n2020-05-27 17:00:00.0\t3607251\t231139\t6.41\n2020-05-28 17:00:00.0\t3683144\t231732\t6.29\n2020-05-29 17:00:00.0\t3755279\t232248\t6.18\n2020-05-30 17:00:00.0\t3824621\t232664\t6.08\n2020-05-31 17:00:00.0\t3878739\t233019\t6.01\n2020-06-01 17:00:00.0\t3910133\t233197\t5.96\n2020-06-02 17:00:00.0\t3962292\t233515\t5.89\n2020-06-03 17:00:00.0\t3999591\t233836\t5.85\n2020-06-04 17:00:00.0\t4049544\t234013\t5.78\n2020-06-05 17:00:00.0\t4114572\t234531\t5.7\n2020-06-06 17:00:00.0\t4187057\t234801\t5.61\n2020-06-07 17:00:00.0\t4236535\t234998\t5.55\n2020-06-08 17:00:00.0\t4263647\t235278\t5.52\n2020-06-09 17:00:00.0\t4318650\t235561\t5.45\n2020-06-10 17:00:00.0\t4381349\t235763\t5.38\n2020-06-11 17:00:00.0\t4443821\t236142\t5.31\n2020-06-12 17:00:00.0\t4514441\t236305\t5.23\n2020-06-13 17:00:00.0\t4564191\t236651\t5.18\n2020-06-14 17:00:00.0\t4620718\t236989\t5.13\n2020-06-15 17:00:00.0\t4648825\t237290\t5.1\n2020-06-16 17:00:00.0\t4695707\t237500\t5.06\n2020-06-17 17:00:00.0\t4773408\t237828\t4.98\n2020-06-18 17:00:00.0\t4831562\t238159\t4.93\n2020-06-19 17:00:00.0\t4889103\t238011\t4.87\n2020-06-20 17:00:00.0\t4943825\t238275\t4.82\n2020-06-21 17:00:00.0\t4984370\t238499\t4.78\n2020-06-22 17:00:00.0\t5013342\t238720\t4.76\n2020-06-23 17:00:00.0\t5053827\t238833\t4.73\n2020-06-24 17:00:00.0\t5107093\t239410\t4.69\n2020-06-25 17:00:00.0\t5163154\t239706\t4.64\n2020-06-26 17:00:00.0\t5215922\t239961\t4.6\n2020-06-27 17:00:00.0\t5277273\t240136\t4.55\n2020-06-28 17:00:00.0\t5314619\t240310\t4.52\n2020-06-29 17:00:00.0\t5341837\t240436\t4.5\n2020-06-30 17:00:00.0\t5390110\t240578\t4.46\n2020-07-01 17:00:00.0\t5445476\t240760\t4.42\n2020-07-02 17:00:00.0\t5498719\t240961\t4.38\n2020-07-03 17:00:00.0\t5548815\t241184\t4.35\n2020-07-04 17:00:00.0\t5600826\t241419\t4.31\n2020-07-05 17:00:00.0\t5638288\t241611\t4.29\n2020-07-06 17:00:00.0\t5660454\t241819\t4.27\n2020-07-07 17:00:00.0\t5703673\t241956\t4.24\n2020-07-08 17:00:00.0\t5754116\t242149\t4.21\n2020-07-09 17:00:00.0\t5806668\t242363\t4.17\n2020-07-10 17:00:00.0\t5854621\t242639\t4.14\n2020-07-11 17:00:00.0\t5900552\t242827\t4.12\n2020-07-12 17:00:00.0\t5938811\t243061\t4.09\n2020-07-13 17:00:00.0\t5962744\t243230\t4.08\n2020-07-14 17:00:00.0\t6004611\t243344\t4.05\n2020-07-15 17:00:00.0\t6053060\t243506\t4.02\n2020-07-16 17:00:00.0\t6103492\t243736\t3.99\n2020-07-17 17:00:00.0\t6154259\t243967\t3.96\n2020-07-18 17:00:00.0\t6202524\t244216\t3.94\n2020-07-19 17:00:00.0\t6238049\t244434\t3.92\n2020-07-20 17:00:00.0\t6262302\t244624\t3.91\n2020-07-21 17:00:00.0\t6305412\t244752\t3.88\n2020-07-22 17:00:00.0\t6354730\t245032\t3.86\n2020-07-23 17:00:00.0\t6415041\t245338\t3.82\n2020-07-24 17:00:00.0\t6468375\t245590\t3.8\n2020-07-25 17:00:00.0\t6520046\t245864\t3.77\n2020-07-26 17:00:00.0\t6560572\t246118\t3.75\n2020-07-27 17:00:00.0\t6586123\t246286\t3.74\n2020-07-28 17:00:00.0\t6634293\t246488\t3.72\n2020-07-29 17:00:00.0\t6690311\t246776\t3.69\n2020-07-30 17:00:00.0\t6752169\t247158\t3.66\n2020-07-31 17:00:00.0\t6813113\t247537\t3.63\n2020-08-01 17:00:00.0\t6873496\t247832\t3.61\n2020-08-02 17:00:00.0\t6916765\t248070\t3.59\n2020-08-03 17:00:00.0\t6940801\t248229\t3.58\n2020-08-04 17:00:00.0\t6984589\t248419\t3.56\n2020-08-05 17:00:00.0\t7041040\t248803\t3.53\n2020-08-06 17:00:00.0\t7099713\t249204\t3.51\n2020-08-07 17:00:00.0\t7158909\t249756\t3.49\n2020-08-08 17:00:00.0\t7212207\t250103\t3.47\n2020-08-09 17:00:00.0\t7249844\t250566\t3.46\n2020-08-10 17:00:00.0\t7276276\t250825\t3.45\n2020-08-11 17:00:00.0\t7316918\t251237\t3.43\n2020-08-12 17:00:00.0\t7369576\t251713\t3.42\n2020-08-13 17:00:00.0\t7420764\t252235\t3.4\n2020-08-14 17:00:00.0\t7467487\t252809\t3.39\n2020-08-15 17:00:00.0\t7520610\t253438\t3.37\n2020-08-16 17:00:00.0\t7557417\t253915\t3.36\n2020-08-17 17:00:00.0\t7588083\t254235\t3.35\n2020-08-18 17:00:00.0\t7642059\t254636\t3.33\n2020-08-19 17:00:00.0\t7713154\t255278\t3.31\n2020-08-20 17:00:00.0\t7790596\t256118\t3.29\n2020-08-21 17:00:00.0\t7862592\t257065\t3.27\n2020-08-22 17:00:00.0\t7940266\t258136\t3.25\n2020-08-23 17:00:00.0\t8007637\t259345\t3.24\n2020-08-24 17:00:00.0\t8053551\t260298\t3.23\n2020-08-25 17:00:00.0\t8125892\t261174\t3.21\n2020-08-26 17:00:00.0\t8219421\t262540\t3.19\n2020-08-27 17:00:00.0\t8313445\t263949\t3.17\n2020-08-28 17:00:00.0\t8410510\t265409\t3.16\n2020-08-29 17:00:00.0\t8509618\t266853\t3.14\n2020-08-30 17:00:00.0\t8586341\t268218\t3.12\n2020-08-31 17:00:00.0\t8644859\t269214\t3.11\n2020-09-01 17:00:00.0\t8725909\t270189\t3.1\n2020-09-02 17:00:00.0\t8828868\t271515\t3.08\n2020-09-03 17:00:00.0\t8921658\t272912\t3.06\n2020-09-04 17:00:00.0\t9034743\t274644\t3.04\n2020-09-05 17:00:00.0\t9142401\t276337\t3.02\n2020-09-06 17:00:00.0\t9219257\t277634\t3.01\n2020-09-07 17:00:00.0\t9271810\t278784\t3.01\n2020-09-08 17:00:00.0\t9364213\t280153\t2.99\n2020-09-09 17:00:00.0\t9460203\t281583\t2.98\n2020-09-10 17:00:00.0\t9554389\t283180\t2.96\n2020-09-11 17:00:00.0\t9653269\t284796\t2.95\n2020-09-12 17:00:00.0\t9745975\t286297\t2.94\n2020-09-13 17:00:00.0\t9818118\t287753\t2.93\n2020-09-14 17:00:00.0\t9863427\t288761\t2.93\n2020-09-15 17:00:00.0\t9943944\t289990\t2.92\n2020-09-16 17:00:00.0\t10044551\t291442\t2.9\n2020-09-17 17:00:00.0\t10146324\t293025\t2.89\n2020-09-18 17:00:00.0\t10246163\t294932\t2.88\n2020-09-19 17:00:00.0\t10349386\t296569\t2.87\n2020-09-20 17:00:00.0\t10432814\t298156\t2.86\n2020-09-21 17:00:00.0\t10488676\t299506\t2.86\n2020-09-22 17:00:00.0\t10575979\t300897\t2.85\n2020-09-23 17:00:00.0\t10679675\t302537\t2.83\n2020-09-24 17:00:00.0\t10787694\t304323\t2.82\n2020-09-25 17:00:00.0\t10894963\t306235\t2.81\n2020-09-26 17:00:00.0\t10999350\t308104\t2.8\n2020-09-27 17:00:00.0\t11087064\t309870\t2.79\n2020-09-28 17:00:00.0\t11138173\t311364\t2.8\n2020-09-29 17:00:00.0\t11228358\t313011\t2.79\n2020-09-30 17:00:00.0\t11333922\t314861\t2.78\n2020-10-01 17:00:00.0\t11452158\t317409\t2.77\n2020-10-02 17:00:00.0\t11572459\t319908\t2.76\n2020-10-03 17:00:00.0\t11691391\t322751\t2.76\n2020-10-04 17:00:00.0\t11784105\t325329\t2.76\n2020-10-05 17:00:00.0\t11844346\t327586\t2.77\n2020-10-06 17:00:00.0\t11944088\t330263\t2.77\n2020-10-07 17:00:00.0\t12069402\t333940\t2.77\n2020-10-08 17:00:00.0\t12197500\t338398\t2.77\n2020-10-09 17:00:00.0\t12326971\t343770\t2.79\n2020-10-10 17:00:00.0\t12460055\t349494\t2.8\n2020-10-11 17:00:00.0\t12564713\t354950\t2.82\n2020-10-12 17:00:00.0\t12650155\t359569\t2.84\n2020-10-13 17:00:00.0\t12762699\t365467\t2.86\n2020-10-14 17:00:00.0\t12914895\t372799\t2.89\n2020-10-15 17:00:00.0\t13077827\t381602\t2.92\n2020-10-16 17:00:00.0\t13228204\t391611\t2.96\n2020-10-17 17:00:00.0\t13394041\t402536\t3.01\n2020-10-18 17:00:00.0\t13540582\t414241\t3.06\n2020-10-19 17:00:00.0\t13639444\t423578\t3.11\n2020-10-20 17:00:00.0\t13784181\t434449\t3.15\n2020-10-21 17:00:00.0\t13962029\t449648\t3.22\n2020-10-22 17:00:00.0\t14132421\t465726\t3.3\n2020-10-23 17:00:00.0\t14314453\t484869\t3.39\n2020-10-24 17:00:00.0\t14492122\t504509\t3.48\n2020-10-25 17:00:00.0\t14654002\t525782\t3.59\n2020-10-26 17:00:00.0\t14778688\t542789\t3.67\n2020-10-27 17:00:00.0\t14953086\t564778\t3.78\n2020-10-28 17:00:00.0\t15152038\t589766\t3.89\n2020-10-29 17:00:00.0\t15353490\t616595\t4.02\n2020-10-30 17:00:00.0\t15568575\t647674\t4.16\n2020-10-31 17:00:00.0\t15784461\t679430\t4.3\n2020-11-01 17:00:00.0\t15967918\t709335\t4.44\n2020-11-02 17:00:00.0\t16103649\t731588\t4.54\n2020-11-03 17:00:00.0\t16285936\t759829\t4.67\n2020-11-04 17:00:00.0\t16497767\t790377\t4.79\n2020-11-05 17:00:00.0\t16717651\t824879\t4.93\n2020-11-06 17:00:00.0\t16951896\t862681\t5.09\n2020-11-07 17:00:00.0\t17183569\t902490\t5.25\n2020-11-08 17:00:00.0\t17374713\t935104\t5.38\n2020-11-09 17:00:00.0\t17522438\t960373\t5.48\n2020-11-10 17:00:00.0\t17740196\t995463\t5.61\n2020-11-11 17:00:00.0\t17965836\t1028424\t5.72\n2020-11-12 17:00:00.0\t18200508\t1066401\t5.86\n2020-11-13 17:00:00.0\t18455416\t1107303\t6.0\n2020-11-14 17:00:00.0\t18683111\t1144552\t6.13\n2020-11-15 17:00:00.0\t18878386\t1178529\t6.24\n2020-11-16 17:00:00.0\t19031049\t1205881\t6.34\n2020-11-17 17:00:00.0\t19239507\t1238072\t6.44\n2020-11-18 17:00:00.0\t19474341\t1272352\t6.53\n2020-11-19 17:00:00.0\t19724527\t1308528\t6.63\n2020-11-20 17:00:00.0\t19962604\t1345767\t6.74\n2020-11-21 17:00:00.0\t20199829\t1380531\t6.83\n2020-11-22 17:00:00.0\t20388576\t1408868\t6.91\n2020-11-23 17:00:00.0\t20537521\t1431795\t6.97\n2020-11-24 17:00:00.0\t20726180\t1455022\t7.02\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512341_819305789",
+      "id": "20201124-141533_180253563",
+      "dateCreated": "2020-11-25 09:28:32.342",
+      "dateStarted": "2020-11-25 09:29:34.437",
+      "dateFinished": "2020-11-25 09:29:35.543",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val window \u003d org.apache.spark.sql.expressions.Window.orderBy(\"data\")\n\nval tamponiCasiGiornaliero \u003d covidData\n    .withColumn(\"tamponi_diff\", $\"tamponi\" - lag(\"tamponi\", 1, 0).over(window))\n    .withColumn(\"totale_casi_diff\", $\"totale_casi\" - lag(\"totale_casi\", 1, 0).over(window))\n    .withColumn(\"rapporto_tamponi_casi\", functions.round($\"totale_casi_diff\".divide($\"tamponi_diff\") * 100, 2))\n    .select(\"data\", \"tamponi_diff\", \"totale_casi_diff\", \"rapporto_tamponi_casi\")\n    \ntamponiCasiGiornaliero.show()\ntamponiCasiGiornaliero.createOrReplaceTempView(\"tamponi_casi_giornaliero\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-25 09:29:35.626",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------------------+------------+----------------+---------------------+\n|               data|tamponi_diff|totale_casi_diff|rapporto_tamponi_casi|\n+-------------------+------------+----------------+---------------------+\n|2020-02-24 18:00:00|        4324|             229|                  5.3|\n|2020-02-25 18:00:00|        4299|              93|                 2.16|\n|2020-02-26 18:00:00|         964|              78|                 8.09|\n|2020-02-27 18:00:00|        2427|             250|                 10.3|\n|2020-02-28 18:00:00|        3681|             238|                 6.47|\n|2020-02-29 18:00:00|        2966|             240|                 8.09|\n|2020-03-01 18:00:00|        2466|             566|                22.95|\n|2020-03-02 18:00:00|        2218|             342|                15.42|\n|2020-03-03 18:00:00|        2511|             466|                18.56|\n|2020-03-04 18:00:00|        3981|             587|                14.75|\n|2020-03-05 18:00:00|        2525|             769|                30.46|\n|2020-03-06 18:00:00|        3997|             778|                19.46|\n|2020-03-07 18:00:00|        5703|            1247|                21.87|\n|2020-03-08 18:00:00|        7875|            1492|                18.95|\n|2020-03-09 18:00:00|        3889|            1797|                46.21|\n|2020-03-10 18:00:00|        6935|             977|                14.09|\n|2020-03-11 17:00:00|       12393|            2313|                18.66|\n|2020-03-12 17:00:00|       12857|            2651|                20.62|\n|2020-03-13 17:00:00|       11477|            2547|                22.19|\n|2020-03-14 17:00:00|       11682|            3497|                29.93|\n+-------------------+------------+----------------+---------------------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mwindow\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.expressions.WindowSpec\u001b[0m \u003d org.apache.spark.sql.expressions.WindowSpec@8e9a2ff\n\u001b[1m\u001b[34mtamponiCasiGiornaliero\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [data: timestamp, tamponi_diff: int ... 2 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512342_1323925559",
+      "id": "20201124-162308_947090358",
+      "dateCreated": "2020-11-25 09:28:32.342",
+      "dateStarted": "2020-11-25 09:29:35.673",
+      "dateFinished": "2020-11-25 09:29:38.823",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\n\nSELECT * FROM tamponi_casi_giornaliero",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-25 09:29:38.879",
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 12.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "lineChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "data": "string",
+                      "tamponi": "string",
+                      "totale_casi": "string",
+                      "rapporto_tamponi_casi": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "isDateFormat": true,
+                  "dateFormat": "DD/MM"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "data",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "rapporto_tamponi_casi",
+                  "index": 3.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "data\ttamponi_diff\ttotale_casi_diff\trapporto_tamponi_casi\n2020-02-24 18:00:00.0\t4324\t229\t5.3\n2020-02-25 18:00:00.0\t4299\t93\t2.16\n2020-02-26 18:00:00.0\t964\t78\t8.09\n2020-02-27 18:00:00.0\t2427\t250\t10.3\n2020-02-28 18:00:00.0\t3681\t238\t6.47\n2020-02-29 18:00:00.0\t2966\t240\t8.09\n2020-03-01 18:00:00.0\t2466\t566\t22.95\n2020-03-02 18:00:00.0\t2218\t342\t15.42\n2020-03-03 18:00:00.0\t2511\t466\t18.56\n2020-03-04 18:00:00.0\t3981\t587\t14.75\n2020-03-05 18:00:00.0\t2525\t769\t30.46\n2020-03-06 18:00:00.0\t3997\t778\t19.46\n2020-03-07 18:00:00.0\t5703\t1247\t21.87\n2020-03-08 18:00:00.0\t7875\t1492\t18.95\n2020-03-09 18:00:00.0\t3889\t1797\t46.21\n2020-03-10 18:00:00.0\t6935\t977\t14.09\n2020-03-11 17:00:00.0\t12393\t2313\t18.66\n2020-03-12 17:00:00.0\t12857\t2651\t20.62\n2020-03-13 17:00:00.0\t11477\t2547\t22.19\n2020-03-14 17:00:00.0\t11682\t3497\t29.93\n2020-03-15 17:00:00.0\t15729\t3590\t22.82\n2020-03-16 17:00:00.0\t13063\t3233\t24.75\n2020-03-17 17:00:00.0\t10695\t3526\t32.97\n2020-03-18 17:00:00.0\t16884\t4207\t24.92\n2020-03-19 17:00:00.0\t17236\t5322\t30.88\n2020-03-20 17:00:00.0\t24109\t5986\t24.83\n2020-03-21 17:00:00.0\t26336\t6557\t24.9\n2020-03-22 17:00:00.0\t25180\t5560\t22.08\n2020-03-23 17:00:00.0\t17066\t4789\t28.06\n2020-03-24 17:00:00.0\t21496\t5249\t24.42\n2020-03-25 17:00:00.0\t27481\t5210\t18.96\n2020-03-26 17:00:00.0\t36615\t6153\t16.8\n2020-03-27 17:00:00.0\t33019\t5959\t18.05\n2020-03-28 17:00:00.0\t35447\t5974\t16.85\n2020-03-29 17:00:00.0\t24504\t5217\t21.29\n2020-03-30 17:00:00.0\t23329\t4050\t17.36\n2020-03-31 17:00:00.0\t29609\t4053\t13.69\n2020-04-01 17:00:00.0\t34455\t4782\t13.88\n2020-04-02 17:00:00.0\t39809\t4668\t11.73\n2020-04-03 17:00:00.0\t38617\t4585\t11.87\n2020-04-04 17:00:00.0\t37375\t4805\t12.86\n2020-04-05 17:00:00.0\t34237\t4316\t12.61\n2020-04-06 17:00:00.0\t30271\t3599\t11.89\n2020-04-07 17:00:00.0\t33713\t3039\t9.01\n2020-04-08 17:00:00.0\t51680\t3836\t7.42\n2020-04-09 17:00:00.0\t46244\t4204\t9.09\n2020-04-10 17:00:00.0\t53495\t3951\t7.39\n2020-04-11 17:00:00.0\t56609\t4694\t8.29\n2020-04-12 17:00:00.0\t46720\t4092\t8.76\n2020-04-13 17:00:00.0\t36717\t3153\t8.59\n2020-04-14 17:00:00.0\t26779\t2972\t11.1\n2020-04-15 17:00:00.0\t43715\t2667\t6.1\n2020-04-16 17:00:00.0\t60999\t3786\t6.21\n2020-04-17 17:00:00.0\t65705\t3493\t5.32\n2020-04-18 17:00:00.0\t61725\t3491\t5.66\n2020-04-19 17:00:00.0\t50708\t3047\t6.01\n2020-04-20 17:00:00.0\t41483\t2256\t5.44\n2020-04-21 17:00:00.0\t52126\t2729\t5.24\n2020-04-22 17:00:00.0\t63101\t3370\t5.34\n2020-04-23 17:00:00.0\t66658\t2646\t3.97\n2020-04-24 17:00:00.0\t62447\t3021\t4.84\n2020-04-25 17:00:00.0\t65387\t2357\t3.6\n2020-04-26 17:00:00.0\t49916\t2324\t4.66\n2020-04-27 17:00:00.0\t32003\t1739\t5.43\n2020-04-28 17:00:00.0\t57272\t2091\t3.65\n2020-04-29 17:00:00.0\t63827\t2086\t3.27\n2020-04-30 17:00:00.0\t68456\t1872\t2.73\n2020-05-01 17:00:00.0\t74208\t1965\t2.65\n2020-05-02 17:00:00.0\t55412\t1900\t3.43\n2020-05-03 17:00:00.0\t44935\t1389\t3.09\n2020-05-04 17:00:00.0\t37631\t1221\t3.24\n2020-05-05 17:00:00.0\t55263\t1075\t1.95\n2020-05-06 17:00:00.0\t64263\t1444\t2.25\n2020-05-07 17:00:00.0\t70359\t1401\t1.99\n2020-05-08 17:00:00.0\t63775\t1327\t2.08\n2020-05-09 17:00:00.0\t69171\t1083\t1.57\n2020-05-10 17:00:00.0\t51678\t802\t1.55\n2020-05-11 17:00:00.0\t40740\t744\t1.83\n2020-05-12 17:00:00.0\t67003\t1402\t2.09\n2020-05-13 17:00:00.0\t61973\t888\t1.43\n2020-05-14 17:00:00.0\t71876\t992\t1.38\n2020-05-15 17:00:00.0\t68176\t789\t1.16\n2020-05-16 17:00:00.0\t69179\t875\t1.26\n2020-05-17 17:00:00.0\t60101\t675\t1.12\n2020-05-18 17:00:00.0\t36406\t451\t1.24\n2020-05-19 17:00:00.0\t63158\t813\t1.29\n2020-05-20 17:00:00.0\t67195\t665\t0.99\n2020-05-21 17:00:00.0\t71679\t642\t0.9\n2020-05-22 17:00:00.0\t75380\t652\t0.86\n2020-05-23 17:00:00.0\t72410\t669\t0.92\n2020-05-24 17:00:00.0\t55824\t531\t0.95\n2020-05-25 17:00:00.0\t35241\t300\t0.85\n2020-05-26 17:00:00.0\t57674\t397\t0.69\n2020-05-27 17:00:00.0\t67324\t584\t0.87\n2020-05-28 17:00:00.0\t75893\t593\t0.78\n2020-05-29 17:00:00.0\t72135\t516\t0.72\n2020-05-30 17:00:00.0\t69342\t416\t0.6\n2020-05-31 17:00:00.0\t54118\t355\t0.66\n2020-06-01 17:00:00.0\t31394\t178\t0.57\n2020-06-02 17:00:00.0\t52159\t318\t0.61\n2020-06-03 17:00:00.0\t37299\t321\t0.86\n2020-06-04 17:00:00.0\t49953\t177\t0.35\n2020-06-05 17:00:00.0\t65028\t518\t0.8\n2020-06-06 17:00:00.0\t72485\t270\t0.37\n2020-06-07 17:00:00.0\t49478\t197\t0.4\n2020-06-08 17:00:00.0\t27112\t280\t1.03\n2020-06-09 17:00:00.0\t55003\t283\t0.51\n2020-06-10 17:00:00.0\t62699\t202\t0.32\n2020-06-11 17:00:00.0\t62472\t379\t0.61\n2020-06-12 17:00:00.0\t70620\t163\t0.23\n2020-06-13 17:00:00.0\t49750\t346\t0.7\n2020-06-14 17:00:00.0\t56527\t338\t0.6\n2020-06-15 17:00:00.0\t28107\t301\t1.07\n2020-06-16 17:00:00.0\t46882\t210\t0.45\n2020-06-17 17:00:00.0\t77701\t328\t0.42\n2020-06-18 17:00:00.0\t58154\t331\t0.57\n2020-06-19 17:00:00.0\t57541\t-148\t-0.26\n2020-06-20 17:00:00.0\t54722\t264\t0.48\n2020-06-21 17:00:00.0\t40545\t224\t0.55\n2020-06-22 17:00:00.0\t28972\t221\t0.76\n2020-06-23 17:00:00.0\t40485\t113\t0.28\n2020-06-24 17:00:00.0\t53266\t577\t1.08\n2020-06-25 17:00:00.0\t56061\t296\t0.53\n2020-06-26 17:00:00.0\t52768\t255\t0.48\n2020-06-27 17:00:00.0\t61351\t175\t0.29\n2020-06-28 17:00:00.0\t37346\t174\t0.47\n2020-06-29 17:00:00.0\t27218\t126\t0.46\n2020-06-30 17:00:00.0\t48273\t142\t0.29\n2020-07-01 17:00:00.0\t55366\t182\t0.33\n2020-07-02 17:00:00.0\t53243\t201\t0.38\n2020-07-03 17:00:00.0\t50096\t223\t0.45\n2020-07-04 17:00:00.0\t52011\t235\t0.45\n2020-07-05 17:00:00.0\t37462\t192\t0.51\n2020-07-06 17:00:00.0\t22166\t208\t0.94\n2020-07-07 17:00:00.0\t43219\t137\t0.32\n2020-07-08 17:00:00.0\t50443\t193\t0.38\n2020-07-09 17:00:00.0\t52552\t214\t0.41\n2020-07-10 17:00:00.0\t47953\t276\t0.58\n2020-07-11 17:00:00.0\t45931\t188\t0.41\n2020-07-12 17:00:00.0\t38259\t234\t0.61\n2020-07-13 17:00:00.0\t23933\t169\t0.71\n2020-07-14 17:00:00.0\t41867\t114\t0.27\n2020-07-15 17:00:00.0\t48449\t162\t0.33\n2020-07-16 17:00:00.0\t50432\t230\t0.46\n2020-07-17 17:00:00.0\t50767\t231\t0.46\n2020-07-18 17:00:00.0\t48265\t249\t0.52\n2020-07-19 17:00:00.0\t35525\t218\t0.61\n2020-07-20 17:00:00.0\t24253\t190\t0.78\n2020-07-21 17:00:00.0\t43110\t128\t0.3\n2020-07-22 17:00:00.0\t49318\t280\t0.57\n2020-07-23 17:00:00.0\t60311\t306\t0.51\n2020-07-24 17:00:00.0\t53334\t252\t0.47\n2020-07-25 17:00:00.0\t51671\t274\t0.53\n2020-07-26 17:00:00.0\t40526\t254\t0.63\n2020-07-27 17:00:00.0\t25551\t168\t0.66\n2020-07-28 17:00:00.0\t48170\t202\t0.42\n2020-07-29 17:00:00.0\t56018\t288\t0.51\n2020-07-30 17:00:00.0\t61858\t382\t0.62\n2020-07-31 17:00:00.0\t60944\t379\t0.62\n2020-08-01 17:00:00.0\t60383\t295\t0.49\n2020-08-02 17:00:00.0\t43269\t238\t0.55\n2020-08-03 17:00:00.0\t24036\t159\t0.66\n2020-08-04 17:00:00.0\t43788\t190\t0.43\n2020-08-05 17:00:00.0\t56451\t384\t0.68\n2020-08-06 17:00:00.0\t58673\t401\t0.68\n2020-08-07 17:00:00.0\t59196\t552\t0.93\n2020-08-08 17:00:00.0\t53298\t347\t0.65\n2020-08-09 17:00:00.0\t37637\t463\t1.23\n2020-08-10 17:00:00.0\t26432\t259\t0.98\n2020-08-11 17:00:00.0\t40642\t412\t1.01\n2020-08-12 17:00:00.0\t52658\t476\t0.9\n2020-08-13 17:00:00.0\t51188\t522\t1.02\n2020-08-14 17:00:00.0\t46723\t574\t1.23\n2020-08-15 17:00:00.0\t53123\t629\t1.18\n2020-08-16 17:00:00.0\t36807\t477\t1.3\n2020-08-17 17:00:00.0\t30666\t320\t1.04\n2020-08-18 17:00:00.0\t53976\t401\t0.74\n2020-08-19 17:00:00.0\t71095\t642\t0.9\n2020-08-20 17:00:00.0\t77442\t840\t1.08\n2020-08-21 17:00:00.0\t71996\t947\t1.32\n2020-08-22 17:00:00.0\t77674\t1071\t1.38\n2020-08-23 17:00:00.0\t67371\t1209\t1.79\n2020-08-24 17:00:00.0\t45914\t953\t2.08\n2020-08-25 17:00:00.0\t72341\t876\t1.21\n2020-08-26 17:00:00.0\t93529\t1366\t1.46\n2020-08-27 17:00:00.0\t94024\t1409\t1.5\n2020-08-28 17:00:00.0\t97065\t1460\t1.5\n2020-08-29 17:00:00.0\t99108\t1444\t1.46\n2020-08-30 17:00:00.0\t76723\t1365\t1.78\n2020-08-31 17:00:00.0\t58518\t996\t1.7\n2020-09-01 17:00:00.0\t81050\t975\t1.2\n2020-09-02 17:00:00.0\t102959\t1326\t1.29\n2020-09-03 17:00:00.0\t92790\t1397\t1.51\n2020-09-04 17:00:00.0\t113085\t1732\t1.53\n2020-09-05 17:00:00.0\t107658\t1693\t1.57\n2020-09-06 17:00:00.0\t76856\t1297\t1.69\n2020-09-07 17:00:00.0\t52553\t1150\t2.19\n2020-09-08 17:00:00.0\t92403\t1369\t1.48\n2020-09-09 17:00:00.0\t95990\t1430\t1.49\n2020-09-10 17:00:00.0\t94186\t1597\t1.7\n2020-09-11 17:00:00.0\t98880\t1616\t1.63\n2020-09-12 17:00:00.0\t92706\t1501\t1.62\n2020-09-13 17:00:00.0\t72143\t1456\t2.02\n2020-09-14 17:00:00.0\t45309\t1008\t2.22\n2020-09-15 17:00:00.0\t80517\t1229\t1.53\n2020-09-16 17:00:00.0\t100607\t1452\t1.44\n2020-09-17 17:00:00.0\t101773\t1583\t1.56\n2020-09-18 17:00:00.0\t99839\t1907\t1.91\n2020-09-19 17:00:00.0\t103223\t1637\t1.59\n2020-09-20 17:00:00.0\t83428\t1587\t1.9\n2020-09-21 17:00:00.0\t55862\t1350\t2.42\n2020-09-22 17:00:00.0\t87303\t1391\t1.59\n2020-09-23 17:00:00.0\t103696\t1640\t1.58\n2020-09-24 17:00:00.0\t108019\t1786\t1.65\n2020-09-25 17:00:00.0\t107269\t1912\t1.78\n2020-09-26 17:00:00.0\t104387\t1869\t1.79\n2020-09-27 17:00:00.0\t87714\t1766\t2.01\n2020-09-28 17:00:00.0\t51109\t1494\t2.92\n2020-09-29 17:00:00.0\t90185\t1647\t1.83\n2020-09-30 17:00:00.0\t105564\t1850\t1.75\n2020-10-01 17:00:00.0\t118236\t2548\t2.16\n2020-10-02 17:00:00.0\t120301\t2499\t2.08\n2020-10-03 17:00:00.0\t118932\t2843\t2.39\n2020-10-04 17:00:00.0\t92714\t2578\t2.78\n2020-10-05 17:00:00.0\t60241\t2257\t3.75\n2020-10-06 17:00:00.0\t99742\t2677\t2.68\n2020-10-07 17:00:00.0\t125314\t3677\t2.93\n2020-10-08 17:00:00.0\t128098\t4458\t3.48\n2020-10-09 17:00:00.0\t129471\t5372\t4.15\n2020-10-10 17:00:00.0\t133084\t5724\t4.3\n2020-10-11 17:00:00.0\t104658\t5456\t5.21\n2020-10-12 17:00:00.0\t85442\t4619\t5.41\n2020-10-13 17:00:00.0\t112544\t5898\t5.24\n2020-10-14 17:00:00.0\t152196\t7332\t4.82\n2020-10-15 17:00:00.0\t162932\t8803\t5.4\n2020-10-16 17:00:00.0\t150377\t10009\t6.66\n2020-10-17 17:00:00.0\t165837\t10925\t6.59\n2020-10-18 17:00:00.0\t146541\t11705\t7.99\n2020-10-19 17:00:00.0\t98862\t9337\t9.44\n2020-10-20 17:00:00.0\t144737\t10871\t7.51\n2020-10-21 17:00:00.0\t177848\t15199\t8.55\n2020-10-22 17:00:00.0\t170392\t16078\t9.44\n2020-10-23 17:00:00.0\t182032\t19143\t10.52\n2020-10-24 17:00:00.0\t177669\t19640\t11.05\n2020-10-25 17:00:00.0\t161880\t21273\t13.14\n2020-10-26 17:00:00.0\t124686\t17007\t13.64\n2020-10-27 17:00:00.0\t174398\t21989\t12.61\n2020-10-28 17:00:00.0\t198952\t24988\t12.56\n2020-10-29 17:00:00.0\t201452\t26829\t13.32\n2020-10-30 17:00:00.0\t215085\t31079\t14.45\n2020-10-31 17:00:00.0\t215886\t31756\t14.71\n2020-11-01 17:00:00.0\t183457\t29905\t16.3\n2020-11-02 17:00:00.0\t135731\t22253\t16.39\n2020-11-03 17:00:00.0\t182287\t28241\t15.49\n2020-11-04 17:00:00.0\t211831\t30548\t14.42\n2020-11-05 17:00:00.0\t219884\t34502\t15.69\n2020-11-06 17:00:00.0\t234245\t37802\t16.14\n2020-11-07 17:00:00.0\t231673\t39809\t17.18\n2020-11-08 17:00:00.0\t191144\t32614\t17.06\n2020-11-09 17:00:00.0\t147725\t25269\t17.11\n2020-11-10 17:00:00.0\t217758\t35090\t16.11\n2020-11-11 17:00:00.0\t225640\t32961\t14.61\n2020-11-12 17:00:00.0\t234672\t37977\t16.18\n2020-11-13 17:00:00.0\t254908\t40902\t16.05\n2020-11-14 17:00:00.0\t227695\t37249\t16.36\n2020-11-15 17:00:00.0\t195275\t33977\t17.4\n2020-11-16 17:00:00.0\t152663\t27352\t17.92\n2020-11-17 17:00:00.0\t208458\t32191\t15.44\n2020-11-18 17:00:00.0\t234834\t34280\t14.6\n2020-11-19 17:00:00.0\t250186\t36176\t14.46\n2020-11-20 17:00:00.0\t238077\t37239\t15.64\n2020-11-21 17:00:00.0\t237225\t34764\t14.65\n2020-11-22 17:00:00.0\t188747\t28337\t15.01\n2020-11-23 17:00:00.0\t148945\t22927\t15.39\n2020-11-24 17:00:00.0\t188659\t23227\t12.31\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512342_-1987317404",
+      "id": "20201124-163150_1136107029",
+      "dateCreated": "2020-11-25 09:28:32.342",
+      "dateStarted": "2020-11-25 09:29:38.946",
+      "dateFinished": "2020-11-25 09:29:39.986",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\n\nSELECT * FROM tamponi_casi_giornaliero",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-25 09:29:40.046",
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 12.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "data": "string",
+                      "tamponi_diff": "string",
+                      "totale_casi_diff": "string",
+                      "rapporto_tamponi_casi": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "rotate",
+                  "stacked": false
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "data",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "tamponi_diff",
+                  "index": 1.0,
+                  "aggr": "sum"
+                },
+                {
+                  "name": "totale_casi_diff",
+                  "index": 2.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "data\ttamponi_diff\ttotale_casi_diff\trapporto_tamponi_casi\n2020-02-24 18:00:00.0\t4324\t229\t5.3\n2020-02-25 18:00:00.0\t4299\t93\t2.16\n2020-02-26 18:00:00.0\t964\t78\t8.09\n2020-02-27 18:00:00.0\t2427\t250\t10.3\n2020-02-28 18:00:00.0\t3681\t238\t6.47\n2020-02-29 18:00:00.0\t2966\t240\t8.09\n2020-03-01 18:00:00.0\t2466\t566\t22.95\n2020-03-02 18:00:00.0\t2218\t342\t15.42\n2020-03-03 18:00:00.0\t2511\t466\t18.56\n2020-03-04 18:00:00.0\t3981\t587\t14.75\n2020-03-05 18:00:00.0\t2525\t769\t30.46\n2020-03-06 18:00:00.0\t3997\t778\t19.46\n2020-03-07 18:00:00.0\t5703\t1247\t21.87\n2020-03-08 18:00:00.0\t7875\t1492\t18.95\n2020-03-09 18:00:00.0\t3889\t1797\t46.21\n2020-03-10 18:00:00.0\t6935\t977\t14.09\n2020-03-11 17:00:00.0\t12393\t2313\t18.66\n2020-03-12 17:00:00.0\t12857\t2651\t20.62\n2020-03-13 17:00:00.0\t11477\t2547\t22.19\n2020-03-14 17:00:00.0\t11682\t3497\t29.93\n2020-03-15 17:00:00.0\t15729\t3590\t22.82\n2020-03-16 17:00:00.0\t13063\t3233\t24.75\n2020-03-17 17:00:00.0\t10695\t3526\t32.97\n2020-03-18 17:00:00.0\t16884\t4207\t24.92\n2020-03-19 17:00:00.0\t17236\t5322\t30.88\n2020-03-20 17:00:00.0\t24109\t5986\t24.83\n2020-03-21 17:00:00.0\t26336\t6557\t24.9\n2020-03-22 17:00:00.0\t25180\t5560\t22.08\n2020-03-23 17:00:00.0\t17066\t4789\t28.06\n2020-03-24 17:00:00.0\t21496\t5249\t24.42\n2020-03-25 17:00:00.0\t27481\t5210\t18.96\n2020-03-26 17:00:00.0\t36615\t6153\t16.8\n2020-03-27 17:00:00.0\t33019\t5959\t18.05\n2020-03-28 17:00:00.0\t35447\t5974\t16.85\n2020-03-29 17:00:00.0\t24504\t5217\t21.29\n2020-03-30 17:00:00.0\t23329\t4050\t17.36\n2020-03-31 17:00:00.0\t29609\t4053\t13.69\n2020-04-01 17:00:00.0\t34455\t4782\t13.88\n2020-04-02 17:00:00.0\t39809\t4668\t11.73\n2020-04-03 17:00:00.0\t38617\t4585\t11.87\n2020-04-04 17:00:00.0\t37375\t4805\t12.86\n2020-04-05 17:00:00.0\t34237\t4316\t12.61\n2020-04-06 17:00:00.0\t30271\t3599\t11.89\n2020-04-07 17:00:00.0\t33713\t3039\t9.01\n2020-04-08 17:00:00.0\t51680\t3836\t7.42\n2020-04-09 17:00:00.0\t46244\t4204\t9.09\n2020-04-10 17:00:00.0\t53495\t3951\t7.39\n2020-04-11 17:00:00.0\t56609\t4694\t8.29\n2020-04-12 17:00:00.0\t46720\t4092\t8.76\n2020-04-13 17:00:00.0\t36717\t3153\t8.59\n2020-04-14 17:00:00.0\t26779\t2972\t11.1\n2020-04-15 17:00:00.0\t43715\t2667\t6.1\n2020-04-16 17:00:00.0\t60999\t3786\t6.21\n2020-04-17 17:00:00.0\t65705\t3493\t5.32\n2020-04-18 17:00:00.0\t61725\t3491\t5.66\n2020-04-19 17:00:00.0\t50708\t3047\t6.01\n2020-04-20 17:00:00.0\t41483\t2256\t5.44\n2020-04-21 17:00:00.0\t52126\t2729\t5.24\n2020-04-22 17:00:00.0\t63101\t3370\t5.34\n2020-04-23 17:00:00.0\t66658\t2646\t3.97\n2020-04-24 17:00:00.0\t62447\t3021\t4.84\n2020-04-25 17:00:00.0\t65387\t2357\t3.6\n2020-04-26 17:00:00.0\t49916\t2324\t4.66\n2020-04-27 17:00:00.0\t32003\t1739\t5.43\n2020-04-28 17:00:00.0\t57272\t2091\t3.65\n2020-04-29 17:00:00.0\t63827\t2086\t3.27\n2020-04-30 17:00:00.0\t68456\t1872\t2.73\n2020-05-01 17:00:00.0\t74208\t1965\t2.65\n2020-05-02 17:00:00.0\t55412\t1900\t3.43\n2020-05-03 17:00:00.0\t44935\t1389\t3.09\n2020-05-04 17:00:00.0\t37631\t1221\t3.24\n2020-05-05 17:00:00.0\t55263\t1075\t1.95\n2020-05-06 17:00:00.0\t64263\t1444\t2.25\n2020-05-07 17:00:00.0\t70359\t1401\t1.99\n2020-05-08 17:00:00.0\t63775\t1327\t2.08\n2020-05-09 17:00:00.0\t69171\t1083\t1.57\n2020-05-10 17:00:00.0\t51678\t802\t1.55\n2020-05-11 17:00:00.0\t40740\t744\t1.83\n2020-05-12 17:00:00.0\t67003\t1402\t2.09\n2020-05-13 17:00:00.0\t61973\t888\t1.43\n2020-05-14 17:00:00.0\t71876\t992\t1.38\n2020-05-15 17:00:00.0\t68176\t789\t1.16\n2020-05-16 17:00:00.0\t69179\t875\t1.26\n2020-05-17 17:00:00.0\t60101\t675\t1.12\n2020-05-18 17:00:00.0\t36406\t451\t1.24\n2020-05-19 17:00:00.0\t63158\t813\t1.29\n2020-05-20 17:00:00.0\t67195\t665\t0.99\n2020-05-21 17:00:00.0\t71679\t642\t0.9\n2020-05-22 17:00:00.0\t75380\t652\t0.86\n2020-05-23 17:00:00.0\t72410\t669\t0.92\n2020-05-24 17:00:00.0\t55824\t531\t0.95\n2020-05-25 17:00:00.0\t35241\t300\t0.85\n2020-05-26 17:00:00.0\t57674\t397\t0.69\n2020-05-27 17:00:00.0\t67324\t584\t0.87\n2020-05-28 17:00:00.0\t75893\t593\t0.78\n2020-05-29 17:00:00.0\t72135\t516\t0.72\n2020-05-30 17:00:00.0\t69342\t416\t0.6\n2020-05-31 17:00:00.0\t54118\t355\t0.66\n2020-06-01 17:00:00.0\t31394\t178\t0.57\n2020-06-02 17:00:00.0\t52159\t318\t0.61\n2020-06-03 17:00:00.0\t37299\t321\t0.86\n2020-06-04 17:00:00.0\t49953\t177\t0.35\n2020-06-05 17:00:00.0\t65028\t518\t0.8\n2020-06-06 17:00:00.0\t72485\t270\t0.37\n2020-06-07 17:00:00.0\t49478\t197\t0.4\n2020-06-08 17:00:00.0\t27112\t280\t1.03\n2020-06-09 17:00:00.0\t55003\t283\t0.51\n2020-06-10 17:00:00.0\t62699\t202\t0.32\n2020-06-11 17:00:00.0\t62472\t379\t0.61\n2020-06-12 17:00:00.0\t70620\t163\t0.23\n2020-06-13 17:00:00.0\t49750\t346\t0.7\n2020-06-14 17:00:00.0\t56527\t338\t0.6\n2020-06-15 17:00:00.0\t28107\t301\t1.07\n2020-06-16 17:00:00.0\t46882\t210\t0.45\n2020-06-17 17:00:00.0\t77701\t328\t0.42\n2020-06-18 17:00:00.0\t58154\t331\t0.57\n2020-06-19 17:00:00.0\t57541\t-148\t-0.26\n2020-06-20 17:00:00.0\t54722\t264\t0.48\n2020-06-21 17:00:00.0\t40545\t224\t0.55\n2020-06-22 17:00:00.0\t28972\t221\t0.76\n2020-06-23 17:00:00.0\t40485\t113\t0.28\n2020-06-24 17:00:00.0\t53266\t577\t1.08\n2020-06-25 17:00:00.0\t56061\t296\t0.53\n2020-06-26 17:00:00.0\t52768\t255\t0.48\n2020-06-27 17:00:00.0\t61351\t175\t0.29\n2020-06-28 17:00:00.0\t37346\t174\t0.47\n2020-06-29 17:00:00.0\t27218\t126\t0.46\n2020-06-30 17:00:00.0\t48273\t142\t0.29\n2020-07-01 17:00:00.0\t55366\t182\t0.33\n2020-07-02 17:00:00.0\t53243\t201\t0.38\n2020-07-03 17:00:00.0\t50096\t223\t0.45\n2020-07-04 17:00:00.0\t52011\t235\t0.45\n2020-07-05 17:00:00.0\t37462\t192\t0.51\n2020-07-06 17:00:00.0\t22166\t208\t0.94\n2020-07-07 17:00:00.0\t43219\t137\t0.32\n2020-07-08 17:00:00.0\t50443\t193\t0.38\n2020-07-09 17:00:00.0\t52552\t214\t0.41\n2020-07-10 17:00:00.0\t47953\t276\t0.58\n2020-07-11 17:00:00.0\t45931\t188\t0.41\n2020-07-12 17:00:00.0\t38259\t234\t0.61\n2020-07-13 17:00:00.0\t23933\t169\t0.71\n2020-07-14 17:00:00.0\t41867\t114\t0.27\n2020-07-15 17:00:00.0\t48449\t162\t0.33\n2020-07-16 17:00:00.0\t50432\t230\t0.46\n2020-07-17 17:00:00.0\t50767\t231\t0.46\n2020-07-18 17:00:00.0\t48265\t249\t0.52\n2020-07-19 17:00:00.0\t35525\t218\t0.61\n2020-07-20 17:00:00.0\t24253\t190\t0.78\n2020-07-21 17:00:00.0\t43110\t128\t0.3\n2020-07-22 17:00:00.0\t49318\t280\t0.57\n2020-07-23 17:00:00.0\t60311\t306\t0.51\n2020-07-24 17:00:00.0\t53334\t252\t0.47\n2020-07-25 17:00:00.0\t51671\t274\t0.53\n2020-07-26 17:00:00.0\t40526\t254\t0.63\n2020-07-27 17:00:00.0\t25551\t168\t0.66\n2020-07-28 17:00:00.0\t48170\t202\t0.42\n2020-07-29 17:00:00.0\t56018\t288\t0.51\n2020-07-30 17:00:00.0\t61858\t382\t0.62\n2020-07-31 17:00:00.0\t60944\t379\t0.62\n2020-08-01 17:00:00.0\t60383\t295\t0.49\n2020-08-02 17:00:00.0\t43269\t238\t0.55\n2020-08-03 17:00:00.0\t24036\t159\t0.66\n2020-08-04 17:00:00.0\t43788\t190\t0.43\n2020-08-05 17:00:00.0\t56451\t384\t0.68\n2020-08-06 17:00:00.0\t58673\t401\t0.68\n2020-08-07 17:00:00.0\t59196\t552\t0.93\n2020-08-08 17:00:00.0\t53298\t347\t0.65\n2020-08-09 17:00:00.0\t37637\t463\t1.23\n2020-08-10 17:00:00.0\t26432\t259\t0.98\n2020-08-11 17:00:00.0\t40642\t412\t1.01\n2020-08-12 17:00:00.0\t52658\t476\t0.9\n2020-08-13 17:00:00.0\t51188\t522\t1.02\n2020-08-14 17:00:00.0\t46723\t574\t1.23\n2020-08-15 17:00:00.0\t53123\t629\t1.18\n2020-08-16 17:00:00.0\t36807\t477\t1.3\n2020-08-17 17:00:00.0\t30666\t320\t1.04\n2020-08-18 17:00:00.0\t53976\t401\t0.74\n2020-08-19 17:00:00.0\t71095\t642\t0.9\n2020-08-20 17:00:00.0\t77442\t840\t1.08\n2020-08-21 17:00:00.0\t71996\t947\t1.32\n2020-08-22 17:00:00.0\t77674\t1071\t1.38\n2020-08-23 17:00:00.0\t67371\t1209\t1.79\n2020-08-24 17:00:00.0\t45914\t953\t2.08\n2020-08-25 17:00:00.0\t72341\t876\t1.21\n2020-08-26 17:00:00.0\t93529\t1366\t1.46\n2020-08-27 17:00:00.0\t94024\t1409\t1.5\n2020-08-28 17:00:00.0\t97065\t1460\t1.5\n2020-08-29 17:00:00.0\t99108\t1444\t1.46\n2020-08-30 17:00:00.0\t76723\t1365\t1.78\n2020-08-31 17:00:00.0\t58518\t996\t1.7\n2020-09-01 17:00:00.0\t81050\t975\t1.2\n2020-09-02 17:00:00.0\t102959\t1326\t1.29\n2020-09-03 17:00:00.0\t92790\t1397\t1.51\n2020-09-04 17:00:00.0\t113085\t1732\t1.53\n2020-09-05 17:00:00.0\t107658\t1693\t1.57\n2020-09-06 17:00:00.0\t76856\t1297\t1.69\n2020-09-07 17:00:00.0\t52553\t1150\t2.19\n2020-09-08 17:00:00.0\t92403\t1369\t1.48\n2020-09-09 17:00:00.0\t95990\t1430\t1.49\n2020-09-10 17:00:00.0\t94186\t1597\t1.7\n2020-09-11 17:00:00.0\t98880\t1616\t1.63\n2020-09-12 17:00:00.0\t92706\t1501\t1.62\n2020-09-13 17:00:00.0\t72143\t1456\t2.02\n2020-09-14 17:00:00.0\t45309\t1008\t2.22\n2020-09-15 17:00:00.0\t80517\t1229\t1.53\n2020-09-16 17:00:00.0\t100607\t1452\t1.44\n2020-09-17 17:00:00.0\t101773\t1583\t1.56\n2020-09-18 17:00:00.0\t99839\t1907\t1.91\n2020-09-19 17:00:00.0\t103223\t1637\t1.59\n2020-09-20 17:00:00.0\t83428\t1587\t1.9\n2020-09-21 17:00:00.0\t55862\t1350\t2.42\n2020-09-22 17:00:00.0\t87303\t1391\t1.59\n2020-09-23 17:00:00.0\t103696\t1640\t1.58\n2020-09-24 17:00:00.0\t108019\t1786\t1.65\n2020-09-25 17:00:00.0\t107269\t1912\t1.78\n2020-09-26 17:00:00.0\t104387\t1869\t1.79\n2020-09-27 17:00:00.0\t87714\t1766\t2.01\n2020-09-28 17:00:00.0\t51109\t1494\t2.92\n2020-09-29 17:00:00.0\t90185\t1647\t1.83\n2020-09-30 17:00:00.0\t105564\t1850\t1.75\n2020-10-01 17:00:00.0\t118236\t2548\t2.16\n2020-10-02 17:00:00.0\t120301\t2499\t2.08\n2020-10-03 17:00:00.0\t118932\t2843\t2.39\n2020-10-04 17:00:00.0\t92714\t2578\t2.78\n2020-10-05 17:00:00.0\t60241\t2257\t3.75\n2020-10-06 17:00:00.0\t99742\t2677\t2.68\n2020-10-07 17:00:00.0\t125314\t3677\t2.93\n2020-10-08 17:00:00.0\t128098\t4458\t3.48\n2020-10-09 17:00:00.0\t129471\t5372\t4.15\n2020-10-10 17:00:00.0\t133084\t5724\t4.3\n2020-10-11 17:00:00.0\t104658\t5456\t5.21\n2020-10-12 17:00:00.0\t85442\t4619\t5.41\n2020-10-13 17:00:00.0\t112544\t5898\t5.24\n2020-10-14 17:00:00.0\t152196\t7332\t4.82\n2020-10-15 17:00:00.0\t162932\t8803\t5.4\n2020-10-16 17:00:00.0\t150377\t10009\t6.66\n2020-10-17 17:00:00.0\t165837\t10925\t6.59\n2020-10-18 17:00:00.0\t146541\t11705\t7.99\n2020-10-19 17:00:00.0\t98862\t9337\t9.44\n2020-10-20 17:00:00.0\t144737\t10871\t7.51\n2020-10-21 17:00:00.0\t177848\t15199\t8.55\n2020-10-22 17:00:00.0\t170392\t16078\t9.44\n2020-10-23 17:00:00.0\t182032\t19143\t10.52\n2020-10-24 17:00:00.0\t177669\t19640\t11.05\n2020-10-25 17:00:00.0\t161880\t21273\t13.14\n2020-10-26 17:00:00.0\t124686\t17007\t13.64\n2020-10-27 17:00:00.0\t174398\t21989\t12.61\n2020-10-28 17:00:00.0\t198952\t24988\t12.56\n2020-10-29 17:00:00.0\t201452\t26829\t13.32\n2020-10-30 17:00:00.0\t215085\t31079\t14.45\n2020-10-31 17:00:00.0\t215886\t31756\t14.71\n2020-11-01 17:00:00.0\t183457\t29905\t16.3\n2020-11-02 17:00:00.0\t135731\t22253\t16.39\n2020-11-03 17:00:00.0\t182287\t28241\t15.49\n2020-11-04 17:00:00.0\t211831\t30548\t14.42\n2020-11-05 17:00:00.0\t219884\t34502\t15.69\n2020-11-06 17:00:00.0\t234245\t37802\t16.14\n2020-11-07 17:00:00.0\t231673\t39809\t17.18\n2020-11-08 17:00:00.0\t191144\t32614\t17.06\n2020-11-09 17:00:00.0\t147725\t25269\t17.11\n2020-11-10 17:00:00.0\t217758\t35090\t16.11\n2020-11-11 17:00:00.0\t225640\t32961\t14.61\n2020-11-12 17:00:00.0\t234672\t37977\t16.18\n2020-11-13 17:00:00.0\t254908\t40902\t16.05\n2020-11-14 17:00:00.0\t227695\t37249\t16.36\n2020-11-15 17:00:00.0\t195275\t33977\t17.4\n2020-11-16 17:00:00.0\t152663\t27352\t17.92\n2020-11-17 17:00:00.0\t208458\t32191\t15.44\n2020-11-18 17:00:00.0\t234834\t34280\t14.6\n2020-11-19 17:00:00.0\t250186\t36176\t14.46\n2020-11-20 17:00:00.0\t238077\t37239\t15.64\n2020-11-21 17:00:00.0\t237225\t34764\t14.65\n2020-11-22 17:00:00.0\t188747\t28337\t15.01\n2020-11-23 17:00:00.0\t148945\t22927\t15.39\n2020-11-24 17:00:00.0\t188659\t23227\t12.31\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512343_1973276571",
+      "id": "20201124-172937_2136543753",
+      "dateCreated": "2020-11-25 09:28:32.343",
+      "dateStarted": "2020-11-25 09:29:40.089",
+      "dateFinished": "2020-11-25 09:29:40.609",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\n\nSELECT tc.data, tc.rapporto_tamponi_casi AS tc_rapporto, tcg.rapporto_tamponi_casi AS tcg_rapporto\nFROM tamponi_casi AS tc\nINNER JOIN tamponi_casi_giornaliero AS tcg ON tcg.data \u003d tc.data",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-25 09:29:40.686",
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "lineChart",
+              "height": 300.0,
+              "optionOpen": true,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "data": "string",
+                      "tc_rapporto": "string",
+                      "tcg_rapport": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "data",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "tc_rapporto",
+                  "index": 1.0,
+                  "aggr": "sum"
+                },
+                {
+                  "name": "tcg_rapporto",
+                  "index": 2.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "data\ttc_rapporto\ttcg_rapporto\n2020-02-24 18:00:00.0\t5.3\t5.3\n2020-02-25 18:00:00.0\t3.73\t2.16\n2020-02-26 18:00:00.0\t4.17\t8.09\n2020-02-27 18:00:00.0\t5.41\t10.3\n2020-02-28 18:00:00.0\t5.66\t6.47\n2020-02-29 18:00:00.0\t6.04\t8.09\n2020-03-01 18:00:00.0\t8.02\t22.95\n2020-03-02 18:00:00.0\t8.72\t15.42\n2020-03-03 18:00:00.0\t9.68\t18.56\n2020-03-04 18:00:00.0\t10.35\t14.75\n2020-03-05 18:00:00.0\t11.92\t30.46\n2020-03-06 18:00:00.0\t12.75\t19.46\n2020-03-07 18:00:00.0\t13.99\t21.87\n2020-03-08 18:00:00.0\t14.77\t18.95\n2020-03-09 18:00:00.0\t17.04\t46.21\n2020-03-10 18:00:00.0\t16.7\t14.09\n2020-03-11 17:00:00.0\t17.04\t18.66\n2020-03-12 17:00:00.0\t17.57\t20.62\n2020-03-13 17:00:00.0\t18.12\t22.19\n2020-03-14 17:00:00.0\t19.38\t29.93\n2020-03-15 17:00:00.0\t19.81\t22.82\n2020-03-16 17:00:00.0\t20.28\t24.75\n2020-03-17 17:00:00.0\t21.19\t32.97\n2020-03-18 17:00:00.0\t21.57\t24.92\n2020-03-19 17:00:00.0\t22.45\t30.88\n2020-03-20 17:00:00.0\t22.73\t24.83\n2020-03-21 17:00:00.0\t22.97\t24.9\n2020-03-22 17:00:00.0\t22.89\t22.08\n2020-03-23 17:00:00.0\t23.21\t28.06\n2020-03-24 17:00:00.0\t23.29\t24.42\n2020-03-25 17:00:00.0\t22.93\t18.96\n2020-03-26 17:00:00.0\t22.31\t16.8\n2020-03-27 17:00:00.0\t21.95\t18.05\n2020-03-28 17:00:00.0\t21.53\t16.85\n2020-03-29 17:00:00.0\t21.52\t21.29\n2020-03-30 17:00:00.0\t21.31\t17.36\n2020-03-31 17:00:00.0\t20.87\t13.69\n2020-04-01 17:00:00.0\t20.42\t13.88\n2020-04-02 17:00:00.0\t19.83\t11.73\n2020-04-03 17:00:00.0\t19.33\t11.87\n2020-04-04 17:00:00.0\t18.96\t12.86\n2020-04-05 17:00:00.0\t18.65\t12.61\n2020-04-06 17:00:00.0\t18.37\t11.89\n2020-04-07 17:00:00.0\t17.95\t9.01\n2020-04-08 17:00:00.0\t17.27\t7.42\n2020-04-09 17:00:00.0\t16.83\t9.09\n2020-04-10 17:00:00.0\t16.27\t7.39\n2020-04-11 17:00:00.0\t15.8\t8.29\n2020-04-12 17:00:00.0\t15.48\t8.76\n2020-04-13 17:00:00.0\t15.24\t8.59\n2020-04-14 17:00:00.0\t15.13\t11.1\n2020-04-15 17:00:00.0\t14.78\t6.1\n2020-04-16 17:00:00.0\t14.34\t6.21\n2020-04-17 17:00:00.0\t13.86\t5.32\n2020-04-18 17:00:00.0\t13.47\t5.66\n2020-04-19 17:00:00.0\t13.19\t6.01\n2020-04-20 17:00:00.0\t12.96\t5.44\n2020-04-21 17:00:00.0\t12.69\t5.24\n2020-04-22 17:00:00.0\t12.38\t5.34\n2020-04-23 17:00:00.0\t12.02\t3.97\n2020-04-24 17:00:00.0\t11.75\t4.84\n2020-04-25 17:00:00.0\t11.44\t3.6\n2020-04-26 17:00:00.0\t11.25\t4.66\n2020-04-27 17:00:00.0\t11.14\t5.43\n2020-04-28 17:00:00.0\t10.91\t3.65\n2020-04-29 17:00:00.0\t10.65\t3.27\n2020-04-30 17:00:00.0\t10.38\t2.73\n2020-05-01 17:00:00.0\t10.1\t2.65\n2020-05-02 17:00:00.0\t9.93\t3.43\n2020-05-03 17:00:00.0\t9.78\t3.09\n2020-05-04 17:00:00.0\t9.67\t3.24\n2020-05-05 17:00:00.0\t9.48\t1.95\n2020-05-06 17:00:00.0\t9.28\t2.25\n2020-05-07 17:00:00.0\t9.06\t1.99\n2020-05-08 17:00:00.0\t8.88\t2.08\n2020-05-09 17:00:00.0\t8.68\t1.57\n2020-05-10 17:00:00.0\t8.54\t1.55\n2020-05-11 17:00:00.0\t8.43\t1.83\n2020-05-12 17:00:00.0\t8.27\t2.09\n2020-05-13 17:00:00.0\t8.12\t1.43\n2020-05-14 17:00:00.0\t7.95\t1.38\n2020-05-15 17:00:00.0\t7.79\t1.16\n2020-05-16 17:00:00.0\t7.63\t1.26\n2020-05-17 17:00:00.0\t7.5\t1.12\n2020-05-18 17:00:00.0\t7.43\t1.24\n2020-05-19 17:00:00.0\t7.3\t1.29\n2020-05-20 17:00:00.0\t7.17\t0.99\n2020-05-21 17:00:00.0\t7.03\t0.9\n2020-05-22 17:00:00.0\t6.89\t0.86\n2020-05-23 17:00:00.0\t6.76\t0.92\n2020-05-24 17:00:00.0\t6.67\t0.95\n2020-05-25 17:00:00.0\t6.61\t0.85\n2020-05-26 17:00:00.0\t6.51\t0.69\n2020-05-27 17:00:00.0\t6.41\t0.87\n2020-05-28 17:00:00.0\t6.29\t0.78\n2020-05-29 17:00:00.0\t6.18\t0.72\n2020-05-30 17:00:00.0\t6.08\t0.6\n2020-05-31 17:00:00.0\t6.01\t0.66\n2020-06-01 17:00:00.0\t5.96\t0.57\n2020-06-02 17:00:00.0\t5.89\t0.61\n2020-06-03 17:00:00.0\t5.85\t0.86\n2020-06-04 17:00:00.0\t5.78\t0.35\n2020-06-05 17:00:00.0\t5.7\t0.8\n2020-06-06 17:00:00.0\t5.61\t0.37\n2020-06-07 17:00:00.0\t5.55\t0.4\n2020-06-08 17:00:00.0\t5.52\t1.03\n2020-06-09 17:00:00.0\t5.45\t0.51\n2020-06-10 17:00:00.0\t5.38\t0.32\n2020-06-11 17:00:00.0\t5.31\t0.61\n2020-06-12 17:00:00.0\t5.23\t0.23\n2020-06-13 17:00:00.0\t5.18\t0.7\n2020-06-14 17:00:00.0\t5.13\t0.6\n2020-06-15 17:00:00.0\t5.1\t1.07\n2020-06-16 17:00:00.0\t5.06\t0.45\n2020-06-17 17:00:00.0\t4.98\t0.42\n2020-06-18 17:00:00.0\t4.93\t0.57\n2020-06-19 17:00:00.0\t4.87\t-0.26\n2020-06-20 17:00:00.0\t4.82\t0.48\n2020-06-21 17:00:00.0\t4.78\t0.55\n2020-06-22 17:00:00.0\t4.76\t0.76\n2020-06-23 17:00:00.0\t4.73\t0.28\n2020-06-24 17:00:00.0\t4.69\t1.08\n2020-06-25 17:00:00.0\t4.64\t0.53\n2020-06-26 17:00:00.0\t4.6\t0.48\n2020-06-27 17:00:00.0\t4.55\t0.29\n2020-06-28 17:00:00.0\t4.52\t0.47\n2020-06-29 17:00:00.0\t4.5\t0.46\n2020-06-30 17:00:00.0\t4.46\t0.29\n2020-07-01 17:00:00.0\t4.42\t0.33\n2020-07-02 17:00:00.0\t4.38\t0.38\n2020-07-03 17:00:00.0\t4.35\t0.45\n2020-07-04 17:00:00.0\t4.31\t0.45\n2020-07-05 17:00:00.0\t4.29\t0.51\n2020-07-06 17:00:00.0\t4.27\t0.94\n2020-07-07 17:00:00.0\t4.24\t0.32\n2020-07-08 17:00:00.0\t4.21\t0.38\n2020-07-09 17:00:00.0\t4.17\t0.41\n2020-07-10 17:00:00.0\t4.14\t0.58\n2020-07-11 17:00:00.0\t4.12\t0.41\n2020-07-12 17:00:00.0\t4.09\t0.61\n2020-07-13 17:00:00.0\t4.08\t0.71\n2020-07-14 17:00:00.0\t4.05\t0.27\n2020-07-15 17:00:00.0\t4.02\t0.33\n2020-07-16 17:00:00.0\t3.99\t0.46\n2020-07-17 17:00:00.0\t3.96\t0.46\n2020-07-18 17:00:00.0\t3.94\t0.52\n2020-07-19 17:00:00.0\t3.92\t0.61\n2020-07-20 17:00:00.0\t3.91\t0.78\n2020-07-21 17:00:00.0\t3.88\t0.3\n2020-07-22 17:00:00.0\t3.86\t0.57\n2020-07-23 17:00:00.0\t3.82\t0.51\n2020-07-24 17:00:00.0\t3.8\t0.47\n2020-07-25 17:00:00.0\t3.77\t0.53\n2020-07-26 17:00:00.0\t3.75\t0.63\n2020-07-27 17:00:00.0\t3.74\t0.66\n2020-07-28 17:00:00.0\t3.72\t0.42\n2020-07-29 17:00:00.0\t3.69\t0.51\n2020-07-30 17:00:00.0\t3.66\t0.62\n2020-07-31 17:00:00.0\t3.63\t0.62\n2020-08-01 17:00:00.0\t3.61\t0.49\n2020-08-02 17:00:00.0\t3.59\t0.55\n2020-08-03 17:00:00.0\t3.58\t0.66\n2020-08-04 17:00:00.0\t3.56\t0.43\n2020-08-05 17:00:00.0\t3.53\t0.68\n2020-08-06 17:00:00.0\t3.51\t0.68\n2020-08-07 17:00:00.0\t3.49\t0.93\n2020-08-08 17:00:00.0\t3.47\t0.65\n2020-08-09 17:00:00.0\t3.46\t1.23\n2020-08-10 17:00:00.0\t3.45\t0.98\n2020-08-11 17:00:00.0\t3.43\t1.01\n2020-08-12 17:00:00.0\t3.42\t0.9\n2020-08-13 17:00:00.0\t3.4\t1.02\n2020-08-14 17:00:00.0\t3.39\t1.23\n2020-08-15 17:00:00.0\t3.37\t1.18\n2020-08-16 17:00:00.0\t3.36\t1.3\n2020-08-17 17:00:00.0\t3.35\t1.04\n2020-08-18 17:00:00.0\t3.33\t0.74\n2020-08-19 17:00:00.0\t3.31\t0.9\n2020-08-20 17:00:00.0\t3.29\t1.08\n2020-08-21 17:00:00.0\t3.27\t1.32\n2020-08-22 17:00:00.0\t3.25\t1.38\n2020-08-23 17:00:00.0\t3.24\t1.79\n2020-08-24 17:00:00.0\t3.23\t2.08\n2020-08-25 17:00:00.0\t3.21\t1.21\n2020-08-26 17:00:00.0\t3.19\t1.46\n2020-08-27 17:00:00.0\t3.17\t1.5\n2020-08-28 17:00:00.0\t3.16\t1.5\n2020-08-29 17:00:00.0\t3.14\t1.46\n2020-08-30 17:00:00.0\t3.12\t1.78\n2020-08-31 17:00:00.0\t3.11\t1.7\n2020-09-01 17:00:00.0\t3.1\t1.2\n2020-09-02 17:00:00.0\t3.08\t1.29\n2020-09-03 17:00:00.0\t3.06\t1.51\n2020-09-04 17:00:00.0\t3.04\t1.53\n2020-09-05 17:00:00.0\t3.02\t1.57\n2020-09-06 17:00:00.0\t3.01\t1.69\n2020-09-07 17:00:00.0\t3.01\t2.19\n2020-09-08 17:00:00.0\t2.99\t1.48\n2020-09-09 17:00:00.0\t2.98\t1.49\n2020-09-10 17:00:00.0\t2.96\t1.7\n2020-09-11 17:00:00.0\t2.95\t1.63\n2020-09-12 17:00:00.0\t2.94\t1.62\n2020-09-13 17:00:00.0\t2.93\t2.02\n2020-09-14 17:00:00.0\t2.93\t2.22\n2020-09-15 17:00:00.0\t2.92\t1.53\n2020-09-16 17:00:00.0\t2.9\t1.44\n2020-09-17 17:00:00.0\t2.89\t1.56\n2020-09-18 17:00:00.0\t2.88\t1.91\n2020-09-19 17:00:00.0\t2.87\t1.59\n2020-09-20 17:00:00.0\t2.86\t1.9\n2020-09-21 17:00:00.0\t2.86\t2.42\n2020-09-22 17:00:00.0\t2.85\t1.59\n2020-09-23 17:00:00.0\t2.83\t1.58\n2020-09-24 17:00:00.0\t2.82\t1.65\n2020-09-25 17:00:00.0\t2.81\t1.78\n2020-09-26 17:00:00.0\t2.8\t1.79\n2020-09-27 17:00:00.0\t2.79\t2.01\n2020-09-28 17:00:00.0\t2.8\t2.92\n2020-09-29 17:00:00.0\t2.79\t1.83\n2020-09-30 17:00:00.0\t2.78\t1.75\n2020-10-01 17:00:00.0\t2.77\t2.16\n2020-10-02 17:00:00.0\t2.76\t2.08\n2020-10-03 17:00:00.0\t2.76\t2.39\n2020-10-04 17:00:00.0\t2.76\t2.78\n2020-10-05 17:00:00.0\t2.77\t3.75\n2020-10-06 17:00:00.0\t2.77\t2.68\n2020-10-07 17:00:00.0\t2.77\t2.93\n2020-10-08 17:00:00.0\t2.77\t3.48\n2020-10-09 17:00:00.0\t2.79\t4.15\n2020-10-10 17:00:00.0\t2.8\t4.3\n2020-10-11 17:00:00.0\t2.82\t5.21\n2020-10-12 17:00:00.0\t2.84\t5.41\n2020-10-13 17:00:00.0\t2.86\t5.24\n2020-10-14 17:00:00.0\t2.89\t4.82\n2020-10-15 17:00:00.0\t2.92\t5.4\n2020-10-16 17:00:00.0\t2.96\t6.66\n2020-10-17 17:00:00.0\t3.01\t6.59\n2020-10-18 17:00:00.0\t3.06\t7.99\n2020-10-19 17:00:00.0\t3.11\t9.44\n2020-10-20 17:00:00.0\t3.15\t7.51\n2020-10-21 17:00:00.0\t3.22\t8.55\n2020-10-22 17:00:00.0\t3.3\t9.44\n2020-10-23 17:00:00.0\t3.39\t10.52\n2020-10-24 17:00:00.0\t3.48\t11.05\n2020-10-25 17:00:00.0\t3.59\t13.14\n2020-10-26 17:00:00.0\t3.67\t13.64\n2020-10-27 17:00:00.0\t3.78\t12.61\n2020-10-28 17:00:00.0\t3.89\t12.56\n2020-10-29 17:00:00.0\t4.02\t13.32\n2020-10-30 17:00:00.0\t4.16\t14.45\n2020-10-31 17:00:00.0\t4.3\t14.71\n2020-11-01 17:00:00.0\t4.44\t16.3\n2020-11-02 17:00:00.0\t4.54\t16.39\n2020-11-03 17:00:00.0\t4.67\t15.49\n2020-11-04 17:00:00.0\t4.79\t14.42\n2020-11-05 17:00:00.0\t4.93\t15.69\n2020-11-06 17:00:00.0\t5.09\t16.14\n2020-11-07 17:00:00.0\t5.25\t17.18\n2020-11-08 17:00:00.0\t5.38\t17.06\n2020-11-09 17:00:00.0\t5.48\t17.11\n2020-11-10 17:00:00.0\t5.61\t16.11\n2020-11-11 17:00:00.0\t5.72\t14.61\n2020-11-12 17:00:00.0\t5.86\t16.18\n2020-11-13 17:00:00.0\t6.0\t16.05\n2020-11-14 17:00:00.0\t6.13\t16.36\n2020-11-15 17:00:00.0\t6.24\t17.4\n2020-11-16 17:00:00.0\t6.34\t17.92\n2020-11-17 17:00:00.0\t6.44\t15.44\n2020-11-18 17:00:00.0\t6.53\t14.6\n2020-11-19 17:00:00.0\t6.63\t14.46\n2020-11-20 17:00:00.0\t6.74\t15.64\n2020-11-21 17:00:00.0\t6.83\t14.65\n2020-11-22 17:00:00.0\t6.91\t15.01\n2020-11-23 17:00:00.0\t6.97\t15.39\n2020-11-24 17:00:00.0\t7.02\t12.31\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512343_1347507639",
+      "id": "20201124-182600_1133832098",
+      "dateCreated": "2020-11-25 09:28:32.343",
+      "dateStarted": "2020-11-25 09:29:40.742",
+      "dateFinished": "2020-11-25 09:29:42.575",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\n\u003cimg src\u003d\"https://kontext.tech/api/flex/medias/obj-1645\" style\u003d\"margin: 30px auto\" /\u003e",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-26 08:10:35.909",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/text",
+        "fontSize": 12.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cimg src\u003d\"https://kontext.tech/api/flex/medias/obj-1645\" style\u003d\"margin: 30px auto\" /\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512344_-1615781689",
+      "id": "20201124-173606_1717679697",
+      "dateCreated": "2020-11-25 09:28:32.344",
+      "dateStarted": "2020-11-26 08:10:32.002",
+      "dateFinished": "2020-11-26 08:10:32.020",
+      "status": "FINISHED"
+    },
+    {
+      "text": "tamponiCasiGiornaliero.write.format(\"parquet\").save(\"/zeppelin/spark-warehouse/tamponiCasiGiornaliero.parquet\")\ntamponiCasiGiornaliero.write.format(\"csv\").save(\"/zeppelin/spark-warehouse/tamponiCasiGiornaliero.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-25 09:29:42.812",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "editorHide": false,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512344_1043492191",
+      "id": "20201124-173628_1088772168",
+      "dateCreated": "2020-11-25 09:28:32.344",
+      "dateStarted": "2020-11-25 09:29:42.944",
+      "dateFinished": "2020-11-25 09:29:47.467",
+      "status": "FINISHED"
+    },
+    {
+      "text": "spark.sql(\"\"\"\n    SELECT tc.data, tc.rapporto_tamponi_casi AS tc_rapporto, tcg.rapporto_tamponi_casi AS tcg_rapporto\n    FROM tamponi_casi AS tc\n    INNER JOIN tamponi_casi_giornaliero AS tcg ON tcg.data \u003d tc.data\n\"\"\".stripMargin).write.format(\"parquet\").save(\"/zeppelin/spark-warehouse/tamponiCasiGiornaliero_Totale.parquet\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-25 09:29:47.542",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512344_1919140691",
+      "id": "20201124-183753_268028024",
+      "dateCreated": "2020-11-25 09:28:32.345",
+      "dateStarted": "2020-11-25 09:29:47.565",
+      "dateFinished": "2020-11-25 09:29:49.804",
+      "status": "FINISHED"
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2020-11-25 16:17:26.485",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606296512345_1778619633",
+      "id": "20201124-183821_1706672476",
+      "dateCreated": "2020-11-25 09:28:32.345",
+      "status": "FINISHED"
+    }
+  ],
   "name": "Intro to Apache Spark",
-  "id": "2FQ15NS7A",
+  "id": "2FT4PJ1Q6",
   "defaultInterpreterGroup": "spark",
   "version": "0.9.0-preview1",
   "noteParams": {},
