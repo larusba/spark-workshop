@@ -1148,6 +1148,10 @@
         {
           "groupArtifactVersion": "/jars/neo4j-connector-apache-spark_2.11-4.0.0.jar",
           "local": false
+        },
+        {
+          "groupArtifactVersion": "org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.4",
+          "local": false
         }
       ],
       "option": {
