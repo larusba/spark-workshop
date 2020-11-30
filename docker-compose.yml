@@ -9,6 +9,7 @@ services:
       - neo4j
     ports:
       - "8080:8080"
+      - "4040:4040"
     volumes:
       - ./zeppelin/notebook:/zeppelin/notebook
       - ./zeppelin/conf:/zeppelin/conf

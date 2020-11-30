@@ -959,7 +959,7 @@
         },
         "zeppelin.spark.uiWebUrl": {
           "name": "zeppelin.spark.uiWebUrl",
-          "value": "",
+          "value": "http://localhost:4040",
           "type": "string",
           "description": "Override Spark UI default URL"
         },
