@@ -1,19 +1,19 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n\n# Neo4j Streams Sink\n\nThis module allows Neo4j consuming data from a Kafka topic, and it does it in a \"smart\" way, by allowing you to define your custom queries. What you need to do is write in your neo4j.conf something like this:\n\n`streams.sink.topic.cypher.\u003cTOPIC\u003e\u003d\u003cCYPHER_QUERY\u003e`\n\nSo if you define a query just like this:\n\n```\nstreams.sink.topic.my-topic\u003dMERGE (n:Person{id: event.id}) \\\n    ON CREATE SET n +\u003d event.properties\n```\n\nAnd for events like this:\n\n`{id:\"alice@example.com\",properties:{name:\"Alice\",age:32}}`\n\nUnder the hood the Sink module will execute a query like this:\n\n```\nUNWIND {batch} AS event\nMERGE (n:Label {id: event.id})\n    ON CREATE SET n +\u003d event.properties\n```\n\nSo continuing with the example above a possible full representation could be:\n\n```\nWITH [{id:\"alice@example.com\",properties:{name:\"Alice\",age:32}},\n    {id:\"bob@example.com\",properties:{name:\"Bob\",age:42}}] AS batch\nUNWIND batch AS event\nMERGE (n:Person {id: event.id})\n    ON CREATE SET n +\u003d event.properties\n```\n\nThis gives to the developer the power to define his own business rules because you can choose to update, add to, remove, adapt your graph data based on the events you get.",
+      "text": "%md\n\n# Neo4j Streams Sink\n\nThis module allows Neo4j consuming data from a Kafka topic, and it does it in a \"smart\" way, by allowing you to define your custom queries. What you need to do is write in your neo4j.conf something like this:\n\n`streams.sink.topic.cypher.\u003cTOPIC\u003e\u003d\u003cCYPHER_QUERY\u003e`",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 15:39:44.922",
+      "dateUpdated": "2020-12-01 11:59:42.384",
       "config": {
         "tableHide": false,
         "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true,
+          "language": "text",
+          "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": false
         },
         "colWidth": 12.0,
-        "editorMode": "ace/mode/markdown",
+        "editorMode": "ace/mode/text",
         "fontSize": 9.0,
         "editorHide": true,
         "results": {},
@@ -28,7 +28,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eNeo4j Streams Sink\u003c/h1\u003e\n\u003cp\u003eThis module allows Neo4j consuming data from a Kafka topic, and it does it in a \u0026ldquo;smart\u0026rdquo; way, by allowing you to define your custom queries. What you need to do is write in your neo4j.conf something like this:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003estreams.sink.topic.cypher.\u0026lt;TOPIC\u0026gt;\u003d\u0026lt;CYPHER_QUERY\u0026gt;\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eSo if you define a query just like this:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003estreams.sink.topic.my-topic\u003dMERGE (n:Person{id: event.id}) \\\n    ON CREATE SET n +\u003d event.properties\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eAnd for events like this:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003e{id:\u0026quot;alice@example.com\u0026quot;,properties:{name:\u0026quot;Alice\u0026quot;,age:32}}\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eUnder the hood the Sink module will execute a query like this:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eUNWIND {batch} AS event\nMERGE (n:Label {id: event.id})\n    ON CREATE SET n +\u003d event.properties\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eSo continuing with the example above a possible full representation could be:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eWITH [{id:\u0026quot;alice@example.com\u0026quot;,properties:{name:\u0026quot;Alice\u0026quot;,age:32}},\n    {id:\u0026quot;bob@example.com\u0026quot;,properties:{name:\u0026quot;Bob\u0026quot;,age:42}}] AS batch\nUNWIND batch AS event\nMERGE (n:Person {id: event.id})\n    ON CREATE SET n +\u003d event.properties\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eThis gives to the developer the power to define his own business rules because you can choose to update, add to, remove, adapt your graph data based on the events you get.\u003c/p\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eNeo4j Streams Sink\u003c/h1\u003e\n\u003cp\u003eThis module allows Neo4j consuming data from a Kafka topic, and it does it in a \u0026ldquo;smart\u0026rdquo; way, by allowing you to define your custom queries. What you need to do is write in your neo4j.conf something like this:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003estreams.sink.topic.cypher.\u0026lt;TOPIC\u0026gt;\u003d\u0026lt;CYPHER_QUERY\u0026gt;\u003c/code\u003e\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -37,14 +37,14 @@
       "jobName": "paragraph_1606459681770_-1677356869",
       "id": "20190125-192004_563441123",
       "dateCreated": "2020-11-27 06:48:01.771",
-      "dateStarted": "2020-11-27 15:39:44.979",
-      "dateFinished": "2020-11-27 15:39:49.601",
+      "dateStarted": "2020-12-01 11:59:37.102",
+      "dateFinished": "2020-12-01 11:59:40.555",
       "status": "FINISHED"
     },
     {
       "text": "%md\n## Our configuration\n\n```\nNEO4J_streams_sink_topic_cypher_pharma: \"\n          MERGE (p:Pharmacy{fiscalId: event.FISCAL_ID}) ON CREATE SET p.name \u003d event.NAME\n          MERGE (t:PharmacyType{type: event.TYPE_NAME})\n          MERGE (a:Address{name: event.ADDRESS + \u0027, \u0027 + event.CITY})\n            ON CREATE SET a.latitude \u003d event.LATITUDE, a.longitude \u003d event.LONGITUDE,\n              a.code \u003d event.POSTAL_CODE, a.point \u003d event.POINT\n          MERGE (c:City{name: event.CITY})\n          MERGE (p)-[:IS_TYPE]-(t)\n          MERGE (p)-[:HAS_ADDRESS]-(a)\n          MERGE (a)-[:IS_LOCATED_IN]-\u003e(c)\"\n```",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 15:39:49.707",
+      "dateUpdated": "2020-12-01 11:59:45.205",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -78,8 +78,8 @@
       "jobName": "paragraph_1606459681771_-1173533187",
       "id": "20190125-185025_1627821720",
       "dateCreated": "2020-11-27 06:48:01.771",
-      "dateStarted": "2020-11-27 15:39:49.830",
-      "dateFinished": "2020-11-27 15:39:49.894",
+      "dateStarted": "2020-12-01 11:59:45.188",
+      "dateFinished": "2020-12-01 11:59:45.234",
       "status": "FINISHED"
     },
     {
@@ -1142,7 +1142,7 @@
       "title": "Get the staging Dataset and send the data to the \"pharma\" topic",
       "text": "(spark.table(\"OPEN_DATA_KAFKA_STAGE\").selectExpr(\"CAST(key AS STRING)\", \"CAST(value AS STRING)\")\n    .write\n    .format(\"kafka\")\n    .option(\"kafka.enable.auto.commit\", \"true\")\n    .option(\"kafka.bootstrap.servers\", \"broker:9093\")\n    .option(\"topic\", \"pharma\")\n    .save())",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 15:40:44.868",
+      "dateUpdated": "2020-12-01 11:18:22.492",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -1446,7 +1446,5 @@
   "config": {
     "isZeppelinNotebookCronEnable": false
   },
-  "info": {
-    "isRunning": false
-  }
+  "info": {}
 }
