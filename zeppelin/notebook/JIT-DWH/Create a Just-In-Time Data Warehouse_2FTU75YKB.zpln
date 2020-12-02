@@ -79,19 +79,19 @@
       "status": "READY"
     },
     {
-      "text": "%md\n# A Legacy Structure\n\n## Enterprise Data Warehouses\nTraditional DWH requires data teams to constantly build multiple costly and time-consuming **E**xtract **T**ransform **L**oad (ETL) pipelines to ultimately derive business insights.\nOne of the biggest pain points is that, due to its **Rigid architecture that\u0027s difficult to chang*e*, Enterprise Data Warehouses are **inherently rigid**. That\u0027s because:\n\n* they are **based on** the **Schema-On-Write** architecture: first, you define your schema, then you write your data, then you read your data and it comes back in the schema you defined up-front;\n* they are **based on** (expensive) **batched/scheduled jobs**;\n\n**This results in having to build costly and time-consuming ETL pipeline** to access and manipulate the data. And as **new data types** and sources are introduced, the need to augment your ETL pipelines **exacerbates the problem**.\nThanks to the combination of the stream data processing with the Neo4j Streams CDC module and the Schema-On-Read approach provided by Apache Spark we can overcome this rigidity and build a new kind of (flexible) DWH.",
+      "text": "%md\n# A Legacy Structure\n\n## Enterprise Data Warehouses\nTraditional DWH requires data teams to constantly build multiple costly and time-consuming **E**xtract **T**ransform **L**oad (ETL) pipelines to ultimately derive business insights.\nOne of the biggest pain points is that, due to its **Rigid architecture that\u0027s difficult to change**, Enterprise Data Warehouses are **inherently rigid**. That\u0027s because:\n\n* they are **based on** the **Schema-On-Write** architecture: first, you define your schema, then you write your data, then you read your data and it comes back in the schema you defined up-front;\n* they are **based on** (expensive) **batched/scheduled jobs**;\n\n**This results in having to build costly and time-consuming ETL pipeline** to access and manipulate the data. And as **new data types** and sources are introduced, the need to augment your ETL pipelines **exacerbates the problem**.\nThanks to the combination of the stream data processing with the Neo4j Streams CDC module and the Schema-On-Read approach provided by Apache Spark we can overcome this rigidity and build a new kind of (flexible) DWH.",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 06:47:34.504",
+      "dateUpdated": "2020-12-02 07:09:52.608",
       "config": {
         "tableHide": false,
         "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true,
+          "language": "text",
+          "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": false
         },
         "colWidth": 12.0,
-        "editorMode": "ace/mode/markdown",
+        "editorMode": "ace/mode/text",
         "fontSize": 9.0,
         "editorHide": true,
         "results": {},
@@ -106,7 +106,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eA Legacy Structure\u003c/h1\u003e\n\u003ch2\u003eEnterprise Data Warehouses\u003c/h2\u003e\n\u003cp\u003eTraditional DWH requires data teams to constantly build multiple costly and time-consuming \u003cstrong\u003eE\u003c/strong\u003extract \u003cstrong\u003eT\u003c/strong\u003eransform \u003cstrong\u003eL\u003c/strong\u003eoad (ETL) pipelines to ultimately derive business insights.\u003cbr/\u003eOne of the biggest pain points is that, due to its **Rigid architecture that\u0026rsquo;s difficult to chang*e*, Enterprise Data Warehouses are \u003cstrong\u003einherently rigid\u003c/strong\u003e. That\u0026rsquo;s because:\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003ethey are \u003cstrong\u003ebased on\u003c/strong\u003e the \u003cstrong\u003eSchema-On-Write\u003c/strong\u003e architecture: first, you define your schema, then you write your data, then you read your data and it comes back in the schema you defined up-front;\u003c/li\u003e\n  \u003cli\u003ethey are \u003cstrong\u003ebased on\u003c/strong\u003e (expensive) \u003cstrong\u003ebatched/scheduled jobs\u003c/strong\u003e;\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003eThis results in having to build costly and time-consuming ETL pipeline\u003c/strong\u003e to access and manipulate the data. And as \u003cstrong\u003enew data types\u003c/strong\u003e and sources are introduced, the need to augment your ETL pipelines \u003cstrong\u003eexacerbates the problem\u003c/strong\u003e.\u003cbr/\u003eThanks to the combination of the stream data processing with the Neo4j Streams CDC module and the Schema-On-Read approach provided by Apache Spark we can overcome this rigidity and build a new kind of (flexible) DWH.\u003c/p\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eA Legacy Structure\u003c/h1\u003e\n\u003ch2\u003eEnterprise Data Warehouses\u003c/h2\u003e\n\u003cp\u003eTraditional DWH requires data teams to constantly build multiple costly and time-consuming \u003cstrong\u003eE\u003c/strong\u003extract \u003cstrong\u003eT\u003c/strong\u003eransform \u003cstrong\u003eL\u003c/strong\u003eoad (ETL) pipelines to ultimately derive business insights.\u003cbr/\u003eOne of the biggest pain points is that, due to its \u003cstrong\u003eRigid architecture that\u0026rsquo;s difficult to change\u003c/strong\u003e, Enterprise Data Warehouses are \u003cstrong\u003einherently rigid\u003c/strong\u003e. That\u0026rsquo;s because:\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003ethey are \u003cstrong\u003ebased on\u003c/strong\u003e the \u003cstrong\u003eSchema-On-Write\u003c/strong\u003e architecture: first, you define your schema, then you write your data, then you read your data and it comes back in the schema you defined up-front;\u003c/li\u003e\n  \u003cli\u003ethey are \u003cstrong\u003ebased on\u003c/strong\u003e (expensive) \u003cstrong\u003ebatched/scheduled jobs\u003c/strong\u003e;\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003eThis results in having to build costly and time-consuming ETL pipeline\u003c/strong\u003e to access and manipulate the data. And as \u003cstrong\u003enew data types\u003c/strong\u003e and sources are introduced, the need to augment your ETL pipelines \u003cstrong\u003eexacerbates the problem\u003c/strong\u003e.\u003cbr/\u003eThanks to the combination of the stream data processing with the Neo4j Streams CDC module and the Schema-On-Read approach provided by Apache Spark we can overcome this rigidity and build a new kind of (flexible) DWH.\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -115,7 +115,9 @@
       "jobName": "paragraph_1606459654503_1203881618",
       "id": "20190117-214203_1930190604",
       "dateCreated": "2020-11-27 06:47:34.504",
-      "status": "READY"
+      "dateStarted": "2020-12-02 07:09:50.863",
+      "dateFinished": "2020-12-02 07:09:51.079",
+      "status": "FINISHED"
     },
     {
       "text": "%md\n# A paradigm shift: Just-In-Time Data Warehouse\n\nA JIT-DWH solution is designed to easily handle a wider variety of data from different sources an start from a different approach about how to deal and manage data: **Schema-On-Read**\n\n## Schema-On-Read\n\nSchema-On-Read follows a different sequence, it just loads the data as-is and applies your own lens to the data when you read it back out. With this kind of approach you can present data in a schema that is adapted best to the queries being issued. You\u0027re not stuck with a one-size-fits-all schema. With schema-on-read, you can present the data back in a schema that is most relevant to the task at hand.\n\n## How to?\n\nApply this kind of schema is pretty simple and leverage the **Neo4j Streams** module with **Apache Spark**\u0027s Structured Streaming Apis and **Apache Kafka**",
@@ -159,19 +161,19 @@
     {
       "text": "%md\nTo a more in-depth description of the Neo4j Streams project and how/why we at [LARUS](http://www.larus-ba.it/) and [Neo4j](https://neo4j.com/) built it, check out [this article]((https://medium.com/neo4j/a-new-neo4j-integration-with-apache-kafka-6099c14851d2)) that provides an in-depth description.",
       "user": "anonymous",
-      "dateUpdated": "2020-12-01 14:25:21.748",
+      "dateUpdated": "2020-12-02 07:07:49.568",
       "config": {
         "tableHide": false,
         "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true,
+          "language": "text",
+          "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": false
         },
         "colWidth": 12.0,
-        "editorMode": "ace/mode/markdown",
+        "editorMode": "ace/mode/text",
         "fontSize": 9.0,
-        "editorHide": false,
+        "editorHide": true,
         "results": {},
         "enabled": true
       },
@@ -238,7 +240,7 @@
       "title": "Execute this query if you want clean-up the DB",
       "text": "%neo4j\nMATCH (n) DETACH DELETE n;",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 14:56:45.296",
+      "dateUpdated": "2020-12-02 07:08:12.385",
       "config": {
         "editorSetting": {
           "language": "text",
@@ -267,15 +269,15 @@
       "jobName": "paragraph_1606459654511_477173240",
       "id": "20181215-121020_2036794274",
       "dateCreated": "2020-11-27 06:47:34.511",
-      "dateStarted": "2020-11-27 14:56:45.342",
-      "dateFinished": "2020-11-27 14:56:54.342",
+      "dateStarted": "2020-12-02 07:08:12.419",
+      "dateFinished": "2020-12-02 07:09:39.822",
       "status": "FINISHED"
     },
     {
       "title": "Create an Index on Person label",
       "text": "%neo4j\nCREATE INDEX ON :Person(id) ",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 15:13:49.521",
+      "dateUpdated": "2020-12-02 07:18:51.978",
       "config": {
         "editorSetting": {
           "language": "text",
@@ -304,15 +306,15 @@
       "jobName": "paragraph_1606459654512_-857802102",
       "id": "20181219-220056_2052771444",
       "dateCreated": "2020-11-27 06:47:34.512",
-      "dateStarted": "2020-11-27 15:13:50.232",
-      "dateFinished": "2020-11-27 15:14:00.064",
+      "dateStarted": "2020-12-02 07:18:52.875",
+      "dateFinished": "2020-12-02 07:19:02.604",
       "status": "FINISHED"
     },
     {
       "title": "Set the Background Job into Neo4j",
       "text": "%neo4j\nCALL apoc.periodic.repeat(\u0027create-fake-social-data\u0027, \u0027WITH [\"M\", \"F\", \"X\"] AS gender UNWIND range(1, 10) AS id CREATE (p:Person {id: apoc.create.uuid(), name: \"Name-\" +  apoc.text.random(10), age: round(rand() * 100), index: id, gender: gender[toInteger(size(gender) * rand())]}) WITH collect(p) AS people UNWIND people AS p1 UNWIND range(1, 3) AS friend WITH p1, people[(p1.index + friend) % size(people)] AS p2 CREATE (p1)-[:KNOWS{years: round(rand() * 10), engaged: (rand() \u003e 0.5)}]-\u003e(p2)\u0027, 15) YIELD name\nRETURN name AS created",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 15:14:11.234",
+      "dateUpdated": "2020-12-02 07:19:05.651",
       "config": {
         "editorSetting": {
           "language": "text",
@@ -374,15 +376,15 @@
       "jobName": "paragraph_1606459654515_-926166891",
       "id": "20181209-002325_644010003",
       "dateCreated": "2020-11-27 06:47:34.515",
-      "dateStarted": "2020-11-27 15:14:11.287",
-      "dateFinished": "2020-11-27 15:14:14.782",
+      "dateStarted": "2020-12-02 07:19:05.724",
+      "dateFinished": "2020-12-02 07:19:08.980",
       "status": "FINISHED"
     },
     {
       "title": "Run this query when you want stop the background job",
       "text": "%neo4j\nCALL apoc.periodic.cancel(\u0027create-fake-social-data\u0027) YIELD name\nRETURN name AS cancelled",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 15:19:19.127",
+      "dateUpdated": "2020-12-02 07:32:47.258",
       "config": {
         "editorSetting": {
           "language": "text",
@@ -444,15 +446,15 @@
       "jobName": "paragraph_1606459654516_1545331706",
       "id": "20181209-003847_433243552",
       "dateCreated": "2020-11-27 06:47:34.516",
-      "dateStarted": "2020-11-27 15:19:19.168",
-      "dateFinished": "2020-11-27 15:19:19.562",
+      "dateStarted": "2020-12-02 07:32:47.299",
+      "dateFinished": "2020-12-02 07:32:47.679",
       "status": "FINISHED"
     },
     {
       "title": "Let\u0027s see how our data grow up",
       "text": "%neo4j\nMATCH p \u003d (p1:Person)-[k:KNOWS]-\u003e(p2:Person)\nRETURN count(p)",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 15:14:21.697",
+      "dateUpdated": "2020-12-02 07:19:26.913",
       "config": {
         "editorSetting": {
           "language": "text",
@@ -505,7 +507,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "count(p)\n30\n"
+            "data": "count(p)\n60\n"
           }
         ]
       },
@@ -514,15 +516,15 @@
       "jobName": "paragraph_1606459654517_-1989342123",
       "id": "20181213-181332_2045375519",
       "dateCreated": "2020-11-27 06:47:34.517",
-      "dateStarted": "2020-11-27 15:14:21.758",
-      "dateFinished": "2020-11-27 15:14:24.001",
+      "dateStarted": "2020-12-02 07:19:26.977",
+      "dateFinished": "2020-12-02 07:19:27.178",
       "status": "FINISHED"
     },
     {
       "title": "Create a Structured Streaming Dataset that consumes the data from a \"neo4j\" topic (the default topic of the CDC)",
       "text": "val kafkaStreamingDF \u003d (spark\n    .readStream\n    .format(\"kafka\")\n    .option(\"kafka.bootstrap.servers\", \"broker:9093\")\n    .option(\"startingoffsets\", \"earliest\")\n    .option(\"subscribe\", \"people,knows\")\n    .load())",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 15:14:27.209",
+      "dateUpdated": "2020-12-02 07:19:51.128",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -556,15 +558,15 @@
       "jobName": "paragraph_1606459654517_1678329512",
       "id": "20181203-171416_2095332168",
       "dateCreated": "2020-11-27 06:47:34.518",
-      "dateStarted": "2020-11-27 15:14:27.265",
-      "dateFinished": "2020-11-27 15:15:13.095",
+      "dateStarted": "2020-12-02 07:19:51.165",
+      "dateFinished": "2020-12-02 07:20:34.035",
       "status": "FINISHED"
     },
     {
       "title": "The structure of the data, as you can see is basically a Kafka ProducerRecord representation",
       "text": "kafkaStreamingDF.printSchema",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 15:04:12.681",
+      "dateUpdated": "2020-12-02 07:22:09.863",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -598,15 +600,15 @@
       "jobName": "paragraph_1606459654519_-872084361",
       "id": "20181203-222402_2131396521",
       "dateCreated": "2020-11-27 06:47:34.519",
-      "dateStarted": "2020-11-27 15:04:12.725",
-      "dateFinished": "2020-11-27 15:04:13.804",
+      "dateStarted": "2020-12-02 07:22:09.905",
+      "dateFinished": "2020-12-02 07:22:11.064",
       "status": "FINISHED"
     },
     {
       "title": "Let\u0027s create the Structure of the data streamed by the CDC",
       "text": "import org.apache.spark.sql.types._\n\nval cdcMetaSchema \u003d (new StructType()\n    .add(\"timestamp\", LongType)\n    .add(\"username\", StringType)\n    .add(\"operation\", StringType)\n    .add(\"source\", MapType(StringType, StringType, true)))\n    \nval cdcPayloadSchemaBeforeAfter \u003d (new StructType()\n    .add(\"labels\", ArrayType(StringType, false))\n    .add(\"properties\",  MapType(StringType, StringType, true)))\n    \nval cdcPayloadSchema \u003d (new StructType()\n    .add(\"id\", StringType)\n    .add(\"type\", StringType)\n    .add(\"label\", StringType)\n    .add(\"start\", MapType(StringType, StringType, true))\n    .add(\"end\", MapType(StringType, StringType, true))\n    .add(\"before\", cdcPayloadSchemaBeforeAfter)\n    .add(\"after\", cdcPayloadSchemaBeforeAfter))\n    \nval cdcSchema \u003d (new StructType()\n    .add(\"meta\", cdcMetaSchema)\n    .add(\"payload\", cdcPayloadSchema))",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 15:15:52.870",
+      "dateUpdated": "2020-12-02 07:23:01.546",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -641,15 +643,15 @@
       "jobName": "paragraph_1606459654519_1858032150",
       "id": "20181203-223834_1064272161",
       "dateCreated": "2020-11-27 06:47:34.519",
-      "dateStarted": "2020-11-27 15:15:52.894",
-      "dateFinished": "2020-11-27 15:15:55.910",
+      "dateStarted": "2020-12-02 07:23:01.589",
+      "dateFinished": "2020-12-02 07:23:05.081",
       "status": "FINISHED"
     },
     {
       "title": "Let\u0027s extract only the CDC Dataframe",
       "text": "import org.apache.spark.sql.functions._\nval cdcDataFrame \u003d (kafkaStreamingDF\n    .selectExpr(\"CAST(value AS STRING) AS VALUE\")\n    .select(from_json(\u0027VALUE, cdcSchema) as \u0027JSON))",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 15:15:59.893",
+      "dateUpdated": "2020-12-02 07:24:54.054",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -683,15 +685,15 @@
       "jobName": "paragraph_1606459654520_968725347",
       "id": "20181203-223743_2113201414",
       "dateCreated": "2020-11-27 06:47:34.520",
-      "dateStarted": "2020-11-27 15:15:59.933",
-      "dateFinished": "2020-11-27 15:16:04.410",
+      "dateStarted": "2020-12-02 07:24:54.061",
+      "dateFinished": "2020-12-02 07:24:55.877",
       "status": "FINISHED"
     },
     {
       "title": "The cdcDataFrame schema",
       "text": "cdcDataFrame.printSchema",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 15:16:07.236",
+      "dateUpdated": "2020-12-02 07:24:58.641",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -725,15 +727,15 @@
       "jobName": "paragraph_1606459654521_-211134694",
       "id": "20181203-232919_1118633785",
       "dateCreated": "2020-11-27 06:47:34.521",
-      "dateStarted": "2020-11-27 15:16:07.274",
-      "dateFinished": "2020-11-27 15:16:08.833",
+      "dateStarted": "2020-12-02 07:24:58.669",
+      "dateFinished": "2020-12-02 07:25:00.246",
       "status": "FINISHED"
     },
     {
       "title": "Let\u0027s perform a simple ETL query in order to extract fields of interest",
       "text": "val dataWarehouseDataFrame \u003d (cdcDataFrame\n    .where(\"json.payload.type \u003d \u0027node\u0027 and (array_contains(nvl(json.payload.after.labels, json.payload.before.labels), \u0027Person\u0027))\")\n    .selectExpr(\"json.payload.id AS neo_id\", \"CAST(json.meta.timestamp / 1000 AS Timestamp) AS timestamp\",\n        \"json.meta.source.hostname AS host\",\n        \"json.meta.operation AS operation\",\n        \"nvl(json.payload.after.labels, json.payload.before.labels) AS labels\",\n        \"explode(json.payload.after.properties)\"))\ndataWarehouseDataFrame.printSchema",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 15:16:17.159",
+      "dateUpdated": "2020-12-02 07:27:09.697",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -768,15 +770,15 @@
       "jobName": "paragraph_1606459654521_821812732",
       "id": "20181209-005140_1170394865",
       "dateCreated": "2020-11-27 06:47:34.521",
-      "dateStarted": "2020-11-27 15:16:17.221",
-      "dateFinished": "2020-11-27 15:16:19.489",
+      "dateStarted": "2020-12-02 07:27:09.750",
+      "dateFinished": "2020-12-02 07:27:11.781",
       "status": "FINISHED"
     },
     {
       "title": "If you want debug your streaming query please execute this",
       "text": "val query \u003d (dataWarehouseDataFrame\n    .writeStream\n    .outputMode(\"append\")\n    .format(\"console\")\n    .start())\nquery.awaitTermination(10000)\nquery.stop",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 15:18:24.491",
+      "dateUpdated": "2020-12-02 07:27:34.774",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -810,7 +812,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "-------------------------------------------\nBatch: 0\n-------------------------------------------\n+------+--------------------+-----+---------+--------+------+--------------------+\n|neo_id|           timestamp| host|operation|  labels|   key|               value|\n+------+--------------------+-----+---------+--------+------+--------------------+\n|     0|2020-11-27 15:14:...|neo4j|  created|[Person]|gender|                   X|\n|     0|2020-11-27 15:14:...|neo4j|  created|[Person]|  name|     Name-8rfUQglWwx|\n|     0|2020-11-27 15:14:...|neo4j|  created|[Person]| index|                   1|\n|     0|2020-11-27 15:14:...|neo4j|  created|[Person]|    id|3e73e180-8439-497...|\n|     0|2020-11-27 15:14:...|neo4j|  created|[Person]|   age|                91.0|\n|     1|2020-11-27 15:14:...|neo4j|  created|[Person]|gender|                   M|\n|     1|2020-11-27 15:14:...|neo4j|  created|[Person]|  name|     Name-ahj90UcdQJ|\n|     1|2020-11-27 15:14:...|neo4j|  created|[Person]| index|                   2|\n|     1|2020-11-27 15:14:...|neo4j|  created|[Person]|    id|65e5637a-b443-43e...|\n|     1|2020-11-27 15:14:...|neo4j|  created|[Person]|   age|                61.0|\n|     2|2020-11-27 15:14:...|neo4j|  created|[Person]|gender|                   F|\n|     2|2020-11-27 15:14:...|neo4j|  created|[Person]|  name|     Name-hqubZZEHkI|\n|     2|2020-11-27 15:14:...|neo4j|  created|[Person]| index|                   3|\n|     2|2020-11-27 15:14:...|neo4j|  created|[Person]|    id|700b7633-4d6b-446...|\n|     2|2020-11-27 15:14:...|neo4j|  created|[Person]|   age|                93.0|\n|     3|2020-11-27 15:14:...|neo4j|  created|[Person]|gender|                   F|\n|     3|2020-11-27 15:14:...|neo4j|  created|[Person]|  name|     Name-k7hCHDtEef|\n|     3|2020-11-27 15:14:...|neo4j|  created|[Person]| index|                   4|\n|     3|2020-11-27 15:14:...|neo4j|  created|[Person]|    id|8aad957b-6b69-4a7...|\n|     3|2020-11-27 15:14:...|neo4j|  created|[Person]|   age|                10.0|\n+------+--------------------+-----+---------+--------+------+--------------------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mquery\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.streaming.StreamingQuery\u001b[0m \u003d org.apache.spark.sql.execution.streaming.StreamingQueryWrapper@7078c415\n"
+            "data": "-------------------------------------------\nBatch: 0\n-------------------------------------------\n+------+--------------------+-----+---------+--------+------+--------------------+\n|neo_id|           timestamp| host|operation|  labels|   key|               value|\n+------+--------------------+-----+---------+--------+------+--------------------+\n|     0|2020-12-02 07:19:...|neo4j|  created|[Person]|gender|                   M|\n|     0|2020-12-02 07:19:...|neo4j|  created|[Person]|  name|     Name-ejYYaOYpMV|\n|     0|2020-12-02 07:19:...|neo4j|  created|[Person]| index|                   1|\n|     0|2020-12-02 07:19:...|neo4j|  created|[Person]|    id|6e9b41dd-19ba-472...|\n|     0|2020-12-02 07:19:...|neo4j|  created|[Person]|   age|                12.0|\n|     1|2020-12-02 07:19:...|neo4j|  created|[Person]|gender|                   X|\n|     1|2020-12-02 07:19:...|neo4j|  created|[Person]|  name|     Name-h8QCw2OGHN|\n|     1|2020-12-02 07:19:...|neo4j|  created|[Person]| index|                   2|\n|     1|2020-12-02 07:19:...|neo4j|  created|[Person]|    id|750be246-37aa-4e5...|\n|     1|2020-12-02 07:19:...|neo4j|  created|[Person]|   age|                87.0|\n|     2|2020-12-02 07:19:...|neo4j|  created|[Person]|gender|                   F|\n|     2|2020-12-02 07:19:...|neo4j|  created|[Person]|  name|     Name-SgNGbm7Phs|\n|     2|2020-12-02 07:19:...|neo4j|  created|[Person]| index|                   3|\n|     2|2020-12-02 07:19:...|neo4j|  created|[Person]|    id|5e493bd0-55c8-47a...|\n|     2|2020-12-02 07:19:...|neo4j|  created|[Person]|   age|                49.0|\n|     3|2020-12-02 07:19:...|neo4j|  created|[Person]|gender|                   X|\n|     3|2020-12-02 07:19:...|neo4j|  created|[Person]|  name|     Name-x33smwMb72|\n|     3|2020-12-02 07:19:...|neo4j|  created|[Person]| index|                   4|\n|     3|2020-12-02 07:19:...|neo4j|  created|[Person]|    id|ea3805ff-644b-46c...|\n|     3|2020-12-02 07:19:...|neo4j|  created|[Person]|   age|                 6.0|\n+------+--------------------+-----+---------+--------+------+--------------------+\nonly showing top 20 rows\n\n-------------------------------------------\nBatch: 1\n-------------------------------------------\n+------+--------------------+-----+---------+--------+------+--------------------+\n|neo_id|           timestamp| host|operation|  labels|   key|               value|\n+------+--------------------+-----+---------+--------+------+--------------------+\n|   342|2020-12-02 07:27:...|neo4j|  created|[Person]|gender|                   M|\n|   342|2020-12-02 07:27:...|neo4j|  created|[Person]|  name|     Name-Y5IAonaMHv|\n|   342|2020-12-02 07:27:...|neo4j|  created|[Person]| index|                   3|\n|   342|2020-12-02 07:27:...|neo4j|  created|[Person]|    id|a46d6390-363c-44b...|\n|   342|2020-12-02 07:27:...|neo4j|  created|[Person]|   age|                34.0|\n|   343|2020-12-02 07:27:...|neo4j|  created|[Person]|gender|                   F|\n|   343|2020-12-02 07:27:...|neo4j|  created|[Person]|  name|     Name-3mppFuSGdG|\n|   343|2020-12-02 07:27:...|neo4j|  created|[Person]| index|                   4|\n|   343|2020-12-02 07:27:...|neo4j|  created|[Person]|    id|bf359f64-c0e4-4f3...|\n|   343|2020-12-02 07:27:...|neo4j|  created|[Person]|   age|                91.0|\n|   344|2020-12-02 07:27:...|neo4j|  created|[Person]|gender|                   M|\n|   344|2020-12-02 07:27:...|neo4j|  created|[Person]|  name|     Name-qo85nDihfa|\n|   344|2020-12-02 07:27:...|neo4j|  created|[Person]| index|                   5|\n|   344|2020-12-02 07:27:...|neo4j|  created|[Person]|    id|052023b4-28ef-4fd...|\n|   344|2020-12-02 07:27:...|neo4j|  created|[Person]|   age|                11.0|\n|   349|2020-12-02 07:27:...|neo4j|  created|[Person]|gender|                   M|\n|   349|2020-12-02 07:27:...|neo4j|  created|[Person]|  name|     Name-lrsRNjB1Jl|\n|   349|2020-12-02 07:27:...|neo4j|  created|[Person]| index|                  10|\n|   349|2020-12-02 07:27:...|neo4j|  created|[Person]|    id|bdddc5eb-bc6e-4f1...|\n|   349|2020-12-02 07:27:...|neo4j|  created|[Person]|   age|                44.0|\n+------+--------------------+-----+---------+--------+------+--------------------+\n\n\u001b[1m\u001b[34mquery\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.streaming.StreamingQuery\u001b[0m \u003d org.apache.spark.sql.execution.streaming.StreamingQueryWrapper@19b4d952\n"
           }
         ]
       },
@@ -819,15 +821,15 @@
       "jobName": "paragraph_1606459654521_-2071683613",
       "id": "20181203-232932_1554731041",
       "dateCreated": "2020-11-27 06:47:34.522",
-      "dateStarted": "2020-11-27 15:17:03.613",
-      "dateFinished": "2020-11-27 15:17:15.285",
+      "dateStarted": "2020-12-02 07:27:34.806",
+      "dateFinished": "2020-12-02 07:27:46.622",
       "status": "FINISHED"
     },
     {
       "title": "Save the data streamed from the Neo4j CDC over the Filesystem as JSON",
       "text": "val writeOnDisk \u003d (dataWarehouseDataFrame\n    .writeStream\n    .format(\"json\")\n    .option(\"checkpointLocation\", \"/zeppelin/spark-warehouse/jit-dwh/checkpoint\")\n    .option(\"path\", \"/zeppelin/spark-warehouse/jit-dwh\")\n    .queryName(\"nodes\")\n    .start())",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 15:31:45.057",
+      "dateUpdated": "2020-12-02 07:28:00.416",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -853,7 +855,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\u001b[1m\u001b[34mwriteOnDisk\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.streaming.StreamingQuery\u001b[0m \u003d org.apache.spark.sql.execution.streaming.StreamingQueryWrapper@6ee21fef\n"
+            "data": "\u001b[1m\u001b[34mwriteOnDisk\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.streaming.StreamingQuery\u001b[0m \u003d org.apache.spark.sql.execution.streaming.StreamingQueryWrapper@5fe9f811\n"
           }
         ]
       },
@@ -862,15 +864,15 @@
       "jobName": "paragraph_1606459654522_-1046173446",
       "id": "20181214-212019_1790824348",
       "dateCreated": "2020-11-27 06:47:34.522",
-      "dateStarted": "2020-11-27 15:31:45.101",
-      "dateFinished": "2020-11-27 15:31:46.289",
+      "dateStarted": "2020-12-02 07:28:00.455",
+      "dateFinished": "2020-12-02 07:28:01.804",
       "status": "FINISHED"
     },
     {
       "title": "Launch this paragraph if you want stop the streaming JOB",
       "text": "spark.streams.active.foreach { _.stop }",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 15:32:48.647",
+      "dateUpdated": "2020-12-02 07:32:40.244",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -898,8 +900,8 @@
       "jobName": "paragraph_1606459654524_96194840",
       "id": "20181227-003826_1846066318",
       "dateCreated": "2020-11-27 06:47:34.524",
-      "dateStarted": "2020-11-27 15:32:48.687",
-      "dateFinished": "2020-11-27 15:32:51.570",
+      "dateStarted": "2020-12-02 07:32:40.277",
+      "dateFinished": "2020-12-02 07:32:43.843",
       "status": "FINISHED"
     },
     {
