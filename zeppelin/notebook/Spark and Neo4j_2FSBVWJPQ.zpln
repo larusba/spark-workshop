@@ -222,9 +222,9 @@
     },
     {
       "title": "Read the Reviewers",
-      "text": "/**\n * In this example we use the \"relationship\" read method (https://neo4j.com/developer/spark/reading/#bookmark-read-rel)\n */\nval reviewDf \u003d spark.read.format(\"org.neo4j.spark.DataSource\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"osw2020\")\n    .option(\"pushdown.columns.enabled\", \"false\")\n    .option(\"relationship\", \"REVIEWED\")\n    .option(\"relationship.source.labels\", \"Person\")\n    .option(\"relationship.target.labels\", \"Movie\")\n    .load()\n    \nreviewDf.show()",
+      "text": "/**\n * In this example we use the \"relationship\" read method (https://neo4j.com/developer/spark/reading/#bookmark-read-rel)\n */\nval reviewDf \u003d spark.read.format(\"org.neo4j.spark.DataSource\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"osw2020\")\n    .option(\"relationship\", \"REVIEWED\")\n    .option(\"relationship.source.labels\", \"Person\")\n    .option(\"relationship.target.labels\", \"Movie\")\n    .load()\n    \nreviewDf.show()",
       "user": "anonymous",
-      "dateUpdated": "2020-12-01 07:06:40.840",
+      "dateUpdated": "2020-12-02 06:25:47.013",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -293,6 +293,36 @@
       "dateCreated": "2020-11-26 10:45:37.218",
       "dateStarted": "2020-12-01 06:53:07.543",
       "dateFinished": "2020-12-01 06:53:10.169",
+      "status": "FINISHED"
+    },
+    {
+      "text": "/**\n * Exercise: read data from Neo4j using the \"query\" mode\n * \n * Docs: https://neo4j.com/developer/spark/reading/#bookmark-read-query\n */\nval reviewDf \u003d spark.read.format(\"org.neo4j.spark.DataSource\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"osw2020\")\n    /*...*/\n    .load()\n    .show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-02 06:29:41.140",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606809360494_-1021176466",
+      "id": "paragraph_1606809360494_-1021176466",
+      "dateCreated": "2020-12-01 07:56:00.494",
+      "dateStarted": "2020-12-02 06:29:04.316",
+      "dateFinished": "2020-12-02 06:29:07.824",
       "status": "FINISHED"
     },
     {
@@ -379,7 +409,7 @@
     {
       "text": "%neo4j\n\nMATCH (n:Instrument) RETURN n;",
       "user": "anonymous",
-      "dateUpdated": "2020-12-01 07:50:15.524",
+      "dateUpdated": "2020-12-02 06:30:53.170",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -450,7 +480,7 @@
     {
       "text": "val celebritiesMusician \u003d Seq(\n        (\"Keanu Reeves\", \"Drums\"),\n        (\"Carrie-Anne Moss\", \"Piano\"),\n        (\"Laurence Fishburne\", \"Bass\"),\n        (\"Hugo Weaving\", \"Guitar\"),\n        (\"Ezio Greggio\", \"Triangle\")\n    ).toDF(\"actor_name\", \"instrument_name\")\n    \n/**\n * Save modes for relationship nodes: https://neo4j.com/developer/spark/writing/#bookmark-node-save-modes\n */\ncelebritiesMusician.write\n    .format(\"org.neo4j.spark.DataSource\")\n    .mode(\"Overwrite\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"osw2020\")\n    .option(\"relationship.save.strategy\", \"keys\")\n    .option(\"relationship\", \"PLAYS\")\n    .option(\"relationship.source.labels\", \"Person\")\n    .option(\"relationship.source.node.keys\", \"actor_name:name\")\n    .option(\"relationship.source.save.mode\", \"Match\") // we don\u0027t want new actors in our db\n    .option(\"relationship.target.labels\", \"Instrument\")\n    .option(\"relationship.target.node.keys\", \"instrument_name:name\")\n    .option(\"relationship.target.save.mode\", \"Overwrite\") // but we do want new instruments\n    .save()",
       "user": "anonymous",
-      "dateUpdated": "2020-12-01 07:51:08.023",
+      "dateUpdated": "2020-12-02 06:34:02.648",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -473,7 +503,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\u001b[1m\u001b[34mcelebritiesMusician\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [actor_name: string, instrument_name: string]\n"
+            "data": "\u001b[1m\u001b[34mcelebritiesMusician\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [actor_name: string, instrument_name: string ... 1 more field]\n"
           }
         ]
       },
@@ -482,14 +512,14 @@
       "jobName": "paragraph_1606397425925_853194907",
       "id": "paragraph_1606397425925_853194907",
       "dateCreated": "2020-11-26 13:30:25.925",
-      "dateStarted": "2020-12-01 07:51:08.041",
-      "dateFinished": "2020-12-01 07:51:12.409",
+      "dateStarted": "2020-12-02 06:32:56.684",
+      "dateFinished": "2020-12-02 06:33:09.914",
       "status": "FINISHED"
     },
     {
       "text": "%neo4j\n\nMATCH pattern\u003d(p:Person)-[:PLAYS]-\u003e(i:Instrument) RETURN pattern",
       "user": "anonymous",
-      "dateUpdated": "2020-12-01 07:51:13.256",
+      "dateUpdated": "2020-12-02 06:33:23.351",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -497,7 +527,7 @@
         "results": {
           "0": {
             "graph": {
-              "mode": "network",
+              "mode": "table",
               "height": 300.0,
               "optionOpen": false,
               "setting": {
@@ -508,7 +538,8 @@
                       "id": "string",
                       "label": "string",
                       "name": "string",
-                      "born": "string"
+                      "born": "string",
+                      "experience": "string"
                     },
                     "updated": false
                   },
@@ -545,7 +576,7 @@
         "msg": [
           {
             "type": "NETWORK",
-            "data": "{\"nodes\":[{\"id\":1,\"data\":{\"name\":\"Keanu Reeves\",\"born\":1964},\"label\":\"Person\"},{\"id\":2,\"data\":{\"name\":\"Carrie-Anne Moss\",\"born\":1967},\"label\":\"Person\"},{\"id\":3,\"data\":{\"name\":\"Laurence Fishburne\",\"born\":1961},\"label\":\"Person\"},{\"id\":4,\"data\":{\"name\":\"Hugo Weaving\",\"born\":1960},\"label\":\"Person\"},{\"id\":171,\"data\":{\"name\":\"Drums\"},\"label\":\"Instrument\"},{\"id\":172,\"data\":{\"name\":\"Guitar\"},\"label\":\"Instrument\"},{\"id\":173,\"data\":{\"name\":\"Piano\"},\"label\":\"Instrument\"},{\"id\":174,\"data\":{\"name\":\"Bass\"},\"label\":\"Instrument\"}],\"edges\":[{\"source\":4,\"target\":172,\"id\":256,\"data\":{},\"label\":\"PLAYS\"},{\"source\":1,\"target\":171,\"id\":253,\"data\":{},\"label\":\"PLAYS\"},{\"source\":2,\"target\":173,\"id\":254,\"data\":{},\"label\":\"PLAYS\"},{\"source\":3,\"target\":174,\"id\":255,\"data\":{},\"label\":\"PLAYS\"}],\"labels\":{\"Movie\":\"#5B953D\",\"Person\":\"#8550EC\",\"Instrument\":\"#0365C5\"},\"types\":[\"ACTED_IN\",\"REVIEWED\",\"PRODUCED\",\"WROTE\",\"PLAYS\",\"FOLLOWS\",\"DIRECTED\"],\"directed\":true}"
+            "data": "{\"nodes\":[{\"id\":1,\"data\":{\"name\":\"Keanu Reeves\",\"born\":1964},\"label\":\"Person\"},{\"id\":2,\"data\":{\"name\":\"Carrie-Anne Moss\",\"born\":1967},\"label\":\"Person\"},{\"id\":3,\"data\":{\"name\":\"Laurence Fishburne\",\"born\":1961},\"label\":\"Person\"},{\"id\":4,\"data\":{\"name\":\"Hugo Weaving\",\"born\":1960},\"label\":\"Person\"},{\"id\":171,\"data\":{\"name\":\"Drums\"},\"label\":\"Instrument\"},{\"id\":172,\"data\":{\"name\":\"Guitar\"},\"label\":\"Instrument\"},{\"id\":173,\"data\":{\"name\":\"Piano\"},\"label\":\"Instrument\"},{\"id\":174,\"data\":{\"name\":\"Bass\"},\"label\":\"Instrument\"}],\"edges\":[{\"source\":4,\"target\":172,\"id\":256,\"data\":{\"experience\":31},\"label\":\"PLAYS\"},{\"source\":1,\"target\":171,\"id\":253,\"data\":{\"experience\":2},\"label\":\"PLAYS\"},{\"source\":2,\"target\":173,\"id\":254,\"data\":{\"experience\":9},\"label\":\"PLAYS\"},{\"source\":3,\"target\":174,\"id\":255,\"data\":{\"experience\":11},\"label\":\"PLAYS\"}],\"labels\":{\"Movie\":\"#83DE07\",\"Person\":\"#EF75EB\",\"Instrument\":\"#B13E01\"},\"types\":[\"ACTED_IN\",\"REVIEWED\",\"PRODUCED\",\"WROTE\",\"PLAYS\",\"FOLLOWS\",\"DIRECTED\"],\"directed\":true}"
           }
         ]
       },
@@ -554,42 +585,14 @@
       "jobName": "paragraph_1606401945089_-1506418454",
       "id": "paragraph_1606401945089_-1506418454",
       "dateCreated": "2020-11-26 14:45:45.090",
-      "dateStarted": "2020-12-01 07:51:13.277",
-      "dateFinished": "2020-12-01 07:51:13.425",
+      "dateStarted": "2020-12-02 06:33:16.037",
+      "dateFinished": "2020-12-02 06:33:21.970",
       "status": "FINISHED"
     },
     {
-      "text": "/**\n * Exercise: ***\n */",
+      "text": "%md\n\n\u003cimg src\u003d\"https://i.imgur.com/3dMnxNy.png\" style\u003d\"margin: 30px auto\" /\u003e \n\nWe will use this dataset https://www.kaggle.com/tovarischsukhov/southparklines",
       "user": "anonymous",
-      "dateUpdated": "2020-12-01 07:56:20.381",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 12.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "apps": [],
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1606809360494_-1021176466",
-      "id": "paragraph_1606809360494_-1021176466",
-      "dateCreated": "2020-12-01 07:56:00.494",
-      "status": "READY"
-    },
-    {
-      "text": "%md\n\n\u003cimg src\u003d\"https://i.imgur.com/3dMnxNy.png\" style\u003d\"margin: 30px auto\" /\u003e ",
-      "user": "anonymous",
-      "dateUpdated": "2020-11-26 08:11:59.783",
+      "dateUpdated": "2020-12-02 06:37:10.677",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -613,7 +616,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cimg src\u003d\"https://i.imgur.com/3dMnxNy.png\" style\u003d\"margin: 30px auto\" /\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cimg src\u003d\"https://i.imgur.com/3dMnxNy.png\" style\u003d\"margin: 30px auto\" /\u003e\n\u003cp\u003eWe will use this dataset \u003ca href\u003d\"https://www.kaggle.com/tovarischsukhov/southparklines\"\u003ehttps://www.kaggle.com/tovarischsukhov/southparklines\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -622,14 +625,14 @@
       "jobName": "paragraph_1606374925076_-187920743",
       "id": "paragraph_1606374925076_-187920743",
       "dateCreated": "2020-11-26 07:15:25.076",
-      "dateStarted": "2020-11-26 08:11:57.167",
-      "dateFinished": "2020-11-26 08:11:57.181",
+      "dateStarted": "2020-12-02 06:37:04.535",
+      "dateFinished": "2020-12-02 06:37:08.333",
       "status": "FINISHED"
     },
     {
       "text": "val spd \u003d spark.read.format(\"parquet\")\n    .load(\"/zeppelin/spark-warehouse/south-park-dialogues.parquet\")\n    \nspd.show()    ",
       "user": "anonymous",
-      "dateUpdated": "2020-11-26 11:03:46.113",
+      "dateUpdated": "2020-12-02 06:38:33.042",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -652,7 +655,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "+------+-------+---------------+--------------------+\n|season|episode|      character|                line|\n+------+-------+---------------+--------------------+\n|    10|      1|           Stan|You guys, you guy...|\n|    10|      1|           Kyle|Going away? For h...|\n|    10|      1|           Stan|           Forever.\n|\n|    10|      1|           Chef|    I\u0027m sorry boys.\n|\n|    10|      1|           Stan|Chef said he\u0027s be...|\n|    10|      1|           Chef|               Wow!\n|\n|    10|      1|  Mrs. Garrison|Chef?? What kind ...|\n|    10|      1|           Chef|What\u0027s the meanin...|\n|    10|      1|  Mrs. Garrison|I hope you\u0027re mak...|\n|    10|      1|        Cartman|I\u0027m gonna miss hi...|\n|    10|      1|           Stan|Dude, how are we ...|\n|    10|      1|Mayor McDaniels|And we will all m...|\n|    10|      1|          Jimbo|           Bye-bye!\n|\n|    10|      1|         Gerald|          Good-bye!\n|\n|    10|      1|     Mr. Mackey|           So long!\n|\n|    10|      1|          A Man|     So long, Chef!\n|\n|    10|      1|  A Sign-Holder|    Good-bye, Chef!\n|\n|    10|      1|          Randy|Good-bye, Chef! H...|\n|    10|      1|           Chef|       Good-bye! ..\n|\n|    10|      1|           Kyle|Draw two card, fa...|\n+------+-------+---------------+--------------------+\nonly showing top 20 rows\n\nimport org.apache.spark.sql.functions._\n\u001b[1m\u001b[34mspd\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [season: string, episode: string ... 2 more fields]\n"
+            "data": "+------+-------+---------------+--------------------+\n|season|episode|      character|                line|\n+------+-------+---------------+--------------------+\n|    10|      1|           Stan|You guys, you guy...|\n|    10|      1|           Kyle|Going away? For h...|\n|    10|      1|           Stan|           Forever.\n|\n|    10|      1|           Chef|    I\u0027m sorry boys.\n|\n|    10|      1|           Stan|Chef said he\u0027s be...|\n|    10|      1|           Chef|               Wow!\n|\n|    10|      1|  Mrs. Garrison|Chef?? What kind ...|\n|    10|      1|           Chef|What\u0027s the meanin...|\n|    10|      1|  Mrs. Garrison|I hope you\u0027re mak...|\n|    10|      1|        Cartman|I\u0027m gonna miss hi...|\n|    10|      1|           Stan|Dude, how are we ...|\n|    10|      1|Mayor McDaniels|And we will all m...|\n|    10|      1|          Jimbo|           Bye-bye!\n|\n|    10|      1|         Gerald|          Good-bye!\n|\n|    10|      1|     Mr. Mackey|           So long!\n|\n|    10|      1|          A Man|     So long, Chef!\n|\n|    10|      1|  A Sign-Holder|    Good-bye, Chef!\n|\n|    10|      1|          Randy|Good-bye, Chef! H...|\n|    10|      1|           Chef|       Good-bye! ..\n|\n|    10|      1|           Kyle|Draw two card, fa...|\n+------+-------+---------------+--------------------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mspd\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [season: string, episode: string ... 2 more fields]\n"
           }
         ]
       },
@@ -661,14 +664,14 @@
       "jobName": "paragraph_1606296629096_1227541348",
       "id": "paragraph_1606296629096_1227541348",
       "dateCreated": "2020-11-25 09:30:29.096",
-      "dateStarted": "2020-11-26 06:53:31.759",
-      "dateFinished": "2020-11-26 06:53:51.162",
+      "dateStarted": "2020-12-02 06:38:33.098",
+      "dateFinished": "2020-12-02 06:38:38.305",
       "status": "FINISHED"
     },
     {
-      "text": "// https://neo4j.com/blog/natural-language-analytics-made-simple-visual-neo4j/\n\nspd.write\n    .format(\"org.neo4j.spark.DataSource\")\n    .mode(\"Overwrite\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"workshop\")\n    .option(\"script\",\n    \"\"\"DROP INDEX:Character(name);\n      |CREATE INDEX ON :Character(name);\n      |CREATE INDEX ON :Episode(label);\n      |CREATE INDEX ON :Word(value);\n      |\"\"\".stripMargin)\n    .option(\"query\", \n    \"\"\"MERGE (c:Character {name: COALESCE(event.character, \u0027unknown\u0027)})\n      |MERGE (e:Episode {label: \"s\" + COALESCE(event.season, \"0\") + \"e\" + COALESCE(event.episode, \"0\")})\n      |WITH REDUCE(t\u003dtolower(COALESCE(event.line, \u0027\u0027)), delim IN [\",\",\".\",\"!\",\"?\",\u0027\"\u0027,\":\",\";\",\"\u0027\",\"-\"] | REPLACE(t, delim, \"\")) AS normalized, c, e\n      |WITH [w in split(normalized,\" \") | trim(w)] AS words, c, e\n      |UNWIND words as word\n      |MERGE (w:Word {value: word})\n      |MERGE (c)-[:SAID]-\u003e(w)-[:IN_EPISODE]-\u003e(e)\n      |\"\"\".stripMargin)\n    .save()\n",
+      "text": "/**\n * Natural Language Analytics made simple and visual with Neo4j by Michael Hunger\n * https://neo4j.com/blog/natural-language-analytics-made-simple-visual-neo4j/\n */\n\nspd.write\n    .format(\"org.neo4j.spark.DataSource\")\n    .mode(\"Overwrite\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"osw2020\")\n    .option(\"script\",\n    \"\"\"CREATE INDEX ON :Character(name);\n      |CREATE INDEX ON :Episode(label);\n      |CREATE INDEX ON :Word(value);\n      |\"\"\".stripMargin)\n    .option(\"query\", \n    \"\"\"MERGE (c:Character {name: COALESCE(event.character, \u0027unknown\u0027)})\n      |MERGE (e:Episode {label: \"s\" + COALESCE(event.season, \"0\") + \"e\" + COALESCE(event.episode, \"0\")})\n      |WITH REDUCE(t\u003dTOLOWER(COALESCE(event.line, \u0027\u0027)), delim IN [\",\",\".\",\"!\",\"?\",\u0027\"\u0027,\":\",\";\",\"\u0027\",\"-\"] | REPLACE(t, delim, \"\")) AS normalized, c, e\n      |WITH [w in split(normalized,\" \") | trim(w)] AS words, c, e\n      |UNWIND words as word\n      |MERGE (w:Word {value: word})\n      |MERGE (c)-[:SAID]-\u003e(w)-[:IN_EPISODE]-\u003e(e)\n      |\"\"\".stripMargin)\n    .save()\n",
       "user": "anonymous",
-      "dateUpdated": "2020-11-26 09:37:51.186",
+      "dateUpdated": "2020-12-02 06:42:26.309",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -695,23 +698,89 @@
       "jobName": "paragraph_1606296633310_-1616833778",
       "id": "paragraph_1606296633310_-1616833778",
       "dateCreated": "2020-11-25 09:30:33.311",
-      "dateStarted": "2020-11-26 06:54:15.213",
-      "dateFinished": "2020-11-26 06:57:39.290",
+      "dateStarted": "2020-12-02 06:42:26.336",
+      "dateFinished": "2020-12-02 06:48:59.826",
       "status": "FINISHED"
     },
     {
+      "text": "val wordsDf \u003d spark.read.format(\"org.neo4j.spark.DataSource\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"osw2020\")\n    .option(\"relationship\", \"SAID\")\n    .option(\"relationship.source.labels\", \"Character\")\n    .option(\"relationship.target.labels\", \"Word\")\n    .load()\n    \nwordsDf.show()",
       "user": "anonymous",
-      "config": {},
+      "dateUpdated": "2020-12-02 07:00:46.176",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
       "settings": {
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+-----------+---------------+-----------+-----------+---------------+------------+\n|\u003crel.id\u003e|\u003crel.type\u003e|\u003csource.id\u003e|\u003csource.labels\u003e|source.name|\u003ctarget.id\u003e|\u003ctarget.labels\u003e|target.value|\n+--------+----------+-----------+---------------+-----------+-----------+---------------+------------+\n|  676683|      SAID|        175|    [Character]|       Stan|      35837|         [Word]|      spacia|\n|  674323|      SAID|        175|    [Character]|       Stan|        463|         [Word]|         pay|\n|  676167|      SAID|        175|    [Character]|       Stan|       3293|         [Word]|           n|\n|  675637|      SAID|        175|    [Character]|       Stan|       1806|         [Word]|     between|\n|  677533|      SAID|        175|    [Character]|       Stan|       1733|         [Word]|        pull|\n|  677751|      SAID|        175|    [Character]|       Stan|       1508|         [Word]|       night|\n|  674293|      SAID|        175|    [Character]|       Stan|        419|         [Word]|        kyle|\n|  674327|      SAID|        175|    [Character]|       Stan|      18574|         [Word]|  counseling|\n|  674319|      SAID|        175|    [Character]|       Stan|        655|         [Word]|         put|\n|  678255|      SAID|        175|    [Character]|       Stan|        638|         [Word]|      simple|\n|  675007|      SAID|        175|    [Character]|       Stan|        413|         [Word]|        okay|\n|  671919|      SAID|        175|    [Character]|       Stan|      30828|         [Word]|   prejudice|\n|  673703|      SAID|        175|    [Character]|       Stan|       6983|         [Word]|       actor|\n|  674715|      SAID|        175|    [Character]|       Stan|      11061|         [Word]|      ghosts|\n|  672459|      SAID|        175|    [Character]|       Stan|       1717|         [Word]|        free|\n|  678197|      SAID|        175|    [Character]|       Stan|       1497|         [Word]|      middle|\n|  671929|      SAID|        175|    [Character]|       Stan|      10158|         [Word]|  threatened|\n|  672643|      SAID|        175|    [Character]|       Stan|        430|         [Word]|        this|\n|  678473|      SAID|        175|    [Character]|       Stan|        866|         [Word]|          ah|\n|  673631|      SAID|        175|    [Character]|       Stan|       5846|         [Word]|    leonardo|\n+--------+----------+-----------+---------------+-----------+-----------+---------------+------------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mwordsDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [\u003crel.id\u003e: bigint, \u003crel.type\u003e: string ... 6 more fields]\n"
+          }
+        ]
+      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1606303950741_986993783",
-      "id": "paragraph_1606303950741_986993783",
-      "dateCreated": "2020-11-25 11:32:30.741",
-      "status": "READY"
+      "jobName": "paragraph_1606892412036_-213851021",
+      "id": "paragraph_1606892412036_-213851021",
+      "dateCreated": "2020-12-02 07:00:12.036",
+      "dateStarted": "2020-12-02 07:00:46.198",
+      "dateFinished": "2020-12-02 07:00:52.990",
+      "status": "FINISHED"
+    },
+    {
+      "title": "Let\u0027s see who has the largest dictionary",
+      "text": "wordsDf.select(\"`source.name`\", \"`target.value`\").distinct()\n    .groupBy(\"`source.name`\")\n    .count()\n    .orderBy($\"count\".desc)\n    .show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-02 07:06:40.331",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------------+-----+\n| source.name|count|\n+------------+-----+\n|     Cartman| 9921|\n|        Kyle| 5430|\n|        Stan| 5429|\n|       Randy| 3997|\n|     Butters| 3985|\n|Mr. Garrison| 2538|\n|   Announcer| 2129|\n|        Chef| 2024|\n|  Mr. Mackey| 2006|\n|       Jimmy| 1831|\n|       Jimbo| 1561|\n|      Sharon| 1541|\n|    Narrator| 1538|\n|      Gerald| 1477|\n|       Kenny| 1361|\n|       Wendy| 1355|\n|    Reporter| 1351|\n|      Sheila| 1223|\n|       Liane| 1146|\n|     Stephen| 1142|\n+------------+-----+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606892446192_1655353269",
+      "id": "paragraph_1606892446192_1655353269",
+      "dateCreated": "2020-12-02 07:00:46.193",
+      "dateStarted": "2020-12-02 07:06:40.357",
+      "dateFinished": "2020-12-02 07:06:46.198",
+      "status": "FINISHED"
     }
   ],
   "name": "Spark and Neo4j",
