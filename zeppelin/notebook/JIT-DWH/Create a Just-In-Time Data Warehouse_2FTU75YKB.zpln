@@ -1,19 +1,19 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n\n# (Neo4j)-[:LOVES]-\u003e(Kafka)\n\n\u003cdiv class\u003d\"img-responsive center-block\" style\u003d\"background-image: url(\u0027https://cdn-images-1.medium.com/max/2000/1*0k7QFFBl7YGD9haNYeLQpw.png\u0027); width: 1124px; height: 300px; background-position: center; background-size: cover;\"\u003e\u003c/div\u003e\n\n## Link\n\nhttps://neo4j-contrib.github.io/neo4j-streams/",
+      "text": "%md\n\n\u003cdiv class\u003d\"img-responsive center-block\" style\u003d\"background-image: url(\u0027https://cdn-images-1.medium.com/max/2000/1*0k7QFFBl7YGD9haNYeLQpw.png\u0027); width: 1124px; height: 300px; background-position: center; background-size: cover;\"\u003e\u003c/div\u003e\n\n## Link\n\nhttps://neo4j-contrib.github.io/neo4j-streams/",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 06:47:34.491",
+      "dateUpdated": "2020-12-02 09:21:48.958",
       "config": {
         "tableHide": false,
         "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true,
+          "language": "text",
+          "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": false
         },
         "colWidth": 12.0,
-        "editorMode": "ace/mode/markdown",
+        "editorMode": "ace/mode/text",
         "fontSize": 9.0,
         "editorHide": true,
         "results": {},
@@ -28,7 +28,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e(Neo4j)-[:LOVES]-\u0026gt;(Kafka)\u003c/h1\u003e\n\u003cdiv class\u003d\"img-responsive center-block\" style\u003d\"background-image: url(\u0027https://cdn-images-1.medium.com/max/2000/1*0k7QFFBl7YGD9haNYeLQpw.png\u0027); width: 1124px; height: 300px; background-position: center; background-size: cover;\"\u003e\u003c/div\u003e\n\u003ch2\u003eLink\u003c/h2\u003e\n\u003cp\u003e\u003ca href\u003d\"https://neo4j-contrib.github.io/neo4j-streams/\"\u003ehttps://neo4j-contrib.github.io/neo4j-streams/\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cdiv class\u003d\"img-responsive center-block\" style\u003d\"background-image: url(\u0027https://cdn-images-1.medium.com/max/2000/1*0k7QFFBl7YGD9haNYeLQpw.png\u0027); width: 1124px; height: 300px; background-position: center; background-size: cover;\"\u003e\u003c/div\u003e\n\u003ch2\u003eLink\u003c/h2\u003e\n\u003cp\u003e\u003ca href\u003d\"https://neo4j-contrib.github.io/neo4j-streams/\"\u003ehttps://neo4j-contrib.github.io/neo4j-streams/\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -37,51 +37,14 @@
       "jobName": "paragraph_1606459654490_10281182",
       "id": "20190104-221224_305673593",
       "dateCreated": "2020-11-27 06:47:34.490",
-      "status": "READY"
-    },
-    {
-      "text": "%md\n# Leveraging the Neo4j Streams module - Part 1 - Build a Just-In-Time Datawarehouse",
-      "user": "anonymous",
-      "dateUpdated": "2020-11-27 06:47:34.499",
-      "config": {
-        "tableHide": false,
-        "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true,
-          "completionKey": "TAB",
-          "completionSupport": false
-        },
-        "colWidth": 12.0,
-        "editorMode": "ace/mode/markdown",
-        "fontSize": 9.0,
-        "editorHide": true,
-        "results": {},
-        "enabled": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eLeveraging the Neo4j Streams module - Part 1 - Build a Just-In-Time Datawarehouse\u003c/h1\u003e\n\u003c/div\u003e"
-          }
-        ]
-      },
-      "apps": [],
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1606459654498_805189957",
-      "id": "20181219-220008_870823315",
-      "dateCreated": "2020-11-27 06:47:34.499",
-      "status": "READY"
+      "dateStarted": "2020-12-02 09:21:49.011",
+      "dateFinished": "2020-12-02 09:21:49.085",
+      "status": "FINISHED"
     },
     {
       "text": "%md\n# A Legacy Structure\n\n## Enterprise Data Warehouses\nTraditional DWH requires data teams to constantly build multiple costly and time-consuming **E**xtract **T**ransform **L**oad (ETL) pipelines to ultimately derive business insights.\nOne of the biggest pain points is that, due to its **Rigid architecture that\u0027s difficult to change**, Enterprise Data Warehouses are **inherently rigid**. That\u0027s because:\n\n* they are **based on** the **Schema-On-Write** architecture: first, you define your schema, then you write your data, then you read your data and it comes back in the schema you defined up-front;\n* they are **based on** (expensive) **batched/scheduled jobs**;\n\n**This results in having to build costly and time-consuming ETL pipeline** to access and manipulate the data. And as **new data types** and sources are introduced, the need to augment your ETL pipelines **exacerbates the problem**.\nThanks to the combination of the stream data processing with the Neo4j Streams CDC module and the Schema-On-Read approach provided by Apache Spark we can overcome this rigidity and build a new kind of (flexible) DWH.",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:09:52.608",
+      "dateUpdated": "2020-12-02 09:21:51.352",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -115,14 +78,14 @@
       "jobName": "paragraph_1606459654503_1203881618",
       "id": "20190117-214203_1930190604",
       "dateCreated": "2020-11-27 06:47:34.504",
-      "dateStarted": "2020-12-02 07:09:50.863",
-      "dateFinished": "2020-12-02 07:09:51.079",
+      "dateStarted": "2020-12-02 09:21:51.388",
+      "dateFinished": "2020-12-02 09:21:51.679",
       "status": "FINISHED"
     },
     {
       "text": "%md\n# A paradigm shift: Just-In-Time Data Warehouse\n\nA JIT-DWH solution is designed to easily handle a wider variety of data from different sources an start from a different approach about how to deal and manage data: **Schema-On-Read**\n\n## Schema-On-Read\n\nSchema-On-Read follows a different sequence, it just loads the data as-is and applies your own lens to the data when you read it back out. With this kind of approach you can present data in a schema that is adapted best to the queries being issued. You\u0027re not stuck with a one-size-fits-all schema. With schema-on-read, you can present the data back in a schema that is most relevant to the task at hand.\n\n## How to?\n\nApply this kind of schema is pretty simple and leverage the **Neo4j Streams** module with **Apache Spark**\u0027s Structured Streaming Apis and **Apache Kafka**",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 06:47:34.504",
+      "dateUpdated": "2020-12-02 09:21:53.849",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -156,12 +119,14 @@
       "jobName": "paragraph_1606459654504_-1359095545",
       "id": "20181212-182324_330547645",
       "dateCreated": "2020-11-27 06:47:34.504",
-      "status": "READY"
+      "dateStarted": "2020-12-02 09:21:53.854",
+      "dateFinished": "2020-12-02 09:21:54.146",
+      "status": "FINISHED"
     },
     {
       "text": "%md\nTo a more in-depth description of the Neo4j Streams project and how/why we at [LARUS](http://www.larus-ba.it/) and [Neo4j](https://neo4j.com/) built it, check out [this article]((https://medium.com/neo4j/a-new-neo4j-integration-with-apache-kafka-6099c14851d2)) that provides an in-depth description.",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:07:49.568",
+      "dateUpdated": "2020-12-02 09:21:57.238",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -195,22 +160,24 @@
       "jobName": "paragraph_1606459654509_475906861",
       "id": "20181215-115145_1797779162",
       "dateCreated": "2020-11-27 06:47:34.510",
-      "status": "READY"
+      "dateStarted": "2020-12-02 09:21:57.269",
+      "dateFinished": "2020-12-02 09:21:57.322",
+      "status": "FINISHED"
     },
     {
       "text": "%md\n\n# Create random Social Network Data\n\nWe\u0027ll create a fake social network by using the APOC apoc.periodic.repeat procedure that executes every 15 seconds this query:\n\n```\nWITH [\"M\", \"F\", \"\"] AS gender\nUNWIND range(1, 10) AS id\nCREATE (p:Person {id: apoc.create.uuid(), name: \"Name-\" +  apoc.text.random(10), age: round(rand() * 100), index: id, gender: gender[toInteger(size(gender) * rand())]})\nWITH collect(p) AS people\nUNWIND people AS p1\nUNWIND range(1, 3) AS friend\nWITH p1, people[(p1.index + friend) % size(people)] AS p2\nCREATE (p1)-[:KNOWS{years: round(rand() * 10), engaged: (rand() \u003e 0.5)}]-\u003e(p2)\n```\n\nIf you need more details about how the APOC project please follow this [link](https://neo4j-contrib.github.io/neo4j-apoc-procedures/)",
       "user": "anonymous",
-      "dateUpdated": "2020-11-27 06:47:34.511",
+      "dateUpdated": "2020-12-02 09:57:21.656",
       "config": {
         "tableHide": false,
         "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true,
+          "language": "text",
+          "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": false
         },
         "colWidth": 12.0,
-        "editorMode": "ace/mode/markdown",
+        "editorMode": "ace/mode/text",
         "fontSize": 9.0,
         "editorHide": true,
         "results": {},
@@ -234,13 +201,15 @@
       "jobName": "paragraph_1606459654511_1461125948",
       "id": "20181213-174840_2104223392",
       "dateCreated": "2020-11-27 06:47:34.511",
-      "status": "READY"
+      "dateStarted": "2020-12-02 09:57:16.213",
+      "dateFinished": "2020-12-02 09:57:16.335",
+      "status": "FINISHED"
     },
     {
       "title": "Execute this query if you want clean-up the DB",
       "text": "%neo4j\nMATCH (n) DETACH DELETE n;",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:08:12.385",
+      "dateUpdated": "2020-12-02 09:57:45.531",
       "config": {
         "editorSetting": {
           "language": "text",
@@ -259,10 +228,6 @@
       "settings": {
         "params": {},
         "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": []
       },
       "apps": [],
       "progressUpdateIntervalMs": 500,
@@ -296,10 +261,6 @@
       "settings": {
         "params": {},
         "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": []
       },
       "apps": [],
       "progressUpdateIntervalMs": 500,
@@ -362,15 +323,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TABLE",
-            "data": "created\n\"create-fake-social-data\"\n"
-          }
-        ]
-      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654515_-926166891",
@@ -431,15 +383,6 @@
       "settings": {
         "params": {},
         "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TABLE",
-            "data": "cancelled\n\"create-fake-social-data\"\n"
-          }
-        ]
       },
       "apps": [],
       "progressUpdateIntervalMs": 500,
@@ -502,15 +445,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TABLE",
-            "data": "count(p)\n60\n"
-          }
-        ]
-      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654517_-1989342123",
@@ -544,15 +478,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "\u001b[1m\u001b[34mkafkaStreamingDF\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [key: binary, value: binary ... 5 more fields]\n"
-          }
-        ]
-      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654517_1678329512",
@@ -566,7 +491,7 @@
       "title": "The structure of the data, as you can see is basically a Kafka ProducerRecord representation",
       "text": "kafkaStreamingDF.printSchema",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:22:09.863",
+      "dateUpdated": "2020-12-02 10:01:23.301",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -585,15 +510,6 @@
       "settings": {
         "params": {},
         "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "root\n |-- key: binary (nullable \u003d true)\n |-- value: binary (nullable \u003d true)\n |-- topic: string (nullable \u003d true)\n |-- partition: integer (nullable \u003d true)\n |-- offset: long (nullable \u003d true)\n |-- timestamp: timestamp (nullable \u003d true)\n |-- timestampType: integer (nullable \u003d true)\n\n"
-          }
-        ]
       },
       "apps": [],
       "progressUpdateIntervalMs": 500,
@@ -629,15 +545,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "import org.apache.spark.sql.types._\n\u001b[1m\u001b[34mcdcMetaSchema\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m \u003d StructType(StructField(timestamp,LongType,true), StructField(username,StringType,true), StructField(operation,StringType,true), StructField(source,MapType(StringType,StringType,true),true))\n\u001b[1m\u001b[34mcdcPayloadSchemaBeforeAfter\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m \u003d StructType(StructField(labels,ArrayType(StringType,false),true), StructField(properties,MapType(StringType,StringType,true),true))\n\u001b[1m\u001b[34mcdcPayloadSchema\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m \u003d StructType(StructField(id,StringType,true), StructField(type,StringType,true), StructField(label,StringType,true), StructField(start,MapType(StringType,StringType,true),true), Stru..."
-          }
-        ]
-      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654519_1858032150",
@@ -670,15 +577,6 @@
       "settings": {
         "params": {},
         "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "import org.apache.spark.sql.functions._\n\u001b[1m\u001b[34mcdcDataFrame\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [JSON: struct\u003cmeta: struct\u003ctimestamp: bigint, username: string ... 2 more fields\u003e, payload: struct\u003cid: string, type: string ... 5 more fields\u003e\u003e]\n"
-          }
-        ]
       },
       "apps": [],
       "progressUpdateIntervalMs": 500,
@@ -713,15 +611,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "root\n |-- JSON: struct (nullable \u003d true)\n |    |-- meta: struct (nullable \u003d true)\n |    |    |-- timestamp: long (nullable \u003d true)\n |    |    |-- username: string (nullable \u003d true)\n |    |    |-- operation: string (nullable \u003d true)\n |    |    |-- source: map (nullable \u003d true)\n |    |    |    |-- key: string\n |    |    |    |-- value: string (valueContainsNull \u003d true)\n |    |-- payload: struct (nullable \u003d true)\n |    |    |-- id: string (nullable \u003d true)\n |    |    |-- type: string (nullable \u003d true)\n |    |    |-- label: string (nullable \u003d true)\n |    |    |-- start: map (nullable \u003d true)\n |    |    |    |-- key: string\n |    |    |    |-- value: string (valueContainsNull \u003d true)\n |    |    |-- end: map (nullable \u003d true)\n |    |    |    |-- key: string\n |    |    |    |-- value: string (valueContainsNull \u003d true)\n |    |    |-- before: struct (nullable \u003d true)\n |    |    |    |-- labels: array (nullable \u003d true)\n |    |    |    |    |-- element: string (containsNull \u003d true)\n |    |    |    |-- properties: map (nullable \u003d true)\n |    |    |    |    |-- key: string\n |    |    |    |    |-- value: string (valueContainsNull \u003d true)\n |    |    |-- after: struct (nullable \u003d true)\n |    |    |    |-- labels: array (nullable \u003d true)\n |    |    |    |    |-- element: string (containsNull \u003d true)\n |    |    |    |-- properties: map (nullable \u003d true)\n |    |    |    |    |-- key: string\n |    |    |    |    |-- value: string (valueContainsNull \u003d true)\n\n"
-          }
-        ]
-      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654521_-211134694",
@@ -755,15 +644,6 @@
       "settings": {
         "params": {},
         "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "root\n |-- neo_id: string (nullable \u003d true)\n |-- timestamp: timestamp (nullable \u003d true)\n |-- host: string (nullable \u003d true)\n |-- operation: string (nullable \u003d true)\n |-- labels: array (nullable \u003d true)\n |    |-- element: string (containsNull \u003d true)\n |-- key: string (nullable \u003d false)\n |-- value: string (nullable \u003d true)\n\n\u001b[1m\u001b[34mdataWarehouseDataFrame\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [neo_id: string, timestamp: timestamp ... 5 more fields]\n"
-          }
-        ]
       },
       "apps": [],
       "progressUpdateIntervalMs": 500,
@@ -807,15 +687,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "-------------------------------------------\nBatch: 0\n-------------------------------------------\n+------+--------------------+-----+---------+--------+------+--------------------+\n|neo_id|           timestamp| host|operation|  labels|   key|               value|\n+------+--------------------+-----+---------+--------+------+--------------------+\n|     0|2020-12-02 07:19:...|neo4j|  created|[Person]|gender|                   M|\n|     0|2020-12-02 07:19:...|neo4j|  created|[Person]|  name|     Name-ejYYaOYpMV|\n|     0|2020-12-02 07:19:...|neo4j|  created|[Person]| index|                   1|\n|     0|2020-12-02 07:19:...|neo4j|  created|[Person]|    id|6e9b41dd-19ba-472...|\n|     0|2020-12-02 07:19:...|neo4j|  created|[Person]|   age|                12.0|\n|     1|2020-12-02 07:19:...|neo4j|  created|[Person]|gender|                   X|\n|     1|2020-12-02 07:19:...|neo4j|  created|[Person]|  name|     Name-h8QCw2OGHN|\n|     1|2020-12-02 07:19:...|neo4j|  created|[Person]| index|                   2|\n|     1|2020-12-02 07:19:...|neo4j|  created|[Person]|    id|750be246-37aa-4e5...|\n|     1|2020-12-02 07:19:...|neo4j|  created|[Person]|   age|                87.0|\n|     2|2020-12-02 07:19:...|neo4j|  created|[Person]|gender|                   F|\n|     2|2020-12-02 07:19:...|neo4j|  created|[Person]|  name|     Name-SgNGbm7Phs|\n|     2|2020-12-02 07:19:...|neo4j|  created|[Person]| index|                   3|\n|     2|2020-12-02 07:19:...|neo4j|  created|[Person]|    id|5e493bd0-55c8-47a...|\n|     2|2020-12-02 07:19:...|neo4j|  created|[Person]|   age|                49.0|\n|     3|2020-12-02 07:19:...|neo4j|  created|[Person]|gender|                   X|\n|     3|2020-12-02 07:19:...|neo4j|  created|[Person]|  name|     Name-x33smwMb72|\n|     3|2020-12-02 07:19:...|neo4j|  created|[Person]| index|                   4|\n|     3|2020-12-02 07:19:...|neo4j|  created|[Person]|    id|ea3805ff-644b-46c...|\n|     3|2020-12-02 07:19:...|neo4j|  created|[Person]|   age|                 6.0|\n+------+--------------------+-----+---------+--------+------+--------------------+\nonly showing top 20 rows\n\n-------------------------------------------\nBatch: 1\n-------------------------------------------\n+------+--------------------+-----+---------+--------+------+--------------------+\n|neo_id|           timestamp| host|operation|  labels|   key|               value|\n+------+--------------------+-----+---------+--------+------+--------------------+\n|   342|2020-12-02 07:27:...|neo4j|  created|[Person]|gender|                   M|\n|   342|2020-12-02 07:27:...|neo4j|  created|[Person]|  name|     Name-Y5IAonaMHv|\n|   342|2020-12-02 07:27:...|neo4j|  created|[Person]| index|                   3|\n|   342|2020-12-02 07:27:...|neo4j|  created|[Person]|    id|a46d6390-363c-44b...|\n|   342|2020-12-02 07:27:...|neo4j|  created|[Person]|   age|                34.0|\n|   343|2020-12-02 07:27:...|neo4j|  created|[Person]|gender|                   F|\n|   343|2020-12-02 07:27:...|neo4j|  created|[Person]|  name|     Name-3mppFuSGdG|\n|   343|2020-12-02 07:27:...|neo4j|  created|[Person]| index|                   4|\n|   343|2020-12-02 07:27:...|neo4j|  created|[Person]|    id|bf359f64-c0e4-4f3...|\n|   343|2020-12-02 07:27:...|neo4j|  created|[Person]|   age|                91.0|\n|   344|2020-12-02 07:27:...|neo4j|  created|[Person]|gender|                   M|\n|   344|2020-12-02 07:27:...|neo4j|  created|[Person]|  name|     Name-qo85nDihfa|\n|   344|2020-12-02 07:27:...|neo4j|  created|[Person]| index|                   5|\n|   344|2020-12-02 07:27:...|neo4j|  created|[Person]|    id|052023b4-28ef-4fd...|\n|   344|2020-12-02 07:27:...|neo4j|  created|[Person]|   age|                11.0|\n|   349|2020-12-02 07:27:...|neo4j|  created|[Person]|gender|                   M|\n|   349|2020-12-02 07:27:...|neo4j|  created|[Person]|  name|     Name-lrsRNjB1Jl|\n|   349|2020-12-02 07:27:...|neo4j|  created|[Person]| index|                  10|\n|   349|2020-12-02 07:27:...|neo4j|  created|[Person]|    id|bdddc5eb-bc6e-4f1...|\n|   349|2020-12-02 07:27:...|neo4j|  created|[Person]|   age|                44.0|\n+------+--------------------+-----+---------+--------+------+--------------------+\n\n\u001b[1m\u001b[34mquery\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.streaming.StreamingQuery\u001b[0m \u003d org.apache.spark.sql.execution.streaming.StreamingQueryWrapper@19b4d952\n"
-          }
-        ]
-      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654521_-2071683613",
@@ -850,15 +721,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "\u001b[1m\u001b[34mwriteOnDisk\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.streaming.StreamingQuery\u001b[0m \u003d org.apache.spark.sql.execution.streaming.StreamingQueryWrapper@5fe9f811\n"
-          }
-        ]
-      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654522_-1046173446",
@@ -890,10 +752,6 @@
       "settings": {
         "params": {},
         "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": []
       },
       "apps": [],
       "progressUpdateIntervalMs": 500,
