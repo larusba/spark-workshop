@@ -181,9 +181,9 @@
       "status": "FINISHED"
     },
     {
-      "text": "%md\n## Consumer Group\n\n* To allow for parallelism, consumers are organized in **consumer groups**\n",
+      "text": "%md\n## Consumer Group\n\n* To allow for parallelism, consumers are organized in **consumer groups**. The consumers which are members of the same group are subscribed to the same topics.\n* The relationship between each Consumer of a group and Partitions are 1-N.\n* A message in a Kafka topic can be consumed multiple times by different Consumer Groups.\n* When a consumer is added or removed to a group a **rebalancing** occurs automatically. During rebalancing no data will be lost and the consumption will be paused. \n* The default rebalancing strategy is called **Range**: the partitions are assigned to the consumers based on message key. Messages with the same key will land in the same partition of the same topic and so in the same consumer.\n\n\n",
       "user": "anonymous",
-      "dateUpdated": "2020-11-26 14:03:47.444",
+      "dateUpdated": "2020-12-02 08:55:31.480",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -521,7 +521,7 @@
     {
       "text": "%md\n\n### Neo4j Streams Source\n\n\u003e**C**hange **D**ata **C**apture (CDC) is a set of software design patterns used to determine (and track) the data that has changed so an action can be taken using the changed data.\n\nNeo4j acts as a source and Kafka as a target.\n\nEach transaction communicates its changes to our event listener:\n\n* exposing creation, updates and deletes of Nodes and Relationships\n* providing before-and-after information\n\nTo control which nodes/relationships and which of their properties are sent to Kafka, you can define patterns:\n\n* **Node patterns**, the basic syntax is `Label{*};Label1{prop1, prop2};Label3{-prop1,-prop2}`\n* **Relationships patterns**, the basic syntax is `KNOWS{*};MEET{prop1, prop2};ANSWER{-prop1,-prop2}`\n\nThe **Transaction Event Handler** is the core of the Stream Producer and allows to stream database changes.\nThe Source module streams three kind of events:\n\n* **created**: when a node/relation/property is created\n* **updated**: when a node/relation/property is updated\n* **deleted**: when a node/relation/property is deleted\n\nNeo4j Streams supports also the **multi-database** feature introduced since Neo4j 4.x\n\nLet\u0027s take a look to the docker-compose.yml file, in particular at the `neo4j` container:\n\n```\nNEO4J_streams_source_enabled: \"true\"\nNEO4J_streams_source_topic_nodes_customer: Customer{customerID,contactName,companyName}\nNEO4J_streams_source_topic_nodes_order: Order{orderID,shipCity,shipAddress}\nNEO4J_streams_source_topic_nodes_product: Product{productID,productName}\nNEO4J_streams_source_topic_relationships_purchased: PURCHASED{*}\nNEO4J_streams_source_topic_relationships_orders: ORDERS{quantity,unitPrice}\n```\n\nThe Event structure was inspired by the [Debezium](https://debezium.io/) format and has the following general structure:\n\n```\n{\n  \"meta\": { /* transaction meta-data */ },\n  \"payload\": { /* the data related to the transaction */\n    \"before\": { /* the data before the transaction */},\n    \"after\": { /* the data after the transaction */}\n  }\n}\n```",
       "user": "anonymous",
-      "dateUpdated": "2020-12-01 14:28:03.623",
+      "dateUpdated": "2020-12-02 10:10:08.463",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -601,9 +601,89 @@
       "status": "FINISHED"
     },
     {
-      "text": "%md\nNeo4j Streams Demo\n\nLet\u0027s create some nodes and relationships into Neo4j:\n\n%neo4j\nCREATE (n:User {name: \"Luca\", age: 20, nickname:\"luc4\"});",
+      "text": "%md\n\n### Neo4j Streams Procedures\n\nNeo4j Streams project comes out with two procedures:\n\n* **streams.publish**, allows custom message streaming from Neo4j to the configured environment by using the underlying configured Producer\n* **streams.consume**, allows consuming messages from a given topic\n\nThese functionality could enabled/disabled by changing its property:\n\n```\nstreams.procedure.enabled\u003dtrue/false\n```\n\nThese procedures could be called directly from Neo4j Browser in the following way:\n\n```\nCALL streams.publish(\u0027my-topic\u0027, \u0027Hello World from Neo4j!\u0027)\n\nCALL streams.consume(\u0027my-topic\u0027, {\u003cconfig\u003e}) YIELD event RETURN event\n```\n\n[Here](https://neo4j.com/labs/kafka/4.0/procedures/#_available_configuration_parameters) you can find all the available configuration parameters",
       "user": "anonymous",
-      "dateUpdated": "2020-11-26 23:00:54.292",
+      "dateUpdated": "2020-12-02 10:25:37.545",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eNeo4j Streams Procedures\u003c/h3\u003e\n\u003cp\u003eNeo4j Streams project comes out with two procedures:\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003e\u003cstrong\u003estreams.publish\u003c/strong\u003e, allows custom message streaming from Neo4j to the configured environment by using the underlying configured Producer\u003c/li\u003e\n  \u003cli\u003e\u003cstrong\u003estreams.consume\u003c/strong\u003e, allows consuming messages from a given topic\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eThese functionality could enabled/disabled by changing its property:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003estreams.procedure.enabled\u003dtrue/false\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eThese procedures could be called directly from Neo4j Browser in the following way:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eCALL streams.publish(\u0026#39;my-topic\u0026#39;, \u0026#39;Hello World from Neo4j!\u0026#39;)\n\nCALL streams.consume(\u0026#39;my-topic\u0026#39;, {\u0026lt;config\u0026gt;}) YIELD event RETURN event\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003ca href\u003d\"https://neo4j.com/labs/kafka/4.0/procedures/#_available_configuration_parameters\"\u003eHere\u003c/a\u003e you can find all the available configuration parameters\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606903784509_1927501012",
+      "id": "paragraph_1606903784509_1927501012",
+      "dateCreated": "2020-12-02 10:09:44.511",
+      "dateStarted": "2020-12-02 10:25:05.011",
+      "dateFinished": "2020-12-02 10:25:05.047",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n### Neo4j Streams DEMO\n\nLet\u0027s take a look at the Neo4j container configuration:\n\n```\n  NEO4J_streams_source_enabled: \"true\"\n  NEO4J_streams_sink_enabled: \"true\"\n  NEO4J_streams_source_topic_nodes_customer: Customer{customerID,contactName,companyName}\n  NEO4J_streams_source_topic_nodes_order: Order{orderID,shipCity,shipAddress}\n  NEO4J_streams_source_topic_nodes_product: Product{productID,productName}\n  NEO4J_streams_source_topic_relationships_purchased: PURCHASED{*}\n  NEO4J_streams_source_topic_relationships_orders: ORDERS{quantity,unitPrice}\n  NEO4J_streams_sink_topic_cypher_sales: \"\n    MERGE (c:Customer {customerID: event.customer.customerID})\n    ON CREATE SET c.contactName \u003d event.customer.contactName,\n    c.companyName \u003d event.customer.companyName\n    MERGE (o:Order {orderID: event.order.orderID})\n    ON CREATE SET o.shipCity \u003d event.order.shipCity,\n    o.shipAddress \u003d event.order.shipAddress,\n    o.orderDate \u003d localdatetime()\n    MERGE (p:Product {productID: event.product.productID})\n    ON CREATE SET p.productName \u003d event.product.productName\n    MERGE (c)-[:PURCHASED]-\u003e(o)-[os:ORDERS {quantity: event.product.quantity, unitPrice: event.product.unitPrice}]-\u003e(p)\"\n```",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-02 12:06:24.827",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eNeo4j Streams DEMO\u003c/h3\u003e\n\u003cp\u003eLet\u0026rsquo;s take a look at the Neo4j container configuration:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e  NEO4J_streams_source_enabled: \u0026quot;true\u0026quot;\n  NEO4J_streams_sink_enabled: \u0026quot;true\u0026quot;\n  NEO4J_streams_source_topic_nodes_customer: Customer{customerID,contactName,companyName}\n  NEO4J_streams_source_topic_nodes_order: Order{orderID,shipCity,shipAddress}\n  NEO4J_streams_source_topic_nodes_product: Product{productID,productName}\n  NEO4J_streams_source_topic_relationships_purchased: PURCHASED{*}\n  NEO4J_streams_source_topic_relationships_orders: ORDERS{quantity,unitPrice}\n  NEO4J_streams_sink_topic_cypher_sales: \u0026quot;\n    MERGE (c:Customer {customerID: event.customer.customerID})\n    ON CREATE SET c.contactName \u003d event.customer.contactName,\n    c.companyName \u003d event.customer.companyName\n    MERGE (o:Order {orderID: event.order.orderID})\n    ON CREATE SET o.shipCity \u003d event.order.shipCity,\n    o.shipAddress \u003d event.order.shipAddress,\n    o.orderDate \u003d localdatetime()\n    MERGE (p:Product {productID: event.product.productID})\n    ON CREATE SET p.productName \u003d event.product.productName\n    MERGE (c)-[:PURCHASED]-\u0026gt;(o)-[os:ORDERS {quantity: event.product.quantity, unitPrice: event.product.unitPrice}]-\u0026gt;(p)\u0026quot;\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606910651920_1144451203",
+      "id": "paragraph_1606910651920_1144451203",
+      "dateCreated": "2020-12-02 12:04:11.920",
+      "dateStarted": "2020-12-02 12:06:21.585",
+      "dateFinished": "2020-12-02 12:06:21.660",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\nWe will use the Northwind data sample, which represents a product sale system",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-02 12:10:08.911",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -621,12 +701,636 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eWe will use the Northwind data sample, which represents a product sale system\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606910766190_1440117304",
+      "id": "paragraph_1606910766190_1440117304",
+      "dateCreated": "2020-12-02 12:06:06.190",
+      "dateStarted": "2020-12-02 12:10:08.944",
+      "dateFinished": "2020-12-02 12:10:08.977",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%neo4j\nMATCH (n) RETURN count(n)",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-02 10:35:04.324",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "count(n)": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "count(n)\n0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606905271077_-1805827748",
+      "id": "paragraph_1606905271077_-1805827748",
+      "dateCreated": "2020-12-02 10:34:31.078",
+      "dateStarted": "2020-12-02 10:35:03.801",
+      "dateFinished": "2020-12-02 10:35:03.888",
+      "status": "FINISHED"
+    },
+    {
+      "title": "Neo4j Streams Demo",
+      "text": "%neo4j\nLOAD CSV WITH HEADERS FROM \"http://data.neo4j.com/northwind/products.csv\" AS row\nCREATE (n:Product)\nSET n \u003d row,\nn.unitPrice \u003d toFloat(row.unitPrice),\nn.unitsInStock \u003d toInteger(row.unitsInStock), n.unitsOnOrder \u003d toInteger(row.unitsOnOrder),\nn.reorderLevel \u003d toInteger(row.reorderLevel), n.discontinued \u003d (row.discontinued \u003c\u003e \"0\");\n\nLOAD CSV WITH HEADERS FROM \"http://data.neo4j.com/northwind/categories.csv\" AS row\nCREATE (n:Category)\nSET n \u003d row;\n\nLOAD CSV WITH HEADERS FROM \"http://data.neo4j.com/northwind/suppliers.csv\" AS row\nCREATE (n:Supplier)\nSET n \u003d row;\n\nCREATE INDEX ON :Product(productID);\n\nCREATE INDEX ON :Category(categoryID);\n\nCREATE INDEX ON :Supplier(supplierID);\n\nMATCH (p:Product),(c:Category)\nWHERE p.categoryID \u003d c.categoryID\nCREATE (p)-[:PART_OF]-\u003e(c);\n\nMATCH (p:Product),(s:Supplier)\nWHERE p.supplierID \u003d s.supplierID\nCREATE (s)-[:SUPPLIES]-\u003e(p);\n\nLOAD CSV WITH HEADERS FROM \"http://data.neo4j.com/northwind/customers.csv\" AS row\nCREATE (n:Customer)\nSET n \u003d row;\n\nLOAD CSV WITH HEADERS FROM \"http://data.neo4j.com/northwind/orders.csv\" AS row\nCREATE (n:Order)\nSET n \u003d row;\n\nCREATE INDEX ON :Customer(customerID);\n\nCREATE INDEX ON :Order(orderID);\n\nMATCH (c:Customer),(o:Order)\nWHERE c.customerID \u003d o.customerID\nCREATE (c)-[:PURCHASED]-\u003e(o);\n\nLOAD CSV WITH HEADERS FROM \"http://data.neo4j.com/northwind/order-details.csv\" AS row\nMATCH (p:Product), (o:Order)\nWHERE p.productID \u003d row.productID AND o.orderID \u003d row.orderID\nCREATE (o)-[details:ORDERS]-\u003e(p)\nSET details \u003d row,\ndetails.quantity \u003d toInteger(row.quantity);",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-02 12:04:05.800",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text",
+        "title": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606295646371_-897207705",
       "id": "20201124-215223_1236840499",
       "dateCreated": "2020-11-25 09:14:06.371",
-      "status": "READY"
+      "dateStarted": "2020-12-02 11:45:31.514",
+      "dateFinished": "2020-12-02 11:45:45.198",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%neo4j\nMATCH (n) RETURN count(n) as nodes, labels(n) as labels",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-02 11:45:56.995",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "nodes": "string",
+                      "labels": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "nodes\tlabels\n77\t[\"Product\"]\n8\t[\"Category\"]\n29\t[\"Supplier\"]\n91\t[\"Customer\"]\n830\t[\"Order\"]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606905295835_-350991567",
+      "id": "paragraph_1606905295835_-350991567",
+      "dateCreated": "2020-12-02 10:34:55.835",
+      "dateStarted": "2020-12-02 11:45:57.029",
+      "dateFinished": "2020-12-02 11:45:57.515",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%neo4j\nMATCH ()-[r]-() RETURN count (r) as relationships, type(r) as types",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-02 11:46:00.353",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "relationships": "string",
+                      "types": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "relationships\ttypes\n4310\t\"ORDERS\"\n154\t\"SUPPLIES\"\n154\t\"PART_OF\"\n1660\t\"PURCHASED\"\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606905584077_-1191206892",
+      "id": "paragraph_1606905584077_-1191206892",
+      "dateCreated": "2020-12-02 10:39:44.085",
+      "dateStarted": "2020-12-02 11:46:00.397",
+      "dateFinished": "2020-12-02 11:46:00.745",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%neo4j\nMATCH part1\u003d(:Customer)-[:PURCHASED]-\u003e(:Order)-[:ORDERS]-\u003e(p:Product)-[:PART_OF]-\u003e(:Category) WITH p,part1 MATCH part2\u003d(:Supplier)-[:SUPPLIES]-\u003e(p) return part1,part2 LIMIT 1",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-02 11:46:03.032",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "network",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "id": "string",
+                      "label": "string",
+                      "country": "string",
+                      "contactTitle": "string",
+                      "address": "string",
+                      "city": "string",
+                      "phone": "string",
+                      "contactName": "string",
+                      "companyName": "string",
+                      "postalCode": "string",
+                      "customerID": "string",
+                      "fax": "string",
+                      "region": "string",
+                      "shipCity": "string",
+                      "orderID": "string",
+                      "freight": "string",
+                      "requiredDate": "string",
+                      "employeeID": "string",
+                      "shipPostalCode": "string",
+                      "shipName": "string",
+                      "shipCountry": "string",
+                      "shipAddress": "string",
+                      "shipVia": "string",
+                      "shippedDate": "string",
+                      "orderDate": "string",
+                      "shipRegion": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "nodes",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "relationships",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text",
+        "tableHide": false,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "NETWORK",
+            "data": "{\"nodes\":[{\"id\":33,\"data\":{\"reorderLevel\":15,\"unitsInStock\":111,\"unitPrice\":14.0,\"supplierID\":\"16\",\"productID\":\"34\",\"quantityPerUnit\":\"24 - 12 oz bottles\",\"discontinued\":false,\"productName\":\"Sasquatch Ale\",\"unitsOnOrder\":0,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":100,\"data\":{\"country\":\"USA\",\"address\":\"3400 - 8th Avenue Suite 210\",\"supplierID\":\"16\",\"city\":\"Bend\",\"contactName\":\"Cheryl Saylor\",\"companyName\":\"Bigfoot Breweries\",\"postalCode\":\"97101\",\"homePage\":\"NULL\",\"contactTitle\":\"Regional Account Rep.\",\"phone\":\"(503) 555-9931\",\"region\":\"OR\",\"fax\":\"NULL\"},\"label\":\"Supplier\"},{\"id\":125,\"data\":{\"country\":\"Argentina\",\"address\":\"Cerrito 333\",\"contactTitle\":\"Sales Agent\",\"city\":\"Buenos Aires\",\"phone\":\"(1) 135-5555\",\"contactName\":\"Patricio Simpson\",\"companyName\":\"Cactus Comidas para llevar\",\"postalCode\":\"1010\",\"customerID\":\"CACTU\",\"fax\":\"(1) 135-4892\",\"region\":\"NULL\"},\"label\":\"Customer\"},{\"id\":77,\"data\":{\"description\":\"Soft drinks, coffees, teas, beers, and ales\",\"categoryName\":\"Beverages\",\"picture\":\"0x151C2F00020000000D000E0014002100FFFFFFFF4269746D617020496D616765005061696E742E5069637475726500010500000200000007000000504272757368000000000000000000A0290000424D98290000000000005600000028000000AC00000078000000010004000000000000000000880B0000880B0000080000\",\"categoryID\":\"1\"},\"label\":\"Category\"},{\"id\":894,\"data\":{\"shipCity\":\"Buenos Aires\",\"orderID\":\"10937\",\"freight\":\"31.51\",\"requiredDate\":\"1998-03-24 00:00:00.000\",\"employeeID\":\"7\",\"shipName\":\"Cactus Comidas para llevar\",\"shipPostalCode\":\"1010\",\"shipCountry\":\"Argentina\",\"shipAddress\":\"Cerrito 333\",\"shipVia\":\"3\",\"customerID\":\"CACTU\",\"shippedDate\":\"1998-03-13 00:00:00.000\",\"orderDate\":\"1998-03-10 00:00:00.000\",\"shipRegion\":\"NULL\"},\"label\":\"Order\"}],\"edges\":[{\"source\":33,\"target\":77,\"id\":33,\"data\":{},\"label\":\"PART_OF\"},{\"source\":894,\"target\":33,\"id\":2772,\"data\":{\"unitPrice\":\"14.00\",\"discount\":\"0\",\"quantity\":20,\"productID\":\"34\",\"orderID\":\"10937\"},\"label\":\"ORDERS\"},{\"source\":125,\"target\":894,\"id\":843,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":100,\"target\":33,\"id\":110,\"data\":{},\"label\":\"SUPPLIES\"}],\"labels\":{\"Product\":\"#B3DDE5\",\"Category\":\"#D90C4D\",\"Supplier\":\"#33611F\",\"Customer\":\"#010058\",\"Order\":\"#6AB209\"},\"types\":[\"ORDERS\",\"PART_OF\",\"SUPPLIES\",\"PURCHASED\"],\"directed\":true}"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606905765285_538516475",
+      "id": "paragraph_1606905765285_538516475",
+      "dateCreated": "2020-12-02 10:42:45.285",
+      "dateStarted": "2020-12-02 11:46:03.060",
+      "dateFinished": "2020-12-02 11:46:03.692",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\nOpen a terminal and go to the project root folder, and then run the following command:\n\n```\ndocker cp northwind-events.txt  broker:/tmp/northwind-events.txt\n```\n\nConnect to the Kafka container and check if the file is successfully copied:\n\n```\ndocker exec -it broker /bin/bash\nls /tmp\n```",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-02 11:46:52.824",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/text",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eOpen a terminal and go to the project root folder, and then run the following command:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003edocker cp northwind-events.txt  broker:/tmp/northwind-events.txt\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eConnect to the Kafka container and check if the file is successfully copied:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003edocker exec -it broker /bin/bash\nls /tmp\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606905791812_2132167422",
+      "id": "paragraph_1606905791812_2132167422",
+      "dateCreated": "2020-12-02 10:43:11.812",
+      "dateStarted": "2020-12-02 11:46:52.868",
+      "dateFinished": "2020-12-02 11:46:55.029",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\nOpen a new terminal panel (without closing the previous one).\n\nFirst connect to the Kafka container (`docker exec -it broker /bin/bash`) and then create a Kafka console consumer as follow:\n\n```\nkafka-console-consumer --bootstrap-server broker:9093 --topic sales --from-beginning\n```\n\nIn the first terminal panel (we are already connected to the Kafka container) just create a Kafka console producer as follow:\n\n```\nkafka-console-producer --bootstrap-server broker:9093 --topic sales \u003c /tmp/northwind-events.txt\n```",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-02 11:59:33.847",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eOpen a new terminal panel (without closing the previous one).\u003c/p\u003e\n\u003cp\u003eFirst connect to the Kafka container (\u003ccode\u003edocker exec -it broker /bin/bash\u003c/code\u003e) and then create a Kafka console consumer as follow:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ekafka-console-consumer --bootstrap-server broker:9093 --topic sales --from-beginning\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eIn the first terminal panel (we are already connected to the Kafka container) just create a Kafka console producer as follow:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ekafka-console-producer --bootstrap-server broker:9093 --topic sales \u0026lt; /tmp/northwind-events.txt\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606907285178_-1392130832",
+      "id": "paragraph_1606907285178_-1392130832",
+      "dateCreated": "2020-12-02 11:08:05.178",
+      "dateStarted": "2020-12-02 11:59:33.929",
+      "dateFinished": "2020-12-02 11:59:34.011",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%neo4j\nMATCH path\u003d(customer:Customer)-[:PURCHASED]-\u003e(order:Order)-[:ORDERS]-\u003e(product:Product) WHERE customer.customerID \u003d \u0027LARUS\u0027 RETURN path",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-02 12:00:56.567",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "network",
+              "height": 359.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "id": "string",
+                      "label": "string",
+                      "reorderLevel": "string",
+                      "unitsInStock": "string",
+                      "unitPrice": "string",
+                      "supplierID": "string",
+                      "productID": "string",
+                      "quantityPerUnit": "string",
+                      "discontinued": "string",
+                      "productName": "string",
+                      "unitsOnOrder": "string",
+                      "categoryID": "string",
+                      "customerID": "string",
+                      "contactName": "string",
+                      "companyName": "string",
+                      "shipCity": "string",
+                      "orderID": "string",
+                      "orderDate": "string",
+                      "shipAddress": "string",
+                      "quantity": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "NETWORK",
+            "data": "{\"nodes\":[{\"id\":69,\"data\":{\"reorderLevel\":30,\"unitsInStock\":15,\"unitPrice\":15.0,\"supplierID\":\"7\",\"productID\":\"70\",\"quantityPerUnit\":\"24 - 355 ml bottles\",\"discontinued\":false,\"productName\":\"Outback Lager\",\"unitsOnOrder\":10,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":70,\"data\":{\"reorderLevel\":0,\"unitsInStock\":26,\"unitPrice\":21.5,\"supplierID\":\"15\",\"productID\":\"71\",\"quantityPerUnit\":\"10 - 500 g pkgs.\",\"discontinued\":false,\"productName\":\"Flotemysost\",\"unitsOnOrder\":0,\"categoryID\":\"4\"},\"label\":\"Product\"},{\"id\":71,\"data\":{\"reorderLevel\":0,\"unitsInStock\":14,\"unitPrice\":34.8,\"supplierID\":\"14\",\"productID\":\"72\",\"quantityPerUnit\":\"24 - 200 g pkgs.\",\"discontinued\":false,\"productName\":\"Mozzarella di Giovanni\",\"unitsOnOrder\":0,\"categoryID\":\"4\"},\"label\":\"Product\"},{\"id\":72,\"data\":{\"reorderLevel\":5,\"unitsInStock\":101,\"unitPrice\":15.0,\"supplierID\":\"17\",\"productID\":\"73\",\"quantityPerUnit\":\"24 - 150 g jars\",\"discontinued\":false,\"productName\":\"Röd Kaviar\",\"unitsOnOrder\":0,\"categoryID\":\"8\"},\"label\":\"Product\"},{\"id\":73,\"data\":{\"reorderLevel\":5,\"unitsInStock\":4,\"unitPrice\":10.0,\"supplierID\":\"4\",\"productID\":\"74\",\"quantityPerUnit\":\"5 kg pkg.\",\"discontinued\":false,\"productName\":\"Longlife Tofu\",\"unitsOnOrder\":20,\"categoryID\":\"7\"},\"label\":\"Product\"},{\"id\":74,\"data\":{\"reorderLevel\":25,\"unitsInStock\":125,\"unitPrice\":7.75,\"supplierID\":\"12\",\"productID\":\"75\",\"quantityPerUnit\":\"24 - 0.5 l bottles\",\"discontinued\":false,\"productName\":\"Rhönbräu Klosterbier\",\"unitsOnOrder\":0,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":1035,\"data\":{\"customerID\":\"LARUS\",\"contactName\":\"Mauro Roiter\",\"companyName\":\"LARUS Business Automation srl\"},\"label\":\"Customer\"},{\"id\":75,\"data\":{\"reorderLevel\":20,\"unitsInStock\":57,\"unitPrice\":18.0,\"supplierID\":\"23\",\"productID\":\"76\",\"quantityPerUnit\":\"500 ml\",\"discontinued\":false,\"productName\":\"Lakkalikööri\",\"unitsOnOrder\":0,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":1036,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99980\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":2},\"time\":{\"hour\":11,\"minute\":58,\"second\":20,\"nano\":968000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":76,\"data\":{\"reorderLevel\":15,\"unitsInStock\":32,\"unitPrice\":13.0,\"supplierID\":\"12\",\"productID\":\"77\",\"quantityPerUnit\":\"12 boxes\",\"discontinued\":false,\"productName\":\"Original Frankfurter grüne Soße\",\"unitsOnOrder\":0,\"categoryID\":\"2\"},\"label\":\"Product\"},{\"id\":1037,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99981\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":2},\"time\":{\"hour\":11,\"minute\":58,\"second\":20,\"nano\":968000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1038,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99982\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":2},\"time\":{\"hour\":11,\"minute\":58,\"second\":20,\"nano\":968000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1039,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99983\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":2},\"time\":{\"hour\":11,\"minute\":58,\"second\":20,\"nano\":968000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1040,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99984\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":2},\"time\":{\"hour\":11,\"minute\":58,\"second\":20,\"nano\":968000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1041,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99985\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":2},\"time\":{\"hour\":11,\"minute\":58,\"second\":20,\"nano\":968000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1042,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99986\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":2},\"time\":{\"hour\":11,\"minute\":58,\"second\":20,\"nano\":968000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1043,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99987\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":2},\"time\":{\"hour\":11,\"minute\":58,\"second\":20,\"nano\":968000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1044,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99988\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":2},\"time\":{\"hour\":11,\"minute\":58,\"second\":20,\"nano\":968000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1045,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99989\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":2},\"time\":{\"hour\":11,\"minute\":58,\"second\":20,\"nano\":968000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1046,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99990\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":2},\"time\":{\"hour\":11,\"minute\":58,\"second\":20,\"nano\":968000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1047,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99991\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":2},\"time\":{\"hour\":11,\"minute\":58,\"second\":20,\"nano\":968000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1048,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99992\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":2},\"time\":{\"hour\":11,\"minute\":58,\"second\":20,\"nano\":968000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1049,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99993\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":2},\"time\":{\"hour\":11,\"minute\":58,\"second\":20,\"nano\":968000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1050,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99994\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":2},\"time\":{\"hour\":11,\"minute\":58,\"second\":20,\"nano\":968000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":33,\"data\":{\"reorderLevel\":15,\"unitsInStock\":111,\"unitPrice\":14.0,\"supplierID\":\"16\",\"productID\":\"34\",\"quantityPerUnit\":\"24 - 12 oz bottles\",\"discontinued\":false,\"productName\":\"Sasquatch Ale\",\"unitsOnOrder\":0,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":34,\"data\":{\"reorderLevel\":15,\"unitsInStock\":20,\"unitPrice\":18.0,\"supplierID\":\"16\",\"productID\":\"35\",\"quantityPerUnit\":\"24 - 12 oz bottles\",\"discontinued\":false,\"productName\":\"Steeleye Stout\",\"unitsOnOrder\":0,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":35,\"data\":{\"reorderLevel\":20,\"unitsInStock\":112,\"unitPrice\":19.0,\"supplierID\":\"17\",\"productID\":\"36\",\"quantityPerUnit\":\"24 - 250 g  jars\",\"discontinued\":false,\"productName\":\"Inlagd Sill\",\"unitsOnOrder\":0,\"categoryID\":\"8\"},\"label\":\"Product\"},{\"id\":36,\"data\":{\"reorderLevel\":25,\"unitsInStock\":11,\"unitPrice\":26.0,\"supplierID\":\"17\",\"productID\":\"37\",\"quantityPerUnit\":\"12 - 500 g pkgs.\",\"discontinued\":false,\"productName\":\"Gravad lax\",\"unitsOnOrder\":50,\"categoryID\":\"8\"},\"label\":\"Product\"},{\"id\":37,\"data\":{\"reorderLevel\":15,\"unitsInStock\":17,\"unitPrice\":263.5,\"supplierID\":\"18\",\"productID\":\"38\",\"quantityPerUnit\":\"12 - 75 cl bottles\",\"discontinued\":false,\"productName\":\"Côte de Blaye\",\"unitsOnOrder\":0,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":38,\"data\":{\"reorderLevel\":5,\"unitsInStock\":69,\"unitPrice\":18.0,\"supplierID\":\"18\",\"productID\":\"39\",\"quantityPerUnit\":\"750 cc per bottle\",\"discontinued\":false,\"productName\":\"Chartreuse verte\",\"unitsOnOrder\":0,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":39,\"data\":{\"reorderLevel\":30,\"unitsInStock\":123,\"unitPrice\":18.4,\"supplierID\":\"19\",\"productID\":\"40\",\"quantityPerUnit\":\"24 - 4 oz tins\",\"discontinued\":false,\"productName\":\"Boston Crab Meat\",\"unitsOnOrder\":0,\"categoryID\":\"8\"},\"label\":\"Product\"}],\"edges\":[{\"source\":1035,\"target\":1036,\"id\":3139,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1036,\"target\":33,\"id\":3140,\"data\":{\"unitPrice\":\"10.0\",\"quantity\":\"3\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1037,\"id\":3141,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1037,\"target\":34,\"id\":3142,\"data\":{\"unitPrice\":\"20.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1038,\"id\":3143,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1038,\"target\":35,\"id\":3144,\"data\":{\"unitPrice\":\"8.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1039,\"id\":3145,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1039,\"target\":36,\"id\":3146,\"data\":{\"unitPrice\":\"16.0\",\"quantity\":\"2\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1040,\"id\":3147,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1040,\"target\":37,\"id\":3148,\"data\":{\"unitPrice\":\"12.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1041,\"id\":3149,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1041,\"target\":38,\"id\":3150,\"data\":{\"unitPrice\":\"13.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1042,\"id\":3151,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1042,\"target\":39,\"id\":3152,\"data\":{\"unitPrice\":\"11.0\",\"quantity\":\"4\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1043,\"id\":3153,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1043,\"target\":69,\"id\":3154,\"data\":{\"unitPrice\":\"9.0\",\"quantity\":\"2\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1044,\"id\":3155,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1044,\"target\":70,\"id\":3156,\"data\":{\"unitPrice\":\"22.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1045,\"id\":3157,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1045,\"target\":71,\"id\":3158,\"data\":{\"unitPrice\":\"32.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1046,\"id\":3159,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1046,\"target\":72,\"id\":3160,\"data\":{\"unitPrice\":\"15.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1047,\"id\":3161,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1047,\"target\":73,\"id\":3162,\"data\":{\"unitPrice\":\"14.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1048,\"id\":3163,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1048,\"target\":74,\"id\":3164,\"data\":{\"unitPrice\":\"30.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1049,\"id\":3165,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1049,\"target\":75,\"id\":3166,\"data\":{\"unitPrice\":\"9.0\",\"quantity\":\"2\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1050,\"id\":3167,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1050,\"target\":76,\"id\":3168,\"data\":{\"unitPrice\":\"10.0\",\"quantity\":\"3\"},\"label\":\"ORDERS\"}],\"labels\":{\"Product\":\"#B3DDE5\",\"Category\":\"#D90C4D\",\"Supplier\":\"#33611F\",\"Customer\":\"#010058\",\"Order\":\"#6AB209\"},\"types\":[\"ORDERS\",\"PART_OF\",\"SUPPLIES\",\"PURCHASED\"],\"directed\":true}"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606908117940_1715979745",
+      "id": "paragraph_1606908117940_1715979745",
+      "dateCreated": "2020-12-02 11:21:57.940",
+      "dateStarted": "2020-12-02 12:00:47.691",
+      "dateFinished": "2020-12-02 12:00:48.162",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\nLet\u0027s take a look also to the Source module in action.\n\nCreate a Kafka console consumer on the topic `customer`, which is capturing the events of the nodes with label `:Customer`:\n\n```\nkafka-console-consumer --bootstrap-server broker:9093 --topic customer --from-beginning\n```\n\nThe event structure is:\n\n```\n{\n  \"meta\": {\n    \"timestamp\": 1606910301617,\n    \"username\": \"\",\n    \"txId\": 32,\n    \"txEventId\": 2,\n    \"txEventsCount\": 46,\n    \"operation\": \"created\",\n    \"source\": {\n      \"hostname\": \"neo4j\"\n    }\n  },\n  \"payload\": {\n    \"id\": \"1035\",\n    \"before\": null,\n    \"after\": {\n      \"properties\": {\n        \"contactName\": \"Mauro Roiter\",\n        \"companyName\": \"LARUS Business Automation srl\",\n        \"customerID\": \"LARUS\"\n      },\n      \"labels\": [\n        \"Customer\"\n      ]\n    },\n    \"type\": \"node\"\n  },\n  \"schema\": {\n    \"properties\": {\n      \"contactName\": \"String\",\n      \"companyName\": \"String\",\n      \"customerID\": \"String\"\n    },\n    \"constraints\": []\n  }\n}\n```",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-02 12:14:02.509",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eLet\u0026rsquo;s take a look also to the Source module in action.\u003c/p\u003e\n\u003cp\u003eCreate a Kafka console consumer on the topic \u003ccode\u003ecustomer\u003c/code\u003e, which is capturing the events of the nodes with label \u003ccode\u003e:Customer\u003c/code\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ekafka-console-consumer --bootstrap-server broker:9093 --topic customer --from-beginning\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eThe event structure is:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e{\n  \u0026quot;meta\u0026quot;: {\n    \u0026quot;timestamp\u0026quot;: 1606910301617,\n    \u0026quot;username\u0026quot;: \u0026quot;\u0026quot;,\n    \u0026quot;txId\u0026quot;: 32,\n    \u0026quot;txEventId\u0026quot;: 2,\n    \u0026quot;txEventsCount\u0026quot;: 46,\n    \u0026quot;operation\u0026quot;: \u0026quot;created\u0026quot;,\n    \u0026quot;source\u0026quot;: {\n      \u0026quot;hostname\u0026quot;: \u0026quot;neo4j\u0026quot;\n    }\n  },\n  \u0026quot;payload\u0026quot;: {\n    \u0026quot;id\u0026quot;: \u0026quot;1035\u0026quot;,\n    \u0026quot;before\u0026quot;: null,\n    \u0026quot;after\u0026quot;: {\n      \u0026quot;properties\u0026quot;: {\n        \u0026quot;contactName\u0026quot;: \u0026quot;Mauro Roiter\u0026quot;,\n        \u0026quot;companyName\u0026quot;: \u0026quot;LARUS Business Automation srl\u0026quot;,\n        \u0026quot;customerID\u0026quot;: \u0026quot;LARUS\u0026quot;\n      },\n      \u0026quot;labels\u0026quot;: [\n        \u0026quot;Customer\u0026quot;\n      ]\n    },\n    \u0026quot;type\u0026quot;: \u0026quot;node\u0026quot;\n  },\n  \u0026quot;schema\u0026quot;: {\n    \u0026quot;properties\u0026quot;: {\n      \u0026quot;contactName\u0026quot;: \u0026quot;String\u0026quot;,\n      \u0026quot;companyName\u0026quot;: \u0026quot;String\u0026quot;,\n      \u0026quot;customerID\u0026quot;: \u0026quot;String\u0026quot;\n    },\n    \u0026quot;constraints\u0026quot;: []\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606910447689_-1508117522",
+      "id": "paragraph_1606910447689_-1508117522",
+      "dateCreated": "2020-12-02 12:00:47.691",
+      "dateStarted": "2020-12-02 12:14:02.553",
+      "dateFinished": "2020-12-02 12:14:02.575",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\nLet\u0027s take a look also to the event structure of a relationship creation. For example:\n\n```\nkakfa-console-consumer --bootstrap-server broker:9093 --topic orders --from-beginning\n```\n\nThe event structure is:\n\n```\n{\n  \"meta\": {\n    \"timestamp\": 1606910301617,\n    \"username\": \"\",\n    \"txId\": 32,\n    \"txEventId\": 45,\n    \"txEventsCount\": 46,\n    \"operation\": \"created\",\n    \"source\": {\n      \"hostname\": \"neo4j\"\n    }\n  },\n  \"payload\": {\n    \"id\": \"3146\",\n    \"start\": {\n      \"id\": \"1039\",\n      \"labels\": [\n        \"Order\"\n      ],\n      \"ids\": {}\n    },\n    \"end\": {\n      \"id\": \"36\",\n      \"labels\": [\n        \"Product\"\n      ],\n      \"ids\": {}\n    },\n    \"before\": null,\n    \"after\": {\n      \"properties\": {\n        \"unitPrice\": \"16.0\",\n        \"quantity\": \"2\"\n      }\n    },\n    \"label\": \"ORDERS\",\n    \"type\": \"relationship\"\n  },\n  \"schema\": {\n    \"properties\": {\n      \"unitPrice\": \"String\",\n      \"quantity\": \"String\"\n    },\n    \"constraints\": []\n  }\n}\n```",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-02 12:16:30.891",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eLet\u0026rsquo;s take a look also to the event structure of a relationship creation. For example:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ekakfa-console-consumer --bootstrap-server broker:9093 --topic orders --from-beginning\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eThe event structure is:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e{\n  \u0026quot;meta\u0026quot;: {\n    \u0026quot;timestamp\u0026quot;: 1606910301617,\n    \u0026quot;username\u0026quot;: \u0026quot;\u0026quot;,\n    \u0026quot;txId\u0026quot;: 32,\n    \u0026quot;txEventId\u0026quot;: 45,\n    \u0026quot;txEventsCount\u0026quot;: 46,\n    \u0026quot;operation\u0026quot;: \u0026quot;created\u0026quot;,\n    \u0026quot;source\u0026quot;: {\n      \u0026quot;hostname\u0026quot;: \u0026quot;neo4j\u0026quot;\n    }\n  },\n  \u0026quot;payload\u0026quot;: {\n    \u0026quot;id\u0026quot;: \u0026quot;3146\u0026quot;,\n    \u0026quot;start\u0026quot;: {\n      \u0026quot;id\u0026quot;: \u0026quot;1039\u0026quot;,\n      \u0026quot;labels\u0026quot;: [\n        \u0026quot;Order\u0026quot;\n      ],\n      \u0026quot;ids\u0026quot;: {}\n    },\n    \u0026quot;end\u0026quot;: {\n      \u0026quot;id\u0026quot;: \u0026quot;36\u0026quot;,\n      \u0026quot;labels\u0026quot;: [\n        \u0026quot;Product\u0026quot;\n      ],\n      \u0026quot;ids\u0026quot;: {}\n    },\n    \u0026quot;before\u0026quot;: null,\n    \u0026quot;after\u0026quot;: {\n      \u0026quot;properties\u0026quot;: {\n        \u0026quot;unitPrice\u0026quot;: \u0026quot;16.0\u0026quot;,\n        \u0026quot;quantity\u0026quot;: \u0026quot;2\u0026quot;\n      }\n    },\n    \u0026quot;label\u0026quot;: \u0026quot;ORDERS\u0026quot;,\n    \u0026quot;type\u0026quot;: \u0026quot;relationship\u0026quot;\n  },\n  \u0026quot;schema\u0026quot;: {\n    \u0026quot;properties\u0026quot;: {\n      \u0026quot;unitPrice\u0026quot;: \u0026quot;String\u0026quot;,\n      \u0026quot;quantity\u0026quot;: \u0026quot;String\u0026quot;\n    },\n    \u0026quot;constraints\u0026quot;: []\n  }\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606911188604_-620410908",
+      "id": "paragraph_1606911188604_-620410908",
+      "dateCreated": "2020-12-02 12:13:08.604",
+      "dateStarted": "2020-12-02 12:16:30.933",
+      "dateFinished": "2020-12-02 12:16:30.980",
+      "status": "FINISHED"
     }
   ],
   "name": "OSW 2020 - Intro to Apache Kafka",

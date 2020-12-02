@@ -1179,7 +1179,7 @@
       "title": "Quering the dataset over Neo4j",
       "text": "%neo4j\nMATCH (p:Pharmacy)-[pha:HAS_ADDRESS]-\u003e(a:Address)-[aic:IS_LOCATED_IN]-\u003e(c:City{name:\u0027${Comune}\u0027})\nRETURN *",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:42:53.210",
+      "dateUpdated": "2020-12-02 10:45:33.410",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -1436,7 +1436,7 @@
       "status": "FINISHED"
     }
   ],
-  "name": "From Open Data to Sink",
+  "name": "OWS 2020 - From Open Data to Sink",
   "id": "2FQTAAYEH",
   "defaultInterpreterGroup": "spark",
   "version": "0.9.0-preview1",

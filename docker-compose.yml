@@ -31,7 +31,8 @@ services:
       NEO4J_ACCEPT_LICENSE_AGREEMENT: "yes"
       NEO4J_AUTH: neo4j/osw2020
       NEO4J_dbms_memory_heap_max__size: 8G
-      NEO4J_dbms_security_procedures_unrestricted: "apoc.*"
+      NEO4J_dbms_security_procedures_unrestricted: "apoc.*"    
+      NEO4J_dbms_logs_debug_level: DEBUG
       NEO4J_apoc_export_file_enabled: "true"
       NEO4J_kafka_zookeeper_connect: zookeeper:2181
       NEO4J_kafka_bootstrap_servers: broker:9093
@@ -56,7 +57,7 @@ services:
         o.orderDate = localdatetime()
         MERGE (p:Product {productID: event.product.productID})
         ON CREATE SET p.productName = event.product.productName
-        MERGE (c)-[:PURCHASED]->(o)-[os:ORDERS {quantity: event.order.quantity, unitPrice: event.order.unitPrice}]->(p)"
+        MERGE (c)-[:PURCHASED]->(o)-[os:ORDERS {quantity: event.product.quantity, unitPrice: event.product.unitPrice}]->(p)"
       NEO4J_streams_sink_topic_cypher_pharma: "
         MERGE (p:Pharmacy{fiscalId: event.FISCAL_ID}) ON CREATE SET p.name = event.NAME
         MERGE (t:PharmacyType{type: event.TYPE_NAME})
