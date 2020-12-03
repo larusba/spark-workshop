@@ -209,7 +209,7 @@
       "title": "Execute this query if you want clean-up the DB",
       "text": "%neo4j\nMATCH (n) DETACH DELETE n;",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 09:57:45.531",
+      "dateUpdated": "2020-12-03 11:32:47.452",
       "config": {
         "editorSetting": {
           "language": "text",
@@ -229,20 +229,24 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654511_477173240",
       "id": "20181215-121020_2036794274",
       "dateCreated": "2020-11-27 06:47:34.511",
-      "dateStarted": "2020-12-02 07:08:12.419",
-      "dateFinished": "2020-12-02 07:09:39.822",
+      "dateStarted": "2020-12-03 11:32:47.479",
+      "dateFinished": "2020-12-03 11:34:13.196",
       "status": "FINISHED"
     },
     {
       "title": "Create an Index on Person label",
       "text": "%neo4j\nCREATE INDEX ON :Person(id) ",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:18:51.978",
+      "dateUpdated": "2020-12-03 11:47:28.735",
       "config": {
         "editorSetting": {
           "language": "text",
@@ -262,20 +266,24 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654512_-857802102",
       "id": "20181219-220056_2052771444",
       "dateCreated": "2020-11-27 06:47:34.512",
-      "dateStarted": "2020-12-02 07:18:52.875",
-      "dateFinished": "2020-12-02 07:19:02.604",
+      "dateStarted": "2020-12-03 11:47:29.780",
+      "dateFinished": "2020-12-03 11:47:37.543",
       "status": "FINISHED"
     },
     {
       "title": "Set the Background Job into Neo4j",
       "text": "%neo4j\nCALL apoc.periodic.repeat(\u0027create-fake-social-data\u0027, \u0027WITH [\"M\", \"F\", \"X\"] AS gender UNWIND range(1, 10) AS id CREATE (p:Person {id: apoc.create.uuid(), name: \"Name-\" +  apoc.text.random(10), age: round(rand() * 100), index: id, gender: gender[toInteger(size(gender) * rand())]}) WITH collect(p) AS people UNWIND people AS p1 UNWIND range(1, 3) AS friend WITH p1, people[(p1.index + friend) % size(people)] AS p2 CREATE (p1)-[:KNOWS{years: round(rand() * 10), engaged: (rand() \u003e 0.5)}]-\u003e(p2)\u0027, 15) YIELD name\nRETURN name AS created",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:19:05.651",
+      "dateUpdated": "2020-12-03 11:47:30.774",
       "config": {
         "editorSetting": {
           "language": "text",
@@ -323,20 +331,29 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "created\n\"create-fake-social-data\"\n"
+          }
+        ]
+      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654515_-926166891",
       "id": "20181209-002325_644010003",
       "dateCreated": "2020-11-27 06:47:34.515",
-      "dateStarted": "2020-12-02 07:19:05.724",
-      "dateFinished": "2020-12-02 07:19:08.980",
+      "dateStarted": "2020-12-03 11:47:35.616",
+      "dateFinished": "2020-12-03 11:47:39.638",
       "status": "FINISHED"
     },
     {
       "title": "Run this query when you want stop the background job",
       "text": "%neo4j\nCALL apoc.periodic.cancel(\u0027create-fake-social-data\u0027) YIELD name\nRETURN name AS cancelled",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:32:47.258",
+      "dateUpdated": "2020-12-03 11:59:35.356",
       "config": {
         "editorSetting": {
           "language": "text",
@@ -384,20 +401,24 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654516_1545331706",
       "id": "20181209-003847_433243552",
       "dateCreated": "2020-11-27 06:47:34.516",
-      "dateStarted": "2020-12-02 07:32:47.299",
-      "dateFinished": "2020-12-02 07:32:47.679",
+      "dateStarted": "2020-12-03 11:59:35.392",
+      "dateFinished": "2020-12-03 11:59:35.465",
       "status": "FINISHED"
     },
     {
       "title": "Let\u0027s see how our data grow up",
       "text": "%neo4j\nMATCH p \u003d (p1:Person)-[k:KNOWS]-\u003e(p2:Person)\nRETURN count(p)",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:19:26.913",
+      "dateUpdated": "2020-12-03 11:47:46.580",
       "config": {
         "editorSetting": {
           "language": "text",
@@ -445,20 +466,29 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "count(p)\n30\n"
+          }
+        ]
+      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654517_-1989342123",
       "id": "20181213-181332_2045375519",
       "dateCreated": "2020-11-27 06:47:34.517",
-      "dateStarted": "2020-12-02 07:19:26.977",
-      "dateFinished": "2020-12-02 07:19:27.178",
+      "dateStarted": "2020-12-03 11:47:46.616",
+      "dateFinished": "2020-12-03 11:47:47.861",
       "status": "FINISHED"
     },
     {
-      "title": "Create a Structured Streaming Dataset that consumes the data from a \"neo4j\" topic (the default topic of the CDC)",
+      "title": "Create a Structured Streaming Dataframe that consumes the data from \"people\" and \"knows\"  topics",
       "text": "val kafkaStreamingDF \u003d (spark\n    .readStream\n    .format(\"kafka\")\n    .option(\"kafka.bootstrap.servers\", \"broker:9093\")\n    .option(\"startingoffsets\", \"earliest\")\n    .option(\"subscribe\", \"people,knows\")\n    .load())",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:19:51.128",
+      "dateUpdated": "2020-12-03 11:47:51.559",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -478,20 +508,29 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mkafkaStreamingDF\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [key: binary, value: binary ... 5 more fields]\n"
+          }
+        ]
+      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654517_1678329512",
       "id": "20181203-171416_2095332168",
       "dateCreated": "2020-11-27 06:47:34.518",
-      "dateStarted": "2020-12-02 07:19:51.165",
-      "dateFinished": "2020-12-02 07:20:34.035",
+      "dateStarted": "2020-12-03 11:47:51.606",
+      "dateFinished": "2020-12-03 11:48:22.473",
       "status": "FINISHED"
     },
     {
       "title": "The structure of the data, as you can see is basically a Kafka ProducerRecord representation",
       "text": "kafkaStreamingDF.printSchema",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 10:01:23.301",
+      "dateUpdated": "2020-12-03 11:38:32.095",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -516,15 +555,15 @@
       "jobName": "paragraph_1606459654519_-872084361",
       "id": "20181203-222402_2131396521",
       "dateCreated": "2020-11-27 06:47:34.519",
-      "dateStarted": "2020-12-02 07:22:09.905",
-      "dateFinished": "2020-12-02 07:22:11.064",
+      "dateStarted": "2020-12-03 11:38:32.121",
+      "dateFinished": "2020-12-03 11:38:32.595",
       "status": "FINISHED"
     },
     {
       "title": "Let\u0027s create the Structure of the data streamed by the CDC",
       "text": "import org.apache.spark.sql.types._\n\nval cdcMetaSchema \u003d (new StructType()\n    .add(\"timestamp\", LongType)\n    .add(\"username\", StringType)\n    .add(\"operation\", StringType)\n    .add(\"source\", MapType(StringType, StringType, true)))\n    \nval cdcPayloadSchemaBeforeAfter \u003d (new StructType()\n    .add(\"labels\", ArrayType(StringType, false))\n    .add(\"properties\",  MapType(StringType, StringType, true)))\n    \nval cdcPayloadSchema \u003d (new StructType()\n    .add(\"id\", StringType)\n    .add(\"type\", StringType)\n    .add(\"label\", StringType)\n    .add(\"start\", MapType(StringType, StringType, true))\n    .add(\"end\", MapType(StringType, StringType, true))\n    .add(\"before\", cdcPayloadSchemaBeforeAfter)\n    .add(\"after\", cdcPayloadSchemaBeforeAfter))\n    \nval cdcSchema \u003d (new StructType()\n    .add(\"meta\", cdcMetaSchema)\n    .add(\"payload\", cdcPayloadSchema))",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:23:01.546",
+      "dateUpdated": "2020-12-03 11:48:24.974",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -545,20 +584,29 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.types._\n\u001b[1m\u001b[34mcdcMetaSchema\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m \u003d StructType(StructField(timestamp,LongType,true), StructField(username,StringType,true), StructField(operation,StringType,true), StructField(source,MapType(StringType,StringType,true),true))\n\u001b[1m\u001b[34mcdcPayloadSchemaBeforeAfter\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m \u003d StructType(StructField(labels,ArrayType(StringType,false),true), StructField(properties,MapType(StringType,StringType,true),true))\n\u001b[1m\u001b[34mcdcPayloadSchema\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m \u003d StructType(StructField(id,StringType,true), StructField(type,StringType,true), StructField(label,StringType,true), StructField(start,MapType(StringType,StringType,true),true), Stru..."
+          }
+        ]
+      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654519_1858032150",
       "id": "20181203-223834_1064272161",
       "dateCreated": "2020-11-27 06:47:34.519",
-      "dateStarted": "2020-12-02 07:23:01.589",
-      "dateFinished": "2020-12-02 07:23:05.081",
+      "dateStarted": "2020-12-03 11:48:25.012",
+      "dateFinished": "2020-12-03 11:48:27.698",
       "status": "FINISHED"
     },
     {
       "title": "Let\u0027s extract only the CDC Dataframe",
       "text": "import org.apache.spark.sql.functions._\nval cdcDataFrame \u003d (kafkaStreamingDF\n    .selectExpr(\"CAST(value AS STRING) AS VALUE\")\n    .select(from_json(\u0027VALUE, cdcSchema) as \u0027JSON))",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:24:54.054",
+      "dateUpdated": "2020-12-03 11:48:30.110",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -578,20 +626,29 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.functions._\n\u001b[1m\u001b[34mcdcDataFrame\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [JSON: struct\u003cmeta: struct\u003ctimestamp: bigint, username: string ... 2 more fields\u003e, payload: struct\u003cid: string, type: string ... 5 more fields\u003e\u003e]\n"
+          }
+        ]
+      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654520_968725347",
       "id": "20181203-223743_2113201414",
       "dateCreated": "2020-11-27 06:47:34.520",
-      "dateStarted": "2020-12-02 07:24:54.061",
-      "dateFinished": "2020-12-02 07:24:55.877",
+      "dateStarted": "2020-12-03 11:48:30.129",
+      "dateFinished": "2020-12-03 11:48:33.113",
       "status": "FINISHED"
     },
     {
       "title": "The cdcDataFrame schema",
       "text": "cdcDataFrame.printSchema",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:24:58.641",
+      "dateUpdated": "2020-12-03 11:41:10.108",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -616,15 +673,15 @@
       "jobName": "paragraph_1606459654521_-211134694",
       "id": "20181203-232919_1118633785",
       "dateCreated": "2020-11-27 06:47:34.521",
-      "dateStarted": "2020-12-02 07:24:58.669",
-      "dateFinished": "2020-12-02 07:25:00.246",
+      "dateStarted": "2020-12-03 11:41:10.127",
+      "dateFinished": "2020-12-03 11:41:10.662",
       "status": "FINISHED"
     },
     {
       "title": "Let\u0027s perform a simple ETL query in order to extract fields of interest",
       "text": "val dataWarehouseDataFrame \u003d (cdcDataFrame\n    .where(\"json.payload.type \u003d \u0027node\u0027 and (array_contains(nvl(json.payload.after.labels, json.payload.before.labels), \u0027Person\u0027))\")\n    .selectExpr(\"json.payload.id AS neo_id\", \"CAST(json.meta.timestamp / 1000 AS Timestamp) AS timestamp\",\n        \"json.meta.source.hostname AS host\",\n        \"json.meta.operation AS operation\",\n        \"nvl(json.payload.after.labels, json.payload.before.labels) AS labels\",\n        \"explode(json.payload.after.properties)\"))\ndataWarehouseDataFrame.printSchema",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:27:09.697",
+      "dateUpdated": "2020-12-03 11:48:34.531",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -645,20 +702,29 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- neo_id: string (nullable \u003d true)\n |-- timestamp: timestamp (nullable \u003d true)\n |-- host: string (nullable \u003d true)\n |-- operation: string (nullable \u003d true)\n |-- labels: array (nullable \u003d true)\n |    |-- element: string (containsNull \u003d true)\n |-- key: string (nullable \u003d false)\n |-- value: string (nullable \u003d true)\n\n\u001b[1m\u001b[34mdataWarehouseDataFrame\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [neo_id: string, timestamp: timestamp ... 5 more fields]\n"
+          }
+        ]
+      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654521_821812732",
       "id": "20181209-005140_1170394865",
       "dateCreated": "2020-11-27 06:47:34.521",
-      "dateStarted": "2020-12-02 07:27:09.750",
-      "dateFinished": "2020-12-02 07:27:11.781",
+      "dateStarted": "2020-12-03 11:48:34.559",
+      "dateFinished": "2020-12-03 11:48:36.317",
       "status": "FINISHED"
     },
     {
       "title": "If you want debug your streaming query please execute this",
       "text": "val query \u003d (dataWarehouseDataFrame\n    .writeStream\n    .outputMode(\"append\")\n    .format(\"console\")\n    .start())\nquery.awaitTermination(10000)\nquery.stop",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:27:34.774",
+      "dateUpdated": "2020-12-03 11:48:38.405",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -687,20 +753,29 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "-------------------------------------------\nBatch: 0\n-------------------------------------------\n+------+--------------------+-----+---------+--------+------+--------------------+\n|neo_id|           timestamp| host|operation|  labels|   key|               value|\n+------+--------------------+-----+---------+--------+------+--------------------+\n|     0|2020-12-03 11:47:...|neo4j|  created|[Person]|gender|                   M|\n|     0|2020-12-03 11:47:...|neo4j|  created|[Person]|  name|     Name-REcxgbAjlt|\n|     0|2020-12-03 11:47:...|neo4j|  created|[Person]| index|                   1|\n|     0|2020-12-03 11:47:...|neo4j|  created|[Person]|    id|4684fdd0-5532-485...|\n|     0|2020-12-03 11:47:...|neo4j|  created|[Person]|   age|                91.0|\n|     1|2020-12-03 11:47:...|neo4j|  created|[Person]|gender|                   M|\n|     1|2020-12-03 11:47:...|neo4j|  created|[Person]|  name|     Name-7YrGgwYCq8|\n|     1|2020-12-03 11:47:...|neo4j|  created|[Person]| index|                   2|\n|     1|2020-12-03 11:47:...|neo4j|  created|[Person]|    id|1f65c3d6-7e83-41c...|\n|     1|2020-12-03 11:47:...|neo4j|  created|[Person]|   age|                39.0|\n|     2|2020-12-03 11:47:...|neo4j|  created|[Person]|gender|                   F|\n|     2|2020-12-03 11:47:...|neo4j|  created|[Person]|  name|     Name-1dtKZ6Fy0L|\n|     2|2020-12-03 11:47:...|neo4j|  created|[Person]| index|                   3|\n|     2|2020-12-03 11:47:...|neo4j|  created|[Person]|    id|272df9bb-14b5-4b6...|\n|     2|2020-12-03 11:47:...|neo4j|  created|[Person]|   age|                50.0|\n|     3|2020-12-03 11:47:...|neo4j|  created|[Person]|gender|                   F|\n|     3|2020-12-03 11:47:...|neo4j|  created|[Person]|  name|     Name-LlygogfJ1h|\n|     3|2020-12-03 11:47:...|neo4j|  created|[Person]| index|                   4|\n|     3|2020-12-03 11:47:...|neo4j|  created|[Person]|    id|781a4c27-f06c-4bd...|\n|     3|2020-12-03 11:47:...|neo4j|  created|[Person]|   age|                40.0|\n+------+--------------------+-----+---------+--------+------+--------------------+\nonly showing top 20 rows\n\n-------------------------------------------\nBatch: 1\n-------------------------------------------\n+------+--------------------+-----+---------+--------+------+--------------------+\n|neo_id|           timestamp| host|operation|  labels|   key|               value|\n+------+--------------------+-----+---------+--------+------+--------------------+\n|    44|2020-12-03 11:48:...|neo4j|  created|[Person]|gender|                   M|\n|    44|2020-12-03 11:48:...|neo4j|  created|[Person]|  name|     Name-prY9tdpV6B|\n|    44|2020-12-03 11:48:...|neo4j|  created|[Person]| index|                   5|\n|    44|2020-12-03 11:48:...|neo4j|  created|[Person]|    id|9ec9662b-7c95-492...|\n|    44|2020-12-03 11:48:...|neo4j|  created|[Person]|   age|                 9.0|\n|    45|2020-12-03 11:48:...|neo4j|  created|[Person]|gender|                   F|\n|    45|2020-12-03 11:48:...|neo4j|  created|[Person]|  name|     Name-4SU2oSCb3A|\n|    45|2020-12-03 11:48:...|neo4j|  created|[Person]| index|                   6|\n|    45|2020-12-03 11:48:...|neo4j|  created|[Person]|    id|009d2417-3d57-464...|\n|    45|2020-12-03 11:48:...|neo4j|  created|[Person]|   age|                95.0|\n|    43|2020-12-03 11:48:...|neo4j|  created|[Person]|gender|                   M|\n|    43|2020-12-03 11:48:...|neo4j|  created|[Person]|  name|     Name-g6RsyxPMKq|\n|    43|2020-12-03 11:48:...|neo4j|  created|[Person]| index|                   4|\n|    43|2020-12-03 11:48:...|neo4j|  created|[Person]|    id|cb2f6571-95fe-40d...|\n|    43|2020-12-03 11:48:...|neo4j|  created|[Person]|   age|                82.0|\n|    48|2020-12-03 11:48:...|neo4j|  created|[Person]|gender|                   F|\n|    48|2020-12-03 11:48:...|neo4j|  created|[Person]|  name|     Name-oXJfLdQkhh|\n|    48|2020-12-03 11:48:...|neo4j|  created|[Person]| index|                   9|\n|    48|2020-12-03 11:48:...|neo4j|  created|[Person]|    id|8040fb54-9886-48e...|\n|    48|2020-12-03 11:48:...|neo4j|  created|[Person]|   age|                10.0|\n+------+--------------------+-----+---------+--------+------+--------------------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mquery\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.streaming.StreamingQuery\u001b[0m \u003d org.apache.spark.sql.execution.streaming.StreamingQueryWrapper@5cebe912\n"
+          }
+        ]
+      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654521_-2071683613",
       "id": "20181203-232932_1554731041",
       "dateCreated": "2020-11-27 06:47:34.522",
-      "dateStarted": "2020-12-02 07:27:34.806",
-      "dateFinished": "2020-12-02 07:27:46.622",
+      "dateStarted": "2020-12-03 11:48:38.427",
+      "dateFinished": "2020-12-03 11:48:50.744",
       "status": "FINISHED"
     },
     {
       "title": "Save the data streamed from the Neo4j CDC over the Filesystem as JSON",
       "text": "val writeOnDisk \u003d (dataWarehouseDataFrame\n    .writeStream\n    .format(\"json\")\n    .option(\"checkpointLocation\", \"/zeppelin/spark-warehouse/jit-dwh/checkpoint\")\n    .option(\"path\", \"/zeppelin/spark-warehouse/jit-dwh\")\n    .queryName(\"nodes\")\n    .start())",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:28:00.416",
+      "dateUpdated": "2020-12-03 11:49:03.009",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -721,20 +796,29 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mwriteOnDisk\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.streaming.StreamingQuery\u001b[0m \u003d org.apache.spark.sql.execution.streaming.StreamingQueryWrapper@3d4a42ee\n"
+          }
+        ]
+      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654522_-1046173446",
       "id": "20181214-212019_1790824348",
       "dateCreated": "2020-11-27 06:47:34.522",
-      "dateStarted": "2020-12-02 07:28:00.455",
-      "dateFinished": "2020-12-02 07:28:01.804",
+      "dateStarted": "2020-12-03 11:49:03.048",
+      "dateFinished": "2020-12-03 11:49:04.642",
       "status": "FINISHED"
     },
     {
       "title": "Launch this paragraph if you want stop the streaming JOB",
       "text": "spark.streams.active.foreach { _.stop }",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 07:32:40.244",
+      "dateUpdated": "2020-12-03 11:59:40.990",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -753,13 +837,17 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606459654524_96194840",
       "id": "20181227-003826_1846066318",
       "dateCreated": "2020-11-27 06:47:34.524",
-      "dateStarted": "2020-12-02 07:32:40.277",
-      "dateFinished": "2020-12-02 07:32:43.843",
+      "dateStarted": "2020-12-03 11:59:41.018",
+      "dateFinished": "2020-12-03 11:59:42.869",
       "status": "FINISHED"
     },
     {
