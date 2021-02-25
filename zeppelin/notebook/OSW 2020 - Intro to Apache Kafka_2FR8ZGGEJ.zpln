@@ -350,12 +350,41 @@
       "title": "Sample Java Producer",
       "text": "%java\n\n/*\n    Take a look at the KafkaProducer API for further details:\n\n    https://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html\n*/\n\nimport java.util.Properties;\nimport org.apache.kafka.clients.producer.KafkaProducer;\nimport org.apache.kafka.clients.producer.ProducerRecord;\nimport org.apache.kafka.common.MetricName;\nimport org.apache.kafka.common.Metric;\nimport java.util.HashMap;\nimport java.util.Map;\nimport org.apache.zeppelin.java.JavaInterpreterUtils;\n\npublic class SampleJavaProducer {\n\n    public static void main (String[] args) {\n    \n        Properties settings \u003d new Properties();\n        settings.put(\"client.id\", \"java-producer-osw2020\");\n        settings.put(\"bootstrap.servers\", \"broker:9093\");\n        \n        /*\n            Acks is the number of acknowledgment the producer will await for, \n            before considering a message as sent\n            \n            \"all\" means the producer will await for acknowledgement by the leader\n            server and all the In-Sync Replicas. \n            \n            Default value is 1\n        */\n        settings.put(\"acks\", \"all\");\n        settings.put(\"key.serializer\", \"org.apache.kafka.common.serialization.StringSerializer\");\n        settings.put(\"value.serializer\", \"org.apache.kafka.common.serialization.StringSerializer\");\n        \n        final KafkaProducer\u003cString, String\u003e producer \u003d new KafkaProducer\u003cString, String\u003e(settings);\n        \n        final String topic \u003d \"user\";\n    \tMap\u003cString, Object\u003e mapRecord \u003d new HashMap\u003c\u003e();\n        \n        for (int index \u003d 0; index \u003c 5; index++) {\n\n            final String key \u003d \"key-\" + index;\n            final String value \u003d \"{\\\"name\\\": \\\"User \"+index+\"\\\", \\\"creationDate\\\":\"+System.currentTimeMillis()+\", \\\"userID\\\": \"+index+\"}\";\n            \n            final ProducerRecord\u003cString, String\u003e record \u003d new ProducerRecord\u003cString, String\u003e(topic, key, value);\n            \n            producer.send(record);\n            \n\t\t\tmapRecord.put(record.key(), record.value());\n        }\n        \n        System.out.println(JavaInterpreterUtils.displayTableFromSimpleMap(\"Record Key\",\"Record Value\", mapRecord));\n    }   \n}",
       "user": "anonymous",
-      "dateUpdated": "2020-12-03 11:51:20.911",
+      "dateUpdated": "2020-12-03 14:21:12.988",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
         "enabled": true,
-        "results": {},
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Record Key": "string",
+                      "Record Value": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
         "editorSetting": {
           "language": "java",
           "editOnDblClick": false,
@@ -368,24 +397,64 @@
       "settings": {
         "params": {},
         "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Record Key\tRecord Value\nkey-1\t{\"name\": \"User 1\", \"creationDate\":1607005271726, \"userID\": 1}\nkey-0\t{\"name\": \"User 0\", \"creationDate\":1607005269942, \"userID\": 0}\nkey-4\t{\"name\": \"User 4\", \"creationDate\":1607005271728, \"userID\": 4}\nkey-3\t{\"name\": \"User 3\", \"creationDate\":1607005271727, \"userID\": 3}\nkey-2\t{\"name\": \"User 2\", \"creationDate\":1607005271727, \"userID\": 2}\n"
+          }
+        ]
       },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606996241018_-1761715205",
       "id": "paragraph_1606996241018_-1761715205",
       "dateCreated": "2020-12-03 11:50:41.018",
-      "status": "READY"
+      "dateStarted": "2020-12-03 14:21:02.150",
+      "dateFinished": "2020-12-03 14:21:11.847",
+      "status": "FINISHED"
     },
     {
       "title": "Sample Java Consumer",
       "text": "%java\n\n/*\n    Take a look at the KafkaConsumer API for further details:\n\n    https://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html\n*/\n\nimport java.util.Properties;\nimport java.util.Arrays;\nimport java.time.Duration;\nimport org.apache.kafka.clients.consumer.KafkaConsumer;\nimport org.apache.kafka.clients.consumer.ConsumerRecords;\nimport org.apache.kafka.clients.consumer.ConsumerRecord;\nimport org.apache.kafka.clients.consumer.ConsumerConfig;\nimport org.apache.kafka.common.TopicPartition;\nimport java.util.HashMap;\nimport java.util.Map;\nimport java.util.List;\nimport java.util.Collections;\nimport org.apache.zeppelin.java.JavaInterpreterUtils;\n\npublic class SampleJavaConsumer {\n    \n    public static void main(String[] args) {\n        \n        Properties settings \u003d new Properties();\n        settings.put(\"group.id\", \"java-consumergroup-osw2020\");\n        settings.put(\"client.id\", \"java-consumer-osw2020\");\n        settings.put(\"bootstrap.servers\", \"broker:9093\");\n        /*\n            Usually for test purposes we can enable auto-commit,\n            together with the auto.commit.interval.ms property\n        */\n        settings.setProperty(\"enable.auto.commit\", \"false\");\n        \n        /*\n            This configuration set the offset to the earliest in the topic.\n            Doing so we can read all the messages in the topic.\n            This is the equivalent of --from-beginning we used in the CLI example\n        */\n        settings.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, \"earliest\");\n        settings.put(\"key.deserializer\", \"org.apache.kafka.common.serialization.StringDeserializer\");\n        settings.put(\"value.deserializer\", \"org.apache.kafka.common.serialization.StringDeserializer\");\n        \n        final KafkaConsumer\u003cString, String\u003e consumer \u003d new KafkaConsumer\u003cString, String\u003e(settings);\n        \n        /*consumer.subscribe(Arrays.asList(\"user\"));*/\n        \n        TopicPartition partitionZero \u003d new TopicPartition(\"user\", 0);\n        List\u003cTopicPartition\u003e partitions \u003d Collections.singletonList(partitionZero);\n        consumer.assign(partitions);\n        consumer.seekToBeginning(partitions);\n        \n        final int giveUp \u003d 100;   \n        int noRecordsCount \u003d 0;\n        \n\t\tMap\u003cString, Object\u003e mapRecord \u003d new HashMap\u003c\u003e();\n        \n        while (true) {\n            ConsumerRecords\u003cString, String\u003e records \u003d consumer.poll(Duration.ofMillis(100));\n\t\t\t\n\t\t\tif (records.count() \u003d\u003d 0) {\n                noRecordsCount++;\n                if (noRecordsCount \u003e giveUp) \n                    break;\n                else \n                    continue;\n            }\n\t\t\t\n\t\t    records.forEach(record -\u003e {\n\t\t\t\tmapRecord.put(\"Partition \" + record.partition() + \" - Offset: \" + record.offset(), record.value());\n\t\t\t});\n\t\t\tconsumer.commitAsync();\n        }\n        consumer.close();\n        \n\t\tSystem.out.println(JavaInterpreterUtils.displayTableFromSimpleMap(\"Property\",\"Value\", mapRecord));\n    }\n}",
       "user": "anonymous",
-      "dateUpdated": "2020-12-03 12:01:59.825",
+      "dateUpdated": "2020-12-03 14:24:58.898",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
         "enabled": true,
-        "results": {},
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Property": "string",
+                      "Value": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
         "editorSetting": {
           "language": "java",
           "editOnDblClick": false,
@@ -399,28 +468,23 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Property\tValue\nPartition 0 - Offset: 4\t{\"name\": \"User 2\", \"creationDate\":1607005271727, \"userID\": 2}\nPartition 0 - Offset: 5\t{\"name\": \"User 3\", \"creationDate\":1607005271727, \"userID\": 3}\nPartition 0 - Offset: 2\t{\"name\": \"User 0\", \"creationDate\":1607005269942, \"userID\": 0}\nPartition 0 - Offset: 3\t{\"name\": \"User 1\", \"creationDate\":1607005271726, \"userID\": 1}\nPartition 0 - Offset: 6\t{\"name\": \"User 4\", \"creationDate\":1607005271728, \"userID\": 4}\nPartition 0 - Offset: 0\t{\"name\": \"Mauro\", \"surname\": \"Roiter\"}\nPartition 0 - Offset: 1\t{\"name\": \"Davide\", \"surname\": \"Fantuzzi\"}\n"
+          }
+        ]
+      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606996898260_1982452883",
       "id": "paragraph_1606996898260_1982452883",
       "dateCreated": "2020-12-03 12:01:38.267",
-      "status": "READY"
-    },
-    {
-      "text": "%java\n",
-      "user": "anonymous",
-      "dateUpdated": "2020-12-03 11:16:32.488",
-      "config": {},
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "apps": [],
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1606994192488_1647563786",
-      "id": "paragraph_1606994192488_1647563786",
-      "dateCreated": "2020-12-03 11:16:32.488",
-      "status": "READY"
+      "dateStarted": "2020-12-03 14:24:46.440",
+      "dateFinished": "2020-12-03 14:24:58.191",
+      "status": "FINISHED"
     },
     {
       "text": "%md\n## Kafka Connect\n\nIs a component of Apache Kafka for connecting Kafka with external systems such as databases, key-value stores, search indexes, and others.\n\nIn Kafka Connect, **Connectors** and **tasks** are logical units of work and run as a process. Those processes are called **workers**.\nA worker can be run in two modes:\n\n* **Standalonde mode**, tipically used for development and testing purposes on a local machine;\n* **Distributed mode**, workers run on multiple Connect nodes. So here we have a Connect cluster and connectors are distributed across the cluster nodes. \n\nKafka Connect includes two types of connectors:\n\n* **Source connector** – This type of connectors extract data from external systems, such as relational databases, and store them into a Kafka topic\n* **Sink connector** – This type of connectors read data from Kafka topics, translate and send them to external systems such as Elasticsearch, or Neo4j.\n\nThe main elements in Kafka Connect are:\n\n* Connectors\n* Tasks\n* Workers\n* Converters\n* Transformers\n* DLQ (Dead Letter Queue)",
@@ -713,7 +777,7 @@
       "title": "Check if Neo4j is empty",
       "text": "%neo4j\nMATCH (n) RETURN count(n)",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 16:42:53.507",
+      "dateUpdated": "2020-12-03 14:35:42.150",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -767,7 +831,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "count(n)\n1051\n"
+            "data": "count(n)\n0\n"
           }
         ]
       },
@@ -776,8 +840,8 @@
       "jobName": "paragraph_1606905271077_-1805827748",
       "id": "paragraph_1606905271077_-1805827748",
       "dateCreated": "2020-12-02 10:34:31.078",
-      "dateStarted": "2020-12-02 16:42:31.001",
-      "dateFinished": "2020-12-02 16:42:31.636",
+      "dateStarted": "2020-12-03 14:35:42.191",
+      "dateFinished": "2020-12-03 14:35:46.378",
       "status": "FINISHED"
     },
     {
@@ -822,7 +886,7 @@
       "title": "Load Northwind data",
       "text": "%neo4j\nLOAD CSV WITH HEADERS FROM \"http://data.neo4j.com/northwind/products.csv\" AS row\nCREATE (n:Product)\nSET n \u003d row,\nn.unitPrice \u003d toFloat(row.unitPrice),\nn.unitsInStock \u003d toInteger(row.unitsInStock), n.unitsOnOrder \u003d toInteger(row.unitsOnOrder),\nn.reorderLevel \u003d toInteger(row.reorderLevel), n.discontinued \u003d (row.discontinued \u003c\u003e \"0\");\n\nLOAD CSV WITH HEADERS FROM \"http://data.neo4j.com/northwind/categories.csv\" AS row\nCREATE (n:Category)\nSET n \u003d row;\n\nLOAD CSV WITH HEADERS FROM \"http://data.neo4j.com/northwind/suppliers.csv\" AS row\nCREATE (n:Supplier)\nSET n \u003d row;\n\nCREATE INDEX ON :Product(productID);\n\nCREATE INDEX ON :Category(categoryID);\n\nCREATE INDEX ON :Supplier(supplierID);\n\nMATCH (p:Product),(c:Category)\nWHERE p.categoryID \u003d c.categoryID\nCREATE (p)-[:PART_OF]-\u003e(c);\n\nMATCH (p:Product),(s:Supplier)\nWHERE p.supplierID \u003d s.supplierID\nCREATE (s)-[:SUPPLIES]-\u003e(p);\n\nLOAD CSV WITH HEADERS FROM \"http://data.neo4j.com/northwind/customers.csv\" AS row\nCREATE (n:Customer)\nSET n \u003d row;\n\nLOAD CSV WITH HEADERS FROM \"http://data.neo4j.com/northwind/orders.csv\" AS row\nCREATE (n:Order)\nSET n \u003d row;\n\nCREATE INDEX ON :Customer(customerID);\n\nCREATE INDEX ON :Order(orderID);\n\nMATCH (c:Customer),(o:Order)\nWHERE c.customerID \u003d o.customerID\nCREATE (c)-[:PURCHASED]-\u003e(o);\n\nLOAD CSV WITH HEADERS FROM \"http://data.neo4j.com/northwind/order-details.csv\" AS row\nMATCH (p:Product), (o:Order)\nWHERE p.productID \u003d row.productID AND o.orderID \u003d row.orderID\nCREATE (o)-[details:ORDERS]-\u003e(p)\nSET details \u003d row,\ndetails.quantity \u003d toInteger(row.quantity);",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 16:43:47.082",
+      "dateUpdated": "2020-12-03 14:35:58.814",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -852,15 +916,15 @@
       "jobName": "paragraph_1606295646371_-897207705",
       "id": "20201124-215223_1236840499",
       "dateCreated": "2020-11-25 09:14:06.371",
-      "dateStarted": "2020-12-02 16:43:47.104",
-      "dateFinished": "2020-12-02 16:43:52.182",
+      "dateStarted": "2020-12-03 14:35:58.869",
+      "dateFinished": "2020-12-03 14:36:15.821",
       "status": "FINISHED"
     },
     {
       "title": "Check which are the created nodes",
       "text": "%neo4j\nMATCH (n) RETURN count(n) as nodes, labels(n) as labels",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 16:44:14.284",
+      "dateUpdated": "2020-12-03 14:36:19.203",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -925,15 +989,15 @@
       "jobName": "paragraph_1606905295835_-350991567",
       "id": "paragraph_1606905295835_-350991567",
       "dateCreated": "2020-12-02 10:34:55.835",
-      "dateStarted": "2020-12-02 16:44:14.317",
-      "dateFinished": "2020-12-02 16:44:14.382",
+      "dateStarted": "2020-12-03 14:36:19.254",
+      "dateFinished": "2020-12-03 14:36:19.646",
       "status": "FINISHED"
     },
     {
       "title": "Check which are the created relationships",
       "text": "%neo4j\nMATCH ()-[r]-() RETURN count (r) as relationships, type(r) as types",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 16:44:36.921",
+      "dateUpdated": "2020-12-03 14:36:33.574",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -997,15 +1061,15 @@
       "jobName": "paragraph_1606905584077_-1191206892",
       "id": "paragraph_1606905584077_-1191206892",
       "dateCreated": "2020-12-02 10:39:44.085",
-      "dateStarted": "2020-12-02 16:44:36.948",
-      "dateFinished": "2020-12-02 16:44:36.998",
+      "dateStarted": "2020-12-03 14:36:33.608",
+      "dateFinished": "2020-12-03 14:36:34.145",
       "status": "FINISHED"
     },
     {
       "title": "Check which is the schema of this dataset",
       "text": "%neo4j\nMATCH part1\u003d(:Customer)-[:PURCHASED]-\u003e(:Order)-[:ORDERS]-\u003e(p:Product)-[:PART_OF]-\u003e(:Category) WITH p,part1 MATCH part2\u003d(:Supplier)-[:SUPPLIES]-\u003e(p) return part1,part2 LIMIT 1",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 16:45:11.741",
+      "dateUpdated": "2020-12-03 14:36:40.702",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1118,7 +1182,7 @@
         "msg": [
           {
             "type": "NETWORK",
-            "data": "{\"nodes\":[{\"id\":33,\"data\":{\"reorderLevel\":15,\"unitsInStock\":111,\"unitPrice\":14.0,\"supplierID\":\"16\",\"productID\":\"34\",\"quantityPerUnit\":\"24 - 12 oz bottles\",\"discontinued\":false,\"productName\":\"Sasquatch Ale\",\"unitsOnOrder\":0,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":100,\"data\":{\"country\":\"USA\",\"address\":\"3400 - 8th Avenue Suite 210\",\"supplierID\":\"16\",\"city\":\"Bend\",\"contactName\":\"Cheryl Saylor\",\"companyName\":\"Bigfoot Breweries\",\"postalCode\":\"97101\",\"homePage\":\"NULL\",\"contactTitle\":\"Regional Account Rep.\",\"phone\":\"(503) 555-9931\",\"region\":\"OR\",\"fax\":\"NULL\"},\"label\":\"Supplier\"},{\"id\":125,\"data\":{\"country\":\"Argentina\",\"address\":\"Cerrito 333\",\"contactTitle\":\"Sales Agent\",\"city\":\"Buenos Aires\",\"phone\":\"(1) 135-5555\",\"contactName\":\"Patricio Simpson\",\"companyName\":\"Cactus Comidas para llevar\",\"postalCode\":\"1010\",\"customerID\":\"CACTU\",\"fax\":\"(1) 135-4892\",\"region\":\"NULL\"},\"label\":\"Customer\"},{\"id\":77,\"data\":{\"description\":\"Soft drinks, coffees, teas, beers, and ales\",\"categoryName\":\"Beverages\",\"picture\":\"0x151C2F00020000000D000E0014002100FFFFFFFF4269746D617020496D616765005061696E742E5069637475726500010500000200000007000000504272757368000000000000000000A0290000424D98290000000000005600000028000000AC00000078000000010004000000000000000000880B0000880B0000080000\",\"categoryID\":\"1\"},\"label\":\"Category\"},{\"id\":894,\"data\":{\"shipCity\":\"Buenos Aires\",\"orderID\":\"10937\",\"freight\":\"31.51\",\"requiredDate\":\"1998-03-24 00:00:00.000\",\"employeeID\":\"7\",\"shipName\":\"Cactus Comidas para llevar\",\"shipPostalCode\":\"1010\",\"shipCountry\":\"Argentina\",\"shipAddress\":\"Cerrito 333\",\"shipVia\":\"3\",\"customerID\":\"CACTU\",\"shippedDate\":\"1998-03-13 00:00:00.000\",\"orderDate\":\"1998-03-10 00:00:00.000\",\"shipRegion\":\"NULL\"},\"label\":\"Order\"}],\"edges\":[{\"source\":33,\"target\":77,\"id\":33,\"data\":{},\"label\":\"PART_OF\"},{\"source\":894,\"target\":33,\"id\":2772,\"data\":{\"unitPrice\":\"14.00\",\"discount\":\"0\",\"quantity\":20,\"productID\":\"34\",\"orderID\":\"10937\"},\"label\":\"ORDERS\"},{\"source\":125,\"target\":894,\"id\":843,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":100,\"target\":33,\"id\":110,\"data\":{},\"label\":\"SUPPLIES\"}],\"labels\":{\"Product\":\"#B3DDE5\",\"Category\":\"#D90C4D\",\"Supplier\":\"#33611F\",\"Customer\":\"#010058\",\"Order\":\"#6AB209\"},\"types\":[\"ORDERS\",\"PART_OF\",\"SUPPLIES\",\"PURCHASED\"],\"directed\":true}"
+            "data": "{\"nodes\":[{\"id\":33,\"data\":{\"reorderLevel\":15,\"unitsInStock\":111,\"unitPrice\":14.0,\"supplierID\":\"16\",\"productID\":\"34\",\"quantityPerUnit\":\"24 - 12 oz bottles\",\"discontinued\":false,\"productName\":\"Sasquatch Ale\",\"unitsOnOrder\":0,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":100,\"data\":{\"country\":\"USA\",\"address\":\"3400 - 8th Avenue Suite 210\",\"supplierID\":\"16\",\"city\":\"Bend\",\"contactName\":\"Cheryl Saylor\",\"companyName\":\"Bigfoot Breweries\",\"postalCode\":\"97101\",\"homePage\":\"NULL\",\"contactTitle\":\"Regional Account Rep.\",\"phone\":\"(503) 555-9931\",\"region\":\"OR\",\"fax\":\"NULL\"},\"label\":\"Supplier\"},{\"id\":125,\"data\":{\"country\":\"Argentina\",\"address\":\"Cerrito 333\",\"contactTitle\":\"Sales Agent\",\"city\":\"Buenos Aires\",\"phone\":\"(1) 135-5555\",\"contactName\":\"Patricio Simpson\",\"companyName\":\"Cactus Comidas para llevar\",\"postalCode\":\"1010\",\"customerID\":\"CACTU\",\"fax\":\"(1) 135-4892\",\"region\":\"NULL\"},\"label\":\"Customer\"},{\"id\":77,\"data\":{\"description\":\"Soft drinks, coffees, teas, beers, and ales\",\"categoryName\":\"Beverages\",\"picture\":\"0x151C2F00020000000D000E0014002100FFFFFFFF4269746D617020496D616765005061696E742E5069637475726500010500000200000007000000504272757368000000000000000000A0290000424D98290000000000005600000028000000AC00000078000000010004000000000000000000880B0000880B0000080000\",\"categoryID\":\"1\"},\"label\":\"Category\"},{\"id\":894,\"data\":{\"shipCity\":\"Buenos Aires\",\"orderID\":\"10937\",\"freight\":\"31.51\",\"requiredDate\":\"1998-03-24 00:00:00.000\",\"employeeID\":\"7\",\"shipName\":\"Cactus Comidas para llevar\",\"shipPostalCode\":\"1010\",\"shipCountry\":\"Argentina\",\"shipAddress\":\"Cerrito 333\",\"shipVia\":\"3\",\"customerID\":\"CACTU\",\"shippedDate\":\"1998-03-13 00:00:00.000\",\"orderDate\":\"1998-03-10 00:00:00.000\",\"shipRegion\":\"NULL\"},\"label\":\"Order\"}],\"edges\":[{\"source\":33,\"target\":77,\"id\":33,\"data\":{},\"label\":\"PART_OF\"},{\"source\":894,\"target\":33,\"id\":2772,\"data\":{\"unitPrice\":\"14.00\",\"discount\":\"0\",\"quantity\":20,\"productID\":\"34\",\"orderID\":\"10937\"},\"label\":\"ORDERS\"},{\"source\":125,\"target\":894,\"id\":843,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":100,\"target\":33,\"id\":110,\"data\":{},\"label\":\"SUPPLIES\"}],\"labels\":{\"Product\":\"#94E8ED\",\"Category\":\"#DDDC73\",\"Supplier\":\"#959BA5\",\"Customer\":\"#0F3888\",\"Order\":\"#1F5CFB\"},\"types\":[\"ORDERS\",\"PART_OF\",\"SUPPLIES\",\"PURCHASED\"],\"directed\":true}"
           }
         ]
       },
@@ -1127,15 +1191,15 @@
       "jobName": "paragraph_1606905765285_538516475",
       "id": "paragraph_1606905765285_538516475",
       "dateCreated": "2020-12-02 10:42:45.285",
-      "dateStarted": "2020-12-02 16:45:11.772",
-      "dateFinished": "2020-12-02 16:45:11.838",
+      "dateStarted": "2020-12-03 14:36:40.748",
+      "dateFinished": "2020-12-03 14:36:41.538",
       "status": "FINISHED"
     },
     {
       "title": "Preparing for sending a batch of events",
       "text": "%md\n\nOpen a terminal and go to the project root folder, and then run the following command:\n\n```\ndocker cp northwind-events.txt  broker:/tmp/northwind-events.txt\n```\n\nConnect to the Kafka container and check if the file is successfully copied:\n\n```\ndocker exec -it broker /bin/bash\nls /tmp\n```",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 16:46:10.677",
+      "dateUpdated": "2020-12-03 14:38:17.453",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1148,7 +1212,7 @@
           "completionSupport": false
         },
         "editorMode": "ace/mode/text",
-        "editorHide": false,
+        "editorHide": true,
         "tableHide": false,
         "title": true
       },
@@ -1178,7 +1242,7 @@
       "title": "Producing and consuming",
       "text": "%md\n\nOpen a new terminal panel (without closing the previous one).\n\nFirst connect to the Kafka container (`docker exec -it broker /bin/bash`) and then create a Kafka console consumer as follow:\n\n```\nkafka-console-consumer --bootstrap-server broker:9093 --topic sales --from-beginning\n```\n\nIn the first terminal panel (we are already connected to the Kafka container) just create a Kafka console producer as follow:\n\n```\nkafka-console-producer --bootstrap-server broker:9093 --topic sales \u003c /tmp/northwind-events.txt\n```",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 16:46:46.716",
+      "dateUpdated": "2020-12-03 14:38:20.112",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1192,7 +1256,7 @@
         },
         "editorMode": "ace/mode/text",
         "tableHide": false,
-        "editorHide": false,
+        "editorHide": true,
         "title": true
       },
       "settings": {
@@ -1221,7 +1285,7 @@
       "title": "Checkout the created subgraph",
       "text": "%neo4j\nMATCH path\u003d(customer:Customer)-[:PURCHASED]-\u003e(order:Order)-[:ORDERS]-\u003e(product:Product) WHERE customer.customerID \u003d \u0027LARUS\u0027 RETURN path",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 16:47:13.023",
+      "dateUpdated": "2020-12-03 14:39:55.951",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1292,15 +1356,20 @@
       },
       "results": {
         "code": "SUCCESS",
-        "msg": []
+        "msg": [
+          {
+            "type": "NETWORK",
+            "data": "{\"nodes\":[{\"id\":69,\"data\":{\"reorderLevel\":30,\"unitsInStock\":15,\"unitPrice\":15.0,\"supplierID\":\"7\",\"productID\":\"70\",\"quantityPerUnit\":\"24 - 355 ml bottles\",\"discontinued\":false,\"productName\":\"Outback Lager\",\"unitsOnOrder\":10,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":70,\"data\":{\"reorderLevel\":0,\"unitsInStock\":26,\"unitPrice\":21.5,\"supplierID\":\"15\",\"productID\":\"71\",\"quantityPerUnit\":\"10 - 500 g pkgs.\",\"discontinued\":false,\"productName\":\"Flotemysost\",\"unitsOnOrder\":0,\"categoryID\":\"4\"},\"label\":\"Product\"},{\"id\":71,\"data\":{\"reorderLevel\":0,\"unitsInStock\":14,\"unitPrice\":34.8,\"supplierID\":\"14\",\"productID\":\"72\",\"quantityPerUnit\":\"24 - 200 g pkgs.\",\"discontinued\":false,\"productName\":\"Mozzarella di Giovanni\",\"unitsOnOrder\":0,\"categoryID\":\"4\"},\"label\":\"Product\"},{\"id\":72,\"data\":{\"reorderLevel\":5,\"unitsInStock\":101,\"unitPrice\":15.0,\"supplierID\":\"17\",\"productID\":\"73\",\"quantityPerUnit\":\"24 - 150 g jars\",\"discontinued\":false,\"productName\":\"Röd Kaviar\",\"unitsOnOrder\":0,\"categoryID\":\"8\"},\"label\":\"Product\"},{\"id\":73,\"data\":{\"reorderLevel\":5,\"unitsInStock\":4,\"unitPrice\":10.0,\"supplierID\":\"4\",\"productID\":\"74\",\"quantityPerUnit\":\"5 kg pkg.\",\"discontinued\":false,\"productName\":\"Longlife Tofu\",\"unitsOnOrder\":20,\"categoryID\":\"7\"},\"label\":\"Product\"},{\"id\":74,\"data\":{\"reorderLevel\":25,\"unitsInStock\":125,\"unitPrice\":7.75,\"supplierID\":\"12\",\"productID\":\"75\",\"quantityPerUnit\":\"24 - 0.5 l bottles\",\"discontinued\":false,\"productName\":\"Rhönbräu Klosterbier\",\"unitsOnOrder\":0,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":1035,\"data\":{\"customerID\":\"LARUS\",\"contactName\":\"Mauro Roiter\",\"companyName\":\"LARUS Business Automation srl\"},\"label\":\"Customer\"},{\"id\":75,\"data\":{\"reorderLevel\":20,\"unitsInStock\":57,\"unitPrice\":18.0,\"supplierID\":\"23\",\"productID\":\"76\",\"quantityPerUnit\":\"500 ml\",\"discontinued\":false,\"productName\":\"Lakkalikööri\",\"unitsOnOrder\":0,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":1036,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99980\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":3},\"time\":{\"hour\":14,\"minute\":39,\"second\":30,\"nano\":527000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":76,\"data\":{\"reorderLevel\":15,\"unitsInStock\":32,\"unitPrice\":13.0,\"supplierID\":\"12\",\"productID\":\"77\",\"quantityPerUnit\":\"12 boxes\",\"discontinued\":false,\"productName\":\"Original Frankfurter grüne Soße\",\"unitsOnOrder\":0,\"categoryID\":\"2\"},\"label\":\"Product\"},{\"id\":1037,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99981\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":3},\"time\":{\"hour\":14,\"minute\":39,\"second\":30,\"nano\":527000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1038,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99982\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":3},\"time\":{\"hour\":14,\"minute\":39,\"second\":30,\"nano\":527000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1039,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99983\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":3},\"time\":{\"hour\":14,\"minute\":39,\"second\":30,\"nano\":527000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1040,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99984\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":3},\"time\":{\"hour\":14,\"minute\":39,\"second\":30,\"nano\":527000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1041,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99985\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":3},\"time\":{\"hour\":14,\"minute\":39,\"second\":30,\"nano\":527000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1042,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99986\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":3},\"time\":{\"hour\":14,\"minute\":39,\"second\":30,\"nano\":527000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1043,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99987\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":3},\"time\":{\"hour\":14,\"minute\":39,\"second\":30,\"nano\":527000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1044,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99988\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":3},\"time\":{\"hour\":14,\"minute\":39,\"second\":30,\"nano\":527000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1045,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99989\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":3},\"time\":{\"hour\":14,\"minute\":39,\"second\":30,\"nano\":527000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1046,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99990\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":3},\"time\":{\"hour\":14,\"minute\":39,\"second\":30,\"nano\":527000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1047,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99991\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":3},\"time\":{\"hour\":14,\"minute\":39,\"second\":30,\"nano\":527000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1048,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99992\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":3},\"time\":{\"hour\":14,\"minute\":39,\"second\":30,\"nano\":527000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1049,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99993\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":3},\"time\":{\"hour\":14,\"minute\":39,\"second\":30,\"nano\":527000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":1050,\"data\":{\"shipCity\":\"Venice\",\"orderID\":\"99994\",\"orderDate\":{\"date\":{\"year\":2020,\"month\":12,\"day\":3},\"time\":{\"hour\":14,\"minute\":39,\"second\":30,\"nano\":527000000}},\"shipAddress\":\"via bruno maderna 7\"},\"label\":\"Order\"},{\"id\":33,\"data\":{\"reorderLevel\":15,\"unitsInStock\":111,\"unitPrice\":14.0,\"supplierID\":\"16\",\"productID\":\"34\",\"quantityPerUnit\":\"24 - 12 oz bottles\",\"discontinued\":false,\"productName\":\"Sasquatch Ale\",\"unitsOnOrder\":0,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":34,\"data\":{\"reorderLevel\":15,\"unitsInStock\":20,\"unitPrice\":18.0,\"supplierID\":\"16\",\"productID\":\"35\",\"quantityPerUnit\":\"24 - 12 oz bottles\",\"discontinued\":false,\"productName\":\"Steeleye Stout\",\"unitsOnOrder\":0,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":35,\"data\":{\"reorderLevel\":20,\"unitsInStock\":112,\"unitPrice\":19.0,\"supplierID\":\"17\",\"productID\":\"36\",\"quantityPerUnit\":\"24 - 250 g  jars\",\"discontinued\":false,\"productName\":\"Inlagd Sill\",\"unitsOnOrder\":0,\"categoryID\":\"8\"},\"label\":\"Product\"},{\"id\":36,\"data\":{\"reorderLevel\":25,\"unitsInStock\":11,\"unitPrice\":26.0,\"supplierID\":\"17\",\"productID\":\"37\",\"quantityPerUnit\":\"12 - 500 g pkgs.\",\"discontinued\":false,\"productName\":\"Gravad lax\",\"unitsOnOrder\":50,\"categoryID\":\"8\"},\"label\":\"Product\"},{\"id\":37,\"data\":{\"reorderLevel\":15,\"unitsInStock\":17,\"unitPrice\":263.5,\"supplierID\":\"18\",\"productID\":\"38\",\"quantityPerUnit\":\"12 - 75 cl bottles\",\"discontinued\":false,\"productName\":\"Côte de Blaye\",\"unitsOnOrder\":0,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":38,\"data\":{\"reorderLevel\":5,\"unitsInStock\":69,\"unitPrice\":18.0,\"supplierID\":\"18\",\"productID\":\"39\",\"quantityPerUnit\":\"750 cc per bottle\",\"discontinued\":false,\"productName\":\"Chartreuse verte\",\"unitsOnOrder\":0,\"categoryID\":\"1\"},\"label\":\"Product\"},{\"id\":39,\"data\":{\"reorderLevel\":30,\"unitsInStock\":123,\"unitPrice\":18.4,\"supplierID\":\"19\",\"productID\":\"40\",\"quantityPerUnit\":\"24 - 4 oz tins\",\"discontinued\":false,\"productName\":\"Boston Crab Meat\",\"unitsOnOrder\":0,\"categoryID\":\"8\"},\"label\":\"Product\"}],\"edges\":[{\"source\":1035,\"target\":1036,\"id\":3139,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1036,\"target\":33,\"id\":3140,\"data\":{\"unitPrice\":\"10.0\",\"quantity\":\"3\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1037,\"id\":3141,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1037,\"target\":34,\"id\":3142,\"data\":{\"unitPrice\":\"20.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1038,\"id\":3143,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1038,\"target\":35,\"id\":3144,\"data\":{\"unitPrice\":\"8.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1039,\"id\":3145,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1039,\"target\":36,\"id\":3146,\"data\":{\"unitPrice\":\"16.0\",\"quantity\":\"2\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1040,\"id\":3147,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1040,\"target\":37,\"id\":3148,\"data\":{\"unitPrice\":\"12.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1041,\"id\":3149,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1041,\"target\":38,\"id\":3150,\"data\":{\"unitPrice\":\"13.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1042,\"id\":3151,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1042,\"target\":39,\"id\":3152,\"data\":{\"unitPrice\":\"11.0\",\"quantity\":\"4\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1043,\"id\":3153,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1043,\"target\":69,\"id\":3154,\"data\":{\"unitPrice\":\"9.0\",\"quantity\":\"2\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1044,\"id\":3155,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1044,\"target\":70,\"id\":3156,\"data\":{\"unitPrice\":\"22.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1045,\"id\":3157,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1045,\"target\":71,\"id\":3158,\"data\":{\"unitPrice\":\"32.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1046,\"id\":3159,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1046,\"target\":72,\"id\":3160,\"data\":{\"unitPrice\":\"15.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1047,\"id\":3161,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1047,\"target\":73,\"id\":3162,\"data\":{\"unitPrice\":\"14.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1048,\"id\":3163,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1048,\"target\":74,\"id\":3164,\"data\":{\"unitPrice\":\"30.0\",\"quantity\":\"1\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1049,\"id\":3165,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1049,\"target\":75,\"id\":3166,\"data\":{\"unitPrice\":\"9.0\",\"quantity\":\"2\"},\"label\":\"ORDERS\"},{\"source\":1035,\"target\":1050,\"id\":3167,\"data\":{},\"label\":\"PURCHASED\"},{\"source\":1050,\"target\":76,\"id\":3168,\"data\":{\"unitPrice\":\"10.0\",\"quantity\":\"3\"},\"label\":\"ORDERS\"}],\"labels\":{\"Product\":\"#94E8ED\",\"Category\":\"#DDDC73\",\"Supplier\":\"#959BA5\",\"Customer\":\"#0F3888\",\"Order\":\"#1F5CFB\"},\"types\":[\"ORDERS\",\"PART_OF\",\"SUPPLIES\",\"PURCHASED\"],\"directed\":true}"
+          }
+        ]
       },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606908117940_1715979745",
       "id": "paragraph_1606908117940_1715979745",
       "dateCreated": "2020-12-02 11:21:57.940",
-      "dateStarted": "2020-12-02 16:47:13.056",
-      "dateFinished": "2020-12-02 16:47:13.087",
+      "dateStarted": "2020-12-03 14:39:55.983",
+      "dateFinished": "2020-12-03 14:39:56.321",
       "status": "FINISHED"
     },
     {
@@ -1350,7 +1419,7 @@
       "title": "Analyze the source event structure for a relationship",
       "text": "%md\nLet\u0027s take a look also to the event structure of a relationship creation, by creating a console consumer on the topic `orders`:\n\n```\nkakfa-console-consumer --bootstrap-server broker:9093 --topic orders --from-beginning\n```\n\nThe event structure is:\n\n```\n{\n  \"meta\": {\n    \"timestamp\": 1606910301617,\n    \"username\": \"\",\n    \"txId\": 32,\n    \"txEventId\": 45,\n    \"txEventsCount\": 46,\n    \"operation\": \"created\",\n    \"source\": {\n      \"hostname\": \"neo4j\"\n    }\n  },\n  \"payload\": {\n    \"id\": \"3146\",\n    \"start\": {\n      \"id\": \"1039\",\n      \"labels\": [\n        \"Order\"\n      ],\n      \"ids\": {}\n    },\n    \"end\": {\n      \"id\": \"36\",\n      \"labels\": [\n        \"Product\"\n      ],\n      \"ids\": {}\n    },\n    \"before\": null,\n    \"after\": {\n      \"properties\": {\n        \"unitPrice\": \"16.0\",\n        \"quantity\": \"2\"\n      }\n    },\n    \"label\": \"ORDERS\",\n    \"type\": \"relationship\"\n  },\n  \"schema\": {\n    \"properties\": {\n      \"unitPrice\": \"String\",\n      \"quantity\": \"String\"\n    },\n    \"constraints\": []\n  }\n}\n```",
       "user": "anonymous",
-      "dateUpdated": "2020-12-02 22:21:18.364",
+      "dateUpdated": "2020-12-03 14:42:22.458",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1363,7 +1432,7 @@
           "completionSupport": true
         },
         "editorMode": "ace/mode/text",
-        "editorHide": false,
+        "editorHide": true,
         "tableHide": false,
         "title": true
       },
