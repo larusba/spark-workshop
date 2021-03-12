@@ -41,6 +41,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606295646358_-169103103",
       "id": "20201119-163744_649109186",
@@ -82,6 +83,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606295646358_-1882574338",
       "id": "20201119-164023_1921299471",
@@ -131,6 +133,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606295646359_789469299",
       "id": "20201119-163934_1675658529",
@@ -172,6 +175,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606295646362_993126499",
       "id": "20201120-142859_59394266",
@@ -213,6 +217,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606925813953_-515866447",
       "id": "paragraph_1606925813953_-515866447",
@@ -254,6 +259,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606295646368_-904811456",
       "id": "20201124-165612_854895868",
@@ -297,6 +303,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606295646368_747197493",
       "id": "20201120-113028_507172212",
@@ -338,6 +345,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606295646370_-1779558733",
       "id": "20201120-131759_1793611934",
@@ -350,7 +358,7 @@
       "title": "Sample Java Producer",
       "text": "%java\n\n/*\n    Take a look at the KafkaProducer API for further details:\n\n    https://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html\n*/\n\nimport java.util.Properties;\nimport org.apache.kafka.clients.producer.KafkaProducer;\nimport org.apache.kafka.clients.producer.ProducerRecord;\nimport org.apache.kafka.common.MetricName;\nimport org.apache.kafka.common.Metric;\nimport java.util.HashMap;\nimport java.util.Map;\nimport org.apache.zeppelin.java.JavaInterpreterUtils;\n\npublic class SampleJavaProducer {\n\n    public static void main (String[] args) {\n    \n        Properties settings \u003d new Properties();\n        settings.put(\"client.id\", \"java-producer-osw2020\");\n        settings.put(\"bootstrap.servers\", \"broker:9093\");\n        \n        /*\n            Acks is the number of acknowledgment the producer will await for, \n            before considering a message as sent\n            \n            \"all\" means the producer will await for acknowledgement by the leader\n            server and all the In-Sync Replicas. \n            \n            Default value is 1\n        */\n        settings.put(\"acks\", \"all\");\n        settings.put(\"key.serializer\", \"org.apache.kafka.common.serialization.StringSerializer\");\n        settings.put(\"value.serializer\", \"org.apache.kafka.common.serialization.StringSerializer\");\n        \n        final KafkaProducer\u003cString, String\u003e producer \u003d new KafkaProducer\u003cString, String\u003e(settings);\n        \n        final String topic \u003d \"user\";\n    \tMap\u003cString, Object\u003e mapRecord \u003d new HashMap\u003c\u003e();\n        \n        for (int index \u003d 0; index \u003c 5; index++) {\n\n            final String key \u003d \"key-\" + index;\n            final String value \u003d \"{\\\"name\\\": \\\"User \"+index+\"\\\", \\\"creationDate\\\":\"+System.currentTimeMillis()+\", \\\"userID\\\": \"+index+\"}\";\n            \n            final ProducerRecord\u003cString, String\u003e record \u003d new ProducerRecord\u003cString, String\u003e(topic, key, value);\n            \n            producer.send(record);\n            \n\t\t\tmapRecord.put(record.key(), record.value());\n        }\n        \n        System.out.println(JavaInterpreterUtils.displayTableFromSimpleMap(\"Record Key\",\"Record Value\", mapRecord));\n    }   \n}",
       "user": "anonymous",
-      "dateUpdated": "2020-12-03 14:21:12.988",
+      "dateUpdated": "2021-03-09 09:03:44.494",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -403,17 +411,18 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "Record Key\tRecord Value\nkey-1\t{\"name\": \"User 1\", \"creationDate\":1607005271726, \"userID\": 1}\nkey-0\t{\"name\": \"User 0\", \"creationDate\":1607005269942, \"userID\": 0}\nkey-4\t{\"name\": \"User 4\", \"creationDate\":1607005271728, \"userID\": 4}\nkey-3\t{\"name\": \"User 3\", \"creationDate\":1607005271727, \"userID\": 3}\nkey-2\t{\"name\": \"User 2\", \"creationDate\":1607005271727, \"userID\": 2}\n"
+            "data": "Record Key\tRecord Value\nkey-1\t{\"name\": \"User 1\", \"creationDate\":1615280633576, \"userID\": 1}\nkey-0\t{\"name\": \"User 0\", \"creationDate\":1615280631864, \"userID\": 0}\nkey-4\t{\"name\": \"User 4\", \"creationDate\":1615280633583, \"userID\": 4}\nkey-3\t{\"name\": \"User 3\", \"creationDate\":1615280633583, \"userID\": 3}\nkey-2\t{\"name\": \"User 2\", \"creationDate\":1615280633583, \"userID\": 2}\n"
           }
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606996241018_-1761715205",
       "id": "paragraph_1606996241018_-1761715205",
       "dateCreated": "2020-12-03 11:50:41.018",
-      "dateStarted": "2020-12-03 14:21:02.150",
-      "dateFinished": "2020-12-03 14:21:11.847",
+      "dateStarted": "2021-03-09 09:03:44.583",
+      "dateFinished": "2021-03-09 09:03:53.671",
       "status": "FINISHED"
     },
     {
@@ -478,6 +487,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606996898260_1982452883",
       "id": "paragraph_1606996898260_1982452883",
@@ -519,6 +529,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606295646370_364381912",
       "id": "20201120-131852_1504811226",
@@ -560,6 +571,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606295646371_-1832869158",
       "id": "20201120-131904_1926991562",
@@ -601,6 +613,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606295646371_1068194227",
       "id": "20201120-131954_343396949",
@@ -642,6 +655,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606295646371_1264604686",
       "id": "20201120-132006_218759733",
@@ -683,6 +697,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606903784509_1927501012",
       "id": "paragraph_1606903784509_1927501012",
@@ -724,6 +739,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606910651920_1144451203",
       "id": "paragraph_1606910651920_1144451203",
@@ -765,6 +781,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606910766190_1440117304",
       "id": "paragraph_1606910766190_1440117304",
@@ -836,6 +853,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606905271077_-1805827748",
       "id": "paragraph_1606905271077_-1805827748",
@@ -874,6 +892,7 @@
         "msg": []
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606919769724_667846134",
       "id": "paragraph_1606919769724_667846134",
@@ -912,6 +931,7 @@
         "msg": []
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606295646371_-897207705",
       "id": "20201124-215223_1236840499",
@@ -985,6 +1005,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606905295835_-350991567",
       "id": "paragraph_1606905295835_-350991567",
@@ -1057,6 +1078,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606905584077_-1191206892",
       "id": "paragraph_1606905584077_-1191206892",
@@ -1187,6 +1209,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606905765285_538516475",
       "id": "paragraph_1606905765285_538516475",
@@ -1230,6 +1253,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606905791812_2132167422",
       "id": "paragraph_1606905791812_2132167422",
@@ -1273,6 +1297,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606907285178_-1392130832",
       "id": "paragraph_1606907285178_-1392130832",
@@ -1364,6 +1389,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606908117940_1715979745",
       "id": "paragraph_1606908117940_1715979745",
@@ -1407,6 +1433,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606910447689_-1508117522",
       "id": "paragraph_1606910447689_-1508117522",
@@ -1450,6 +1477,7 @@
         ]
       },
       "apps": [],
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606911188604_-620410908",
       "id": "paragraph_1606911188604_-620410908",

@@ -4,7 +4,7 @@ services:
   zeppelin:
     hostname: zeppelin
     container_name: zeppelin
-    image: apache/zeppelin:0.9.0
+    image: larusefraudy/zeppelin:0.9.0
     depends_on:
       - neo4j
     ports:
