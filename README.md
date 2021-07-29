@@ -1,6 +1,6 @@
-# Open Source Week 2020 - Apache Kafka & Apache Spark
+# Apache Spark Workshop
 
-This is the repository for the Open Source Week 2020 workshop on _"Creating Big Data real-time & batch application with Apache Kafka and Apache Spark"_
+This is the repository for the Apache Spark Workshop.
 
 ## How to run
 
@@ -12,6 +12,6 @@ docker-compose up
 
 It will take some time so be sure to run this before the Workshop take place.
 
-**NOTE**: this is not the final version, it's getting constantly updated so just push the last version the day of the workshop.
+Note that **this is not definitive version**. This repository is getting constantly updated and we highly suggest you to pull the new version the day of the workshop!
 
 If you have any problem please open an issue on this repository.
