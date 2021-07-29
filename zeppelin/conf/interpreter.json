@@ -536,7 +536,7 @@
       "name": "java",
       "group": "java",
       "properties": {},
-      "status": "DOWNLOADING_DEPENDENCIES",
+      "status": "READY",
       "interpreterGroup": [
         {
           "name": "java",
@@ -1101,7 +1101,7 @@
         },
         "zeppelin.spark.sql.stacktrace": {
           "name": "zeppelin.spark.sql.stacktrace",
-          "value": false,
+          "value": true,
           "type": "checkbox",
           "description": "Show full exception stacktrace for SQL queries if set to true."
         },
@@ -2352,7 +2352,7 @@
         },
         "neo4j.auth.password": {
           "name": "neo4j.auth.password",
-          "value": "osw2020",
+          "value": "password",
           "type": "string",
           "description": "The Neo4j user password."
         },
