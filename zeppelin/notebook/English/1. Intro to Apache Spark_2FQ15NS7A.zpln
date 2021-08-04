@@ -426,9 +426,9 @@
     },
     {
       "title": "How to reference columns",
-      "text": "val myNewDf \u003d Seq(\n        (1, \"Davide\", \"Fantzzi\", \"Data Engineer\", \"LARUS Business Automation\"),\n        (2, \"Sofia\", \"Conton\", \"Internationalization Program Assistant\", \"LARUS Business Automation\"),\n        (3, \"Jeff\", \"Bezos\", \"Executive Chairman\", \"Amazon\")\n    ).toDF(\"id\", \"firstname\", \"lastname\", \"role\", \"company\")\n    \nmyNewDf.show(truncate \u003d false)",
+      "text": "val myNewDf \u003d Seq(\n        (1, \"Davide\", \"Fantuzzi\", \"Data Engineer\", \"LARUS Business Automation\"),\n        (2, \"Sofia\", \"Conton\", \"Internationalization Program Assistant\", \"LARUS Business Automation\"),\n        (3, \"Jeff\", \"Bezos\", \"Executive Chairman\", \"Amazon\")\n    ).toDF(\"id\", \"firstname\", \"lastname\", \"role\", \"company\")\n    \nmyNewDf.show(truncate \u003d false)",
       "user": "anonymous",
-      "dateUpdated": "2021-07-29 14:58:51.579",
+      "dateUpdated": "2021-08-03 10:23:53.369",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -1230,7 +1230,5 @@
     "looknfeel": "default",
     "personalizedMode": "false"
   },
-  "info": {
-    "isRunning": false
-  }
+  "info": {}
 }

@@ -3,7 +3,7 @@
     {
       "text": "%md\n\n\u003cimg src\u003d\"https://miro.medium.com/max/2848/1*c9L0IMcLum6oAyEfVpNrAA.png\" style\u003d\"height: 200px; margin: 30px auto\" /\u003e\n\n# Using Spark with Neo4j\n\nLarus contributed to create the [Neo4j Connector for Apache Spark](https://neo4j.com/developer/spark/). \n\nThe Neo4j Connector for Apache Spark is intended to make integrating graphs together with spark easy. \nThere are effectively two ways of using the connector:\n\n * **As a data source**: read any set of nodes or relationships as a DataFrame in Spark\n * **As a sink**: write any DataFrame to Neo4j as a collection of nodes or relationships, or alternatively; use a Cypher statement to process records in a DataFrame into the graph pattern of your choice.\n \n\n### Multilanguage\n\nThe connector is based on the new [Spark Datasource V2 API](https://jaceklaskowski.gitbooks.io/mastering-spark-sql/content/spark-sql-data-source-api-v2.html), and supports Scala, Java, R, and Python out-of-the-box.\n\n### Compability\n\nYou can use the connector with Neo4j 3.5 and all the 4.* releases, whether run as a single instance, in causal cluster mode, or run as a managed service in Neo4j Aura. It doesn\u0027t require enterprise features so it worsk on the Enterprise edition as well as on the Community edition.\n\nIt\u0027s open source! Come to help us at https://github.com/neo4j-contrib/neo4j-spark-connector\n\nDocs https://neo4j.com/developer/spark/overview/",
       "user": "anonymous",
-      "dateUpdated": "2021-07-28 14:50:45.933",
+      "dateUpdated": "2021-08-04 10:46:00.514",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -38,14 +38,14 @@
       "jobName": "paragraph_1606377888232_-1272699187",
       "id": "paragraph_1606377888232_-1272699187",
       "dateCreated": "2020-11-26 08:04:48.232",
-      "dateStarted": "2021-07-28 14:50:45.935",
-      "dateFinished": "2021-07-28 14:50:45.962",
+      "dateStarted": "2021-08-04 10:46:00.537",
+      "dateFinished": "2021-08-04 10:46:00.577",
       "status": "FINISHED"
     },
     {
       "text": "%md\n\n# Movie Graph\n\nThe code of the following paragraph is hidden because is a lof of Cypher code. Just run it to create the Movie Graph.\n\nThe graph has this schema:\n\n\u003cimg src\u003d\"https://i.imgur.com/NzIDzF2.png\" style\u003d\"height: 400px\"\u003e",
       "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:56:42.983",
+      "dateUpdated": "2021-08-04 10:46:00.636",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -80,15 +80,57 @@
       "jobName": "paragraph_1606384102687_547478762",
       "id": "paragraph_1606384102687_547478762",
       "dateCreated": "2020-11-26 09:48:22.687",
-      "dateStarted": "2021-07-27 09:56:43.036",
-      "dateFinished": "2021-07-27 09:56:43.084",
+      "dateStarted": "2021-08-04 10:46:00.658",
+      "dateFinished": "2021-08-04 10:46:00.674",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md \n# How to read from Neo4j\n\n**Neo4j Connector for Apache Spark** allows you to read data from Neo4j in 3 different ways\n\n* by node labels\n* by relationship name\n* by direct Cypher query\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-04 10:46:00.758",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eHow to read from Neo4j\u003c/h1\u003e\n\u003cp\u003e\u003cstrong\u003eNeo4j Connector for Apache Spark\u003c/strong\u003e allows you to read data from Neo4j in 3 different ways\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003eby node labels\u003c/li\u003e\n  \u003cli\u003eby relationship name\u003c/li\u003e\n  \u003cli\u003eby direct Cypher query\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1627980417946_1973788534",
+      "id": "paragraph_1627980417946_1973788534",
+      "dateCreated": "2021-08-03 08:46:57.946",
+      "dateStarted": "2021-08-04 10:46:00.781",
+      "dateFinished": "2021-08-04 10:46:00.796",
       "status": "FINISHED"
     },
     {
       "title": "Create Movie Graph (run me!)",
       "text": "%neo4j\nCREATE (TheMatrix:Movie {title:\u0027The Matrix\u0027, released:1999, tagline:\u0027Welcome to the Real World\u0027})\nCREATE (Keanu:Person {name:\u0027Keanu Reeves\u0027, born:1964})\nCREATE (Carrie:Person {name:\u0027Carrie-Anne Moss\u0027, born:1967})\nCREATE (Laurence:Person {name:\u0027Laurence Fishburne\u0027, born:1961})\nCREATE (Hugo:Person {name:\u0027Hugo Weaving\u0027, born:1960})\nCREATE (LillyW:Person {name:\u0027Lilly Wachowski\u0027, born:1967})\nCREATE (LanaW:Person {name:\u0027Lana Wachowski\u0027, born:1965})\nCREATE (JoelS:Person {name:\u0027Joel Silver\u0027, born:1952})\nCREATE\n(Keanu)-[:ACTED_IN {roles:[\u0027Neo\u0027]}]-\u003e(TheMatrix),\n(Carrie)-[:ACTED_IN {roles:[\u0027Trinity\u0027]}]-\u003e(TheMatrix),\n(Laurence)-[:ACTED_IN {roles:[\u0027Morpheus\u0027]}]-\u003e(TheMatrix),\n(Hugo)-[:ACTED_IN {roles:[\u0027Agent Smith\u0027]}]-\u003e(TheMatrix),\n(LillyW)-[:DIRECTED]-\u003e(TheMatrix),\n(LanaW)-[:DIRECTED]-\u003e(TheMatrix),\n(JoelS)-[:PRODUCED]-\u003e(TheMatrix)\n\nCREATE (Emil:Person {name:\"Emil Eifrem\", born:1978})\nCREATE (Emil)-[:ACTED_IN {roles:[\"Emil\"]}]-\u003e(TheMatrix)\n\nCREATE (TheMatrixReloaded:Movie {title:\u0027The Matrix Reloaded\u0027, released:2003, tagline:\u0027Free your mind\u0027})\nCREATE\n(Keanu)-[:ACTED_IN {roles:[\u0027Neo\u0027]}]-\u003e(TheMatrixReloaded),\n(Carrie)-[:ACTED_IN {roles:[\u0027Trinity\u0027]}]-\u003e(TheMatrixReloaded),\n(Laurence)-[:ACTED_IN {roles:[\u0027Morpheus\u0027]}]-\u003e(TheMatrixReloaded),\n(Hugo)-[:ACTED_IN {roles:[\u0027Agent Smith\u0027]}]-\u003e(TheMatrixReloaded),\n(LillyW)-[:DIRECTED]-\u003e(TheMatrixReloaded),\n(LanaW)-[:DIRECTED]-\u003e(TheMatrixReloaded),\n(JoelS)-[:PRODUCED]-\u003e(TheMatrixReloaded)\n\nCREATE (TheMatrixRevolutions:Movie {title:\u0027The Matrix Revolutions\u0027, released:2003, tagline:\u0027Everything that has a beginning has an end\u0027})\nCREATE\n(Keanu)-[:ACTED_IN {roles:[\u0027Neo\u0027]}]-\u003e(TheMatrixRevolutions),\n(Carrie)-[:ACTED_IN {roles:[\u0027Trinity\u0027]}]-\u003e(TheMatrixRevolutions),\n(Laurence)-[:ACTED_IN {roles:[\u0027Morpheus\u0027]}]-\u003e(TheMatrixRevolutions),\n(Hugo)-[:ACTED_IN {roles:[\u0027Agent Smith\u0027]}]-\u003e(TheMatrixRevolutions),\n(LillyW)-[:DIRECTED]-\u003e(TheMatrixRevolutions),\n(LanaW)-[:DIRECTED]-\u003e(TheMatrixRevolutions),\n(JoelS)-[:PRODUCED]-\u003e(TheMatrixRevolutions)\n\nCREATE (TheDevilsAdvocate:Movie {title:\"The Devil\u0027s Advocate\", released:1997, tagline:\u0027Evil has its winning ways\u0027})\nCREATE (Charlize:Person {name:\u0027Charlize Theron\u0027, born:1975})\nCREATE (Al:Person {name:\u0027Al Pacino\u0027, born:1940})\nCREATE (Taylor:Person {name:\u0027Taylor Hackford\u0027, born:1944})\nCREATE\n(Keanu)-[:ACTED_IN {roles:[\u0027Kevin Lomax\u0027]}]-\u003e(TheDevilsAdvocate),\n(Charlize)-[:ACTED_IN {roles:[\u0027Mary Ann Lomax\u0027]}]-\u003e(TheDevilsAdvocate),\n(Al)-[:ACTED_IN {roles:[\u0027John Milton\u0027]}]-\u003e(TheDevilsAdvocate),\n(Taylor)-[:DIRECTED]-\u003e(TheDevilsAdvocate)\n\nCREATE (AFewGoodMen:Movie {title:\"A Few Good Men\", released:1992, tagline:\"In the heart of the nation\u0027s capital, in a courthouse of the U.S. government, one man will stop at nothing to keep his honor, and one will stop at nothing to find the truth.\"})\nCREATE (TomC:Person {name:\u0027Tom Cruise\u0027, born:1962})\nCREATE (JackN:Person {name:\u0027Jack Nicholson\u0027, born:1937})\nCREATE (DemiM:Person {name:\u0027Demi Moore\u0027, born:1962})\nCREATE (KevinB:Person {name:\u0027Kevin Bacon\u0027, born:1958})\nCREATE (KieferS:Person {name:\u0027Kiefer Sutherland\u0027, born:1966})\nCREATE (NoahW:Person {name:\u0027Noah Wyle\u0027, born:1971})\nCREATE (CubaG:Person {name:\u0027Cuba Gooding Jr.\u0027, born:1968})\nCREATE (KevinP:Person {name:\u0027Kevin Pollak\u0027, born:1957})\nCREATE (JTW:Person {name:\u0027J.T. Walsh\u0027, born:1943})\nCREATE (JamesM:Person {name:\u0027James Marshall\u0027, born:1967})\nCREATE (ChristopherG:Person {name:\u0027Christopher Guest\u0027, born:1948})\nCREATE (RobR:Person {name:\u0027Rob Reiner\u0027, born:1947})\nCREATE (AaronS:Person {name:\u0027Aaron Sorkin\u0027, born:1961})\nCREATE\n(TomC)-[:ACTED_IN {roles:[\u0027Lt. Daniel Kaffee\u0027]}]-\u003e(AFewGoodMen),\n(JackN)-[:ACTED_IN {roles:[\u0027Col. Nathan R. Jessup\u0027]}]-\u003e(AFewGoodMen),\n(DemiM)-[:ACTED_IN {roles:[\u0027Lt. Cdr. JoAnne Galloway\u0027]}]-\u003e(AFewGoodMen),\n(KevinB)-[:ACTED_IN {roles:[\u0027Capt. Jack Ross\u0027]}]-\u003e(AFewGoodMen),\n(KieferS)-[:ACTED_IN {roles:[\u0027Lt. Jonathan Kendrick\u0027]}]-\u003e(AFewGoodMen),\n(NoahW)-[:ACTED_IN {roles:[\u0027Cpl. Jeffrey Barnes\u0027]}]-\u003e(AFewGoodMen),\n(CubaG)-[:ACTED_IN {roles:[\u0027Cpl. Carl Hammaker\u0027]}]-\u003e(AFewGoodMen),\n(KevinP)-[:ACTED_IN {roles:[\u0027Lt. Sam Weinberg\u0027]}]-\u003e(AFewGoodMen),\n(JTW)-[:ACTED_IN {roles:[\u0027Lt. Col. Matthew Andrew Markinson\u0027]}]-\u003e(AFewGoodMen),\n(JamesM)-[:ACTED_IN {roles:[\u0027Pfc. Louden Downey\u0027]}]-\u003e(AFewGoodMen),\n(ChristopherG)-[:ACTED_IN {roles:[\u0027Dr. Stone\u0027]}]-\u003e(AFewGoodMen),\n(AaronS)-[:ACTED_IN {roles:[\u0027Man in Bar\u0027]}]-\u003e(AFewGoodMen),\n(RobR)-[:DIRECTED]-\u003e(AFewGoodMen),\n(AaronS)-[:WROTE]-\u003e(AFewGoodMen)\n\nCREATE (TopGun:Movie {title:\"Top Gun\", released:1986, tagline:\u0027I feel the need, the need for speed.\u0027})\nCREATE (KellyM:Person {name:\u0027Kelly McGillis\u0027, born:1957})\nCREATE (ValK:Person {name:\u0027Val Kilmer\u0027, born:1959})\nCREATE (AnthonyE:Person {name:\u0027Anthony Edwards\u0027, born:1962})\nCREATE (TomS:Person {name:\u0027Tom Skerritt\u0027, born:1933})\nCREATE (MegR:Person {name:\u0027Meg Ryan\u0027, born:1961})\nCREATE (TonyS:Person {name:\u0027Tony Scott\u0027, born:1944})\nCREATE (JimC:Person {name:\u0027Jim Cash\u0027, born:1941})\nCREATE\n(TomC)-[:ACTED_IN {roles:[\u0027Maverick\u0027]}]-\u003e(TopGun),\n(KellyM)-[:ACTED_IN {roles:[\u0027Charlie\u0027]}]-\u003e(TopGun),\n(ValK)-[:ACTED_IN {roles:[\u0027Iceman\u0027]}]-\u003e(TopGun),\n(AnthonyE)-[:ACTED_IN {roles:[\u0027Goose\u0027]}]-\u003e(TopGun),\n(TomS)-[:ACTED_IN {roles:[\u0027Viper\u0027]}]-\u003e(TopGun),\n(MegR)-[:ACTED_IN {roles:[\u0027Carole\u0027]}]-\u003e(TopGun),\n(TonyS)-[:DIRECTED]-\u003e(TopGun),\n(JimC)-[:WROTE]-\u003e(TopGun)\n\nCREATE (JerryMaguire:Movie {title:\u0027Jerry Maguire\u0027, released:2000, tagline:\u0027The rest of his life begins now.\u0027})\nCREATE (ReneeZ:Person {name:\u0027Renee Zellweger\u0027, born:1969})\nCREATE (KellyP:Person {name:\u0027Kelly Preston\u0027, born:1962})\nCREATE (JerryO:Person {name:\"Jerry O\u0027Connell\", born:1974})\nCREATE (JayM:Person {name:\u0027Jay Mohr\u0027, born:1970})\nCREATE (BonnieH:Person {name:\u0027Bonnie Hunt\u0027, born:1961})\nCREATE (ReginaK:Person {name:\u0027Regina King\u0027, born:1971})\nCREATE (JonathanL:Person {name:\u0027Jonathan Lipnicki\u0027, born:1996})\nCREATE (CameronC:Person {name:\u0027Cameron Crowe\u0027, born:1957})\nCREATE\n(TomC)-[:ACTED_IN {roles:[\u0027Jerry Maguire\u0027]}]-\u003e(JerryMaguire),\n(CubaG)-[:ACTED_IN {roles:[\u0027Rod Tidwell\u0027]}]-\u003e(JerryMaguire),\n(ReneeZ)-[:ACTED_IN {roles:[\u0027Dorothy Boyd\u0027]}]-\u003e(JerryMaguire),\n(KellyP)-[:ACTED_IN {roles:[\u0027Avery Bishop\u0027]}]-\u003e(JerryMaguire),\n(JerryO)-[:ACTED_IN {roles:[\u0027Frank Cushman\u0027]}]-\u003e(JerryMaguire),\n(JayM)-[:ACTED_IN {roles:[\u0027Bob Sugar\u0027]}]-\u003e(JerryMaguire),\n(BonnieH)-[:ACTED_IN {roles:[\u0027Laurel Boyd\u0027]}]-\u003e(JerryMaguire),\n(ReginaK)-[:ACTED_IN {roles:[\u0027Marcee Tidwell\u0027]}]-\u003e(JerryMaguire),\n(JonathanL)-[:ACTED_IN {roles:[\u0027Ray Boyd\u0027]}]-\u003e(JerryMaguire),\n(CameronC)-[:DIRECTED]-\u003e(JerryMaguire),\n(CameronC)-[:PRODUCED]-\u003e(JerryMaguire),\n(CameronC)-[:WROTE]-\u003e(JerryMaguire)\n\nCREATE (StandByMe:Movie {title:\"Stand By Me\", released:1986, tagline:\"For some, it\u0027s the last real taste of innocence, and the first real taste of life. But for everyone, it\u0027s the time that memories are made of.\"})\nCREATE (RiverP:Person {name:\u0027River Phoenix\u0027, born:1970})\nCREATE (CoreyF:Person {name:\u0027Corey Feldman\u0027, born:1971})\nCREATE (WilW:Person {name:\u0027Wil Wheaton\u0027, born:1972})\nCREATE (JohnC:Person {name:\u0027John Cusack\u0027, born:1966})\nCREATE (MarshallB:Person {name:\u0027Marshall Bell\u0027, born:1942})\nCREATE\n(WilW)-[:ACTED_IN {roles:[\u0027Gordie Lachance\u0027]}]-\u003e(StandByMe),\n(RiverP)-[:ACTED_IN {roles:[\u0027Chris Chambers\u0027]}]-\u003e(StandByMe),\n(JerryO)-[:ACTED_IN {roles:[\u0027Vern Tessio\u0027]}]-\u003e(StandByMe),\n(CoreyF)-[:ACTED_IN {roles:[\u0027Teddy Duchamp\u0027]}]-\u003e(StandByMe),\n(JohnC)-[:ACTED_IN {roles:[\u0027Denny Lachance\u0027]}]-\u003e(StandByMe),\n(KieferS)-[:ACTED_IN {roles:[\u0027Ace Merrill\u0027]}]-\u003e(StandByMe),\n(MarshallB)-[:ACTED_IN {roles:[\u0027Mr. Lachance\u0027]}]-\u003e(StandByMe),\n(RobR)-[:DIRECTED]-\u003e(StandByMe)\n\nCREATE (AsGoodAsItGets:Movie {title:\u0027As Good as It Gets\u0027, released:1997, tagline:\u0027A comedy from the heart that goes for the throat.\u0027})\nCREATE (HelenH:Person {name:\u0027Helen Hunt\u0027, born:1963})\nCREATE (GregK:Person {name:\u0027Greg Kinnear\u0027, born:1963})\nCREATE (JamesB:Person {name:\u0027James L. Brooks\u0027, born:1940})\nCREATE\n(JackN)-[:ACTED_IN {roles:[\u0027Melvin Udall\u0027]}]-\u003e(AsGoodAsItGets),\n(HelenH)-[:ACTED_IN {roles:[\u0027Carol Connelly\u0027]}]-\u003e(AsGoodAsItGets),\n(GregK)-[:ACTED_IN {roles:[\u0027Simon Bishop\u0027]}]-\u003e(AsGoodAsItGets),\n(CubaG)-[:ACTED_IN {roles:[\u0027Frank Sachs\u0027]}]-\u003e(AsGoodAsItGets),\n(JamesB)-[:DIRECTED]-\u003e(AsGoodAsItGets)\n\nCREATE (WhatDreamsMayCome:Movie {title:\u0027What Dreams May Come\u0027, released:1998, tagline:\u0027After life there is more. The end is just the beginning.\u0027})\nCREATE (AnnabellaS:Person {name:\u0027Annabella Sciorra\u0027, born:1960})\nCREATE (MaxS:Person {name:\u0027Max von Sydow\u0027, born:1929})\nCREATE (WernerH:Person {name:\u0027Werner Herzog\u0027, born:1942})\nCREATE (Robin:Person {name:\u0027Robin Williams\u0027, born:1951})\nCREATE (VincentW:Person {name:\u0027Vincent Ward\u0027, born:1956})\nCREATE\n(Robin)-[:ACTED_IN {roles:[\u0027Chris Nielsen\u0027]}]-\u003e(WhatDreamsMayCome),\n(CubaG)-[:ACTED_IN {roles:[\u0027Albert Lewis\u0027]}]-\u003e(WhatDreamsMayCome),\n(AnnabellaS)-[:ACTED_IN {roles:[\u0027Annie Collins-Nielsen\u0027]}]-\u003e(WhatDreamsMayCome),\n(MaxS)-[:ACTED_IN {roles:[\u0027The Tracker\u0027]}]-\u003e(WhatDreamsMayCome),\n(WernerH)-[:ACTED_IN {roles:[\u0027The Face\u0027]}]-\u003e(WhatDreamsMayCome),\n(VincentW)-[:DIRECTED]-\u003e(WhatDreamsMayCome)\n\nCREATE (SnowFallingonCedars:Movie {title:\u0027Snow Falling on Cedars\u0027, released:1999, tagline:\u0027First loves last. Forever.\u0027})\nCREATE (EthanH:Person {name:\u0027Ethan Hawke\u0027, born:1970})\nCREATE (RickY:Person {name:\u0027Rick Yune\u0027, born:1971})\nCREATE (JamesC:Person {name:\u0027James Cromwell\u0027, born:1940})\nCREATE (ScottH:Person {name:\u0027Scott Hicks\u0027, born:1953})\nCREATE\n(EthanH)-[:ACTED_IN {roles:[\u0027Ishmael Chambers\u0027]}]-\u003e(SnowFallingonCedars),\n(RickY)-[:ACTED_IN {roles:[\u0027Kazuo Miyamoto\u0027]}]-\u003e(SnowFallingonCedars),\n(MaxS)-[:ACTED_IN {roles:[\u0027Nels Gudmundsson\u0027]}]-\u003e(SnowFallingonCedars),\n(JamesC)-[:ACTED_IN {roles:[\u0027Judge Fielding\u0027]}]-\u003e(SnowFallingonCedars),\n(ScottH)-[:DIRECTED]-\u003e(SnowFallingonCedars)\n\nCREATE (YouveGotMail:Movie {title:\"You\u0027ve Got Mail\", released:1998, tagline:\u0027At odds in life... in love on-line.\u0027})\nCREATE (ParkerP:Person {name:\u0027Parker Posey\u0027, born:1968})\nCREATE (DaveC:Person {name:\u0027Dave Chappelle\u0027, born:1973})\nCREATE (SteveZ:Person {name:\u0027Steve Zahn\u0027, born:1967})\nCREATE (TomH:Person {name:\u0027Tom Hanks\u0027, born:1956})\nCREATE (NoraE:Person {name:\u0027Nora Ephron\u0027, born:1941})\nCREATE\n(TomH)-[:ACTED_IN {roles:[\u0027Joe Fox\u0027]}]-\u003e(YouveGotMail),\n(MegR)-[:ACTED_IN {roles:[\u0027Kathleen Kelly\u0027]}]-\u003e(YouveGotMail),\n(GregK)-[:ACTED_IN {roles:[\u0027Frank Navasky\u0027]}]-\u003e(YouveGotMail),\n(ParkerP)-[:ACTED_IN {roles:[\u0027Patricia Eden\u0027]}]-\u003e(YouveGotMail),\n(DaveC)-[:ACTED_IN {roles:[\u0027Kevin Jackson\u0027]}]-\u003e(YouveGotMail),\n(SteveZ)-[:ACTED_IN {roles:[\u0027George Pappas\u0027]}]-\u003e(YouveGotMail),\n(NoraE)-[:DIRECTED]-\u003e(YouveGotMail)\n\nCREATE (SleeplessInSeattle:Movie {title:\u0027Sleepless in Seattle\u0027, released:1993, tagline:\u0027What if someone you never met, someone you never saw, someone you never knew was the only someone for you?\u0027})\nCREATE (RitaW:Person {name:\u0027Rita Wilson\u0027, born:1956})\nCREATE (BillPull:Person {name:\u0027Bill Pullman\u0027, born:1953})\nCREATE (VictorG:Person {name:\u0027Victor Garber\u0027, born:1949})\nCREATE (RosieO:Person {name:\"Rosie O\u0027Donnell\", born:1962})\nCREATE\n(TomH)-[:ACTED_IN {roles:[\u0027Sam Baldwin\u0027]}]-\u003e(SleeplessInSeattle),\n(MegR)-[:ACTED_IN {roles:[\u0027Annie Reed\u0027]}]-\u003e(SleeplessInSeattle),\n(RitaW)-[:ACTED_IN {roles:[\u0027Suzy\u0027]}]-\u003e(SleeplessInSeattle),\n(BillPull)-[:ACTED_IN {roles:[\u0027Walter\u0027]}]-\u003e(SleeplessInSeattle),\n(VictorG)-[:ACTED_IN {roles:[\u0027Greg\u0027]}]-\u003e(SleeplessInSeattle),\n(RosieO)-[:ACTED_IN {roles:[\u0027Becky\u0027]}]-\u003e(SleeplessInSeattle),\n(NoraE)-[:DIRECTED]-\u003e(SleeplessInSeattle)\n\nCREATE (JoeVersustheVolcano:Movie {title:\u0027Joe Versus the Volcano\u0027, released:1990, tagline:\u0027A story of love, lava and burning desire.\u0027})\nCREATE (JohnS:Person {name:\u0027John Patrick Stanley\u0027, born:1950})\nCREATE (Nathan:Person {name:\u0027Nathan Lane\u0027, born:1956})\nCREATE\n(TomH)-[:ACTED_IN {roles:[\u0027Joe Banks\u0027]}]-\u003e(JoeVersustheVolcano),\n(MegR)-[:ACTED_IN {roles:[\u0027DeDe\u0027, \u0027Angelica Graynamore\u0027, \u0027Patricia Graynamore\u0027]}]-\u003e(JoeVersustheVolcano),\n(Nathan)-[:ACTED_IN {roles:[\u0027Baw\u0027]}]-\u003e(JoeVersustheVolcano),\n(JohnS)-[:DIRECTED]-\u003e(JoeVersustheVolcano)\n\nCREATE (WhenHarryMetSally:Movie {title:\u0027When Harry Met Sally\u0027, released:1998, tagline:\u0027Can two friends sleep together and still love each other in the morning?\u0027})\nCREATE (BillyC:Person {name:\u0027Billy Crystal\u0027, born:1948})\nCREATE (CarrieF:Person {name:\u0027Carrie Fisher\u0027, born:1956})\nCREATE (BrunoK:Person {name:\u0027Bruno Kirby\u0027, born:1949})\nCREATE\n(BillyC)-[:ACTED_IN {roles:[\u0027Harry Burns\u0027]}]-\u003e(WhenHarryMetSally),\n(MegR)-[:ACTED_IN {roles:[\u0027Sally Albright\u0027]}]-\u003e(WhenHarryMetSally),\n(CarrieF)-[:ACTED_IN {roles:[\u0027Marie\u0027]}]-\u003e(WhenHarryMetSally),\n(BrunoK)-[:ACTED_IN {roles:[\u0027Jess\u0027]}]-\u003e(WhenHarryMetSally),\n(RobR)-[:DIRECTED]-\u003e(WhenHarryMetSally),\n(RobR)-[:PRODUCED]-\u003e(WhenHarryMetSally),\n(NoraE)-[:PRODUCED]-\u003e(WhenHarryMetSally),\n(NoraE)-[:WROTE]-\u003e(WhenHarryMetSally)\n\nCREATE (ThatThingYouDo:Movie {title:\u0027That Thing You Do\u0027, released:1996, tagline:\u0027In every life there comes a time when that thing you dream becomes that thing you do\u0027})\nCREATE (LivT:Person {name:\u0027Liv Tyler\u0027, born:1977})\nCREATE\n(TomH)-[:ACTED_IN {roles:[\u0027Mr. White\u0027]}]-\u003e(ThatThingYouDo),\n(LivT)-[:ACTED_IN {roles:[\u0027Faye Dolan\u0027]}]-\u003e(ThatThingYouDo),\n(Charlize)-[:ACTED_IN {roles:[\u0027Tina\u0027]}]-\u003e(ThatThingYouDo),\n(TomH)-[:DIRECTED]-\u003e(ThatThingYouDo)\n\nCREATE (TheReplacements:Movie {title:\u0027The Replacements\u0027, released:2000, tagline:\u0027Pain heals, Chicks dig scars... Glory lasts forever\u0027})\nCREATE (Brooke:Person {name:\u0027Brooke Langton\u0027, born:1970})\nCREATE (Gene:Person {name:\u0027Gene Hackman\u0027, born:1930})\nCREATE (Orlando:Person {name:\u0027Orlando Jones\u0027, born:1968})\nCREATE (Howard:Person {name:\u0027Howard Deutch\u0027, born:1950})\nCREATE\n(Keanu)-[:ACTED_IN {roles:[\u0027Shane Falco\u0027]}]-\u003e(TheReplacements),\n(Brooke)-[:ACTED_IN {roles:[\u0027Annabelle Farrell\u0027]}]-\u003e(TheReplacements),\n(Gene)-[:ACTED_IN {roles:[\u0027Jimmy McGinty\u0027]}]-\u003e(TheReplacements),\n(Orlando)-[:ACTED_IN {roles:[\u0027Clifford Franklin\u0027]}]-\u003e(TheReplacements),\n(Howard)-[:DIRECTED]-\u003e(TheReplacements)\n\nCREATE (RescueDawn:Movie {title:\u0027RescueDawn\u0027, released:2006, tagline:\"Based on the extraordinary true story of one man\u0027s fight for freedom\"})\nCREATE (ChristianB:Person {name:\u0027Christian Bale\u0027, born:1974})\nCREATE (ZachG:Person {name:\u0027Zach Grenier\u0027, born:1954})\nCREATE\n(MarshallB)-[:ACTED_IN {roles:[\u0027Admiral\u0027]}]-\u003e(RescueDawn),\n(ChristianB)-[:ACTED_IN {roles:[\u0027Dieter Dengler\u0027]}]-\u003e(RescueDawn),\n(ZachG)-[:ACTED_IN {roles:[\u0027Squad Leader\u0027]}]-\u003e(RescueDawn),\n(SteveZ)-[:ACTED_IN {roles:[\u0027Duane\u0027]}]-\u003e(RescueDawn),\n(WernerH)-[:DIRECTED]-\u003e(RescueDawn)\n\nCREATE (TheBirdcage:Movie {title:\u0027The Birdcage\u0027, released:1996, tagline:\u0027Come as you are\u0027})\nCREATE (MikeN:Person {name:\u0027Mike Nichols\u0027, born:1931})\nCREATE\n(Robin)-[:ACTED_IN {roles:[\u0027Armand Goldman\u0027]}]-\u003e(TheBirdcage),\n(Nathan)-[:ACTED_IN {roles:[\u0027Albert Goldman\u0027]}]-\u003e(TheBirdcage),\n(Gene)-[:ACTED_IN {roles:[\u0027Sen. Kevin Keeley\u0027]}]-\u003e(TheBirdcage),\n(MikeN)-[:DIRECTED]-\u003e(TheBirdcage)\n\nCREATE (Unforgiven:Movie {title:\u0027Unforgiven\u0027, released:1992, tagline:\"It\u0027s a hell of a thing, killing a man\"})\nCREATE (RichardH:Person {name:\u0027Richard Harris\u0027, born:1930})\nCREATE (ClintE:Person {name:\u0027Clint Eastwood\u0027, born:1930})\nCREATE\n(RichardH)-[:ACTED_IN {roles:[\u0027English Bob\u0027]}]-\u003e(Unforgiven),\n(ClintE)-[:ACTED_IN {roles:[\u0027Bill Munny\u0027]}]-\u003e(Unforgiven),\n(Gene)-[:ACTED_IN {roles:[\u0027Little Bill Daggett\u0027]}]-\u003e(Unforgiven),\n(ClintE)-[:DIRECTED]-\u003e(Unforgiven)\n\nCREATE (JohnnyMnemonic:Movie {title:\u0027Johnny Mnemonic\u0027, released:1995, tagline:\u0027The hottest data on earth. In the coolest head in town\u0027})\nCREATE (Takeshi:Person {name:\u0027Takeshi Kitano\u0027, born:1947})\nCREATE (Dina:Person {name:\u0027Dina Meyer\u0027, born:1968})\nCREATE (IceT:Person {name:\u0027Ice-T\u0027, born:1958})\nCREATE (RobertL:Person {name:\u0027Robert Longo\u0027, born:1953})\nCREATE\n(Keanu)-[:ACTED_IN {roles:[\u0027Johnny Mnemonic\u0027]}]-\u003e(JohnnyMnemonic),\n(Takeshi)-[:ACTED_IN {roles:[\u0027Takahashi\u0027]}]-\u003e(JohnnyMnemonic),\n(Dina)-[:ACTED_IN {roles:[\u0027Jane\u0027]}]-\u003e(JohnnyMnemonic),\n(IceT)-[:ACTED_IN {roles:[\u0027J-Bone\u0027]}]-\u003e(JohnnyMnemonic),\n(RobertL)-[:DIRECTED]-\u003e(JohnnyMnemonic)\n\nCREATE (CloudAtlas:Movie {title:\u0027Cloud Atlas\u0027, released:2012, tagline:\u0027Everything is connected\u0027})\nCREATE (HalleB:Person {name:\u0027Halle Berry\u0027, born:1966})\nCREATE (JimB:Person {name:\u0027Jim Broadbent\u0027, born:1949})\nCREATE (TomT:Person {name:\u0027Tom Tykwer\u0027, born:1965})\nCREATE (DavidMitchell:Person {name:\u0027David Mitchell\u0027, born:1969})\nCREATE (StefanArndt:Person {name:\u0027Stefan Arndt\u0027, born:1961})\nCREATE\n(TomH)-[:ACTED_IN {roles:[\u0027Zachry\u0027, \u0027Dr. Henry Goose\u0027, \u0027Isaac Sachs\u0027, \u0027Dermot Hoggins\u0027]}]-\u003e(CloudAtlas),\n(Hugo)-[:ACTED_IN {roles:[\u0027Bill Smoke\u0027, \u0027Haskell Moore\u0027, \u0027Tadeusz Kesselring\u0027, \u0027Nurse Noakes\u0027, \u0027Boardman Mephi\u0027, \u0027Old Georgie\u0027]}]-\u003e(CloudAtlas),\n(HalleB)-[:ACTED_IN {roles:[\u0027Luisa Rey\u0027, \u0027Jocasta Ayrs\u0027, \u0027Ovid\u0027, \u0027Meronym\u0027]}]-\u003e(CloudAtlas),\n(JimB)-[:ACTED_IN {roles:[\u0027Vyvyan Ayrs\u0027, \u0027Captain Molyneux\u0027, \u0027Timothy Cavendish\u0027]}]-\u003e(CloudAtlas),\n(TomT)-[:DIRECTED]-\u003e(CloudAtlas),\n(LillyW)-[:DIRECTED]-\u003e(CloudAtlas),\n(LanaW)-[:DIRECTED]-\u003e(CloudAtlas),\n(DavidMitchell)-[:WROTE]-\u003e(CloudAtlas),\n(StefanArndt)-[:PRODUCED]-\u003e(CloudAtlas)\n\nCREATE (TheDaVinciCode:Movie {title:\u0027The Da Vinci Code\u0027, released:2006, tagline:\u0027Break The Codes\u0027})\nCREATE (IanM:Person {name:\u0027Ian McKellen\u0027, born:1939})\nCREATE (AudreyT:Person {name:\u0027Audrey Tautou\u0027, born:1976})\nCREATE (PaulB:Person {name:\u0027Paul Bettany\u0027, born:1971})\nCREATE (RonH:Person {name:\u0027Ron Howard\u0027, born:1954})\nCREATE\n(TomH)-[:ACTED_IN {roles:[\u0027Dr. Robert Langdon\u0027]}]-\u003e(TheDaVinciCode),\n(IanM)-[:ACTED_IN {roles:[\u0027Sir Leight Teabing\u0027]}]-\u003e(TheDaVinciCode),\n(AudreyT)-[:ACTED_IN {roles:[\u0027Sophie Neveu\u0027]}]-\u003e(TheDaVinciCode),\n(PaulB)-[:ACTED_IN {roles:[\u0027Silas\u0027]}]-\u003e(TheDaVinciCode),\n(RonH)-[:DIRECTED]-\u003e(TheDaVinciCode)\n\nCREATE (VforVendetta:Movie {title:\u0027V for Vendetta\u0027, released:2006, tagline:\u0027Freedom! Forever!\u0027})\nCREATE (NatalieP:Person {name:\u0027Natalie Portman\u0027, born:1981})\nCREATE (StephenR:Person {name:\u0027Stephen Rea\u0027, born:1946})\nCREATE (JohnH:Person {name:\u0027John Hurt\u0027, born:1940})\nCREATE (BenM:Person {name: \u0027Ben Miles\u0027, born:1967})\nCREATE\n(Hugo)-[:ACTED_IN {roles:[\u0027V\u0027]}]-\u003e(VforVendetta),\n(NatalieP)-[:ACTED_IN {roles:[\u0027Evey Hammond\u0027]}]-\u003e(VforVendetta),\n(StephenR)-[:ACTED_IN {roles:[\u0027Eric Finch\u0027]}]-\u003e(VforVendetta),\n(JohnH)-[:ACTED_IN {roles:[\u0027High Chancellor Adam Sutler\u0027]}]-\u003e(VforVendetta),\n(BenM)-[:ACTED_IN {roles:[\u0027Dascomb\u0027]}]-\u003e(VforVendetta),\n(JamesM)-[:DIRECTED]-\u003e(VforVendetta),\n(LillyW)-[:PRODUCED]-\u003e(VforVendetta),\n(LanaW)-[:PRODUCED]-\u003e(VforVendetta),\n(JoelS)-[:PRODUCED]-\u003e(VforVendetta),\n(LillyW)-[:WROTE]-\u003e(VforVendetta),\n(LanaW)-[:WROTE]-\u003e(VforVendetta)\n\nCREATE (SpeedRacer:Movie {title:\u0027Speed Racer\u0027, released:2008, tagline:\u0027Speed has no limits\u0027})\nCREATE (EmileH:Person {name:\u0027Emile Hirsch\u0027, born:1985})\nCREATE (JohnG:Person {name:\u0027John Goodman\u0027, born:1960})\nCREATE (SusanS:Person {name:\u0027Susan Sarandon\u0027, born:1946})\nCREATE (MatthewF:Person {name:\u0027Matthew Fox\u0027, born:1966})\nCREATE (ChristinaR:Person {name:\u0027Christina Ricci\u0027, born:1980})\nCREATE (Rain:Person {name:\u0027Rain\u0027, born:1982})\nCREATE\n(EmileH)-[:ACTED_IN {roles:[\u0027Speed Racer\u0027]}]-\u003e(SpeedRacer),\n(JohnG)-[:ACTED_IN {roles:[\u0027Pops\u0027]}]-\u003e(SpeedRacer),\n(SusanS)-[:ACTED_IN {roles:[\u0027Mom\u0027]}]-\u003e(SpeedRacer),\n(MatthewF)-[:ACTED_IN {roles:[\u0027Racer X\u0027]}]-\u003e(SpeedRacer),\n(ChristinaR)-[:ACTED_IN {roles:[\u0027Trixie\u0027]}]-\u003e(SpeedRacer),\n(Rain)-[:ACTED_IN {roles:[\u0027Taejo Togokahn\u0027]}]-\u003e(SpeedRacer),\n(BenM)-[:ACTED_IN {roles:[\u0027Cass Jones\u0027]}]-\u003e(SpeedRacer),\n(LillyW)-[:DIRECTED]-\u003e(SpeedRacer),\n(LanaW)-[:DIRECTED]-\u003e(SpeedRacer),\n(LillyW)-[:WROTE]-\u003e(SpeedRacer),\n(LanaW)-[:WROTE]-\u003e(SpeedRacer),\n(JoelS)-[:PRODUCED]-\u003e(SpeedRacer)\n\nCREATE (NinjaAssassin:Movie {title:\u0027Ninja Assassin\u0027, released:2009, tagline:\u0027Prepare to enter a secret world of assassins\u0027})\nCREATE (NaomieH:Person {name:\u0027Naomie Harris\u0027})\nCREATE\n(Rain)-[:ACTED_IN {roles:[\u0027Raizo\u0027]}]-\u003e(NinjaAssassin),\n(NaomieH)-[:ACTED_IN {roles:[\u0027Mika Coretti\u0027]}]-\u003e(NinjaAssassin),\n(RickY)-[:ACTED_IN {roles:[\u0027Takeshi\u0027]}]-\u003e(NinjaAssassin),\n(BenM)-[:ACTED_IN {roles:[\u0027Ryan Maslow\u0027]}]-\u003e(NinjaAssassin),\n(JamesM)-[:DIRECTED]-\u003e(NinjaAssassin),\n(LillyW)-[:PRODUCED]-\u003e(NinjaAssassin),\n(LanaW)-[:PRODUCED]-\u003e(NinjaAssassin),\n(JoelS)-[:PRODUCED]-\u003e(NinjaAssassin)\n\nCREATE (TheGreenMile:Movie {title:\u0027The Green Mile\u0027, released:1999, tagline:\"Walk a mile you\u0027ll never forget.\"})\nCREATE (MichaelD:Person {name:\u0027Michael Clarke Duncan\u0027, born:1957})\nCREATE (DavidM:Person {name:\u0027David Morse\u0027, born:1953})\nCREATE (SamR:Person {name:\u0027Sam Rockwell\u0027, born:1968})\nCREATE (GaryS:Person {name:\u0027Gary Sinise\u0027, born:1955})\nCREATE (PatriciaC:Person {name:\u0027Patricia Clarkson\u0027, born:1959})\nCREATE (FrankD:Person {name:\u0027Frank Darabont\u0027, born:1959})\nCREATE\n(TomH)-[:ACTED_IN {roles:[\u0027Paul Edgecomb\u0027]}]-\u003e(TheGreenMile),\n(MichaelD)-[:ACTED_IN {roles:[\u0027John Coffey\u0027]}]-\u003e(TheGreenMile),\n(DavidM)-[:ACTED_IN {roles:[\u0027Brutus \"Brutal\" Howell\u0027]}]-\u003e(TheGreenMile),\n(BonnieH)-[:ACTED_IN {roles:[\u0027Jan Edgecomb\u0027]}]-\u003e(TheGreenMile),\n(JamesC)-[:ACTED_IN {roles:[\u0027Warden Hal Moores\u0027]}]-\u003e(TheGreenMile),\n(SamR)-[:ACTED_IN {roles:[\u0027\"Wild Bill\" Wharton\u0027]}]-\u003e(TheGreenMile),\n(GaryS)-[:ACTED_IN {roles:[\u0027Burt Hammersmith\u0027]}]-\u003e(TheGreenMile),\n(PatriciaC)-[:ACTED_IN {roles:[\u0027Melinda Moores\u0027]}]-\u003e(TheGreenMile),\n(FrankD)-[:DIRECTED]-\u003e(TheGreenMile)\n\nCREATE (FrostNixon:Movie {title:\u0027Frost/Nixon\u0027, released:2008, tagline:\u0027400 million people were waiting for the truth.\u0027})\nCREATE (FrankL:Person {name:\u0027Frank Langella\u0027, born:1938})\nCREATE (MichaelS:Person {name:\u0027Michael Sheen\u0027, born:1969})\nCREATE (OliverP:Person {name:\u0027Oliver Platt\u0027, born:1960})\nCREATE\n(FrankL)-[:ACTED_IN {roles:[\u0027Richard Nixon\u0027]}]-\u003e(FrostNixon),\n(MichaelS)-[:ACTED_IN {roles:[\u0027David Frost\u0027]}]-\u003e(FrostNixon),\n(KevinB)-[:ACTED_IN {roles:[\u0027Jack Brennan\u0027]}]-\u003e(FrostNixon),\n(OliverP)-[:ACTED_IN {roles:[\u0027Bob Zelnick\u0027]}]-\u003e(FrostNixon),\n(SamR)-[:ACTED_IN {roles:[\u0027James Reston, Jr.\u0027]}]-\u003e(FrostNixon),\n(RonH)-[:DIRECTED]-\u003e(FrostNixon)\n\nCREATE (Hoffa:Movie {title:\u0027Hoffa\u0027, released:1992, tagline:\"He didn\u0027t want law. He wanted justice.\"})\nCREATE (DannyD:Person {name:\u0027Danny DeVito\u0027, born:1944})\nCREATE (JohnR:Person {name:\u0027John C. Reilly\u0027, born:1965})\nCREATE\n(JackN)-[:ACTED_IN {roles:[\u0027Hoffa\u0027]}]-\u003e(Hoffa),\n(DannyD)-[:ACTED_IN {roles:[\u0027Robert \"Bobby\" Ciaro\u0027]}]-\u003e(Hoffa),\n(JTW)-[:ACTED_IN {roles:[\u0027Frank Fitzsimmons\u0027]}]-\u003e(Hoffa),\n(JohnR)-[:ACTED_IN {roles:[\u0027Peter \"Pete\" Connelly\u0027]}]-\u003e(Hoffa),\n(DannyD)-[:DIRECTED]-\u003e(Hoffa)\n\nCREATE (Apollo13:Movie {title:\u0027Apollo 13\u0027, released:1995, tagline:\u0027Houston, we have a problem.\u0027})\nCREATE (EdH:Person {name:\u0027Ed Harris\u0027, born:1950})\nCREATE (BillPax:Person {name:\u0027Bill Paxton\u0027, born:1955})\nCREATE\n(TomH)-[:ACTED_IN {roles:[\u0027Jim Lovell\u0027]}]-\u003e(Apollo13),\n(KevinB)-[:ACTED_IN {roles:[\u0027Jack Swigert\u0027]}]-\u003e(Apollo13),\n(EdH)-[:ACTED_IN {roles:[\u0027Gene Kranz\u0027]}]-\u003e(Apollo13),\n(BillPax)-[:ACTED_IN {roles:[\u0027Fred Haise\u0027]}]-\u003e(Apollo13),\n(GaryS)-[:ACTED_IN {roles:[\u0027Ken Mattingly\u0027]}]-\u003e(Apollo13),\n(RonH)-[:DIRECTED]-\u003e(Apollo13)\n\nCREATE (Twister:Movie {title:\u0027Twister\u0027, released:1996, tagline:\"Don\u0027t Breathe. Don\u0027t Look Back.\"})\nCREATE (PhilipH:Person {name:\u0027Philip Seymour Hoffman\u0027, born:1967})\nCREATE (JanB:Person {name:\u0027Jan de Bont\u0027, born:1943})\nCREATE\n(BillPax)-[:ACTED_IN {roles:[\u0027Bill Harding\u0027]}]-\u003e(Twister),\n(HelenH)-[:ACTED_IN {roles:[\u0027Dr. Jo Harding\u0027]}]-\u003e(Twister),\n(ZachG)-[:ACTED_IN {roles:[\u0027Eddie\u0027]}]-\u003e(Twister),\n(PhilipH)-[:ACTED_IN {roles:[\u0027Dustin \"Dusty\" Davis\u0027]}]-\u003e(Twister),\n(JanB)-[:DIRECTED]-\u003e(Twister)\n\nCREATE (CastAway:Movie {title:\u0027Cast Away\u0027, released:2000, tagline:\u0027At the edge of the world, his journey begins.\u0027})\nCREATE (RobertZ:Person {name:\u0027Robert Zemeckis\u0027, born:1951})\nCREATE\n(TomH)-[:ACTED_IN {roles:[\u0027Chuck Noland\u0027]}]-\u003e(CastAway),\n(HelenH)-[:ACTED_IN {roles:[\u0027Kelly Frears\u0027]}]-\u003e(CastAway),\n(RobertZ)-[:DIRECTED]-\u003e(CastAway)\n\nCREATE (OneFlewOvertheCuckoosNest:Movie {title:\"One Flew Over the Cuckoo\u0027s Nest\", released:1975, tagline:\"If he\u0027s crazy, what does that make you?\"})\nCREATE (MilosF:Person {name:\u0027Milos Forman\u0027, born:1932})\nCREATE\n(JackN)-[:ACTED_IN {roles:[\u0027Randle McMurphy\u0027]}]-\u003e(OneFlewOvertheCuckoosNest),\n(DannyD)-[:ACTED_IN {roles:[\u0027Martini\u0027]}]-\u003e(OneFlewOvertheCuckoosNest),\n(MilosF)-[:DIRECTED]-\u003e(OneFlewOvertheCuckoosNest)\n\nCREATE (SomethingsGottaGive:Movie {title:\"Something\u0027s Gotta Give\", released:2003})\nCREATE (DianeK:Person {name:\u0027Diane Keaton\u0027, born:1946})\nCREATE (NancyM:Person {name:\u0027Nancy Meyers\u0027, born:1949})\nCREATE\n(JackN)-[:ACTED_IN {roles:[\u0027Harry Sanborn\u0027]}]-\u003e(SomethingsGottaGive),\n(DianeK)-[:ACTED_IN {roles:[\u0027Erica Barry\u0027]}]-\u003e(SomethingsGottaGive),\n(Keanu)-[:ACTED_IN {roles:[\u0027Julian Mercer\u0027]}]-\u003e(SomethingsGottaGive),\n(NancyM)-[:DIRECTED]-\u003e(SomethingsGottaGive),\n(NancyM)-[:PRODUCED]-\u003e(SomethingsGottaGive),\n(NancyM)-[:WROTE]-\u003e(SomethingsGottaGive)\n\nCREATE (BicentennialMan:Movie {title:\u0027Bicentennial Man\u0027, released:1999, tagline:\"One robot\u0027s 200 year journey to become an ordinary man.\"})\nCREATE (ChrisC:Person {name:\u0027Chris Columbus\u0027, born:1958})\nCREATE\n(Robin)-[:ACTED_IN {roles:[\u0027Andrew Marin\u0027]}]-\u003e(BicentennialMan),\n(OliverP)-[:ACTED_IN {roles:[\u0027Rupert Burns\u0027]}]-\u003e(BicentennialMan),\n(ChrisC)-[:DIRECTED]-\u003e(BicentennialMan)\n\nCREATE (CharlieWilsonsWar:Movie {title:\"Charlie Wilson\u0027s War\", released:2007, tagline:\"A stiff drink. A little mascara. A lot of nerve. Who said they couldn\u0027t bring down the Soviet empire.\"})\nCREATE (JuliaR:Person {name:\u0027Julia Roberts\u0027, born:1967})\nCREATE\n(TomH)-[:ACTED_IN {roles:[\u0027Rep. Charlie Wilson\u0027]}]-\u003e(CharlieWilsonsWar),\n(JuliaR)-[:ACTED_IN {roles:[\u0027Joanne Herring\u0027]}]-\u003e(CharlieWilsonsWar),\n(PhilipH)-[:ACTED_IN {roles:[\u0027Gust Avrakotos\u0027]}]-\u003e(CharlieWilsonsWar),\n(MikeN)-[:DIRECTED]-\u003e(CharlieWilsonsWar)\n\nCREATE (ThePolarExpress:Movie {title:\u0027The Polar Express\u0027, released:2004, tagline:\u0027This Holiday Season... Believe\u0027})\nCREATE\n(TomH)-[:ACTED_IN {roles:[\u0027Hero Boy\u0027, \u0027Father\u0027, \u0027Conductor\u0027, \u0027Hobo\u0027, \u0027Scrooge\u0027, \u0027Santa Claus\u0027]}]-\u003e(ThePolarExpress),\n(RobertZ)-[:DIRECTED]-\u003e(ThePolarExpress)\n\nCREATE (ALeagueofTheirOwn:Movie {title:\u0027A League of Their Own\u0027, released:1992, tagline:\u0027Once in a lifetime you get a chance to do something different.\u0027})\nCREATE (Madonna:Person {name:\u0027Madonna\u0027, born:1954})\nCREATE (GeenaD:Person {name:\u0027Geena Davis\u0027, born:1956})\nCREATE (LoriP:Person {name:\u0027Lori Petty\u0027, born:1963})\nCREATE (PennyM:Person {name:\u0027Penny Marshall\u0027, born:1943})\nCREATE\n(TomH)-[:ACTED_IN {roles:[\u0027Jimmy Dugan\u0027]}]-\u003e(ALeagueofTheirOwn),\n(GeenaD)-[:ACTED_IN {roles:[\u0027Dottie Hinson\u0027]}]-\u003e(ALeagueofTheirOwn),\n(LoriP)-[:ACTED_IN {roles:[\u0027Kit Keller\u0027]}]-\u003e(ALeagueofTheirOwn),\n(RosieO)-[:ACTED_IN {roles:[\u0027Doris Murphy\u0027]}]-\u003e(ALeagueofTheirOwn),\n(Madonna)-[:ACTED_IN {roles:[\u0027\"All the Way\" Mae Mordabito\u0027]}]-\u003e(ALeagueofTheirOwn),\n(BillPax)-[:ACTED_IN {roles:[\u0027Bob Hinson\u0027]}]-\u003e(ALeagueofTheirOwn),\n(PennyM)-[:DIRECTED]-\u003e(ALeagueofTheirOwn)\n\nCREATE (PaulBlythe:Person {name:\u0027Paul Blythe\u0027})\nCREATE (AngelaScope:Person {name:\u0027Angela Scope\u0027})\nCREATE (JessicaThompson:Person {name:\u0027Jessica Thompson\u0027})\nCREATE (JamesThompson:Person {name:\u0027James Thompson\u0027})\n\nCREATE\n(JamesThompson)-[:FOLLOWS]-\u003e(JessicaThompson),\n(AngelaScope)-[:FOLLOWS]-\u003e(JessicaThompson),\n(PaulBlythe)-[:FOLLOWS]-\u003e(AngelaScope)\n\nCREATE\n(JessicaThompson)-[:REVIEWED {summary:\u0027An amazing journey\u0027, rating:95}]-\u003e(CloudAtlas),\n(JessicaThompson)-[:REVIEWED {summary:\u0027Silly, but fun\u0027, rating:65}]-\u003e(TheReplacements),\n(JamesThompson)-[:REVIEWED {summary:\u0027The coolest football movie ever\u0027, rating:100}]-\u003e(TheReplacements),\n(AngelaScope)-[:REVIEWED {summary:\u0027Pretty funny at times\u0027, rating:62}]-\u003e(TheReplacements),\n(JessicaThompson)-[:REVIEWED {summary:\u0027Dark, but compelling\u0027, rating:85}]-\u003e(Unforgiven),\n(JessicaThompson)-[:REVIEWED {summary:\"Slapstick redeemed only by the Robin Williams and Gene Hackman\u0027s stellar performances\", rating:45}]-\u003e(TheBirdcage),\n(JessicaThompson)-[:REVIEWED {summary:\u0027A solid romp\u0027, rating:68}]-\u003e(TheDaVinciCode),\n(JamesThompson)-[:REVIEWED {summary:\u0027Fun, but a little far fetched\u0027, rating:65}]-\u003e(TheDaVinciCode),\n(JessicaThompson)-[:REVIEWED {summary:\u0027You had me at Jerry\u0027, rating:92}]-\u003e(JerryMaguire)\n\nWITH TomH as a\nMATCH (a)-[:ACTED_IN]-\u003e(m)\u003c-[:DIRECTED]-(d) RETURN a,m,d LIMIT 10;",
       "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:56:43.119",
+      "dateUpdated": "2021-08-04 10:46:00.880",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -170,7 +212,7 @@
         "msg": [
           {
             "type": "NETWORK",
-            "data": "{\"nodes\":[{\"id\":96,\"data\":{\"name\":\"Mike Nichols\",\"born\":1931},\"label\":\"Person\"},{\"id\":161,\"data\":{\"tagline\":\"This Holiday Season... Believe\",\"title\":\"The Polar Express\",\"released\":2004},\"label\":\"Movie\"},{\"id\":162,\"data\":{\"tagline\":\"Once in a lifetime you get a chance to do something different.\",\"title\":\"A League of Their Own\",\"released\":1992},\"label\":\"Movie\"},{\"id\":130,\"data\":{\"tagline\":\"Walk a mile you\\u0027ll never forget.\",\"title\":\"The Green Mile\",\"released\":1999},\"label\":\"Movie\"},{\"id\":166,\"data\":{\"name\":\"Penny Marshall\",\"born\":1943},\"label\":\"Person\"},{\"id\":71,\"data\":{\"name\":\"Tom Hanks\",\"born\":1956},\"label\":\"Person\"},{\"id\":72,\"data\":{\"name\":\"Nora Ephron\",\"born\":1941},\"label\":\"Person\"},{\"id\":136,\"data\":{\"name\":\"Frank Darabont\",\"born\":1959},\"label\":\"Person\"},{\"id\":73,\"data\":{\"tagline\":\"What if someone you never met, someone you never saw, someone you never knew was the only someone for you?\",\"title\":\"Sleepless in Seattle\",\"released\":1993},\"label\":\"Movie\"},{\"id\":105,\"data\":{\"tagline\":\"Everything is connected\",\"title\":\"Cloud Atlas\",\"released\":2012},\"label\":\"Movie\"},{\"id\":108,\"data\":{\"name\":\"Tom Tykwer\",\"born\":1965},\"label\":\"Person\"},{\"id\":78,\"data\":{\"tagline\":\"A story of love, lava and burning desire.\",\"title\":\"Joe Versus the Volcano\",\"released\":1990},\"label\":\"Movie\"},{\"id\":111,\"data\":{\"tagline\":\"Break The Codes\",\"title\":\"The Da Vinci Code\",\"released\":2006},\"label\":\"Movie\"},{\"id\":79,\"data\":{\"name\":\"John Patrick Stanley\",\"born\":1950},\"label\":\"Person\"},{\"id\":115,\"data\":{\"name\":\"Ron Howard\",\"born\":1954},\"label\":\"Person\"},{\"id\":85,\"data\":{\"tagline\":\"In every life there comes a time when that thing you dream becomes that thing you do\",\"title\":\"That Thing You Do\",\"released\":1996},\"label\":\"Movie\"},{\"id\":150,\"data\":{\"tagline\":\"At the edge of the world, his journey begins.\",\"title\":\"Cast Away\",\"released\":2000},\"label\":\"Movie\"},{\"id\":151,\"data\":{\"name\":\"Robert Zemeckis\",\"born\":1951},\"label\":\"Person\"},{\"id\":159,\"data\":{\"tagline\":\"A stiff drink. A little mascara. A lot of nerve. Who said they couldn\\u0027t bring down the Soviet empire.\",\"title\":\"Charlie Wilson\\u0027s War\",\"released\":2007},\"label\":\"Movie\"}],\"edges\":[],\"labels\":{\"Movie\":\"#5A9FDF\",\"Person\":\"#1C4CC1\"},\"types\":[\"ACTED_IN\",\"REVIEWED\",\"PRODUCED\",\"WROTE\",\"FOLLOWS\",\"DIRECTED\"],\"directed\":true}"
+            "data": "{\"nodes\":[{\"id\":1057,\"data\":{\"tagline\":\"A story of love, lava and burning desire.\",\"title\":\"Joe Versus the Volcano\",\"released\":1990},\"label\":\"Movie\"},{\"id\":1058,\"data\":{\"name\":\"John Patrick Stanley\",\"born\":1950},\"label\":\"Person\"},{\"id\":1090,\"data\":{\"tagline\":\"Break The Codes\",\"title\":\"The Da Vinci Code\",\"released\":2006},\"label\":\"Movie\"},{\"id\":1123,\"data\":{\"tagline\":\"Houston, we have a problem.\",\"title\":\"Apollo 13\",\"released\":1995},\"label\":\"Movie\"},{\"id\":1094,\"data\":{\"name\":\"Ron Howard\",\"born\":1954},\"label\":\"Person\"},{\"id\":1064,\"data\":{\"tagline\":\"In every life there comes a time when that thing you dream becomes that thing you do\",\"title\":\"That Thing You Do\",\"released\":1996},\"label\":\"Movie\"},{\"id\":1129,\"data\":{\"tagline\":\"At the edge of the world, his journey begins.\",\"title\":\"Cast Away\",\"released\":2000},\"label\":\"Movie\"},{\"id\":1130,\"data\":{\"name\":\"Robert Zemeckis\",\"born\":1951},\"label\":\"Person\"},{\"id\":1046,\"data\":{\"tagline\":\"At odds in life... in love on-line.\",\"title\":\"You\\u0027ve Got Mail\",\"released\":1998},\"label\":\"Movie\"},{\"id\":984,\"data\":{\"name\":\"Lilly Wachowski\",\"born\":1967},\"label\":\"Person\"},{\"id\":985,\"data\":{\"name\":\"Lana Wachowski\",\"born\":1965},\"label\":\"Person\"},{\"id\":1050,\"data\":{\"name\":\"Tom Hanks\",\"born\":1956},\"label\":\"Person\"},{\"id\":1051,\"data\":{\"name\":\"Nora Ephron\",\"born\":1941},\"label\":\"Person\"},{\"id\":1052,\"data\":{\"tagline\":\"What if someone you never met, someone you never saw, someone you never knew was the only someone for you?\",\"title\":\"Sleepless in Seattle\",\"released\":1993},\"label\":\"Movie\"},{\"id\":1084,\"data\":{\"tagline\":\"Everything is connected\",\"title\":\"Cloud Atlas\",\"released\":2012},\"label\":\"Movie\"},{\"id\":1087,\"data\":{\"name\":\"Tom Tykwer\",\"born\":1965},\"label\":\"Person\"}],\"edges\":[],\"labels\":{\"Movie\":\"#DEEC0A\",\"Person\":\"#34AE5E\",\"Character\":\"#71BFB6\",\"Episode\":\"#A2B4A8\",\"Word\":\"#038AA4\",\"Beer\":\"#400D4C\",\"Brewery\":\"#549CC9\"},\"types\":[\"BREWED_BY\",\"ACTED_IN\",\"REVIEWED\",\"PRODUCED\",\"WROTE\",\"FOLLOWS\",\"DIRECTED\"],\"directed\":true}"
           }
         ]
       },
@@ -180,15 +222,15 @@
       "jobName": "paragraph_1606383234708_-1950898385",
       "id": "paragraph_1606383234708_-1950898385",
       "dateCreated": "2020-11-26 09:33:54.709",
-      "dateStarted": "2021-07-27 09:56:43.162",
-      "dateFinished": "2021-07-27 09:56:48.700",
+      "dateStarted": "2021-08-04 10:46:00.903",
+      "dateFinished": "2021-08-04 10:46:02.482",
       "status": "FINISHED"
     },
     {
-      "title": "Read the Movies",
+      "title": "Read by labels",
       "text": "/**\n * In this example we use the \"labels\" read method (https://neo4j.com/developer/spark/reading/#bookmark-read-node)\n * With this we can read all the nodes that have one or more labels\n */\nval moviesDf \u003d spark.read.format(\"org.neo4j.spark.DataSource\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"password\")\n    /**/\n    .option(\"pushdown.filters.enabled\", \"false\")\n    .option(\"labels\", \"Movie\")\n    .load()\n    \nmoviesDf.filter(\"released \u003e 2000\").show()",
       "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:56:48.769",
+      "dateUpdated": "2021-08-04 10:46:02.509",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -213,7 +255,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "+----+--------+--------------------+--------------------+--------+\n|\u003cid\u003e|\u003clabels\u003e|               title|             tagline|released|\n+----+--------+--------------------+--------------------+--------+\n|   9| [Movie]| The Matrix Reloaded|      Free your mind|    2003|\n|  10| [Movie]|The Matrix Revolu...|Everything that h...|    2003|\n|  92| [Movie]|          RescueDawn|Based on the extr...|    2006|\n| 105| [Movie]|         Cloud Atlas|Everything is con...|    2012|\n| 111| [Movie]|   The Da Vinci Code|     Break The Codes|    2006|\n| 116| [Movie]|      V for Vendetta|   Freedom! Forever!|    2006|\n| 121| [Movie]|         Speed Racer| Speed has no limits|    2008|\n| 128| [Movie]|      Ninja Assassin|Prepare to enter ...|    2009|\n| 137| [Movie]|         Frost/Nixon|400 million peopl...|    2008|\n| 154| [Movie]|Something\u0027s Gotta...|                null|    2003|\n| 159| [Movie]|Charlie Wilson\u0027s War|A stiff drink. A ...|    2007|\n| 161| [Movie]|   The Polar Express|This Holiday Seas...|    2004|\n+----+--------+--------------------+--------------------+--------+\n\n\u001b[1m\u001b[34mmoviesDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [\u003cid\u003e: bigint, \u003clabels\u003e: array\u003cstring\u003e ... 3 more fields]\n"
+            "data": "+----+--------+--------------------+--------------------+--------+\n|\u003cid\u003e|\u003clabels\u003e|               title|             tagline|released|\n+----+--------+--------------------+--------------------+--------+\n| 988| [Movie]| The Matrix Reloaded|      Free your mind|    2003|\n| 989| [Movie]|The Matrix Revolu...|Everything that h...|    2003|\n|1071| [Movie]|          RescueDawn|Based on the extr...|    2006|\n|1084| [Movie]|         Cloud Atlas|Everything is con...|    2012|\n|1090| [Movie]|   The Da Vinci Code|     Break The Codes|    2006|\n|1095| [Movie]|      V for Vendetta|   Freedom! Forever!|    2006|\n|1100| [Movie]|         Speed Racer| Speed has no limits|    2008|\n|1107| [Movie]|      Ninja Assassin|Prepare to enter ...|    2009|\n|1116| [Movie]|         Frost/Nixon|400 million peopl...|    2008|\n|1133| [Movie]|Something\u0027s Gotta...|                null|    2003|\n|1138| [Movie]|Charlie Wilson\u0027s War|A stiff drink. A ...|    2007|\n|1140| [Movie]|   The Polar Express|This Holiday Seas...|    2004|\n+----+--------+--------------------+--------------------+--------+\n\n\u001b[1m\u001b[34mmoviesDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [\u003cid\u003e: bigint, \u003clabels\u003e: array\u003cstring\u003e ... 3 more fields]\n"
           }
         ]
       },
@@ -226,7 +268,7 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d0"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d24"
             }
           ],
           "interpreterSettingId": "spark"
@@ -236,14 +278,14 @@
       "jobName": "paragraph_1606385253187_-779933416",
       "id": "paragraph_1606385253187_-779933416",
       "dateCreated": "2020-11-26 10:07:33.187",
-      "dateStarted": "2021-07-27 09:56:48.810",
-      "dateFinished": "2021-07-27 09:57:12.683",
+      "dateStarted": "2021-08-04 10:46:02.534",
+      "dateFinished": "2021-08-04 10:46:03.685",
       "status": "FINISHED"
     },
     {
       "text": "moviesDf.printSchema()",
       "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:57:12.756",
+      "dateUpdated": "2021-08-04 10:46:03.736",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -276,15 +318,15 @@
       "jobName": "paragraph_1606991605773_1488107476",
       "id": "paragraph_1606991605773_1488107476",
       "dateCreated": "2020-12-03 10:33:25.773",
-      "dateStarted": "2021-07-27 09:57:12.817",
-      "dateFinished": "2021-07-27 09:57:13.557",
+      "dateStarted": "2021-08-04 10:46:03.755",
+      "dateFinished": "2021-08-04 10:46:03.948",
       "status": "FINISHED"
     },
     {
       "title": "Read the Reviewers",
-      "text": "/**\n * In this example we use the \"relationship\" read method (https://neo4j.com/developer/spark/reading/#bookmark-read-rel)\n */\nval reviewDf \u003d spark.read.format(\"org.neo4j.spark.DataSource\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"password\")\n    /**/\n    .option(\"relationship\", \"REVIEWED\")\n    .option(\"relationship.source.labels\", \"Person\")\n    .option(\"relationship.target.labels\", \"Movie\")\n    .load()\n    \nreviewDf.show()",
+      "text": "/**\n * In this example we use the \"relationship\" read method (https://neo4j.com/developer/spark/reading/#bookmark-read-rel)\n */\nval movieReviewsDf \u003d spark.read.format(\"org.neo4j.spark.DataSource\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"password\")\n    .option(\"relationship\", \"REVIEWED\")\n    .option(\"relationship.source.labels\", \"Person\")\n    .option(\"relationship.target.labels\", \"Movie\")\n    .load()\n    \nmovieReviewsDf.show()",
       "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:57:13.623",
+      "dateUpdated": "2021-08-04 10:46:03.955",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -310,7 +352,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "+--------+----------+-----------+---------------+----------------+-----------+-----------+---------------+-----------------+--------------------+---------------+----------+--------------------+\n|\u003crel.id\u003e|\u003crel.type\u003e|\u003csource.id\u003e|\u003csource.labels\u003e|     source.name|source.born|\u003ctarget.id\u003e|\u003ctarget.labels\u003e|     target.title|      target.tagline|target.released|rel.rating|         rel.summary|\n+--------+----------+-----------+---------------+----------------+-----------+-----------+---------------+-----------------+--------------------+---------------+----------+--------------------+\n|     244|  REVIEWED|        169|       [Person]|Jessica Thompson|       null|        105|        [Movie]|      Cloud Atlas|Everything is con...|           2012|        95|  An amazing journey|\n|     245|  REVIEWED|        169|       [Person]|Jessica Thompson|       null|         87|        [Movie]| The Replacements|Pain heals, Chick...|           2000|        65|      Silly, but fun|\n|     246|  REVIEWED|        170|       [Person]|  James Thompson|       null|         87|        [Movie]| The Replacements|Pain heals, Chick...|           2000|       100|The coolest footb...|\n|     247|  REVIEWED|        168|       [Person]|    Angela Scope|       null|         87|        [Movie]| The Replacements|Pain heals, Chick...|           2000|        62|Pretty funny at t...|\n|     248|  REVIEWED|        169|       [Person]|Jessica Thompson|       null|         97|        [Movie]|       Unforgiven|It\u0027s a hell of a ...|           1992|        85|Dark, but compelling|\n|     249|  REVIEWED|        169|       [Person]|Jessica Thompson|       null|         95|        [Movie]|     The Birdcage|     Come as you are|           1996|        45|Slapstick redeeme...|\n|     250|  REVIEWED|        169|       [Person]|Jessica Thompson|       null|        111|        [Movie]|The Da Vinci Code|     Break The Codes|           2006|        68|        A solid romp|\n|     251|  REVIEWED|        170|       [Person]|  James Thompson|       null|        111|        [Movie]|The Da Vinci Code|     Break The Codes|           2006|        65|Fun, but a little...|\n|     252|  REVIEWED|        169|       [Person]|Jessica Thompson|       null|         37|        [Movie]|    Jerry Maguire|The rest of his l...|           2000|        92| You had me at Jerry|\n+--------+----------+-----------+---------------+----------------+-----------+-----------+---------------+-----------------+--------------------+---------------+----------+--------------------+\n\n\u001b[1m\u001b[34mreviewDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [\u003crel.id\u003e: bigint, \u003crel.type\u003e: string ... 11 more fields]\n"
+            "data": "+--------+----------+-----------+---------------+----------------+-----------+-----------+---------------+-----------------+--------------------+---------------+----------+--------------------+\n|\u003crel.id\u003e|\u003crel.type\u003e|\u003csource.id\u003e|\u003csource.labels\u003e|     source.name|source.born|\u003ctarget.id\u003e|\u003ctarget.labels\u003e|     target.title|      target.tagline|target.released|rel.rating|         rel.summary|\n+--------+----------+-----------+---------------+----------------+-----------+-----------+---------------+-----------------+--------------------+---------------+----------+--------------------+\n|     997|  REVIEWED|       1148|       [Person]|Jessica Thompson|       null|       1084|        [Movie]|      Cloud Atlas|Everything is con...|           2012|        95|  An amazing journey|\n|     998|  REVIEWED|       1148|       [Person]|Jessica Thompson|       null|       1066|        [Movie]| The Replacements|Pain heals, Chick...|           2000|        65|      Silly, but fun|\n|     999|  REVIEWED|       1149|       [Person]|  James Thompson|       null|       1066|        [Movie]| The Replacements|Pain heals, Chick...|           2000|       100|The coolest footb...|\n|    1000|  REVIEWED|       1147|       [Person]|    Angela Scope|       null|       1066|        [Movie]| The Replacements|Pain heals, Chick...|           2000|        62|Pretty funny at t...|\n|    1001|  REVIEWED|       1148|       [Person]|Jessica Thompson|       null|       1076|        [Movie]|       Unforgiven|It\u0027s a hell of a ...|           1992|        85|Dark, but compelling|\n|    1002|  REVIEWED|       1148|       [Person]|Jessica Thompson|       null|       1074|        [Movie]|     The Birdcage|     Come as you are|           1996|        45|Slapstick redeeme...|\n|    1003|  REVIEWED|       1148|       [Person]|Jessica Thompson|       null|       1090|        [Movie]|The Da Vinci Code|     Break The Codes|           2006|        68|        A solid romp|\n|    1004|  REVIEWED|       1149|       [Person]|  James Thompson|       null|       1090|        [Movie]|The Da Vinci Code|     Break The Codes|           2006|        65|Fun, but a little...|\n|    1005|  REVIEWED|       1148|       [Person]|Jessica Thompson|       null|       1016|        [Movie]|    Jerry Maguire|The rest of his l...|           2000|        92| You had me at Jerry|\n+--------+----------+-----------+---------------+----------------+-----------+-----------+---------------+-----------------+--------------------+---------------+----------+--------------------+\n\n\u001b[1m\u001b[34mmovieReviewsDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [\u003crel.id\u003e: bigint, \u003crel.type\u003e: string ... 11 more fields]\n"
           }
         ]
       },
@@ -323,7 +365,7 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d1"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d25"
             }
           ],
           "interpreterSettingId": "spark"
@@ -333,15 +375,15 @@
       "jobName": "paragraph_1606386280388_-1724966949",
       "id": "paragraph_1606386280388_-1724966949",
       "dateCreated": "2020-11-26 10:24:40.389",
-      "dateStarted": "2021-07-27 09:57:13.681",
-      "dateFinished": "2021-07-27 09:57:17.748",
+      "dateStarted": "2021-08-04 10:46:03.998",
+      "dateFinished": "2021-08-04 10:46:05.292",
       "status": "FINISHED"
     },
     {
       "title": "",
-      "text": "/**\n * Exercise: show the review count for each reviewer, sorted by count DESC\n * \n * Hint: comples column names must be sorrounded a backtick, like `column.name`\n */",
+      "text": "/**\n * Exercise: show the review count for each reviewer, sorted by count DESC\n * \n * Hint: complex column names must be sorrounded a backtick, for example `source.name`\n */\nmovieReviewsDf.select(\"`source.name`\")\n    .groupBy(\"`source.name`\")\n    .count()\n    .show()",
       "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:57:17.806",
+      "dateUpdated": "2021-08-04 10:46:05.303",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -364,22 +406,40 @@
       },
       "results": {
         "code": "SUCCESS",
-        "msg": []
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------------+-----+\n|     source.name|count|\n+----------------+-----+\n|Jessica Thompson|    6|\n|  James Thompson|    2|\n|    Angela Scope|    1|\n+----------------+-----+\n\n"
+          }
+        ]
       },
       "apps": [],
-      "runtimeInfos": {},
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d26"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606387537218_-1162086901",
       "id": "paragraph_1606387537218_-1162086901",
       "dateCreated": "2020-11-26 10:45:37.218",
-      "dateStarted": "2021-07-27 09:57:17.888",
-      "dateFinished": "2021-07-27 09:57:18.525",
+      "dateStarted": "2021-08-04 10:46:05.352",
+      "dateFinished": "2021-08-04 10:46:06.355",
       "status": "FINISHED"
     },
     {
-      "text": "/**\n * Exercise: read data from Neo4j using the \"query\" mode\n * \n * Docs: https://neo4j.com/developer/spark/reading/#bookmark-read-query\n */\nval reviewDf \u003d spark.read.format(\"org.neo4j.spark.DataSource\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"password\")\n    .option(\"query\", /* your code here */)\n    .load()\n    .show()",
+      "text": "/**\n * Exercise: read data from Neo4j using the \"query\" mode\n * \n * Docs: https://neo4j.com/developer/spark/reading/#bookmark-read-query\n */\nspark.read.format(\"org.neo4j.spark.DataSource\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"password\")\n    .option(\"query\", \"MATCH ()-[rel:REVIEWED]-\u003e() RETURN AVG(rel.rating)\")\n    .load()\n    .show()",
       "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:57:18.590",
+      "dateUpdated": "2021-08-04 10:46:06.456",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -399,40 +459,250 @@
         "forms": {}
       },
       "results": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "msg": [
           {
             "type": "TEXT",
-            "data": "\u003cconsole\u003e:10: \u001b[31merror: \u001b[0millegal start of simple expression\n    .option(\"query\", /* your code here */)\n                                         ^\n"
+            "data": "+-----------------+\n|  AVG(rel.rating)|\n+-----------------+\n|75.22222222222223|\n+-----------------+\n\n"
           }
         ]
       },
       "apps": [],
-      "runtimeInfos": {},
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d27"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606809360494_-1021176466",
       "id": "paragraph_1606809360494_-1021176466",
       "dateCreated": "2020-12-01 07:56:00.494",
-      "dateStarted": "2021-07-27 09:57:18.664",
-      "dateFinished": "2021-07-27 09:57:18.801",
-      "status": "ERROR"
+      "dateStarted": "2021-08-04 10:46:06.476",
+      "dateFinished": "2021-08-04 10:46:07.763",
+      "status": "FINISHED"
     },
     {
-      "text": "%md\n\n# Writing Modes\n\n**Nodes**:\n\n* **SaveMode.ErrorIfExists**: this will build a CREATE query\n* **SaveMode.Overwrite**: this will build a MERGE query\n\n**Relationship**\n\n* **SaveMode.ErrorIfExists**: this will build a CREATE query\n* **SaveMode.Append**: this will build a MERGE query \n\n**ErrorIfExists** is the default in both cases.\n\nMore at https://neo4j.com/developer/spark/writing/#bookmark-save-mode",
+      "text": "%neo4j\n\nMATCH (n) DETACH DELETE n;",
       "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:57:18.863",
+      "dateUpdated": "2021-08-04 12:57:18.174",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
         "enabled": true,
         "results": {},
         "editorSetting": {
-          "language": "text",
+          "language": "scala",
           "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/text",
+        "editorMode": "ace/mode/undefined"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1627572716249_1662999426",
+      "id": "paragraph_1627572716249_1662999426",
+      "dateCreated": "2021-07-29 15:31:56.249",
+      "dateStarted": "2021-08-04 12:57:18.193",
+      "dateFinished": "2021-08-04 12:57:18.320",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\n# How to write to Neo4j\n\nWriting data to a Neo4j Database can be done in 3 ways:\n\n* Custom Cypher Query\n* Node labels\n* Relationship\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-04 10:46:08.109",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eHow to write to Neo4j\u003c/h1\u003e\n\u003cp\u003eWriting data to a Neo4j Database can be done in 3 ways:\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003eCustom Cypher Query\u003c/li\u003e\n  \u003cli\u003eNode labels\u003c/li\u003e\n  \u003cli\u003eRelationship\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1627985731395_1708359043",
+      "id": "paragraph_1627985731395_1708359043",
+      "dateCreated": "2021-08-03 10:15:31.396",
+      "dateStarted": "2021-08-04 10:46:08.133",
+      "dateFinished": "2021-08-04 10:46:08.144",
+      "status": "FINISHED"
+    },
+    {
+      "title": "Let\u0027s use our CSV from the earlier examples",
+      "text": "val beerDf \u003d spark.read\n    .format(\"csv\")\n    .option(\"header\", true)\n    .option(\"inferSchema\", true)\n    .load(\"./spark-warehouse/beer_info.csv\")\n    \nval reviewDf \u003d spark.read.format(\"csv\")\n    .option(\"inferSchema\", true)\n    .option(\"header\", true)\n    .load(\"./spark-warehouse/beer_reviews.csv\")\n    .where($\"rating\".cast(\"float\").isNotNull)\n    .withColumn(\"clean_rating\", $\"rating\".cast(\"double\"))\n    .withColumn(\"clean_review_id\", $\"rating\".cast(\"integer\"))\n    .drop(\"rating\")\n    .drop(\"review_id\")\n    .withColumnRenamed(\"clean_rating\", \"rating\")\n    .withColumnRenamed(\"clean_review_id\", \"review_id\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-04 15:54:38.190",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mbeerDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [beer_id: int, brewer: string ... 2 more fields]\n\u001b[1m\u001b[34mreviewDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [beer_id: int, review: string ... 2 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d66"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d67"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d68"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d69"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1627986111776_1922437044",
+      "id": "paragraph_1627986111776_1922437044",
+      "dateCreated": "2021-08-03 10:21:51.776",
+      "dateStarted": "2021-08-04 15:54:38.210",
+      "dateFinished": "2021-08-04 15:54:39.373",
+      "status": "FINISHED"
+    },
+    {
+      "text": "beerDf.show()\nreviewDf.show()",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-04 15:52:52.047",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------------------+--------------------+----+\n|beer_id|              brewer|           beer_name| abv|\n+-------+--------------------+--------------------+----+\n|      1|Rahr \u0026amp; Sons B...|      Stormcloud IPA| 6.0|\n|      2|Matt Brewing Comp...|  Saranac Legacy IPA| 6.5|\n|      3|Matt Brewing Comp...|     Saranac Rye IPA|5.95|\n|      4|Matt Brewing Comp...|Saranac India Pal...| 5.8|\n|      5|Zero Gravity Craf...|        Conehead IPA| 5.7|\n|      6|Short\u0027s Brewing C...|           Hopstache| 6.8|\n|      7|Short\u0027s Brewing C...|       Freedom Of 78| 7.0|\n|      8|Short\u0027s Brewing C...|      ControversiALE| 6.5|\n|      9|Short\u0027s Brewing C...|Shorts Huma Lupa ...| 7.7|\n|     10|Magic Hat Brewing...|                HiPA| 6.7|\n|     11|Magic Hat Brewing...|   Ticket To Rye IPA| 7.1|\n|     12|Magic Hat Brewing...|              Encore| 6.4|\n|     13|Magic Hat Brewing...|           Lucky Kat| 5.8|\n|     14|Magic Hat Brewing...|Electric Peel Gra...| 6.0|\n|     15|Long Trail Brewin...|     Green Blaze IPA| 6.5|\n|     16|     No-Li Brewhouse| Born amp Raised IPA| 7.0|\n|     17|     Ska Brewing Co.|     Modus Hoperandi| 6.8|\n|     18|     Ska Brewing Co.|     Modus Mandarina| 6.8|\n|     19|     Heavy Seas Beer|        Loose Cannon|7.25|\n|     20|     Heavy Seas Beer|TropiCannon Citru...|7.25|\n+-------+--------------------+--------------------+----+\nonly showing top 20 rows\n\n+-------+---------+--------------------+------+\n|beer_id|review_id|              review|rating|\n+-------+---------+--------------------+------+\n|    500|        1|Darker and Amber-...|  4.25|\n|    500|        2|This one is a lit...|  3.75|\n|    500|        3|Always has been m...|   3.0|\n|    500|        4|Cloudy orange loo...|   3.5|\n|    500|        5|A very average Am...|   2.5|\n|    500|        6|Bottle. Pours a h...|  3.75|\n|    500|        7|This doesn\u0027t real...|   3.0|\n|    500|        8|Something is off ...|   3.0|\n|    500|        9|Meh. Better than ...|  4.75|\n|    500|       10|Poured from a 12 ...|  2.75|\n|    500|       12|12 ounce bottle i...|   4.0|\n|    500|       13|Poured from a bro...|   3.5|\n|    500|       14|Most excedingly e...|  4.25|\n|    500|       15|Had on tap at Sma...|  3.75|\n|    500|       16|Pours a sickly me...|  3.75|\n|    500|       17|22oz bottle $5.49...|  3.25|\n|    499|       18|Just what you wou...|  4.25|\n|    499|       19|Been my standard ...|   2.5|\n|    499|       20|I like to taste a...|   2.5|\n|    499|       21|Pours a slightly ...|   3.5|\n+-------+---------+--------------------+------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d60"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d61"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1627986743943_290139325",
+      "id": "paragraph_1627986743943_290139325",
+      "dateCreated": "2021-08-03 10:32:23.943",
+      "dateStarted": "2021-08-04 15:52:52.069",
+      "dateFinished": "2021-08-04 15:52:52.693",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\n# Writing Modes\n\n**Nodes**:\n\n* **SaveMode.ErrorIfExists**: this will build a CREATE query\n* **SaveMode.Overwrite**: this will build a MERGE query\n\n**Relationship**\n\n* **SaveMode.ErrorIfExists**: this will build a CREATE query\n* **SaveMode.Append**: this will build a MERGE query \n\n**ErrorIfExists** is the default in both cases.\n\nMore at https://neo4j.com/developer/spark/writing/#bookmark-save-mode",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-04 10:46:10.085",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
         "editorHide": true,
         "tableHide": false
       },
@@ -455,15 +725,15 @@
       "jobName": "paragraph_1606805793606_-1952482657",
       "id": "paragraph_1606805793606_-1952482657",
       "dateCreated": "2020-12-01 06:56:33.607",
-      "dateStarted": "2021-07-27 09:57:18.961",
-      "dateFinished": "2021-07-27 09:57:19.033",
+      "dateStarted": "2021-08-04 10:46:10.108",
+      "dateFinished": "2021-08-04 10:46:10.136",
       "status": "FINISHED"
     },
     {
-      "title": "Write the musical instruments",
-      "text": "/**\n * https://neo4j.com/developer/spark/writing/#bookmark-write-node\n */\n\nval instrumentsDf \u003d Seq(\"Drums\", \"Guitar\", \"Piano\").toDF(\"name\")\n\ninstrumentsDf.write\n    .format(\"org.neo4j.spark.DataSource\")\n    .mode(\"Overwrite\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"password\")\n    /**/\n    .option(\"labels\", \"Instrument\")\n    .option(\"node.keys\", \"name\")\n    .save()",
+      "title": "Write by Labels",
+      "text": "/**\n * https://neo4j.com/developer/spark/writing/#bookmark-write-node\n */\n \nbeerDf.write\n    .format(\"org.neo4j.spark.DataSource\")\n    .mode(\"ErrorIfExists\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"password\")\n    /**/\n    .option(\"labels\", \"Beer\")\n    .option(\"node.keys\", \"beer_id:id\")\n    .save()",
       "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:57:19.058",
+      "dateUpdated": "2021-08-04 13:42:20.607",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -485,12 +755,7 @@
       },
       "results": {
         "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "\u001b[1m\u001b[34minstrumentsDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [name: string]\n"
-          }
-        ]
+        "msg": []
       },
       "apps": [],
       "runtimeInfos": {
@@ -501,7 +766,7 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d2"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d49"
             }
           ],
           "interpreterSettingId": "spark"
@@ -511,14 +776,14 @@
       "jobName": "paragraph_1606396249589_-879352623",
       "id": "paragraph_1606396249589_-879352623",
       "dateCreated": "2020-11-26 13:10:49.589",
-      "dateStarted": "2021-07-27 09:57:19.130",
-      "dateFinished": "2021-07-27 09:57:25.545",
+      "dateStarted": "2021-08-04 13:42:20.622",
+      "dateFinished": "2021-08-04 13:42:21.536",
       "status": "FINISHED"
     },
     {
-      "text": "%neo4j\n\nMATCH (n:Instrument) RETURN n;",
+      "text": "%neo4j\n\nMATCH (n:Beer) RETURN n.id, n.abv, n.beer_name ORDER BY n.id ASC;",
       "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:57:25.566",
+      "dateUpdated": "2021-08-04 13:42:51.735",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -534,8 +799,256 @@
                   "tableGridState": {},
                   "tableColumnTypeState": {
                     "names": {
+                      "n.id": "string",
+                      "n.abv": "string",
+                      "n.beer_name": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/undefined",
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "n.id\tn.abv\tn.beer_name\n1\t6.0\t\"Stormcloud IPA\"\n2\t6.5\t\"Saranac Legacy IPA\"\n3\t5.95\t\"Saranac Rye IPA\"\n4\t5.8\t\"Saranac India Pale Ale\"\n5\t5.7\t\"Conehead IPA\"\n6\t6.8\t\"Hopstache\"\n7\t7.0\t\"Freedom Of 78\"\n8\t6.5\t\"ControversiALE\"\n9\t7.7\t\"Shorts Huma Lupa Licious India Pale Ale\"\n10\t6.7\t\"HiPA\"\n11\t7.1\t\"Ticket To Rye IPA\"\n12\t6.4\t\"Encore\"\n13\t5.8\t\"Lucky Kat\"\n14\t6.0\t\"Electric Peel Grapefruit IPA\"\n15\t6.5\t\"Green Blaze IPA\"\n16\t7.0\t\"Born amp Raised IPA\"\n17\t6.8\t\"Modus Hoperandi\"\n18\t6.8\t\"Modus Mandarina\"\n19\t7.25\t\"Loose Cannon\"\n20\t7.25\t\"TropiCannon Citrus IPA\"\n21\t4.5\t\"CrossBones Session IPA\"\n22\t6.5\t\"India Pale Ale\"\n23\t6.7\t\"Red Brick Hoplanta\"\n24\t6.5\t\"Happy Hops\"\n25\t6.25\t\"Blind Pig IPA\"\n26\t6.4\t\"ORyely IPA\"\n27\t7.0\t\"Falconers IPA\"\n28\t7.0\t\"Upheaval IPA\"\n29\t5.75\t\"Bitter Woman India Pale Ale\"\n30\t6.5\t\"Scurvy\"\n31\t7.0\t\"Death By Hops\"\n32\t7.1\t\"Amsterdam Boneshaker IPA\"\n33\t7.0\t\"Hoptical Illusion\"\n34\t4.8\t\"Mosaic Session IPA\"\n35\t6.5\t\"Misery Bay IPA\"\n36\t6.2\t\"Big Sky IPA\"\n37\t7.0\t\"Hop Hog India Pale Ale\"\n38\t6.9\t\"IPA\"\n39\t7.0\t\"Brew Free Or Die IPA\"\n40\t4.4\t\"Down To Earth Session IPA\"\n41\t7.5\t\"Rye Of The Tiger\"\n42\t6.0\t\"Henry Weinhards Woodland Pass IPA\"\n43\t6.3\t\"Savant\"\n44\t6.3\t\"Avatar Jasmine IPA\"\n45\t6.3\t\"The Immortal IPA\"\n46\t7.4\t\"Dayglow IPA\"\n47\t5.5\t\"Hurricane Kitty\"\n48\t6.4\t\"Hop Meadow IPA\"\n49\t7.5\t\"Perpetual IPA\"\n50\t6.2\t\"First Cut IPA\"\n51\t6.4\t\"Blizzard Of Hops\"\n52\t6.2\t\"Hop Knife Harvest Ale\"\n53\t6.9\t\"Resistance IPA\"\n54\t6.7\t\"Heavy Handed IPA\"\n55\t6.3\t\"Wobble\"\n56\t6.5\t\"Fish Tale India Pale Ale\"\n57\t4.7\t\"Easy IPA\"\n58\t7.0\t\"Bloodline Blood Orange Ale\"\n59\t7.1\t\"Snake Dog IPA\"\n60\t6.4\t\"Muskoka Mad Tom IPA\"\n61\t7.2\t\"Flower Power India Pale Ale\"\n62\t6.0\t\"Green Trail India Pale Ale\"\n63\t6.5\t\"SixtyOne 61\"\n64\t6.0\t\"60 Minute IPA\"\n65\t7.0\t\"ApriHop\"\n66\t7.3\t\"LupuLuau IPA\"\n67\t7.0\t\"Liquid Truth Serum\"\n68\t7.5\t\"Flesh amp Blood IPA\"\n69\t7.2\t\"Romantic Chemistry\"\n70\t7.5\t\"75 Minute IPA\"\n71\t6.5\t\"Pinedrops IPA\"\n72\t6.4\t\"Fresh Squeezed IPA\"\n73\t6.8\t\"Inversion IPA\"\n74\t7.0\t\"Hopzeit Autumn IPA\"\n75\t5.0\t\"Hop Slice Summer Ale\"\n76\t8.0\t\"Hop Rod Rye\"\n77\t7.5\t\"Racer 5 India Pale Ale\"\n78\t7.5\t\"Hop Shovel\"\n79\t6.0\t\"Mystic Bridge IPA\"\n80\t6.0\t\"Thunderhop IPA\"\n81\t7.2\t\"Tasmanian IPA TIPA\"\n82\t7.2\t\"American IPA\"\n83\t6.0\t\"Castaway IPA\"\n84\t4.5\t\"Hanalei Island IPA\"\n85\t6.1\t\"Mission St India Pale Ale\"\n86\t6.5\t\"Big Daddy IPA\"\n87\t6.0\t\"Full Sail IPA\"\n88\t6.5\t\"Wreck The Halls\"\n89\t7.0\t\"Old Elephant Foot IPA\"\n90\t6.4\t\"Sága IPA\"\n91\t7.7\t\"Alena\"\n92\t5.1\t\"Holy Cow\"\n93\t6.6\t\"Lost Gold IPA\"\n94\t7.0\t\"India Pale Ale\"\n95\t5.5\t\"Defender IPA\"\n96\t7.2\t\"Ballantine India Pale Ale\"\n97\t7.2\t\"Lucille IPA\"\n98\t6.7\t\"Boatswain American IPA\"\n99\t6.2\t\"Alaskan Icy Bay IPA\"\n100\t4.3\t\"PopUp Session IPA\"\n101\t5.6\t\"MidCoast IPA\"\n102\t5.7\t\"SingleWide IPA\"\n103\t6.2\t\"Heavy Lifting India Pale Ale\"\n104\t6.5\t\"Nirvana IPA\"\n105\t7.6\t\"Warrior IPA\"\n106\t6.5\t\"Tower 10 IPA\"\n107\t6.7\t\"Thunderhead IPA\"\n108\t6.5\t\"Steal This Can\"\n109\t7.25\t\"IPA\"\n110\t5.9\t\"Last Chance IPA\"\n111\t6.8\t\"Foggy Geezer\"\n112\t7.5\t\"Lazurite\"\n113\t5.7\t\"Sockeye Red India Pale Ale\"\n114\t6.7\t\"Aroma Coma\"\n115\t7.0\t\"Best Coast IPA\"\n116\t7.0\t\"IPA India Pale Ale\"\n117\t6.0\t\"Nu Skool IPA\"\n118\t4.5\t\"RightOWay IPA\"\n119\t4.6\t\"Tangier India Pale Ale\"\n120\t6.5\t\"Pike India Pale Ale\"\n121\t5.8\t\"Supernaut IPA\"\n122\t6.2\t\"Sea Hag IPA\"\n123\t7.0\t\"Crank IPA\"\n124\t5.8\t\"Juniper IPA\"\n125\t6.5\t\"Samuel Adams Rebel IPA\"\n126\t6.0\t\"Samuel Adams Latitude 48 Deconstructed IPA  Mosaic 2013\"\n127\t5.8\t\"Samuel Adams Whitewater IPA\"\n128\t6.75\t\"Tasman Red IPA\"\n129\t6.0\t\"Samuel Adams Latitude 48 Deconstructed IPA  Hallertau Mittelfrueh\"\n130\t6.0\t\"Samuel Adams Latitude 48 IPA\"\n131\t6.2\t\"Samuel Adams Rebel Juiced IPA\"\n132\t6.3\t\"Samuel Adams Rebel Grapefruit IPA\"\n133\t4.5\t\"Samuel Adams Rebel Rider Session IPA\"\n134\t6.5\t\"Victory Harvest Ale\"\n135\t6.5\t\"Vital IPA\"\n136\t7.5\t\"Hop Wallop\"\n137\t6.7\t\"HopDevil India Pale Ale\"\n138\t7.0\t\"Afterglow\"\n139\t7.2\t\"Stoneface IPA\"\n140\t6.3\t\"IPA\"\n141\t6.9\t\"Citrus IPA\"\n142\t7.2\t\"Art Car IPA\"\n143\t7.1\t\"Elissa IPA\"\n144\t4.7\t\"Forever Ever\"\n145\t7.4\t\"Hop Showers\"\n146\t7.1\t\"Other Half IPA\"\n147\t7.12\t\"Mad Hatter  OakAged\"\n148\t6.9\t\"Over The Edge\"\n149\t7.2\t\"Last Stop India Pale Ale\"\n150\t5.9\t\"Freedive IPA\"\n151\t6.8\t\"Ransack the Universe  Hemisphere IPA\"\n152\t6.1\t\"5Day IPA\"\n153\t6.1\t\"Ananda IPA\"\n154\t6.7\t\"Hop Dang Diggity Southern IPA\"\n155\t7.2\t\"Norms Raggedy Ass IPA\"\n156\t7.2\t\"Truth\"\n157\t7.6\t\"City Of The Sun\"\n158\t6.8\t\"Booming Rollers\"\n159\t7.2\t\"Orderville\"\n160\t5.0\t\"Leather Lips IPA\"\n161\t7.4\t\"Nanticoke Nectar\"\n162\t7.0\t\"More Moro Blood Orange IPA\"\n163\t7.0\t\"Hop Gun\"\n164\t6.8\t\"Surf Wax\"\n165\t7.1\t\"Hoptimization IPA\"\n166\t7.2\t\"Newburyport Green Head IPA\"\n167\t7.0\t\"Saint Archer IPA\"\n168\t6.8\t\"Topcutter\"\n169\t6.2\t\"Bent Hop  Golden IPA\"\n170\t9.1\t\"Limoncello IPA\"\n171\t5.3\t\"Hoppy Birthday\"\n172\t7.0\t\"Nelson\"\n173\t7.0\t\"Duet\"\n174\t7.0\t\"Windows Up\"\n175\t6.9\t\"PsycHOPathy\"\n176\t8.6\t\"Mosaic IPA\"\n177\t7.2\t\"Get Bent Mountain IPA\"\n178\t6.3\t\"Fantasy Factory\"\n179\t5.9\t\"Blue Moon White IPA\"\n180\t7.3\t\"Pernicious IPA\"\n181\t6.9\t\"Citrennial\"\n182\t6.2\t\"Spiteful IPA\"\n183\t6.0\t\"Honeyspot Road IPA\"\n184\t4.8\t\"Lil Heaven\"\n185\t7.0\t\"Missile IPA\"\n186\t6.8\t\"Yellow Rose\"\n187\t6.0\t\"Backyahd\"\n188\t6.3\t\"Dundee India Pale Ale\"\n189\t6.5\t\"Juice Bomb\"\n190\t6.5\t\"India Pale Ale IPA\"\n191\t6.2\t\"Spring IPA\"\n192\t6.5\t\"Jockamo IPA\"\n193\t6.9\t\"Wrought Iron IPA\"\n194\t4.7\t\"Grapefruit IPA\"\n195\t6.8\t\"Dankosaurus\"\n196\t8.0\t\"Cast Out\"\n197\t6.8\t\"Let It Ride\"\n198\t6.6\t\"County Line IPA\"\n199\t7.3\t\"Gigantic IPA\"\n200\t7.5\t\"The Pupil\"\n201\t7.2\t\"The Apprentice\"\n202\t6.5\t\"Snaggletooth Bandana\"\n203\t6.0\t\"Squatters IPA\"\n204\t7.0\t\"West Sixth IPA\"\n205\t7.0\t\"Two Hearted Ale\"\n206\t6.0\t\"Santilli\"\n207\t4.9\t\"Lil Citra\"\n208\t7.3\t\"Techno IPA\"\n209\t5.9\t\"Anchor Liberty Ale\"\n210\t6.7\t\"Go West IPA\"\n211\t6.5\t\"Anchor IPA\"\n212\t6.2\t\"Fiddlehead IPA\"\n213\t6.5\t\"Divided Sky Rye IPA\"\n214\t6.5\t\"Super Flare\"\n215\t4.5\t\"Hop Odyssey Citra Session IPA\"\n216\t6.5\t\"Tangerine Soul Style IPA\"\n217\t4.5\t\"Hop Odyssey Mosaic Session India Pale Ale\"\n218\t4.0\t\"Jibe Session IPA\"\n219\t6.8\t\"Soul Style IPA\"\n220\t7.0\t\"Deep Ellum IPA\"\n221\t6.2\t\"Sweetwater LowRYEder IPA\"\n222\t6.0\t\"420 Strain G13 IPA\"\n223\t6.1\t\"Goin Coastal\"\n224\t6.3\t\"Sweetwater IPA\"\n225\t6.1\t\"Category 3 IPA\"\n226\t7.0\t\"Railsplitter IPA\"\n227\t7.5\t\"Slumbrew Flagraiser IPA\"\n228\t7.2\t\"Hop Drop n Roll\"\n229\t5.9\t\"Point The Way\"\n230\t4.5\t\"Wolf Pup\"\n231\t7.0\t\"IDIPA\"\n232\t8.0\t\"Deviant Dales IPA\"\n233\t6.43\t\"IPA\"\n234\t4.9\t\"Pinner\"\n235\t6.2\t\"Gangway IPA\"\n236\t6.6\t\"Hopadillo IPA\"\n237\t7.5\t\"The Great Return\"\n238\t7.0\t\"IPA\"\n239\t6.6\t\"Head High\"\n240\t7.0\t\"Size 7\"\n241\t6.8\t\"Hebrew Hop Manna IPA\"\n242\t6.5\t\"Indie Pale Ale\"\n243\t7.0\t\"Broo Doo\"\n244\t7.3\t\"Necron 99\"\n245\t7.0\t\"LazerSnake\"\n246\t7.0\t\"Descender IPA\"\n247\t7.1\t\"Amalgamator\"\n248\t7.1\t\"Citraholic\"\n249\t7.0\t\"Thrillseeker IPA\"\n250\t7.2\t\"Melrose IPA\"\n251\t6.7\t\"Dunegräs\"\n252\t6.8\t\"Starchicken Shot Gun\"\n253\t7.2\t\"Mayberry\"\n254\t6.2\t\"Face Plant IPA\"\n255\t6.2\t\"Fire Eagle IPA\"\n256\t6.5\t\"Indica India Pale Ale\"\n257\t6.0\t\"Threadless IPA\"\n258\t6.5\t\"The Corruption\"\n259\t6.7\t\"Hop Savant\"\n260\t7.0\t\"51K IPA\"\n261\t7.5\t\"Almanac IPA\"\n262\t7.0\t\"Tap It IPA\"\n263\t6.3\t\"Monumental IPA\"\n264\t6.8\t\"White Rajah\"\n265\t7.2\t\"Elevated IPA\"\n266\t7.5\t\"Project Dank\"\n267\t6.5\t\"Hoppy Poppy IPA\"\n268\t5.5\t\"Class Five IPA\"\n269\t7.0\t\"Islander IPA\"\n270\t6.75\t\"I10 IPA\"\n271\t6.0\t\"Half Cycle IPA\"\n272\t6.8\t\"The Kind IPA\"\n273\t7.0\t\"Falco\"\n274\t2.7\t\"Bikini Beer\"\n275\t4.5\t\"Citra Sunshine Slacker\"\n276\t6.8\t\"India Pale Ale\"\n277\t7.5\t\"Melvin IPA\"\n278\t7.3\t\"Wytchmaker Farmhouse Rye IPA\"\n279\t6.0\t\"Fryes Leap IPA\"\n280\t6.9\t\"Stowaway IPA\"\n281\t6.6\t\"So Fresh amp So Green Green\"\n282\t7.3\t\"Hopsecutioner\"\n283\t7.7\t\"The Walking Dead  Blood Orange IPA\"\n284\t6.5\t\"Tangerine Dreamsicle\"\n285\t5.9\t\"UpHi IPA\"\n286\t6.3\t\"Mosaic Red Rye IPA\"\n287\t7.2\t\"Zephyr\"\n288\t6.2\t\"Pompeii\"\n289\t5.8\t\"Intergalactic Warrior\"\n290\t6.0\t\"1492 IPA\"\n291\t5.5\t\"ZeeLander\"\n292\t6.8\t\"Golden Nugget IPA\"\n293\t6.5\t\"Breaking Bud\"\n294\t7.5\t\"RPM IPA\"\n295\t6.0\t\"Twisted Pine Hoppy Boy IPA\"\n296\t7.3\t\"Money\"\n297\t6.2\t\"Escape To Colorado\"\n298\t6.6\t\"Spiral Jetty\"\n299\t7.1\t\"Chinookie IPA\"\n300\t6.8\t\"Breakside IPA\"\n301\t6.6\t\"Wanderlust\"\n302\t4.3\t\"Notch Left Of The Dial\"\n303\t7.25\t\"Monkeynaut IPA\"\n304\t7.3\t\"Hopwired\"\n305\t6.5\t\"Boo Koo IPA\"\n306\t6.5\t\"Be Hoppy\"\n307\t7.0\t\"300 Mosaic India Pale Ale\"\n308\t7.0\t\"Union Jack IPA\"\n309\t4.0\t\"Easy Jack\"\n310\t7.2\t\"CrystalHero\"\n311\t7.0\t\"GalaxyHero India Pale Ale\"\n312\t6.7\t\"AntiHero IPA\"\n313\t7.5\t\"MosaicHero India Pale Ale\"\n314\t7.5\t\"CitraHero\"\n315\t6.2\t\"Lagunitas IPA\"\n316\t4.0\t\"DayTime\"\n317\t6.7\t\"Hop Knot\"\n318\t7.1\t\"HopBot IPA\"\n319\t6.66\t\"Diabolical India Pale Ale\"\n320\t5.7\t\"Lucky U IPA\"\n321\t6.9\t\"Sisters Of The Moon\"\n322\t7.5\t\"Big Nose IPA\"\n323\t7.0\t\"Another One\"\n324\t7.0\t\"Lunch\"\n325\t6.2\t\"Woods amp Waters\"\n326\t6.5\t\"Hop Program  Beer I\"\n327\t6.2\t\"Interurban IPA\"\n328\t7.0\t\"Lush IPA\"\n329\t7.5\t\"Grapefruit Jungle GFJ\"\n330\t6.8\t\"Alimony Ale\"\n331\t5.0\t\"Hop Session India Pale Ale\"\n332\t7.0\t\"White Hawk Select IPA\"\n333\t6.1\t\"Green Monsta IPA\"\n334\t7.0\t\"Sculpin  Grapefruit\"\n335\t7.0\t\"Big Eye\"\n336\t7.0\t\"Sculpin  Habanero\"\n337\t7.0\t\"Sculpin  Aloha\"\n338\t6.0\t\"Fathom IPA\"\n339\t7.0\t\"Sculpin\"\n340\t7.0\t\"Sculpin  Unfiltered\"\n341\t3.8\t\"Mango Even Keel\"\n342\t7.0\t\"Sculpin  Pineapple\"\n343\t6.8\t\"Lot 3 IPA\"\n344\t6.8\t\"Trickster IPA\"\n345\t4.9\t\"Sunshine Daydream Session IPA\"\n346\t7.5\t\"Head Hunter\"\n347\t7.5\t\"Hop Stalker Fresh Hop IPA\"\n348\t7.1\t\"F5 IPA\"\n349\t6.3\t\"Citrus Mistress\"\n350\t7.2\t\"Alphadelic IPA\"\n351\t7.0\t\"Hop Ottin IPA\"\n352\t7.5\t\"HellRazer\"\n353\t6.5\t\"Neon Gypsy\"\n354\t7.0\t\"The Hemperor\"\n355\t7.0\t\"Voodoo Ranger IPA\"\n356\t6.0\t\"Citradelic Tangerine IPA\"\n357\t4.5\t\"Slow Ride Session IPA\"\n358\t6.8\t\"Lake Placid India Pale Ale\"\n359\t7.0\t\"Fat Tug IPA\"\n360\t6.0\t\"Hopitoulas IPA\"\n361\t6.7\t\"HogWild IPA\"\n362\t7.2\t\"India Pale Ale\"\n363\t7.5\t\"Hop Dish IPA\"\n364\t6.2\t\"Eight Point IPA\"\n365\t7.0\t\"Route 113 IPA\"\n366\t6.6\t\"Eastern Standard IPA\"\n367\t6.2\t\"Redhook Long Hammer IPA\"\n368\t7.5\t\"Beer Hates Astronauts\"\n369\t6.7\t\"Vallejo\"\n370\t7.0\t\"Space\"\n371\t7.0\t\"GoneAway IPA\"\n372\t6.0\t\"Homefront IPA\"\n373\t7.5\t\"Jai Alai IPA  White Oak\"\n374\t7.5\t\"Jai Alai IPA  Cedar Aged Humidor Series\"\n375\t7.5\t\"Jai Alai IPA\"\n376\t7.5\t\"Humidor Series India Pale Ale\"\n377\t3.8\t\"Spring Fever Session IPA\"\n378\t7.0\t\"Triple Play IPA\"\n379\t6.5\t\"Chinookerd\"\n380\t4.8\t\"Super Session 8\"\n381\t4.8\t\"Super Session 2\"\n382\t6.7\t\"Nectar IPA\"\n383\t6.8\t\"Pakos IPA\"\n384\t7.2\t\"512 IPA\"\n385\t5.5\t\"Horny Goat Hopped Up And Horny\"\n386\t7.2\t\"IPA\"\n387\t6.8\t\"Marble IPA\"\n388\t6.8\t\"Apocalypse IPA\"\n389\t6.9\t\"Joe IPA\"\n390\t6.5\t\"Betty\"\n391\t6.6\t\"Happy Camper IPA\"\n392\t7.0\t\"The Astounding SheMonster\"\n393\t6.9\t\"India Pale Ale\"\n394\t6.8\t\"Mission IPA\"\n395\t7.0\t\"Hop Whoopin\"\n396\t7.1\t\"HopShock IPA\"\n397\t7.7\t\"HopArt IPA\"\n398\t7.3\t\"Abominable Winter Ale\"\n399\t6.6\t\"Hopworks IPA\"\n400\t7.2\t\"Jack Hammer\"\n401\t5.6\t\"Punk IPA\"\n402\t6.5\t\"Elvis Juice\"\n403\t7.5\t\"Workhorse IPA\"\n404\t6.5\t\"Southampton IPA\"\n405\t7.2\t\"Organic West Coast IPA\"\n406\t6.5\t\"Ipswich India Pale Ale IPA\"\n407\t6.1\t\"Mayflower IPA\"\n408\t7.7\t\"Vortex IPA\"\n409\t6.7\t\"Watershed IPA\"\n410\t6.8\t\"Big Swell IPA\"\n411\t7.1\t\"Rumble IPA\"\n412\t7.1\t\"Titan IPA\"\n413\t5.0\t\"Lasso\"\n414\t6.2\t\"Pick Axe IPA\"\n415\t4.2\t\"Atwater Grand Circus IPA\"\n416\t7.5\t\"Gangster Frog\"\n417\t6.8\t\"Hoppin To Heaven IPA\"\n418\t6.1\t\"Belhaven Twisted Thistle IPA\"\n419\t6.5\t\"Crooked Tree IPA\"\n420\t6.9\t\"IPA\"\n421\t7.5\t\"Scorpion Bowl IPA\"\n422\t7.3\t\"Vengeful Spirit\"\n423\t6.7\t\"Ghost Hammer IPA\"\n424\t6.7\t\"Tangerine Express IPA\"\n425\t4.8\t\"Go To IPA\"\n426\t7.7\t\"Delicious IPA\"\n427\t6.8\t\"Sacred Cow IPA\"\n428\t6.8\t\"Maiden The Shade\"\n429\t6.7\t\"Total Domination IPA\"\n430\t6.5\t\"Hop Ryot\"\n431\t7.0\t\"Mystic Mama\"\n432\t6.0\t\"Wicked Ram IPA\"\n433\t7.3\t\"Hop Nosh IPA\"\n434\t7.3\t\"Tangerine Hop Nosh IPA\"\n435\t8.3\t\"Smuttynose Stone Clusters Last Stand\"\n436\t6.9\t\"Smuttynose IPA Finest Kind\"\n437\t6.8\t\"Just Outstanding IPA\"\n438\t6.7\t\"Northern Hemisphere Harvest Wet Hop IPA\"\n439\t6.7\t\"Estate Homegrown Wet Hop Ale\"\n440\t6.7\t\"Southern Hemisphere Harvest Fresh Hop IPA\"\n441\t7.2\t\"Torpedo Extra IPA\"\n442\t6.7\t\"Tropical Torpedo Tropical IPA\"\n443\t5.8\t\"Five Hop IPA\"\n444\t6.8\t\"Celebration Fresh Hop IPA\"\n445\t6.2\t\"Hop Hunter\"\n446\t6.5\t\"Harvest Wild Hop IPA  Neomexicanus Varietal\"\n447\t6.5\t\"Flower Child IPA\"\n448\t7.2\t\"Peak Organic IPA\"\n449\t6.5\t\"High Tide Fresh Hop IPA\"\n450\t7.5\t\"Wipeout IPA\"\n451\t7.4\t\"Ballistic IPA\"\n452\t7.5\t\"Velveteen Habit\"\n453\t6.2\t\"Northern Lights IPA\"\n454\t7.3\t\"Good Vibes\"\n455\t6.8\t\"Swamis IPA\"\n456\t4.5\t\"Ponto SIPA Sessionable India Pale Ale\"\n457\t6.0\t\"Hoppy Trails IPA\"\n458\t6.9\t\"Koppi Coffee IPA\"\n459\t7.0\t\"Green Gold\"\n460\t6.9\t\"Simcoe Single Hop IPA\"\n461\t6.8\t\"Better Half\"\n462\t6.8\t\"Snapperhead IPA\"\n463\t6.5\t\"Yellow Snow IPA\"\n464\t7.5\t\"Cold Brew IPA\"\n465\t7.77\t\"Rogue Farms 7 Hop IPA\"\n466\t7.3\t\"Overrated West Coast Style IPA\"\n467\t6.1\t\"Wet\"\n468\t6.7\t\"Furious\"\n469\t7.2\t\"Todd The Axe Man\"\n470\t7.2\t\"Mojo IPA\"\n471\t6.9\t\"Laughing Dog Rocket Dog Rye IPA\"\n472\t6.5\t\"Hop Commander IPA\"\n473\t6.5\t\"Citra Dog\"\n474\t4.7\t\"All Day IPA\"\n475\t7.2\t\"Centennial IPA\"\n476\t7.6\t\"Harvest Ale\"\n477\t7.0\t\"Azacca IPA\"\n478\t6.0\t\"Free Flow IPA\"\n479\t7.2\t\"Singapore IPA\"\n480\t6.0\t\"Masala Mama India Pale Ale\"\n481\t6.0\t\"Mango Mama\"\n482\t6.0\t\"Dragonfly IPA\"\n483\t6.0\t\"Shiva IPA\"\n484\t6.7\t\"Rambler IPA\"\n485\t5.0\t\"Endless IPA\"\n486\t6.5\t\"Corne Du Diable\"\n487\t6.9\t\"ACME California IPA\"\n488\t7.4\t\"Jade IPA\"\n489\t6.3\t\"Hoppyum IPA\"\n490\t7.0\t\"Headstock IPA\"\n491\t5.5\t\"Southern Hops’pitality\"\n492\t6.0\t\"Smashbomb Atomic IPA\"\n493\t6.8\t\"Hopportunity Knocks\"\n494\t6.1\t\"Caldera IPA\"\n495\t5.7\t\"Iowa Pale Ale\"\n496\t6.6\t\"Bengali\"\n497\t5.8\t\"Big Hop\"\n498\t6.5\t\"Red Racer IPA India Pale Ale\"\n499\t7.0\t\"Stash IPA\"\n500\t6.8\t\"Trestles\"\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606808776977_-1340595147",
+      "id": "paragraph_1606808776977_-1340595147",
+      "dateCreated": "2020-12-01 07:46:16.978",
+      "dateStarted": "2021-08-04 13:42:51.456",
+      "dateFinished": "2021-08-04 13:42:51.550",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val beerUpdateDf \u003d Seq(\n        (1, 5.9),\n        (2, 6.3),\n        (3, 6.0)\n    ).toDF(\"id\", \"abv\")\n    \nbeerUpdateDf.write\n    .format(\"org.neo4j.spark.DataSource\")\n    .mode(\"Overwrite\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"password\")\n    /**/\n    .option(\"labels\", \"Beer\")\n    .option(\"node.keys\", \"id\")\n    .save()",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-04 13:52:50.732",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mbeerUpdateDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [id: int, abv: double]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d38"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628063823246_1893004994",
+      "id": "paragraph_1628063823246_1893004994",
+      "dateCreated": "2021-08-04 07:57:03.247",
+      "dateStarted": "2021-08-04 12:48:14.362",
+      "dateFinished": "2021-08-04 12:48:15.433",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%neo4j \n\nMATCH (n:Beer) WHERE n.id IN [1, 2, 3] RETURN n.id, n.abv, n.beer_name",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-04 13:53:06.339",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 12.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "n.id": "string",
+                      "n.abv": "string",
+                      "n.beer_name": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/undefined"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "n.id\tn.abv\tn.beer_name\n1\t6.0\t\"Stormcloud IPA\"\n2\t6.5\t\"Saranac Legacy IPA\"\n3\t5.95\t\"Saranac Rye IPA\"\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628067493625_867848381",
+      "id": "paragraph_1628067493625_867848381",
+      "dateCreated": "2021-08-04 08:58:13.626",
+      "dateStarted": "2021-08-04 13:53:06.036",
+      "dateFinished": "2021-08-04 13:53:06.111",
+      "status": "FINISHED"
+    },
+    {
+      "title": "Write with query",
+      "text": "beerDf.write\n    .format(\"org.neo4j.spark.DataSource\")\n    .mode(\"Overwrite\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"password\")\n    /**/\n    .option(\"query\", \"\"\"\n    |MATCH (b:Beer {id: event.beer_id})\n    |SET b.brewer \u003d NULL\n    |MERGE (br:Brewery {name: event.brewer})\n    |MERGE (b)-[:BREWED_BY]-\u003e(br)\"\"\".stripMargin)\n    .save()",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-04 13:54:24.775",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "tableHide": false,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d50"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1606397425925_853194907",
+      "id": "paragraph_1606397425925_853194907",
+      "dateCreated": "2020-11-26 13:30:25.925",
+      "dateStarted": "2021-08-04 13:54:24.795",
+      "dateFinished": "2021-08-04 13:54:25.850",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%neo4j\n\nMATCH pattern\u003d(b:Beer)-[:BREWED_BY]-\u003e(br:Brewery) RETURN pattern\nLIMIT 20",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-04 14:03:47.548",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 12.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "network",
+              "height": 559.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
                       "id": "string",
                       "label": "string",
+                      "abv": "string",
+                      "beer_name": "string",
                       "name": "string"
                     },
                     "updated": false
@@ -573,24 +1086,65 @@
         "msg": [
           {
             "type": "NETWORK",
-            "data": "{\"nodes\":[{\"id\":171,\"data\":{\"name\":\"Drums\"},\"label\":\"Instrument\"},{\"id\":172,\"data\":{\"name\":\"Guitar\"},\"label\":\"Instrument\"},{\"id\":173,\"data\":{\"name\":\"Piano\"},\"label\":\"Instrument\"}],\"edges\":[],\"labels\":{\"Movie\":\"#5A9FDF\",\"Person\":\"#1C4CC1\",\"Instrument\":\"#3BFFE6\"},\"types\":[\"ACTED_IN\",\"REVIEWED\",\"PRODUCED\",\"WROTE\",\"FOLLOWS\",\"DIRECTED\"],\"directed\":true}"
+            "data": "{\"nodes\":[{\"id\":2958,\"data\":{\"name\":\"Rahr \\u0026amp; Sons Brewing Company\"},\"label\":\"Brewery\"},{\"id\":2959,\"data\":{\"name\":\"Matt Brewing Company / Saranac Brewery\"},\"label\":\"Brewery\"},{\"id\":2960,\"data\":{\"name\":\"Zero Gravity Craft Brewery / American Flatbread\"},\"label\":\"Brewery\"},{\"id\":2961,\"data\":{\"name\":\"Short\\u0027s Brewing Company\"},\"label\":\"Brewery\"},{\"id\":2962,\"data\":{\"name\":\"Magic Hat Brewing Company\"},\"label\":\"Brewery\"},{\"id\":2963,\"data\":{\"name\":\"Long Trail Brewing Co.\"},\"label\":\"Brewery\"},{\"id\":2964,\"data\":{\"name\":\"No-Li Brewhouse\"},\"label\":\"Brewery\"},{\"id\":2965,\"data\":{\"name\":\"Ska Brewing Co.\"},\"label\":\"Brewery\"},{\"id\":2966,\"data\":{\"name\":\"Heavy Seas Beer\"},\"label\":\"Brewery\"},{\"id\":2458,\"data\":{\"id\":1,\"abv\":6.0,\"beer_name\":\"Stormcloud IPA\"},\"label\":\"Beer\"},{\"id\":2459,\"data\":{\"id\":2,\"abv\":6.5,\"beer_name\":\"Saranac Legacy IPA\"},\"label\":\"Beer\"},{\"id\":2460,\"data\":{\"id\":3,\"abv\":5.95,\"beer_name\":\"Saranac Rye IPA\"},\"label\":\"Beer\"},{\"id\":2461,\"data\":{\"id\":4,\"abv\":5.8,\"beer_name\":\"Saranac India Pale Ale\"},\"label\":\"Beer\"},{\"id\":2462,\"data\":{\"id\":5,\"abv\":5.7,\"beer_name\":\"Conehead IPA\"},\"label\":\"Beer\"},{\"id\":2463,\"data\":{\"id\":6,\"abv\":6.8,\"beer_name\":\"Hopstache\"},\"label\":\"Beer\"},{\"id\":2464,\"data\":{\"id\":7,\"abv\":7.0,\"beer_name\":\"Freedom Of 78\"},\"label\":\"Beer\"},{\"id\":2465,\"data\":{\"id\":8,\"abv\":6.5,\"beer_name\":\"ControversiALE\"},\"label\":\"Beer\"},{\"id\":2466,\"data\":{\"id\":9,\"abv\":7.7,\"beer_name\":\"Shorts Huma Lupa Licious India Pale Ale\"},\"label\":\"Beer\"},{\"id\":2467,\"data\":{\"id\":10,\"abv\":6.7,\"beer_name\":\"HiPA\"},\"label\":\"Beer\"},{\"id\":2468,\"data\":{\"id\":11,\"abv\":7.1,\"beer_name\":\"Ticket To Rye IPA\"},\"label\":\"Beer\"},{\"id\":2469,\"data\":{\"id\":12,\"abv\":6.4,\"beer_name\":\"Encore\"},\"label\":\"Beer\"},{\"id\":2470,\"data\":{\"id\":13,\"abv\":5.8,\"beer_name\":\"Lucky Kat\"},\"label\":\"Beer\"},{\"id\":2471,\"data\":{\"id\":14,\"abv\":6.0,\"beer_name\":\"Electric Peel Grapefruit IPA\"},\"label\":\"Beer\"},{\"id\":2472,\"data\":{\"id\":15,\"abv\":6.5,\"beer_name\":\"Green Blaze IPA\"},\"label\":\"Beer\"},{\"id\":2473,\"data\":{\"id\":16,\"abv\":7.0,\"beer_name\":\"Born amp Raised IPA\"},\"label\":\"Beer\"},{\"id\":2474,\"data\":{\"id\":17,\"abv\":6.8,\"beer_name\":\"Modus Hoperandi\"},\"label\":\"Beer\"},{\"id\":2475,\"data\":{\"id\":18,\"abv\":6.8,\"beer_name\":\"Modus Mandarina\"},\"label\":\"Beer\"},{\"id\":2477,\"data\":{\"id\":20,\"abv\":7.25,\"beer_name\":\"TropiCannon Citrus IPA\"},\"label\":\"Beer\"},{\"id\":2478,\"data\":{\"id\":21,\"abv\":4.5,\"beer_name\":\"CrossBones Session IPA\"},\"label\":\"Beer\"}],\"edges\":[{\"source\":2458,\"target\":2958,\"id\":1506,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2459,\"target\":2959,\"id\":1507,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2460,\"target\":2959,\"id\":1508,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2461,\"target\":2959,\"id\":1509,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2462,\"target\":2960,\"id\":1510,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2463,\"target\":2961,\"id\":1511,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2464,\"target\":2961,\"id\":1512,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2465,\"target\":2961,\"id\":1513,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2466,\"target\":2961,\"id\":1514,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2467,\"target\":2962,\"id\":1515,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2468,\"target\":2962,\"id\":1516,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2469,\"target\":2962,\"id\":1517,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2470,\"target\":2962,\"id\":1518,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2471,\"target\":2962,\"id\":1519,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2472,\"target\":2963,\"id\":1520,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2473,\"target\":2964,\"id\":1521,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2474,\"target\":2965,\"id\":1522,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2475,\"target\":2965,\"id\":1523,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2477,\"target\":2966,\"id\":1525,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2478,\"target\":2966,\"id\":1526,\"data\":{},\"label\":\"BREWED_BY\"}],\"labels\":{\"Character\":\"#71BFB6\",\"Episode\":\"#A2B4A8\",\"Word\":\"#038AA4\",\"Beer\":\"#400D4C\",\"Brewery\":\"#27161D\"},\"types\":[\"BREWED_BY\"],\"directed\":true}"
           }
         ]
       },
       "apps": [],
       "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1606808776977_-1340595147",
-      "id": "paragraph_1606808776977_-1340595147",
-      "dateCreated": "2020-12-01 07:46:16.978",
-      "dateStarted": "2021-07-27 09:57:25.695",
-      "dateFinished": "2021-07-27 09:57:26.172",
+      "jobName": "paragraph_1606401945089_-1506418454",
+      "id": "paragraph_1606401945089_-1506418454",
+      "dateCreated": "2020-11-26 14:45:45.090",
+      "dateStarted": "2021-08-04 14:03:47.571",
+      "dateFinished": "2021-08-04 14:03:47.641",
       "status": "FINISHED"
     },
     {
-      "text": "val celebritiesMusician \u003d Seq(\n        (\"Keanu Reeves\", \"Drums\"),\n        (\"Carrie-Anne Moss\", \"Piano\"),\n        (\"Laurence Fishburne\", \"Bass\"),\n        (\"Hugo Weaving\", \"Guitar\"),\n        (\"Ezio Greggio\", \"Triangle\")\n    ).toDF(\"actor_name\", \"instrument_name\")\n    \n/**\n * Save modes for relationship nodes: https://neo4j.com/developer/spark/writing/#bookmark-node-save-modes\n * \n * Save strategies: https://neo4j.com/developer/spark/writing/#bookmark-strategies\n */\ncelebritiesMusician.write\n    .format(\"org.neo4j.spark.DataSource\")\n    .mode(\"Overwrite\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"password\")\n    /**/\n    .option(\"relationship.save.strategy\", \"keys\")\n    .option(\"relationship\", \"PLAYS\")\n    .option(\"relationship.source.labels\", \"Person\")\n    .option(\"relationship.target.labels\", \"Instrument\")\n    .option(\"relationship.source.node.keys\", \"actor_name:name\")\n    .option(\"relationship.target.node.keys\", \"instrument_name:name\")\n    .option(\"relationship.source.save.mode\", \"Match\") // we don\u0027t want new actors in our db\n    .option(\"relationship.target.save.mode\", \"Overwrite\") // but we do want new instruments\n    .save()",
+      "text": "reviewDf.printSchema",
       "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:57:26.213",
+      "dateUpdated": "2021-08-04 14:56:55.542",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/undefined"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- beer_id: integer (nullable \u003d true)\n |-- review_id: decimal(5,0) (nullable \u003d true)\n |-- review: string (nullable \u003d true)\n |-- rating: double (nullable \u003d true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628073347424_1922050348",
+      "id": "paragraph_1628073347424_1922050348",
+      "dateCreated": "2021-08-04 10:35:47.424",
+      "dateStarted": "2021-08-04 14:56:55.563",
+      "dateFinished": "2021-08-04 14:56:55.763",
+      "status": "FINISHED"
+    },
+    {
+      "title": "Writing Relationships",
+      "text": "reviewDf.write\n    .format(\"org.neo4j.spark.DataSource\")\n    .mode(\"ErrorIfExists\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"password\")\n    /**/\n    .option(\"relationship\", \"REVIEWS\")\n    .option(\"relationship.save.strategy\", \"keys\")\n    .option(\"relationship.source.labels\", \":Review\")\n    .option(\"relationship.source.save.mode\", \"ErrorIfExists\")\n    .option(\"relationship.source.node.keys\", \"review_id:id\")\n    .option(\"relationship.source.node.properties\", \"rating,review\")\n    .option(\"relationship.target.labels\", \":Beer\")\n    .option(\"relationship.target.save.mode\", \"Overwrite\")\n    .option(\"relationship.target.node.keys\", \"beer_id:id\")\n    .save()",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-04 15:54:45.308",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -603,7 +1157,8 @@
           "completionSupport": true
         },
         "editorMode": "ace/mode/scala",
-        "tableHide": false
+        "title": true,
+        "editorHide": false
       },
       "settings": {
         "params": {},
@@ -611,12 +1166,7 @@
       },
       "results": {
         "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "\u001b[1m\u001b[34mcelebritiesMusician\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [actor_name: string, instrument_name: string]\n"
-          }
-        ]
+        "msg": []
       },
       "apps": [],
       "runtimeInfos": {
@@ -627,24 +1177,24 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d3"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d70"
             }
           ],
           "interpreterSettingId": "spark"
         }
       },
       "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1606397425925_853194907",
-      "id": "paragraph_1606397425925_853194907",
-      "dateCreated": "2020-11-26 13:30:25.925",
-      "dateStarted": "2021-07-27 09:57:26.310",
-      "dateFinished": "2021-07-27 09:57:34.769",
+      "jobName": "paragraph_1606924171632_-1330942791",
+      "id": "paragraph_1606924171632_-1330942791",
+      "dateCreated": "2020-12-02 15:49:31.632",
+      "dateStarted": "2021-08-04 15:54:45.324",
+      "dateFinished": "2021-08-04 15:54:51.639",
       "status": "FINISHED"
     },
     {
-      "text": "%neo4j\n\nMATCH pattern\u003d(p:Person)-[:PLAYS]-\u003e(i:Instrument) RETURN pattern",
+      "text": "%neo4j \n\nMATCH pattern\u003d(r:Review)-[:REVIEWS]-\u003e(b:Beer)-[:BREWED_BY]-\u003e(br:Brewery) RETURN pattern\nLIMIT 100",
       "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:57:34.781",
+      "dateUpdated": "2021-08-04 15:55:44.522",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -652,8 +1202,8 @@
         "results": {
           "0": {
             "graph": {
-              "mode": "table",
-              "height": 559.0,
+              "mode": "network",
+              "height": 300.0,
               "optionOpen": false,
               "setting": {
                 "table": {
@@ -662,8 +1212,11 @@
                     "names": {
                       "id": "string",
                       "label": "string",
+                      "rating": "string",
+                      "review": "string",
                       "name": "string",
-                      "born": "string"
+                      "abv": "string",
+                      "beer_name": "string"
                     },
                     "updated": false
                   },
@@ -683,13 +1236,12 @@
           }
         },
         "editorSetting": {
-          "language": "text",
+          "language": "scala",
           "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "editorMode": "ace/mode/undefined",
-        "tableHide": false
+        "editorMode": "ace/mode/undefined"
       },
       "settings": {
         "params": {},
@@ -700,382 +1252,25 @@
         "msg": [
           {
             "type": "NETWORK",
-            "data": "{\"nodes\":[{\"id\":1,\"data\":{\"name\":\"Keanu Reeves\",\"born\":1964},\"label\":\"Person\"},{\"id\":2,\"data\":{\"name\":\"Carrie-Anne Moss\",\"born\":1967},\"label\":\"Person\"},{\"id\":3,\"data\":{\"name\":\"Laurence Fishburne\",\"born\":1961},\"label\":\"Person\"},{\"id\":4,\"data\":{\"name\":\"Hugo Weaving\",\"born\":1960},\"label\":\"Person\"},{\"id\":171,\"data\":{\"name\":\"Drums\"},\"label\":\"Instrument\"},{\"id\":172,\"data\":{\"name\":\"Guitar\"},\"label\":\"Instrument\"},{\"id\":173,\"data\":{\"name\":\"Piano\"},\"label\":\"Instrument\"},{\"id\":174,\"data\":{\"name\":\"Bass\"},\"label\":\"Instrument\"}],\"edges\":[{\"source\":1,\"target\":171,\"id\":256,\"data\":{},\"label\":\"PLAYS\"},{\"source\":3,\"target\":174,\"id\":253,\"data\":{},\"label\":\"PLAYS\"},{\"source\":2,\"target\":173,\"id\":254,\"data\":{},\"label\":\"PLAYS\"},{\"source\":4,\"target\":172,\"id\":255,\"data\":{},\"label\":\"PLAYS\"}],\"labels\":{\"Movie\":\"#5A9FDF\",\"Person\":\"#1C4CC1\",\"Instrument\":\"#3BFFE6\"},\"types\":[\"ACTED_IN\",\"REVIEWED\",\"PRODUCED\",\"WROTE\",\"PLAYS\",\"FOLLOWS\",\"DIRECTED\"],\"directed\":true}"
+            "data": "{\"nodes\":[{\"id\":16128,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"Nice clear brew, orange gold with a good sized head and moderate lacing. Sweet caramel malt and grapefruit hits the nostrils at first. A bit of fruitiness. Some leafiness and grains as well. Kinda subdued but nice. Taste is nicely balanced with a solid malt core. A touch of toffee like sweetness and then a good dose of grapefruit and hop oil. Finish is a long and hop oily with some earth and toasted whole grain bread. Feel is medium weight but at times seems a bit thin. However carbonation is light and smooth and this just makes the next score. Goes down easy and is quite pleasant.\"},\"label\":\"Review\"},{\"id\":16129,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"Crystal clear copper color with lots of large bubbles. Dense, creamy hewad with above average lacing. Strong, sweet hop aroma with hints of citrus and grass. Taste is very similar with a moderatelt dry, tingly finish. Aftertaste doesn\\u0027t linger very long. As far as mouthfeel goesm this one sticks with you for a minute, especially the dryness that grabs you in the back of your throat. Drinkability is excellent. If you like IPAs this would make a great session beer on a hot day.\"},\"label\":\"Review\"},{\"id\":16130,\"data\":{\"rating\":3.0,\"id\":3,\"review\":\"Slightly hazy yellow, with a moderately tenacious head. Smells of citrus and grapefruit and the taste mirrors this. The malts are present I guess. You can tell they are there because it\\u0027s not all hops, BUT I can\\u0027t taste the malt in it\\u0027s own right. The mouthfeel is smooth and bubbly. It\\u0027s pretty drinkable as the bitterness isn\\u0027t overwhelming, nor unpleasant. I\\u0027d buy it again.\"},\"label\":\"Review\"},{\"id\":16131,\"data\":{\"rating\":3.0,\"id\":3,\"review\":\"Golden amber brew with a nice head. Weak aroma of floral hops with some citrus notes. Light to medium body, with flavor dominated by hops with a long dry finish. Hops character is on a weak side for IPA. Good IPA for the price but not up to the best examples of the style.\"},\"label\":\"Review\"},{\"id\":16132,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"This is a solid version of an IPA. Saranac offers, literally, every notable style of beer there is. Evidently, they aim to produce a huge variety, rather than a unique interpretation of any particular style. Maybe Saranac should be the benchmark for all beer sampling. All joking aside, their beer is solid from what I have experienced so far, but not outstanding.\"},\"label\":\"Review\"},{\"id\":16133,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"12oz. bottle served in my SA Perfect Pint. Pours a translucent orange-copper with a loose, half-inch, off-white head. A vortex of tiny bubbles rises from the base of the glass to the underside of the cap. Head eventually settles into a solid quarter inch cap - some strands of lacing are present during the tasting. Nose reveals a light citrus character, a slightly resinous quality and biscuit malts. Taste starts out a bit acidic, followed by the piny/resinous quality present in the nose and some lingering bitterness. Mouthfeel is light-medium (but closer to light), with a lively carbonation and some astringency that lightly stimulates the sides of the cheeks. A respectable IPA. Perhaps a little too close to the bitter side of the spectrum, but fairly drinkable.\"},\"label\":\"Review\"},{\"id\":16134,\"data\":{\"rating\":3.0,\"id\":3,\"review\":\"This beer is a crystal clear, golden brew...fleetingly amber in hue with a white cap. Enticing..the aroma is clean and subtle. After a bit of coaxing (agitation and coaxing), the smell of grain, and herbal hops spring forth. Rye isn\\u0027t immediately present, but it is detectable, if you look. The Tate is balanced. Firm and pleasant bitterness. Tongue-tingling carbonation, especially when mixed with the rye and hops. Still, the beer feels a bit thin and less than substantial. The beer is okay, just okay. Not great, and not bad.\"},\"label\":\"Review\"},{\"id\":16135,\"data\":{\"rating\":3.25,\"id\":3,\"review\":\"Poured from a bottle into a shaker pint, the beer is a semi-bright, crystal clear, straw-gold coloring with a frothy, sparse, bright white surface coat of head. Brighter coloring than most Rye IPAs I\\u0027ve seen. The nose has a pretty significant grain character, both roasty and toasty, with a peppery and slightly resiny ribbon throughout. Flavors are bitter and resiny on the forward tongue, with a peppery spiced character at the end of the palate. Heavy grain/rye backbone, with a frothy, light feel in mouth. The aftertaste has a tangy, slightly bitter tone to it, with a frothy, light finish. Subtle dryness at the end of the palate. Not bad, but a bit unbalanced.\"},\"label\":\"Review\"},{\"id\":16136,\"data\":{\"rating\":3.25,\"id\":3,\"review\":\"Poured into McDonald\\u0027s collector glass (I\\u0027m...not at my place right now). Clear golden with rising bubbles and a medium fizzy white head that dissipates quickly to a medium-thin layer of thick white foam. Smells of dank hops, yeast and rye. Taste is bitter hops, yeast and rye, with clean malts and a the hops return at the end leaving a bitter aftertaste. Priorities seem a bit off for an IPA, even with the rye as the focus; this tastes more like a rye pale ale. Still good though, Saranac is always great for tasty sessionable beers.\"},\"label\":\"Review\"},{\"id\":16137,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Light straw with heavy carbonation with mild head. Hoppy, sweet, citrus aroma. Heavy metallic and hoppy taste characteristic of it being an IPA, but a bit sweet at the same time. More depth than we remember the last time we tried this. Better. Herbal notes as you continue through the beer. Finishes true.\"},\"label\":\"Review\"},{\"id\":16138,\"data\":{\"rating\":2.75,\"id\":2,\"review\":\"Glassware: Yuengling pint; Occasion: O\\u0027s?Yanks four-game seriees opens...Appearance: nicely effervescent copper body holds a generous, cloudy two-finger white head that laces quite nicely...Aroma: bright, punchy fragrance--alluring boquet...Palate: thin for an IPA, and fizzy and oily enough to sully the experience....Taste: mildly present; the taste is fleeting and not the spicy, hoppy mix that the label--or the scent--promised!...Overall: lacing nicely at its end, this beer\\u0027s promise of a complex, interesting IPA fizzes into a watered-down, albeit comfortable, brew...would not seek it out for an evening....\"},\"label\":\"Review\"},{\"id\":16139,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Transparent orange with white head that fades. Aroma of pine, deep citrus, grass, malt spice, black pepper, rye. Flavors are similar: citrus with rind, grass, black pepper, sharp rye comes thru towards the finish. Medium bodied with medium carbonation. Aroma and flavors are nicely balanced. A bit prickly in mouthfeel.\"},\"label\":\"Review\"},{\"id\":16140,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"On tap at Nail Creek in Utica. Pours a very carbonated golden color with very thick foamy head into pint glass. No real outstanding smell other than some malts. Taste is of malty bitter hops and you deff taste the bitter rye. Its very drinkable and mild rye. Overall a slightly above average brew and worth a try if you are a saranac fan like myself.\"},\"label\":\"Review\"},{\"id\":16141,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"in the summer box for the first time that i know of. smells like a standard ipa, with a mix of lemongrass and pine tree for hop profile. very little, if any rye malts in the nose. flavor features a bit more of that, but its not spicey or even grainy like some can be, its just sort of an additional layer of malt complexity, still quite well hidden behind the fresh feeling hops. the mouthfeel is not amazing here, its kind of filling like some of the saranac ipa incarnations have been, but i would still have no problem drinking all of them in the box in one go. in general, i think it could have been a bit stronger on the rye malts, but thats just me. crisp and clean in the finish, a worthy summer brew.\"},\"label\":\"Review\"},{\"id\":16142,\"data\":{\"rating\":2.0,\"id\":2,\"review\":\"Pours a deep copper color. Aroma was dominated by citrus with just a hint of malt. I didn\\u0027t get much of the rye flavor in the beer. The hops were not quite right. The malt and hops were not well balanced and seemed to work against each other instead of playing off of one another. The mouthfeel was ok, nothing terrific. Overall, this beer didn\\u0027t do it for me. Something was just a little bit off.\"},\"label\":\"Review\"},{\"id\":16143,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"The beer looks ok, kind of on the light side. A decent amount of head caused by a goodly amount of carbonation. Smell doesn\\u0027t give me much, and is more biscuity than expected. But it\\u0027s clean, and it gives a good preview of the taste. The taste too is biscuit, with the hops fading into the background as they are overpowered by the rye. It\\u0027s a good taste, but I could use more flavor. Mouthfeel is nice, a little sharp and with some bite, but in many ways similar to drinking a Budweiser with more hops. Drinkability is good for an IPA: I\\u0027d be glad to have a few more.\"},\"label\":\"Review\"},{\"id\":16144,\"data\":{\"rating\":3.0,\"id\":3,\"review\":\"Pours a clean deep yellow to orange-ish in color with a light tan head. In the aroma, a pinch of rye and pine to citrus hops. In the taste, rye notes all the way through and mellow pine hops, with a end of citrus. A small hop bite and medium bodied mouthfeel, with a small dry hop and sweet rye in the aftertaste. Not as much rye as expected, mellow hops, not bad.\"},\"label\":\"Review\"},{\"id\":16145,\"data\":{\"rating\":3.0,\"id\":3,\"review\":\"Bottle poured a clear golden amber with a lasting ivory head. Aromas of rye, earthiness, spicy hops and pine. Palate was light bodied and crisp with a dry finish. Flavors of rye, earthiness, spicy hops and light pine with a crisp dry lingering bitter rye finish.\"},\"label\":\"Review\"},{\"id\":16146,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"Pours a lighter golden with a thin white head. Good retention and lots of laceing.Lots of bubbles!Aroma is of earthy hops and citrus. Nice, but on the weak side. Taste is of grapefruit, and grassy hops. Bitter finish. Worth a try but not in the elite class of this style.\"},\"label\":\"Review\"},{\"id\":16147,\"data\":{\"rating\":3.0,\"id\":3,\"review\":\"Reviewed on 2/17/2010. Bottle. Pours a clear light orange with a thick off-white head. Aroma of sweet malt, light fruits, residual sugars. Flavor of toasted malts, light floral hops, sweet malt. For an IPA, this was hardly at all hoppy or citrusy and I certainly didn\\u0027t get any rye out of it. Also it was slightly on the sweeter side of things. It was still very drinkable and enjoyable; it just didn\\u0027t live up to the advertisement.\"},\"label\":\"Review\"},{\"id\":16148,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Poured from a brown 12 oz. bottle. Has a golden color with a 1/2 inch head. Smell is mainly of hops. Taste is good, well balanced hops and malts, a touch of citrus. Feels medium bodied in the mouth and has good drinkability. Overall this is a good quality beer.\"},\"label\":\"Review\"},{\"id\":16149,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"12oz bottle from the 12 Beers of Winter mix pack. Pours a golden color with a medium-sized thick head. Lots of lacing. Aromas of pine, orange, hops and a bit of grain. Taste has more grain that the aroma would indicate. Also flavors of orange and slight piney hops. Pretty decent contribution to the mix pack. Nicely drinkable with a good amount of flavor.\"},\"label\":\"Review\"},{\"id\":16150,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Out of a bottle this beer was a clear orange color with lots of visible rising carbonation. The head was one finger of slightly yellow foam that retained well and left good lacing. The aroma was pleasant, a blend of hops, caramel malt and light rye notes. The flavors however, were a little odd. Maybe I just don\\u0027t have an affinity for Rye but when that grain coupled with the hops it produced a bitterness that I didn\\u0027t care for. That same grainy bitterness lingered on the aftertaste. The mouthfeel was pretty good but slightly oily, the body medium and the carbonation good too.\"},\"label\":\"Review\"},{\"id\":16151,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Clear brass with a smooth eggshell head that leaves scraps of lace on the glass. Mildly minty hop notes with a touch of pale malt. Spicy,bittering hops and a touch of rye and biscuit maltiness. A bit more hop and/or rye flavor would help out here. Light bodied and crisp with seltzery carbonation. An easy drinking lower end of the spectrum rye IPA.\"},\"label\":\"Review\"},{\"id\":16152,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Poured this from a 12oz bottle into a pint glass. It has a clear amber color with a thick two finger off-white head. The head sticks around for a bit and leaves a lot of lacing. The smell and taste are consistent with a mild malt flavor and a balanced hop profile that is more on the bitter side. The mouthfeel is good, which I have found to be consistent for the Saranac beers. The flavor does not impress me much so I would probably only have a few of these.\"},\"label\":\"Review\"},{\"id\":16153,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Poura a clear, pale golden color with a large head that had excellant retention. The head eventually settles to a thick cap. Heavy lacing is left on the glass. Interesting aroma that combines the rye, hops, and malt in a pleasant smell. Spiciness from the rye, dry cracker like malt, and floral hops meld nicely. The flavor is not as nice. A bit of a bland pale ale. Starts with a bready malt flavor and only gets interesting in the finish with a splash of citrus in the finish. What happened to the rye? The different malts seemed to have let the body down as well. Feels thin and a little flat despite the carbonation. For a beer that started off well, it went downhill quickly. Very average in a few areas.\"},\"label\":\"Review\"},{\"id\":16154,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Pours a very clear light golden color with a finger of big bubble slightly off white head. Sticky amount of lace all around the glass. Aroma is malty sweet, spicy, earthy and citrusy with hops. Taste is a nice blend of malt sweetness and hop bitterness. Slight lingering taste of bitter hops is left on the palate. You can really notice the different blends of hops as it isn\\u0027t just an in your face amount of bitterness but a blend of different types of hop character that were onset by the aroma. Individual tastes of the hops are present just like in the nose: spice, earthiness and citrus. Medium feel with this beer and moderate carb. This is really quite drinkable and very enjoyable. I am not certain the rye aspect is what brings out all the complexity of the aroma and taste, but it certainly is a good mix.\"},\"label\":\"Review\"},{\"id\":16155,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"I got this brew in 24 beers of winter variety pack. Poured from a 12 once bottle. This totally not what I expected but very drinkable IMO. Scents of mint and herbs. A darker golden hue to the color. Lots of carbonation with little head. Subtle notes of rye toasty bread along with a moderate hops flavor. More orange citrus than grapefruit. Alcohol well hidden.\"},\"label\":\"Review\"},{\"id\":16156,\"data\":{\"rating\":3.0,\"id\":3,\"review\":\"pours a dark golden color, two finger head and nice sheets of lace as you drink. earthy rather than pine and citrus aromas in the nose. big biscuit malt taste, very dry, with a slight pine citrus taste. carbonation and mouthfeel ok. the dry taste of this beer was a turn off for me, i was loking for something a little more fruity and not so dry. its a pass at the liquor store.\"},\"label\":\"Review\"},{\"id\":16157,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"Poured into an American pint glass after a lengthy rest outside the fridge on the counter. A hard, two-part pour produced a nice fluffy head atop a perfectly clear gold colored liquid. Very minimal carbonation rising up. Aroma includes orange rind, pine cone, rye bread, and grass. Flavor starts off with some citrusy sweetness, followed by the spicy rye, and finishing with a lingering piney bitterness that sticks to the tonge for quite a while. Feel in the mouth is medium with a fluffy carbonation. This IPA is a good drinker for those who enjoy a bold, spicy ale with a bitter bite. I applaud this new release from Saranac. Keep the interesting brews coming!\"},\"label\":\"Review\"},{\"id\":16158,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"One of the better of the six new Saranac beers copped as part of a seasonal sampler... Although to be quite honest, there was very little hop presence or flavor profile with this brew... Bland and watered down with taste struggling to be noticed... Slight hints of citrus are barely evident... nothing special...\"},\"label\":\"Review\"},{\"id\":16159,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"Poured into a standard pint glass a clear full golden with one finger white head atop,aroma is lacking in my mind,a bit of floral hop and toasted grain is about all I could detect.The hops are a bit more pronounced flavor-wise but it lacks any real rye bite in my opinion,there is a firm lightly sweet malt base as well.Its not bad, but it doesnt show off enough of the rye element in my mind.\"},\"label\":\"Review\"},{\"id\":16160,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"Pours a pale golden copper hue with a bright two fingered thick white head leaves thick chunky lacing with each sip. Aromatics are a bit tame here sweet spicy rye with nice upfront bready malt tones and in the back ground comes some floral earthy hops. Flavor is nice with the kick of rye amongst the malts, not real hoppy but nice. It\\u0027s got a complex spice rye character with the bitterness coming late and sticking around between sips. Mouthfeel is slightly slick with hop oils and it is medium bodied with very moderate carbonation levels. Drinkability overall is solid a complex holiday drinking experience with this sampler. I wouldn\\u0027t mind a six of this offering to appear eventually there needs more Rye IPA out there.\"},\"label\":\"Review\"},{\"id\":16161,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"I believe this is my first Rye IPA.. pretty good beer. Great lacing and nice golden color to it, a bit more subdued hop wise than the typical IPA but has a bit different of a taste to it. Nice spiciness to this one too.. just not the usual bitterness, which is good for a change of pace but I do love it. Nice solid, drinkable beer.. can\\u0027t go wrong with this one.\"},\"label\":\"Review\"},{\"id\":16162,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"From the 12 fl. oz. bottle no. 2649-1444. Sampled on November 14, 2009. It pours bronze-amber with decent clarity but little to no head. A bready, weakly spiced, and thinly hopped aroma greets the nose. For an IPA the hoppy aroma is noticeably absent. The mouthfeel is smooth but of medium texture. The taste includes a little bit of malts but overall it is tart. The hop finish is there but weak. Not like most IPA\\u0027s I have tried.\"},\"label\":\"Review\"},{\"id\":16163,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Pours a honey straw color with a tight white head that settles into a light cap. The aroma is of a grainy pale malt with a touch of rye spice and grassy hops. I was expecting more of a hop aroma from an AIPA. The taste of a grainy malt, a bit fruity, some lemon and rye spice, and a grassy hop which finishes with an asprin bite. The brew has a light to moderate body with plenty of fizzy carbonation; finishes a tad dry and bitter. A decent AIPA, better than their traditional offering. I was expecting a bit more rye flavor perhaps more body. Noticable hop presence though not a big fan of the hop profile. Overall, not bad.\"},\"label\":\"Review\"},{\"id\":16164,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"Saranac Rye IPA is a dense, clear, solid golden ale with a soft, chunky off white head that has oily bubbles; outstanding retention and lacing. It has a spicy, grassy, floral aroma that has a little note of black pepper. It\\u0027s medium bodied and quite smooth with a clean finish. It\\u0027s reasonably bitter, dry, spicy and peppery with notes of orange peel and coriander. It has a long, but gentle, bitter aftertaste. It\\u0027s quite drinkable; not a real sock knocker, but tasty.\"},\"label\":\"Review\"},{\"id\":16165,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"12oz bottle purchased as part of a seasonal 12-pack at Shaw\\u0027s in Windham, NH. Pours a crystal-clear yellow-amber body with a good inch of off-white head. Smells piney herbal hoppy with some rye to balance. Herbal minty citrus hops play equal parts with a fair bit of rye and nuttiness. Light to medium bodied with moderate to ample carbonation. Fairly drinkable. I thought this beer would be less drinkable and more astringent, but this actually turns out to be a super IPA with just enough rye flavor to make it interesting. Well-done!\"},\"label\":\"Review\"},{\"id\":16166,\"data\":{\"rating\":3.0,\"id\":3,\"review\":\"The beer pours a nice gold color with a thick frothy white head that slowly fades to lacing. The aroma is decent. It really doesn\\u0027t have much of an aroma at all. It has a basic pale malt scent with little else. I think the rye and hops have cancelled each other out. The taste is decent as well. It has a light pale malt flavor with a strange rye/hops flavor. It\\u0027s a filtered beer and I think the flavors are muted because of it. Either that, or they decided on only a light rye addition. Usually, the malt bill is more complex as well. This is quite pale and light in mouthfeel. It\\u0027s a low/medium bodied beer with good carbonation. This is an average rye IPA. I\\u0027m not really impressed with this beer.\"},\"label\":\"Review\"},{\"id\":16167,\"data\":{\"rating\":1.0,\"id\":1,\"review\":\"Gross af. Made me puke after one beer\"},\"label\":\"Review\"},{\"id\":16169,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"12 ounce bottle with no date. Pours an orange gold color with a white, soapy head. Smell is grapefruit, hops, orange and tangerine pith, caramel malts. Taste is grapefruit, hop resin, some pine, citrus, hop bitterness is there. Not too dank or harsh. Mouthfeel is oily at the front but finishes dry. Medium carb with a medium feel. Not too light or too heavy. I\\u0027ve had this in a 16 ounce can about two years go and it was much more boozy, harsh, and dank. A difficult beer to drink considering its ABV. The 2017 version is a lot better on all fronts. Not world class by any means, but a tasty IPA and one of this brewer\\u0027s better offerings. At $15.99 a 12 pack you can\\u0027t go wrong with this one.\"},\"label\":\"Review\"},{\"id\":16172,\"data\":{\"rating\":3.75,\"id\":3,\"review\":\"Poured into a pint glass from a bottle. Pours orange amber with a tiny white head. Smells of citrus and earthy hops. Tastes of notes of citrus and piney hops, with a decent sweet grain backbone. Beer is light bodied and easy drinking, nice carbonation. Overall, an above average beer.\"},\"label\":\"Review\"},{\"id\":16174,\"data\":{\"rating\":3.25,\"id\":3,\"review\":\"Slightly better than most Saranac beers, but still not great.\"},\"label\":\"Review\"},{\"id\":16176,\"data\":{\"rating\":4.25,\"id\":4,\"review\":\"One of the best beers by Saranac I\\u0027ve had yet, great smell, taste and feel. Real good NY IPA\"},\"label\":\"Review\"},{\"id\":16177,\"data\":{\"rating\":3.25,\"id\":3,\"review\":\"I drink about anything. This was tough to drink. IPA? Not really. Tastes like a very malty ale with a bitter finish. Strange flavor. Tastes musty, almost skunky, sort like a RR with a darker piney punch. Leaves an unpleasant after taste. Disappointing.\"},\"label\":\"Review\"},{\"id\":16178,\"data\":{\"rating\":4.25,\"id\":4,\"review\":\"Pours a light orange color with a minimal white head. Looks to have plenty of carbonation as well. The smell is mostly piney with a little citrus note. The initial taste is actually nicely mild with a crisp clean aftertaste. Lacing is there but not plentiful. I think this could be called a pale ale because of the mild bitterness and aftertaste. I look forward to bringing more of these this summer\"},\"label\":\"Review\"},{\"id\":16180,\"data\":{\"rating\":4.75,\"id\":4,\"review\":\"This is a great IPA for a long session. Really has a nice hop bite while still being crisp and balanced. Not for the weak of heart for certain! A great beer to celebrate 125 years of amazing brewing tradition in my home town of Utica, NY.\"},\"label\":\"Review\"},{\"id\":16183,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"nice go to ipa for a bbq or wonderful introduction to ipa for people who normally wouldn\\u0027t choose this style. An overall great beer.\"},\"label\":\"Review\"},{\"id\":16191,\"data\":{\"rating\":4.25,\"id\":4,\"review\":\"This IPA combines great hoppy qualities of an IPA with drink-ability. Light in color, crisp, smooth finish. Excellent balance, perfect for any occasion.\"},\"label\":\"Review\"},{\"id\":16195,\"data\":{\"rating\":3.75,\"id\":3,\"review\":\"Not quite up to par with the grapefruit sculpin but still really good.\"},\"label\":\"Review\"},{\"id\":16196,\"data\":{\"rating\":4.5,\"id\":4,\"review\":\"Delicious at a great price.\"},\"label\":\"Review\"},{\"id\":16198,\"data\":{\"rating\":4.25,\"id\":4,\"review\":\"12oz bottle poured into a New Belgium tulip glass. This IPA pours a clear gold/amber that has me looking for a mosquito like in Jurassic Park. A slightly sweet citrus nose leads into a tropical citrus taste that is nicely balanced with malt. A sharp hop bit lingers on the sides of your tongue after swallowing the medium body with a thick white head. A great representation of an American IPA, this is good both out of the can and bottle.\"},\"label\":\"Review\"},{\"id\":16202,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Good head and decent lacing. Nice yellow-gold color. Aroma of pineapple and some malt and other assorted citrus. Bitterness is balanced well. Taste is balanced well between hops and the malt. Pineapple, citrus and a little pine make this beer nice and even at 6.5 ABV, quite sessionable.\"},\"label\":\"Review\"},{\"id\":16204,\"data\":{\"rating\":4.5,\"id\":4,\"review\":\"Great ipa! Great for drinkers who are just starting to drink ipa\\u0027s. So crips and refreshing!\"},\"label\":\"Review\"},{\"id\":16207,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Good IPA. Seems like its missing something. But its good.\"},\"label\":\"Review\"},{\"id\":16209,\"data\":{\"rating\":3.75,\"id\":3,\"review\":\"12oz can from the Can-Do 12 Pack. Pours a semi hazy light brownish gold color with an inch of head. Good amount of lacing. The aroma is floral hops with some light dank notes. Hint of citrus. The taste is floral with some light dank hops. Some lemon as well. Finishes with some malts and more of the floral hops. Not much of an alcohol presence. Medium bodied. Good amount of bitterness but very drinkable. Works well in the can as a summer IPA. Overall, solid IPA all around.\"},\"label\":\"Review\"},{\"id\":16212,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"Good to see Saranac make a true quality craft IPA.Pours a burnt orange color with atight formed half finger white head that settles pretty slowly leaving a nice ring behind.Citrusy aromas with mild biscuit like sweetness detected as well,grapefruit stands out most.A good splach of citric fruitiness at the onset of the palate,grapefruit and a tropical quality with only light biterness in the finish,sweetish biscuit malts hold up well to the hops with just a hint of alcohol sweetness as well.A solid American IPA here with alot of hops,stick to stuff like this Saranac.\"},\"label\":\"Review\"},{\"id\":16214,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"Picked up a 4-pack at the Dewitt, NY Wegmans. Poured clear amber with a fluffy white head. The aroma is a juicy, resinous mix of tangelo, floral melon, and passion fruit with a bit of piney grapefruit. The flavor digs more into the citrus with orange rind and floral notes. The bitterness is appropriate, but milder than most IPAs. Not a complaint, this is a very drinkable and delicious pale ale. This is the best IPA Saranac has made and a definite step up from their usual fare. Give this a try.\"},\"label\":\"Review\"},{\"id\":16216,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"The aesthetics of this beer are exceptional. Great color, almost purely golden rust in its hue. Quality head and a fantastic aroma. The drink is somewhat underwhelming. Not a full IPA taste, wrong feel to the bite, and and the aftertaste is far too coppery. A capable IPA, but nothing more.\"},\"label\":\"Review\"},{\"id\":16217,\"data\":{\"rating\":2.75,\"id\":2,\"review\":\"I am not an IPA fan, but Rahr and Sons, my favorite brewery, has a tasty one. It pours into a frothy, white head. Very drinkable despite being an IPA. Color is darker than most IPAs, too.\"},\"label\":\"Review\"},{\"id\":16218,\"data\":{\"rating\":3.25,\"id\":3,\"review\":\"Solid shelf IPA. Not a lot of hop character on the nose, but an easy drinker. Not too bitter and a decent mouthfeel. Great for a hot day BBQ, but not something to drink any time else.\"},\"label\":\"Review\"},{\"id\":16219,\"data\":{\"rating\":3.25,\"id\":3,\"review\":\"Very bitter\"},\"label\":\"Review\"},{\"id\":16220,\"data\":{\"rating\":3.0,\"id\":3,\"review\":\"Looked and smelled really good. Then I tasted it... not terrible, but if other options, maybe go for the other options\"},\"label\":\"Review\"},{\"id\":16221,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"On draft into a pint glass. Decent head and very nice lacing, all the way to the end of the pint. Clear yellow color. Lemony peppery taste with nice hoppy after taste. Not a bad IPA.\"},\"label\":\"Review\"},{\"id\":16222,\"data\":{\"rating\":3.25,\"id\":3,\"review\":\"I enjoyed this beer. Does have a malt forward flavor. Does need more hops. Would buy again, but will not be a regular.\"},\"label\":\"Review\"},{\"id\":16223,\"data\":{\"rating\":4.25,\"id\":4,\"review\":\"Drank fresh from rahr brewery\"},\"label\":\"Review\"},{\"id\":16224,\"data\":{\"rating\":1.0,\"id\":1,\"review\":\"Taster at Dallas Ft Worth airport...\"},\"label\":\"Review\"},{\"id\":16225,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"A Well Balanced american IPA\"},\"label\":\"Review\"},{\"id\":16226,\"data\":{\"rating\":2.5,\"id\":2,\"review\":\"Very hoppy beer. Had a 12oz bottle.\"},\"label\":\"Review\"},{\"id\":16227,\"data\":{\"rating\":3.75,\"id\":3,\"review\":\"Nice IPA smooth not to overwhelming\"},\"label\":\"Review\"},{\"id\":16228,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Disappointing, tastes as though a stoudt and IPA were combined and it is not a good marriage of flavors.\"},\"label\":\"Review\"},{\"id\":16229,\"data\":{\"rating\":2.75,\"id\":2,\"review\":\"Poured this American IPA from a 12 oz bottle into a pint glass. Poured a clear amber color, produced an average off white head, poor retention and it left a little lacing on the glass. The aroma consisted of light malted grain and a slight hint of oranges. Medium bodied, there is a slight malted grain base, gives way quickly to sweet oranges. Some what floral with just a touch of bitter hops. Overall, its a nice session beer- in terms of an AIPA , its rather simple- a little watery/thin- Could use a more generous helping of hops.\"},\"label\":\"Review\"},{\"id\":16230,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Pours a clear, copper color. 1/2 inch head of an off-white color. Good retention and good lacing. Smells of sweet malt, hops, hint of pale malt, hint of cracker, and hint of citrus. Fits the style of an American IPA. Mouth feel is smooth and crisp, with an average carbonation level. Tastes of hops, hint of citrus, sweet malt, and a hint of pale malt, hint of yeast. Overall, aroma and taste were muted to begin, but slowly came to life as this warmed. Still, rather average for an AIPA with good appearance and feel.\"},\"label\":\"Review\"},{\"id\":16231,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Poured from a bottle into a pint glass, I picked this up from Central Market in Fort Worth while we were staying with a friend. The beer pours a crystal clear, orange-straw coloring with a foamy, airy, big bubbled head that leaves a great lacing along the glass. Heavy sweet aromas that muddle the hoppy characteristics in the nose. Some citrus highlights present in the smell, also. The beer has a smokey sweet flavor to start, with spicy, peppery, bitter roasted hops on the main palate. Some toasty and citrusy flavors blend the end flavors together very well. Good finish that subtly lingers with citrus and spice. Slgiht toasty aftertaste. Very tasty, despite slightly watered down initial flavors. This beer finished strong.\"},\"label\":\"Review\"},{\"id\":16232,\"data\":{\"rating\":3.0,\"id\":3,\"review\":\"The beer pours an orange-amber color with a white head. The aroma is toffee with some grassy hops and some floral notes. The flavor is heavy on the floral hops and biscuit malt. I also get some grassy and earthy hops and some malt that makes the beer taste a bit like unsweet iced tea. Low bitterness. Medium mouthfeel and medium carbonation.\"},\"label\":\"Review\"},{\"id\":16233,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"12oz bottle. Pours a clear, ruddy copper with a creamy eggshell head that sticks well. There\\u0027s a lot of suspended sediment in this one, strangely. Smells faintly of sweet amber malt and hints of slightly floral hop. Tastes of bready caramel malt and a more prominent hop character. Slightly piney with a dry finish. Medium body. Not the typical IPA, but still pleasant.\"},\"label\":\"Review\"},{\"id\":16234,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"Snifter. clean and clear orange-yellow color. white head, with good retention and lacing. nice light citrus hop aromas. smells like pilsner malts. decent flavor. some citrus hops and breakfast malts from the german-style IPA. smooth and crisp. easy on the carbonation. mild body. big pilsner flavors. easy to drink, but slightly confusing palate.\"},\"label\":\"Review\"},{\"id\":16235,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Pours a whiskey honey brown with a pillow white head made up of larger bubbles and tight small bubbles holding well to the glass. Smell is suprisingly malty. Faint hops in the nose, bready sweetness dominates, not what I was expecting.Taste is very similar to the nose, hops take a back seat. Honey, some wheat bread, maybe a touch of rye. Its really a struggle to pull some hops from the finish. Also, a little strange, a bit of metallic finish. They are there, but they are on life support. Mouthfeel is watery and thin. This strikes me as more of a pale ale than an IPA. Overall an ok offering from Rahr, but doesn\\u0027t have but a hint of IPA in it at all.\"},\"label\":\"Review\"},{\"id\":16236,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"This beer poured a cloudy pale yellow with a huge head - tight bubbles. The aroma is citrus and fruity...nice hop notes. The taste is bitter and fruity/floral. The mouthfeel is just shy of medium, but well suited. Overall, this is an easy to drink IPA. It is interesting and worth a shot\"},\"label\":\"Review\"},{\"id\":16237,\"data\":{\"rating\":3.0,\"id\":3,\"review\":\"This one poured a crystal clear medium straw color into a tulip glass. The head was thin and left some light lacing as it dissipated. The aroma was of citrusy hops, not as pronounced as I expected for an IPA. Body is medium light. Overall it\\u0027s a good beer, but I find it to be more of a pale ale than an IPA. I want more aroma and bitterness from the hops.\"},\"label\":\"Review\"},{\"id\":16238,\"data\":{\"rating\":2.5,\"id\":2,\"review\":\"\\\"I was excited to see an IPA from Rahr but.it was a little let down. Pours very light with a decent head that disapates quickly. Very light aroma of citrus and hops. Has promise then the first sip comes interesting. At first the hops come at you then you get something like butter? Yeah, odd. The website calls this a \\\"\\\"German IPA\\\"\\\" whatever that maybe but this is an off attempt at the style. Draft is better from what I remember. I like the hops but finishes just a bit diff. Maybe it will get better with time since this is their first shot at the style. Also hoping it was a bad bottle.\\\"\"},\"label\":\"Review\"},{\"id\":16239,\"data\":{\"rating\":5.0,\"id\":5,\"review\":\"Pours a clear golden amber color with a short white head that fades into a thin lace. Nose is fresh grain, sweet malt, and lightly floral hops. Taste is quite crisp with floral (not citrusy) hops along with just the right balance of sweet malt. Very refreshing and highly drinkable. Ive never heard of a German IPA before, but whatever you call this, its a winner.\"},\"label\":\"Review\"},{\"id\":2958,\"data\":{\"name\":\"Rahr \\u0026amp; Sons Brewing Company\"},\"label\":\"Brewery\"},{\"id\":2959,\"data\":{\"name\":\"Matt Brewing Company / Saranac Brewery\"},\"label\":\"Brewery\"},{\"id\":2458,\"data\":{\"id\":1,\"abv\":6.0,\"beer_name\":\"Stormcloud IPA\"},\"label\":\"Beer\"},{\"id\":2459,\"data\":{\"id\":2,\"abv\":6.5,\"beer_name\":\"Saranac Legacy IPA\"},\"label\":\"Beer\"},{\"id\":2460,\"data\":{\"id\":3,\"abv\":5.95,\"beer_name\":\"Saranac Rye IPA\"},\"label\":\"Beer\"},{\"id\":2461,\"data\":{\"id\":4,\"abv\":5.8,\"beer_name\":\"Saranac India Pale Ale\"},\"label\":\"Beer\"},{\"id\":16110,\"data\":{\"rating\":2.5,\"id\":2,\"review\":\"If you\\u0027re an individual who seeks out IPAs, then Save your $ on this dud.\"},\"label\":\"Review\"},{\"id\":16111,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"I live in Matt\\u0027s country and support the Saranac line the best I can. I feel they\\u0027ve gotten to the point where they\\u0027ve expanded the product line too rapidly to develop the individual product. This to me resulted in a middle of the road tasting product that had so much more potential. The result was an IPA for the masses, which is good for the average consumer but could\\u0027ve been something special.\"},\"label\":\"Review\"},{\"id\":16112,\"data\":{\"rating\":3.25,\"id\":3,\"review\":\"Had this at a local festival on tap. There was not much to remember about this beer. Very light malt taste. Smooth going down. Very light with a large head. The smell was flat, no real overtones. I think all the flavor was almost flattened out. Not a bad beer, but nothing exquisite. Would make a good beer for summer fishing or football.\"},\"label\":\"Review\"},{\"id\":16113,\"data\":{\"rating\":3.25,\"id\":3,\"review\":\"From memory here. The first IPA I ever tried as part of a mixer of my first craft purchase back in college. Pour is a nice clear golden color, lots of bubbles, one finger white head. Aroma is full on pine needles, without much malt to balance, it seems. This IPA was rather bitter and one dimensional in the pine flavor, but a decent intro to the style. Dry finish, relatively light. Again, not poor, but one-dimensional here.\"},\"label\":\"Review\"},{\"id\":16114,\"data\":{\"rating\":3.0,\"id\":3,\"review\":\"Golden straw appearance without too much head--little bit dark for an IPA. Nice steady stream of carbonation. Characteristic aroma of hops. Taste is sweet and of course very hoppy. Straight floral and hoppy taste with a hint of caramel in the aftertaste. A bit tart.\"},\"label\":\"Review\"},{\"id\":16115,\"data\":{\"rating\":3.0,\"id\":3,\"review\":\"\\\"Poured a 2\\\"\\\" custard head which slowly receded like melting merengue. The body is a clear straw yellow color verging on golden and not much effervescence is left in it after the head. Smells mildly of malt but honestly I don\\u0027t get any hops from that smell. Taste though comes through with the Cascade hops. It\\u0027s still relatively mild for IPA standards. And not much of a finish to it.\\\"\"},\"label\":\"Review\"},{\"id\":16116,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Poured from 12 oz bottle into a snifter. Pours a reddish amber with a froffy white head that dissipates quickly, but leaves lacing in the glass. Doesn\\u0027t give off a great aroma, but has hints of floral hops. Taste is of lots of earthy and floral hops with a little sweet grain, very nice. Beer is light/medium bodied and has a good level of carbonation, and goes down very easy, one of the beers I can have many of in a night and not think about it. Overall, an above average beer.\"},\"label\":\"Review\"},{\"id\":16117,\"data\":{\"rating\":3.0,\"id\":3,\"review\":\"The beer pours an apple juice yellow with the healthy look of dehydrated piss. The head is thinner and dissipates rather swiftly, but is nicely white with an ever so slight yellowing to it. The lacing is quite thin and droopy, however. The smell is sharply malty, which is odd for an IPA. There are some nice sharp citrusy hops smells in the initial waft, but the strong underlying backbone of the smell seems to be sweet and caramel sweet malts. The taste follows up the smell nicely, with a distinct malty flavoring. The hops are not all together lost though, as the nice crisp burst of orangy citrus seems to swim on the sides of the tongue. There is also a slight biscuitiness in this beer, which seems to come from the malts. It feels properly coarse on the mouth with bitterness, while leaving the tongue with a nice thin sheen of saliva and a thirst for more. It lacks the proper hops-taste that comes with the bitterness though. Carbonation bubbles nicely against the tongue, and the beers consistency seems nicely balanced. Overall this is a nice low hopped IPA, it is definitely more reminiscent of the old British IPA’s than of the American variants, but Sarnac’s more old-timey approach to beer makes this choice not too surprising. It’s not a hop lover’s IPA but it is a nice introduction to the style for those who have trouble with bitters. Decent beer.\"},\"label\":\"Review\"},{\"id\":16118,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"really bitter ipa. smells and tastes the same, very citrus hop beer. i taste slight hints of lemon lime in here. its a bitter hop takeover to a point far beyond refreshment. i didnt like this one at all when i first had it years ago, but as i enjoy one right now i find my palate has evolved to appreciate it for what it is. mouthfeel is a little thin for all this flavor, but thats a good thing here i think. a good beer for bold foods as it can stand up to anything without filling you up. they put this one in most of their mix packs so its widely available. not bad, not amazing.\"},\"label\":\"Review\"},{\"id\":16119,\"data\":{\"rating\":3.0,\"id\":3,\"review\":\"Acquired as part of a mixed case. Poured from the best by Jan 2012 bottle into my Duvel tulip. Orange-ish amber color with about an inch of white head. Aroma was citrusy hops but were somewhat muted. Taste followed the smell, kind of basic and light. Easy drinking and just ok.\"},\"label\":\"Review\"},{\"id\":16120,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"This beer was poured into a frosted mug, and had a two finger head on it. The color was amber and had an earthy, typical IPA smell to it. The mouthfeel was smooth, although it\\u0027ll leave a musky bitter taste in the back of your throat. The taste was traditional IPA, strong hops with a slight bitterness. Overall this was a very good beer, pretty mild IPA, easy to drink and enjoy. This beer is definitely better a little warm as opposed to chilled\"},\"label\":\"Review\"},{\"id\":16121,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Poured a bright golden color, with a decent cap of bubbly off-white foam. Aromas of floral hops, somewhat grassy, bubblegum and biscuit. On the palate, this one was light to medium bodied, with flavors of good hops, as well as some pears, peaches and biscuit malt.\"},\"label\":\"Review\"},{\"id\":16122,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"Has a lighter gold that most IPA\\u0027s, has a very nice smell, you can tell it is going to have some hops. Taste in where an IPA should be, smooth with that hop finish. Great mouth feel, clean, crisp and wow. over all this is a great beer and will go well with any meat product.\"},\"label\":\"Review\"},{\"id\":16123,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Poured out a golden copper with a half finger of head that drops quickly. A thick ring forms around the glass with large puddles across the top. Golden/copper in color. Nose is caramel sweet bread with a subtle, earthy, goldings character. I know it says it on the label but it is clearly defined in this beer. Flavor has that same sweet bread but only after a tingly hit of metallic flavors. Transitions to a light grapefruit flavor but that slowly overpowers the metallic bready flavors. Earthy tones finish is off but there isn\\u0027t a huge bitterness that is common in a lot of IPA\\u0027s. This a good balance of hops and malt but there is something about the malt combination that seems a little gritty.\"},\"label\":\"Review\"},{\"id\":16124,\"data\":{\"rating\":4.0,\"id\":4,\"review\":\"Poured from a bottle into a pint glass, the beer pours a bright orange-copper coloring with a thin, chunky, white, foamy head that slowly disperses while it settles. Aroma is slight grapefruit sweetness, with an abundance of rich, green, resinous hops blended throughout. The beer has hop forward flavors that hid the outside of the mid-tongue. The back of the tongue picks up the peppery notes from the hops, and the light citrus and malt sweetness blends over everything else. Very well balanced flavors. The aftertaste is heavily spiced, with a good citrus balance. The finish is quick and crisp, with a very light bitter drying effect that begs for another swig. Very tasty brew.\"},\"label\":\"Review\"},{\"id\":16125,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Amber color. Fresh hop nose, close to the appearance of being drug-free, clear flavors of IPA. Entrance with green hops, arrival of bitterness, grassy and slightly medicinal but back a little taste citric, citrus, like grapefruit, which is probably Cascade hops, which is going to continue in the palate with bitterness in hops. Interpretation of the classic India Pale Ale, but without a touch of madness.\"},\"label\":\"Review\"},{\"id\":16126,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"I have always heard good things about Saranac, but maybe I have become an IPA snob, but this just was a bit blah. I put Sam Adams Latitude up as the marker for semi-craft beers...which at this point Saranac is considered...at least by me. Sam blew it out of the water. This beer tasted a little dark, kind of like Demo brew from Magic Hat. I mean, I would def drink this beer again, especially because it comes in the Saranac mix 6 pack. I am not sure I would buy it on its own though.\"},\"label\":\"Review\"},{\"id\":16127,\"data\":{\"rating\":3.5,\"id\":3,\"review\":\"Poured from bottle into glass had a nice orange color with lively carbonation and a nice frothy head. Smell is mostly malty sweetness and,so is the taste. This is a subtle ipa, more of a pale ale, but I like it. If you like a hop forward ipa, this is not it. For malty fans, this is wonderful.\"},\"label\":\"Review\"}],\"edges\":[{\"source\":16110,\"target\":2461,\"id\":14850,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16111,\"target\":2461,\"id\":14851,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16112,\"target\":2461,\"id\":14852,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16113,\"target\":2461,\"id\":14853,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16114,\"target\":2461,\"id\":14854,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16115,\"target\":2461,\"id\":14855,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16116,\"target\":2461,\"id\":14856,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16117,\"target\":2461,\"id\":14857,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16118,\"target\":2461,\"id\":14858,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16119,\"target\":2461,\"id\":14859,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16120,\"target\":2461,\"id\":14860,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16121,\"target\":2461,\"id\":14861,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16122,\"target\":2461,\"id\":14862,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16123,\"target\":2461,\"id\":14863,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16124,\"target\":2461,\"id\":14864,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16125,\"target\":2461,\"id\":14865,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16126,\"target\":2461,\"id\":14866,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16127,\"target\":2461,\"id\":14867,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16128,\"target\":2461,\"id\":14868,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16129,\"target\":2461,\"id\":14869,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16130,\"target\":2461,\"id\":14870,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16131,\"target\":2461,\"id\":14871,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16132,\"target\":2461,\"id\":14872,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16133,\"target\":2461,\"id\":14873,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16134,\"target\":2460,\"id\":14874,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16135,\"target\":2460,\"id\":14875,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16136,\"target\":2460,\"id\":14876,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16137,\"target\":2460,\"id\":14877,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16138,\"target\":2460,\"id\":14878,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16139,\"target\":2460,\"id\":14879,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16140,\"target\":2460,\"id\":14880,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16141,\"target\":2460,\"id\":14881,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16142,\"target\":2460,\"id\":14882,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16143,\"target\":2460,\"id\":14883,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16144,\"target\":2460,\"id\":14884,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16145,\"target\":2460,\"id\":14885,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16146,\"target\":2460,\"id\":14886,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16147,\"target\":2460,\"id\":14887,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16148,\"target\":2460,\"id\":14888,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16149,\"target\":2460,\"id\":14889,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16150,\"target\":2460,\"id\":14890,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16151,\"target\":2460,\"id\":14891,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16152,\"target\":2460,\"id\":14892,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16153,\"target\":2460,\"id\":14893,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16154,\"target\":2460,\"id\":14894,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16155,\"target\":2460,\"id\":14895,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16156,\"target\":2460,\"id\":14896,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16157,\"target\":2460,\"id\":14897,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16158,\"target\":2460,\"id\":14898,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16159,\"target\":2460,\"id\":14899,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16160,\"target\":2460,\"id\":14900,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16161,\"target\":2460,\"id\":14901,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16162,\"target\":2460,\"id\":14902,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16163,\"target\":2460,\"id\":14903,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16164,\"target\":2460,\"id\":14904,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16165,\"target\":2460,\"id\":14905,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16166,\"target\":2460,\"id\":14906,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16167,\"target\":2459,\"id\":14907,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16169,\"target\":2459,\"id\":14909,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16172,\"target\":2459,\"id\":14912,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16174,\"target\":2459,\"id\":14914,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16176,\"target\":2459,\"id\":14916,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16177,\"target\":2459,\"id\":14917,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16178,\"target\":2459,\"id\":14918,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16180,\"target\":2459,\"id\":14920,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16183,\"target\":2459,\"id\":14923,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16191,\"target\":2459,\"id\":14931,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16195,\"target\":2459,\"id\":14935,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16196,\"target\":2459,\"id\":14936,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16198,\"target\":2459,\"id\":14938,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16202,\"target\":2459,\"id\":14942,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16204,\"target\":2459,\"id\":14944,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16207,\"target\":2459,\"id\":14947,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16209,\"target\":2459,\"id\":14949,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16212,\"target\":2459,\"id\":14952,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16214,\"target\":2459,\"id\":14954,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16216,\"target\":2458,\"id\":14956,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16217,\"target\":2458,\"id\":14957,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16218,\"target\":2458,\"id\":14958,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16219,\"target\":2458,\"id\":14959,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16220,\"target\":2458,\"id\":14960,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16221,\"target\":2458,\"id\":14961,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16222,\"target\":2458,\"id\":14962,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16223,\"target\":2458,\"id\":14963,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16224,\"target\":2458,\"id\":14964,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16225,\"target\":2458,\"id\":14965,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16226,\"target\":2458,\"id\":14966,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16227,\"target\":2458,\"id\":14967,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16228,\"target\":2458,\"id\":14968,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16229,\"target\":2458,\"id\":14969,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16230,\"target\":2458,\"id\":14970,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16231,\"target\":2458,\"id\":14971,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16232,\"target\":2458,\"id\":14972,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16233,\"target\":2458,\"id\":14973,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16234,\"target\":2458,\"id\":14974,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16235,\"target\":2458,\"id\":14975,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16236,\"target\":2458,\"id\":14976,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16237,\"target\":2458,\"id\":14977,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16238,\"target\":2458,\"id\":14978,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":16239,\"target\":2458,\"id\":14979,\"data\":{},\"label\":\"REVIEWS\"},{\"source\":2458,\"target\":2958,\"id\":1506,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2459,\"target\":2959,\"id\":1507,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2460,\"target\":2959,\"id\":1508,\"data\":{},\"label\":\"BREWED_BY\"},{\"source\":2461,\"target\":2959,\"id\":1509,\"data\":{},\"label\":\"BREWED_BY\"}],\"labels\":{\"Character\":\"#71BFB6\",\"Episode\":\"#A2B4A8\",\"Word\":\"#038AA4\",\"Beer\":\"#400D4C\",\"Brewery\":\"#27161D\",\"Review\":\"#FDCE7D\"},\"types\":[\"BREWED_BY\",\"REVIEWS\"],\"directed\":true}"
           }
         ]
       },
       "apps": [],
       "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1606401945089_-1506418454",
-      "id": "paragraph_1606401945089_-1506418454",
-      "dateCreated": "2020-11-26 14:45:45.090",
-      "dateStarted": "2021-07-27 09:57:34.960",
-      "dateFinished": "2021-07-27 09:57:35.897",
+      "jobName": "paragraph_1628071059991_434091764",
+      "id": "paragraph_1628071059991_434091764",
+      "dateCreated": "2021-08-04 09:57:39.991",
+      "dateStarted": "2021-08-04 15:55:44.540",
+      "dateFinished": "2021-08-04 15:55:44.640",
       "status": "FINISHED"
     },
     {
-      "text": "%md\n\n\u003cimg src\u003d\"https://i.imgur.com/3dMnxNy.png\" style\u003d\"margin: 30px auto\" /\u003e \n\nWe will use this dataset https://www.kaggle.com/tovarischsukhov/southparklines",
+      "text": "%neo4j\n",
       "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:57:35.965",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 12.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "text",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/text",
-        "editorHide": true,
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cimg src\u003d\"https://i.imgur.com/3dMnxNy.png\" style\u003d\"margin: 30px auto\" /\u003e\n\u003cp\u003eWe will use this dataset \u003ca href\u003d\"https://www.kaggle.com/tovarischsukhov/southparklines\"\u003ehttps://www.kaggle.com/tovarischsukhov/southparklines\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e"
-          }
-        ]
-      },
-      "apps": [],
-      "runtimeInfos": {},
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1606374925076_-187920743",
-      "id": "paragraph_1606374925076_-187920743",
-      "dateCreated": "2020-11-26 07:15:25.076",
-      "dateStarted": "2021-07-27 09:57:36.077",
-      "dateFinished": "2021-07-27 09:57:36.136",
-      "status": "FINISHED"
-    },
-    {
-      "text": "val spd \u003d spark.read.format(\"parquet\")\n    .load(\"/zeppelin/spark-warehouse/south-park-dialogues.parquet\")\n    \nspd.show()    ",
-      "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:57:36.175",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 12.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala",
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "+------+-------+---------------+--------------------+\n|season|episode|      character|                line|\n+------+-------+---------------+--------------------+\n|    10|      1|           Stan|You guys, you guy...|\n|    10|      1|           Kyle|Going away? For h...|\n|    10|      1|           Stan|           Forever.\n|\n|    10|      1|           Chef|    I\u0027m sorry boys.\n|\n|    10|      1|           Stan|Chef said he\u0027s be...|\n|    10|      1|           Chef|               Wow!\n|\n|    10|      1|  Mrs. Garrison|Chef?? What kind ...|\n|    10|      1|           Chef|What\u0027s the meanin...|\n|    10|      1|  Mrs. Garrison|I hope you\u0027re mak...|\n|    10|      1|        Cartman|I\u0027m gonna miss hi...|\n|    10|      1|           Stan|Dude, how are we ...|\n|    10|      1|Mayor McDaniels|And we will all m...|\n|    10|      1|          Jimbo|           Bye-bye!\n|\n|    10|      1|         Gerald|          Good-bye!\n|\n|    10|      1|     Mr. Mackey|           So long!\n|\n|    10|      1|          A Man|     So long, Chef!\n|\n|    10|      1|  A Sign-Holder|    Good-bye, Chef!\n|\n|    10|      1|          Randy|Good-bye, Chef! H...|\n|    10|      1|           Chef|       Good-bye! ..\n|\n|    10|      1|           Kyle|Draw two card, fa...|\n+------+-------+---------------+--------------------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mspd\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [season: string, episode: string ... 2 more fields]\n"
-          }
-        ]
-      },
-      "apps": [],
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d4"
-            },
-            {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d5"
-            }
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1606296629096_1227541348",
-      "id": "paragraph_1606296629096_1227541348",
-      "dateCreated": "2020-11-25 09:30:29.096",
-      "dateStarted": "2021-07-27 09:57:36.342",
-      "dateFinished": "2021-07-27 09:57:43.315",
-      "status": "FINISHED"
-    },
-    {
-      "text": "spd.count()",
-      "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:57:43.374",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 12.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "\u001b[1m\u001b[34mres9\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m \u003d 70896\n"
-          }
-        ]
-      },
-      "apps": [],
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d6"
-            }
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1606994534009_109328109",
-      "id": "paragraph_1606994534009_109328109",
-      "dateCreated": "2020-12-03 11:22:14.009",
-      "dateStarted": "2021-07-27 09:57:43.487",
-      "dateFinished": "2021-07-27 09:57:46.341",
-      "status": "FINISHED"
-    },
-    {
-      "text": "/**\n * \n * Episode   // name : \"s1e14\"\n * Character // name : \"Kyle\"\n * Word      // value: \"hello\" \n * \n * (c:Character)-[:SAID]-\u003e(w:Word)-[:IN_EPISODE]-\u003e(e:Episode)\n */",
-      "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:57:46.401",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 12.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": []
-      },
-      "apps": [],
-      "runtimeInfos": {},
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1606994174997_1219662545",
-      "id": "paragraph_1606994174997_1219662545",
-      "dateCreated": "2020-12-03 11:16:14.997",
-      "dateStarted": "2021-07-27 09:57:46.516",
-      "dateFinished": "2021-07-27 09:57:47.481",
-      "status": "FINISHED"
-    },
-    {
-      "text": "/**\n * Natural Language Analytics made simple and visual with Neo4j by Michael Hunger\n * https://neo4j.com/blog/natural-language-analytics-made-simple-visual-neo4j/\n * \n * Docs: https://neo4j.com/developer/spark/writing/#bookmark-write-query\n */\nspd.write\n    .format(\"org.neo4j.spark.DataSource\")\n    .mode(\"Overwrite\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"password\")\n    /**/\n    .option(\"batch.size\", \"800\")\n    .option(\"script\",\n    \"\"\"CREATE INDEX ON :Character(name);\n      |CREATE INDEX ON :Episode(label);\n      |CREATE INDEX ON :Word(value);\n      |\"\"\".stripMargin)\n    .option(\"query\", \n    \"\"\"MERGE (c:Character {name: COALESCE(event.character, \u0027unknown\u0027)})\n      |MERGE (e:Episode {label: \"s\" + COALESCE(event.season, \"0\") + \"e\" + COALESCE(event.episode, \"0\")})\n      |WITH REDUCE(t\u003dTOLOWER(COALESCE(event.line, \u0027\u0027)), delim IN [\",\",\".\",\"!\",\"?\",\u0027\"\u0027,\":\",\";\",\"\u0027\",\"-\"] | REPLACE(t, delim, \"\")) AS normalized, c, e\n      |WITH [w in split(normalized,\" \") | trim(w)] AS words, c, e\n      |UNWIND words as word\n      |MERGE (w:Word {value: word})\n      |MERGE (c)-[:SAID]-\u003e(w)-[:IN_EPISODE]-\u003e(e)\n      |\"\"\".stripMargin)\n    .save()\n",
-      "user": "anonymous",
-      "dateUpdated": "2021-07-27 09:57:47.516",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 12.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala",
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": []
-      },
-      "apps": [],
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d7"
-            }
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1606296633310_-1616833778",
-      "id": "paragraph_1606296633310_-1616833778",
-      "dateCreated": "2020-11-25 09:30:33.311",
-      "dateStarted": "2021-07-27 09:57:47.649",
-      "dateFinished": "2021-07-27 10:05:45.847",
-      "status": "FINISHED"
-    },
-    {
-      "text": "val wordsDf \u003d spark.read.format(\"org.neo4j.spark.DataSource\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"password\")\n    .option(\"relationship\", \"SAID\")\n    .option(\"relationship.source.labels\", \"Character\")\n    .option(\"relationship.target.labels\", \"Word\")\n    .load()\n    \nwordsDf.show()",
-      "user": "anonymous",
-      "dateUpdated": "2021-07-27 10:05:45.908",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 12.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala",
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "+--------+----------+-----------+---------------+-----------+-----------+---------------+------------+\n|\u003crel.id\u003e|\u003crel.type\u003e|\u003csource.id\u003e|\u003csource.labels\u003e|source.name|\u003ctarget.id\u003e|\u003ctarget.labels\u003e|target.value|\n+--------+----------+-----------+---------------+-----------+-----------+---------------+------------+\n|    4741|      SAID|        175|    [Character]|       Stan|       1054|         [Word]|     cartman|\n|  676683|      SAID|        175|    [Character]|       Stan|      35842|         [Word]|      spacia|\n|  676167|      SAID|        175|    [Character]|       Stan|       3293|         [Word]|           n|\n|  679123|      SAID|        175|    [Character]|       Stan|      20708|         [Word]| responsibly|\n|  675637|      SAID|        175|    [Character]|       Stan|       1811|         [Word]|     between|\n|  679101|      SAID|        175|    [Character]|       Stan|      35897|         [Word]|      devote|\n|  677533|      SAID|        175|    [Character]|       Stan|       1743|         [Word]|        pull|\n|  677751|      SAID|        175|    [Character]|       Stan|       1518|         [Word]|       night|\n|  678199|      SAID|        175|    [Character]|       Stan|       1071|         [Word]|         day|\n|  678255|      SAID|        175|    [Character]|       Stan|        645|         [Word]|      simple|\n|  675719|      SAID|        175|    [Character]|       Stan|      35823|         [Word]| skateboards|\n|  676711|      SAID|        175|    [Character]|       Stan|       4120|         [Word]|        cost|\n|  679095|      SAID|        175|    [Character]|       Stan|       2969|         [Word]|      seeing|\n|  678203|      SAID|        175|    [Character]|       Stan|        323|         [Word]|     anymore|\n|  678477|      SAID|        175|    [Character]|       Stan|       1786|         [Word]|        whos|\n|  678197|      SAID|        175|    [Character]|       Stan|       1508|         [Word]|      middle|\n|  678557|      SAID|        175|    [Character]|       Stan|      13858|         [Word]|       cults|\n|  678919|      SAID|        175|    [Character]|       Stan|       1270|         [Word]|        youd|\n|  675725|      SAID|        175|    [Character]|       Stan|       3625|         [Word]|       token|\n|  676169|      SAID|        175|    [Character]|       Stan|      28708|         [Word]|        sync|\n+--------+----------+-----------+---------------+-----------+-----------+---------------+------------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mwordsDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [\u003crel.id\u003e: bigint, \u003crel.type\u003e: string ... 6 more fields]\n"
-          }
-        ]
-      },
-      "apps": [],
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d8"
-            }
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1606892412036_-213851021",
-      "id": "paragraph_1606892412036_-213851021",
-      "dateCreated": "2020-12-02 07:00:12.036",
-      "dateStarted": "2021-07-27 10:05:45.937",
-      "dateFinished": "2021-07-27 10:05:48.672",
-      "status": "FINISHED"
-    },
-    {
-      "title": "Let\u0027s see who has the largest dictionary",
-      "text": "wordsDf.select(\"`source.name`\", \"`target.value`\").distinct()\n    .groupBy(\"`source.name`\")\n    .count()\n    .orderBy($\"count\".desc)\n    .show()",
-      "user": "anonymous",
-      "dateUpdated": "2021-07-27 10:05:48.754",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 12.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala",
-        "title": true,
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "+------------+-----+\n| source.name|count|\n+------------+-----+\n|     Cartman| 9921|\n|        Kyle| 5430|\n|        Stan| 5429|\n|       Randy| 3997|\n|     Butters| 3985|\n|Mr. Garrison| 2538|\n|   Announcer| 2129|\n|        Chef| 2024|\n|  Mr. Mackey| 2006|\n|       Jimmy| 1831|\n|       Jimbo| 1561|\n|      Sharon| 1541|\n|    Narrator| 1538|\n|      Gerald| 1477|\n|       Kenny| 1361|\n|       Wendy| 1355|\n|    Reporter| 1351|\n|      Sheila| 1223|\n|       Liane| 1146|\n|     Stephen| 1142|\n+------------+-----+\nonly showing top 20 rows\n\n"
-          }
-        ]
-      },
-      "apps": [],
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d9"
-            }
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1606892446192_1655353269",
-      "id": "paragraph_1606892446192_1655353269",
-      "dateCreated": "2020-12-02 07:00:46.193",
-      "dateStarted": "2021-07-27 10:05:48.782",
-      "dateFinished": "2021-07-27 10:05:54.562",
-      "status": "FINISHED"
-    },
-    {
-      "user": "anonymous",
-      "dateUpdated": "2021-07-27 10:05:54.601",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala"
-      },
+      "dateUpdated": "2021-08-04 15:55:36.374",
+      "config": {},
       "settings": {
         "params": {},
         "forms": {}
@@ -1083,13 +1278,13 @@
       "apps": [],
       "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1606924171632_-1330942791",
-      "id": "paragraph_1606924171632_-1330942791",
-      "dateCreated": "2020-12-02 15:49:31.632",
-      "status": "FINISHED"
+      "jobName": "paragraph_1628092536373_1525879159",
+      "id": "paragraph_1628092536373_1525879159",
+      "dateCreated": "2021-08-04 15:55:36.373",
+      "status": "READY"
     }
   ],
-  "name": "Part 2 - Apache Spark and Neo4j",
+  "name": "2. Apache Spark and Neo4j",
   "id": "2FSBVWJPQ",
   "defaultInterpreterGroup": "spark",
   "version": "0.9.0-preview1",
@@ -1099,5 +1294,7 @@
   "config": {
     "isZeppelinNotebookCronEnable": false
   },
-  "info": {}
+  "info": {
+    "isRunning": false
+  }
 }
