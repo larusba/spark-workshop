@@ -1,0 +1,1205 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n\u003cimg src\u003d\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Apache_Spark_logo.svg/1200px-Apache_Spark_logo.svg.png\" style\u003d\"width: 300px; margin: 20px auto\" /\u003e\n\n# Apache Spark何ですか?\n\nApache Sparkはビッグデータと機械学習に超高速の統合分析エンジンです。ノードのクラスターに対して操作を実行することにより、データ処理を並行して実行できます。 \n\nSparkのコアデータ構造は** DataFrame **です。これは基本的に固定スキーマのテーブルであり、静的データとストリーミングデータの両方をサポートし、データはSQLまたはAPIを使用したクエリにすることができます。\n\nSparkもPolyglotであり、Scala、Java、R、およびPythonで使用できます。\n\u003cimg src\u003d\"https://i.imgur.com/nxf5ZJu.png\" style\u003d\"margin: 30px auto; width: 600px\" /\u003e\n\nSparkは、すべての主要なビッグデータテクノロジーとネイティブに統合するか、サードパーティのライブラリを使用して統合します。\n\u003cimg src\u003d\"https://databricks.com/wp-content/uploads/2019/02/largest-open-source-apache-spark.png\" style\u003d\"margin: 0px auto; width: 600px\" /\u003e",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:42.908",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 12.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cimg src\u003d\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Apache_Spark_logo.svg/1200px-Apache_Spark_logo.svg.png\" style\u003d\"width: 300px; margin: 20px auto\" /\u003e\n\u003ch1\u003eApache Spark何ですか?\u003c/h1\u003e\n\u003cp\u003eApache Sparkはビッグデータと機械学習に超高速の統合分析エンジンです。ノードのクラスターに対して操作を実行することにより、データ処理を並行して実行できます。 \u003c/p\u003e\n\u003cp\u003eSparkのコアデータ構造は** DataFrame **です。これは基本的に固定スキーマのテーブルであり、静的データとストリーミングデータの両方をサポートし、データはSQLまたはAPIを使用したクエリにすることができます。\u003c/p\u003e\n\u003cp\u003eSparkもPolyglotであり、Scala、Java、R、およびPythonで使用できます。\u003cbr/\u003e\u003cimg src\u003d\"https://i.imgur.com/nxf5ZJu.png\" style\u003d\"margin: 30px auto; width: 600px\" /\u003e\u003c/p\u003e\n\u003cp\u003eSparkは、すべての主要なビッグデータテクノロジーとネイティブに統合するか、サードパーティのライブラリを使用して統合します。\u003cbr/\u003e\u003cimg src\u003d\"https://databricks.com/wp-content/uploads/2019/02/largest-open-source-apache-spark.png\" style\u003d\"margin: 0px auto; width: 600px\" /\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896358_671089039",
+      "id": "20201123-104809_1829268030",
+      "dateCreated": "2021-08-13 07:31:36.359",
+      "dateStarted": "2021-08-25 14:45:42.930",
+      "dateFinished": "2021-08-25 14:45:42.952",
+      "status": "FINISHED"
+    },
+    {
+      "title": "それはどのように機能しますか？",
+      "text": "%md\n\u003cimg src\u003d\"https://s7.orientaltrading.com/is/image/OrientalTrading/FXBanner_808/mandms-milk-chocolate-candies-jar-62-oz~13966317-a02.jpg\" style\u003d\"height: 450px; margin: 30px auto\" /\u003e",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:43.029",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 12.0,
+        "editorHide": true,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cimg src\u003d\"https://s7.orientaltrading.com/is/image/OrientalTrading/FXBanner_808/mandms-milk-chocolate-candies-jar-62-oz~13966317-a02.jpg\" style\u003d\"height: 450px; margin: 30px auto\" /\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896367_819024266",
+      "id": "20201123-105747_1467713703",
+      "dateCreated": "2021-08-13 07:31:36.369",
+      "dateStarted": "2021-08-25 14:45:43.045",
+      "dateFinished": "2021-08-25 14:45:43.056",
+      "status": "FINISHED"
+    },
+    {
+      "title": "Sparkアーキテクチャ",
+      "text": "%md\n\n\u003cimg src\u003d\"https://spark.apache.org/docs/3.1.2/img/cluster-overview.png\" style\u003d\"margin: 30px auto\" /\u003e",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:43.145",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cimg src\u003d\"https://spark.apache.org/docs/3.1.2/img/cluster-overview.png\" style\u003d\"margin: 30px auto\" /\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896369_579589030",
+      "id": "paragraph_1606650436833_121092905",
+      "dateCreated": "2021-08-13 07:31:36.369",
+      "dateStarted": "2021-08-25 14:45:43.163",
+      "dateFinished": "2021-08-25 14:45:43.175",
+      "status": "FINISHED"
+    },
+    {
+      "title": "パーティション",
+      "text": "%md\n\n\u003cimg src\u003d\"https://images.squarespace-cdn.com/content/v1/58a3db0903596e0fdbb27391/1502484724596-T4IEBESUF806VN5CZOEZ/image-asset.png?format\u003d1000w\" style\u003d\"margin: 0 auto\" /\u003e\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:43.263",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cimg src\u003d\"https://images.squarespace-cdn.com/content/v1/58a3db0903596e0fdbb27391/1502484724596-T4IEBESUF806VN5CZOEZ/image-asset.png?format\u003d1000w\" style\u003d\"margin: 0 auto\" /\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896369_356238963",
+      "id": "paragraph_1627473080724_830519811",
+      "dateCreated": "2021-08-13 07:31:36.369",
+      "dateStarted": "2021-08-25 14:45:43.281",
+      "dateFinished": "2021-08-25 14:45:43.296",
+      "status": "FINISHED"
+    },
+    {
+      "title": "キャンディーでいっぱいの瓶を作成します",
+      "text": "import scala.util.Random\n\nval colors: Seq[String] \u003d Seq(\"Blue\", \"Green\", \"Yellow\", \"Red\", \"Brown\")\n\nval random \u003d scala.util.Random\n\nval mmsJar \u003d Seq\n    .tabulate(random.nextInt(250000 - 120000))(n \u003d\u003e colors(random.nextInt(colors.size)))\n    .toDF(\"color\")\n\nmmsJar.show()",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:43.380",
+      "config": {
+        "lineNumbers": false,
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "editorHide": false,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+\n| color|\n+------+\n|Yellow|\n| Brown|\n|  Blue|\n|   Red|\n| Green|\n| Green|\n| Brown|\n|Yellow|\n| Green|\n|  Blue|\n| Green|\n| Green|\n| Brown|\n|Yellow|\n| Green|\n|   Red|\n|Yellow|\n| Green|\n| Green|\n| Brown|\n+------+\nonly showing top 20 rows\n\nimport scala.util.Random\n\u001b[1m\u001b[34mcolors\u001b[0m: \u001b[1m\u001b[32mSeq[String]\u001b[0m \u003d List(Blue, Green, Yellow, Red, Brown)\n\u001b[1m\u001b[34mrandom\u001b[0m: \u001b[1m\u001b[32mutil.Random.type\u001b[0m \u003d scala.util.Random$@58ab2f14\n\u001b[1m\u001b[34mmmsJar\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [color: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896369_1258553238",
+      "id": "20201123-111339_1936980039",
+      "dateCreated": "2021-08-13 07:31:36.370",
+      "dateStarted": "2021-08-25 14:45:43.408",
+      "dateFinished": "2021-08-25 14:45:44.838",
+      "status": "FINISHED"
+    },
+    {
+      "title": "キャンディーを数えましょう",
+      "text": "mmsJar.count()",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:44.912",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "editorHide": false,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres14\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m \u003d 34488\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d23"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896370_461502501",
+      "id": "20201124-175747_594954951",
+      "dateCreated": "2021-08-13 07:31:36.370",
+      "dateStarted": "2021-08-25 14:45:44.946",
+      "dateFinished": "2021-08-25 14:45:46.029",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md \n\n# RDD vs DataFrame vs Dataset\n\nSparkは、異なる時期に導入された3つの異なるAPIを使用します:\n\n* **Resilient Distributed Dataset** (RDD): クラスター内の多くのマシンに分散したデータ要素の分散コレクションです。 RDDは、データを表すJavaまたはScalaオブジェクトのセットです。\n* **DataFrame**:　名前付き列に編成されたデータの分散コレクションです。　概念的には、リレーショナルデータベースのテーブルと同じです。\n* **Dataset**:これは、DataFrame APIの拡張であり、— type-safeの機能、RDD APIの オブジェクト指向プログラミングインターフェイスと、Catalystクエリオプティマイザのパフォーマンス上の利点、およびDataFrameAPIのオフヒープストレージメカニズムを提供します。\n\n\n\u003cimg src\u003d\"https://databricks.com/wp-content/uploads/2018/05/rdd.png\" style\u003d\"margin: 30px auto; height: 340px\" /\u003e\nから画像 https://databricks.com/glossary/what-is-rdd\n\n追加リソース：\n\n* https://medium.com/analytics-vidhya/datasets-vs-dataframes-vs-rdds-d3c2dba2d0b4\n* https://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:46.048",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eRDD vs DataFrame vs Dataset\u003c/h1\u003e\n\u003cp\u003eSparkは、異なる時期に導入された3つの異なるAPIを使用します:\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003e\u003cstrong\u003eResilient Distributed Dataset\u003c/strong\u003e (RDD): クラスター内の多くのマシンに分散したデータ要素の分散コレクションです。 RDDは、データを表すJavaまたはScalaオブジェクトのセットです。\u003c/li\u003e\n  \u003cli\u003e\u003cstrong\u003eDataFrame\u003c/strong\u003e:　名前付き列に編成されたデータの分散コレクションです。　概念的には、リレーショナルデータベースのテーブルと同じです。\u003c/li\u003e\n  \u003cli\u003e\u003cstrong\u003eDataset\u003c/strong\u003e:これは、DataFrame APIの拡張であり、— type-safeの機能、RDD APIの オブジェクト指向プログラミングインターフェイスと、Catalystクエリオプティマイザのパフォーマンス上の利点、およびDataFrameAPIのオフヒープストレージメカニズムを提供します。\u003c/li\u003e\n\u003c/ul\u003e\n\u003cimg src\u003d\"https://databricks.com/wp-content/uploads/2018/05/rdd.png\" style\u003d\"margin: 30px auto; height: 340px\" /\u003e\n\u003cp\u003eから画像 \u003ca href\u003d\"https://databricks.com/glossary/what-is-rdd\"\u003ehttps://databricks.com/glossary/what-is-rdd\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003e追加リソース：\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003e\u003ca href\u003d\"https://medium.com/analytics-vidhya/datasets-vs-dataframes-vs-rdds-d3c2dba2d0b4\"\u003ehttps://medium.com/analytics-vidhya/datasets-vs-dataframes-vs-rdds-d3c2dba2d0b4\u003c/a\u003e\u003c/li\u003e\n  \u003cli\u003e\u003ca href\u003d\"https://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html\"\u003ehttps://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896370_630190013",
+      "id": "paragraph_1606658378173_1654727123",
+      "dateCreated": "2021-08-13 07:31:36.370",
+      "dateStarted": "2021-08-25 14:45:46.084",
+      "dateFinished": "2021-08-25 14:45:46.116",
+      "status": "FINISHED"
+    },
+    {
+      "title": "",
+      "text": "val groupedMmsJar \u003d mmsJar\n    .groupBy(\"color\")\n    .count()\n\ngroupedMmsJar.show()",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:46.183",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "editorHide": false,
+        "title": false,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+-----+\n| color|count|\n+------+-----+\n| Green| 6839|\n|  Blue| 6947|\n| Brown| 6869|\n|Yellow| 6856|\n|   Red| 6977|\n+------+-----+\n\n\u001b[1m\u001b[34mgroupedMmsJar\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [color: string, count: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d24"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d25"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d26"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d27"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d28"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896371_802936216",
+      "id": "20201123-151051_1373271501",
+      "dateCreated": "2021-08-13 07:31:36.371",
+      "dateStarted": "2021-08-25 14:45:46.216",
+      "dateFinished": "2021-08-25 14:45:48.006",
+      "status": "FINISHED"
+    },
+    {
+      "title": "演習: groupedMmsJarをカウントdescで並べ替え、結果を表示します",
+      "text": "/* ここにコードを書いてください */",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:48.020",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896371_965672840",
+      "id": "paragraph_1606989391393_1850225338",
+      "dateCreated": "2021-08-13 07:31:36.371",
+      "dateStarted": "2021-08-25 14:45:48.059",
+      "dateFinished": "2021-08-25 14:45:48.251",
+      "status": "FINISHED"
+    },
+    {
+      "title": "列を参照する方法",
+      "text": "val myNewDf \u003d Seq(\n        (1, \"Davide\", \"Fantuzzi\", \"Data Engineer\", \"LARUS Business Automation\"),\n        (2, \"Sofia\", \"Conton\", \"Internationalization Program Assistant\", \"LARUS Business Automation\"),\n        (3, \"Jeff\", \"Bezos\", \"Executive Chairman\", \"Amazon\")\n    ).toDF(\"id\", \"firstname\", \"lastname\", \"role\", \"company\")\n    \nmyNewDf.show(truncate \u003d false)",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:48.259",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+---------+--------+--------------------------------------+-------------------------+\n|id |firstname|lastname|role                                  |company                  |\n+---+---------+--------+--------------------------------------+-------------------------+\n|1  |Davide   |Fantuzzi|Data Engineer                         |LARUS Business Automation|\n|2  |Sofia    |Conton  |Internationalization Program Assistant|LARUS Business Automation|\n|3  |Jeff     |Bezos   |Executive Chairman                    |Amazon                   |\n+---+---------+--------+--------------------------------------+-------------------------+\n\n\u001b[1m\u001b[34mmyNewDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [id: int, firstname: string ... 3 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896372_1088458462",
+      "id": "paragraph_1627544979375_693150416",
+      "dateCreated": "2021-08-13 07:31:36.372",
+      "dateStarted": "2021-08-25 14:45:48.296",
+      "dateFinished": "2021-08-25 14:45:48.849",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\nColumnクラスで使用可能なメソッド https://spark.apache.org/docs/latest/api/java/org/apache/spark/sql/Column.html",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:48.897",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eColumnクラスで使用可能なメソッド \u003ca href\u003d\"https://spark.apache.org/docs/latest/api/java/org/apache/spark/sql/Column.html\"\u003ehttps://spark.apache.org/docs/latest/api/java/org/apache/spark/sql/Column.html\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896372_1694442050",
+      "id": "paragraph_1606664140848_-2143398861",
+      "dateCreated": "2021-08-13 07:31:36.373",
+      "dateStarted": "2021-08-25 14:45:48.933",
+      "dateFinished": "2021-08-25 14:45:48.949",
+      "status": "FINISHED"
+    },
+    {
+      "title": "CSVファイルからDataFrameを作成する",
+      "text": "val beerDf \u003d spark.read\n    .format(\"csv\")\n    .option(\"header\", true)\n    .option(\"inferSchema\", true)\n    .load(\"./spark-warehouse/beer_info.csv\")\n\nbeerDf.show(truncate \u003d false)",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:49.032",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "editorHide": false,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+-----------------------------------------------+---------------------------------------+----+\n|beer_id|brewer                                         |beer_name                              |abv |\n+-------+-----------------------------------------------+---------------------------------------+----+\n|1      |Rahr \u0026amp; Sons Brewing Company                |Stormcloud IPA                         |6.0 |\n|2      |Matt Brewing Company / Saranac Brewery         |Saranac Legacy IPA                     |6.5 |\n|3      |Matt Brewing Company / Saranac Brewery         |Saranac Rye IPA                        |5.95|\n|4      |Matt Brewing Company / Saranac Brewery         |Saranac India Pale Ale                 |5.8 |\n|5      |Zero Gravity Craft Brewery / American Flatbread|Conehead IPA                           |5.7 |\n|6      |Short\u0027s Brewing Company                        |Hopstache                              |6.8 |\n|7      |Short\u0027s Brewing Company                        |Freedom Of 78                          |7.0 |\n|8      |Short\u0027s Brewing Company                        |ControversiALE                         |6.5 |\n|9      |Short\u0027s Brewing Company                        |Shorts Huma Lupa Licious India Pale Ale|7.7 |\n|10     |Magic Hat Brewing Company                      |HiPA                                   |6.7 |\n|11     |Magic Hat Brewing Company                      |Ticket To Rye IPA                      |7.1 |\n|12     |Magic Hat Brewing Company                      |Encore                                 |6.4 |\n|13     |Magic Hat Brewing Company                      |Lucky Kat                              |5.8 |\n|14     |Magic Hat Brewing Company                      |Electric Peel Grapefruit IPA           |6.0 |\n|15     |Long Trail Brewing Co.                         |Green Blaze IPA                        |6.5 |\n|16     |No-Li Brewhouse                                |Born amp Raised IPA                    |7.0 |\n|17     |Ska Brewing Co.                                |Modus Hoperandi                        |6.8 |\n|18     |Ska Brewing Co.                                |Modus Mandarina                        |6.8 |\n|19     |Heavy Seas Beer                                |Loose Cannon                           |7.25|\n|20     |Heavy Seas Beer                                |TropiCannon Citrus IPA                 |7.25|\n+-------+-----------------------------------------------+---------------------------------------+----+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mbeerDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [beer_id: int, brewer: string ... 2 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d29"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d30"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d31"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896373_1226059908",
+      "id": "paragraph_1627548709487_419896112",
+      "dateCreated": "2021-08-13 07:31:36.373",
+      "dateStarted": "2021-08-25 14:45:49.054",
+      "dateFinished": "2021-08-25 14:45:49.606",
+      "status": "FINISHED"
+    },
+    {
+      "title": "APIを使用してデータを探索する",
+      "text": "beerDf.select(\"brewer\")\n    .groupBy(\"brewer\")\n    .count()\n    .orderBy($\"count\".desc)\n    .show(truncate \u003d false)",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:49.654",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------------------------------+-----+\n|brewer                            |count|\n+----------------------------------+-----+\n|Boston Beer Company (Samuel Adams)|10   |\n|Ballast Point Brewing Company     |9    |\n|Sierra Nevada Brewing Co.         |9    |\n|Dogfish Head Craft Brewery        |8    |\n|Stone Brewing                     |7    |\n|Terrapin Beer Company             |6    |\n|Green Flash Brewing Co.           |5    |\n|Toppling Goliath Brewing Company  |5    |\n|Revolution Brewing                |5    |\n|Lawson\u0027s Finest Liquids           |5    |\n|Magic Hat Brewing Company         |5    |\n|Cigar City Brewing                |5    |\n|Deschutes Brewery                 |5    |\n|Mikkeller ApS                     |4    |\n|Tröegs Brewing Company            |4    |\n|Half Acre Beer Company            |4    |\n|SweetWater Brewing Company        |4    |\n|Short\u0027s Brewing Company           |4    |\n|New Belgium Brewing               |4    |\n|Boulevard Brewing Co.             |4    |\n+----------------------------------+-----+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d32"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896375_70330165",
+      "id": "paragraph_1627551227323_27747364",
+      "dateCreated": "2021-08-13 07:31:36.375",
+      "dateStarted": "2021-08-25 14:45:49.684",
+      "dateFinished": "2021-08-25 14:45:51.134",
+      "status": "FINISHED"
+    },
+    {
+      "title": "より複雑な例",
+      "text": "beerDf.select(\"brewer\", \"abv\")\n    .groupBy(\"brewer\")\n    .agg(\n        count($\"abv\").as(\"beers\"), \n        round(avg($\"abv\"), 2).as(\"abv_avg\")\n    )\n    .orderBy(\n        $\"beers\".desc, \n        $\"abv_avg\".desc\n    )\n    .show(10, truncate \u003d false)\n    ",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:51.192",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------------------------------+-----+-------+\n|brewer                            |beers|abv_avg|\n+----------------------------------+-----+-------+\n|Boston Beer Company (Samuel Adams)|10   |5.99   |\n|Sierra Nevada Brewing Co.         |9    |6.59   |\n|Ballast Point Brewing Company     |9    |6.53   |\n|Dogfish Head Craft Brewery        |8    |7.0    |\n|Stone Brewing                     |7    |6.8    |\n|Terrapin Beer Company             |6    |6.72   |\n|Cigar City Brewing                |5    |7.2    |\n|Revolution Brewing                |5    |7.18   |\n|Magic Hat Brewing Company         |5    |6.4    |\n|Deschutes Brewery                 |5    |6.34   |\n+----------------------------------+-----+-------+\nonly showing top 10 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d33"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896375_196479825",
+      "id": "paragraph_1627552256429_1174387766",
+      "dateCreated": "2021-08-13 07:31:36.375",
+      "dateStarted": "2021-08-25 14:45:51.219",
+      "dateFinished": "2021-08-25 14:45:52.818",
+      "status": "FINISHED"
+    },
+    {
+      "title": "演習: beer_reviews.csvファイルをロードする",
+      "text": "val fileName \u003d \"./spark-warehouse/beer_reviews.csv\"\n\nval reviewDf \u003d spark.read.format(\"csv\")\n    .option(\"inferSchema\", true)\n    .option(\"header\", true)\n    .load(fileName)\n\nreviewDf.show()",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:52.825",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+---------+--------------------+--------------------+\n|beer_id|review_id|              review|              rating|\n+-------+---------+--------------------+--------------------+\n|    500|        1|Darker and Amber-...|                4.25|\n|    500|        2|This one is a lit...|                3.75|\n|    500|        3|Always has been m...|                   3|\n|    500|        4|Cloudy orange loo...|                 3.5|\n|    500|        5|A very average Am...|                 2.5|\n|    500|        6|Bottle. Pours a h...|                3.75|\n|    500|        7|This doesn\u0027t real...|                   3|\n|    500|        8|Something is off ...|                   3|\n|    500|        9|Meh. Better than ...|                4.75|\n|    500|       10|Poured from a 12 ...|                2.75|\n|    500|       11|\"Pours a great de...| Left Coast. I se...|\n|    500|       12|12 ounce bottle i...|                   4|\n|    500|       13|Poured from a bro...|                 3.5|\n|    500|       14|Most excedingly e...|                4.25|\n|    500|       15|Had on tap at Sma...|                3.75|\n|    500|       16|Pours a sickly me...|                3.75|\n|    500|       17|22oz bottle $5.49...|                3.25|\n|    499|       18|Just what you wou...|                4.25|\n|    499|       19|Been my standard ...|                 2.5|\n|    499|       20|I like to taste a...|                 2.5|\n+-------+---------+--------------------+--------------------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mfileName\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m \u003d ./spark-warehouse/beer_reviews.csv\n\u001b[1m\u001b[34mreviewDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [beer_id: int, review_id: decimal(5,0) ... 2 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d34"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d35"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d36"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896376_1413128623",
+      "id": "paragraph_1627552648175_1108330480",
+      "dateCreated": "2021-08-13 07:31:36.376",
+      "dateStarted": "2021-08-25 14:45:52.855",
+      "dateFinished": "2021-08-25 14:45:53.522",
+      "status": "FINISHED"
+    },
+    {
+      "title": "データフレームに参加する",
+      "text": "val beerReviewsDf \u003d beerDf\n    .join(\n        reviewDf, \n        reviewDf(\"beer_id\") \u003d\u003d\u003d beerDf(\"beer_id\"), \n        \"inner\"\n    )\n    .select(beerDf(\"beer_id\"), $\"brewer\", $\"beer_name\", $\"rating\", $\"review\", $\"abv\")\n    \nbeerReviewsDf.show()",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:53.557",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------------------+---------+--------------------+--------------------+---+\n|beer_id|              brewer|beer_name|              rating|              review|abv|\n+-------+--------------------+---------+--------------------+--------------------+---+\n|    500|Left Coast Brewin...| Trestles|                4.25|Darker and Amber-...|6.8|\n|    500|Left Coast Brewin...| Trestles|                3.75|This one is a lit...|6.8|\n|    500|Left Coast Brewin...| Trestles|                   3|Always has been m...|6.8|\n|    500|Left Coast Brewin...| Trestles|                 3.5|Cloudy orange loo...|6.8|\n|    500|Left Coast Brewin...| Trestles|                 2.5|A very average Am...|6.8|\n|    500|Left Coast Brewin...| Trestles|                3.75|Bottle. Pours a h...|6.8|\n|    500|Left Coast Brewin...| Trestles|                   3|This doesn\u0027t real...|6.8|\n|    500|Left Coast Brewin...| Trestles|                   3|Something is off ...|6.8|\n|    500|Left Coast Brewin...| Trestles|                4.75|Meh. Better than ...|6.8|\n|    500|Left Coast Brewin...| Trestles|                2.75|Poured from a 12 ...|6.8|\n|    500|Left Coast Brewin...| Trestles| Left Coast. I se...|\"Pours a great de...|6.8|\n|    500|Left Coast Brewin...| Trestles|                   4|12 ounce bottle i...|6.8|\n|    500|Left Coast Brewin...| Trestles|                 3.5|Poured from a bro...|6.8|\n|    500|Left Coast Brewin...| Trestles|                4.25|Most excedingly e...|6.8|\n|    500|Left Coast Brewin...| Trestles|                3.75|Had on tap at Sma...|6.8|\n|    500|Left Coast Brewin...| Trestles|                3.75|Pours a sickly me...|6.8|\n|    500|Left Coast Brewin...| Trestles|                3.25|22oz bottle $5.49...|6.8|\n|    499|Independence Brew...|Stash IPA|                4.25|Just what you wou...|7.0|\n|    499|Independence Brew...|Stash IPA|                 2.5|Been my standard ...|7.0|\n|    499|Independence Brew...|Stash IPA|                 2.5|I like to taste a...|7.0|\n+-------+--------------------+---------+--------------------+--------------------+---+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mbeerReviewsDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [beer_id: int, brewer: string ... 4 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d37"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d38"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896376_645091515",
+      "id": "paragraph_1627555104668_2035518545",
+      "dateCreated": "2021-08-13 07:31:36.376",
+      "dateStarted": "2021-08-25 14:45:53.584",
+      "dateFinished": "2021-08-25 14:45:54.271",
+      "status": "FINISHED"
+    },
+    {
+      "title": "クリーンなデータ",
+      "text": "val cleanBeerReviewsDf \u003d beerReviewsDf\n    .where($\"rating\".cast(\"float\").isNotNull)\n    .withColumn(\"clean_rating\", $\"rating\".cast(\"float\"))\n    .drop(\"rating\")\n    .withColumnRenamed(\"clean_rating\", \"rating\")\n    \ncleanBeerReviewsDf.show()",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:54.285",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------------------+---------+--------------------+---+------+\n|beer_id|              brewer|beer_name|              review|abv|rating|\n+-------+--------------------+---------+--------------------+---+------+\n|    500|Left Coast Brewin...| Trestles|Darker and Amber-...|6.8|  4.25|\n|    500|Left Coast Brewin...| Trestles|This one is a lit...|6.8|  3.75|\n|    500|Left Coast Brewin...| Trestles|Always has been m...|6.8|   3.0|\n|    500|Left Coast Brewin...| Trestles|Cloudy orange loo...|6.8|   3.5|\n|    500|Left Coast Brewin...| Trestles|A very average Am...|6.8|   2.5|\n|    500|Left Coast Brewin...| Trestles|Bottle. Pours a h...|6.8|  3.75|\n|    500|Left Coast Brewin...| Trestles|This doesn\u0027t real...|6.8|   3.0|\n|    500|Left Coast Brewin...| Trestles|Something is off ...|6.8|   3.0|\n|    500|Left Coast Brewin...| Trestles|Meh. Better than ...|6.8|  4.75|\n|    500|Left Coast Brewin...| Trestles|Poured from a 12 ...|6.8|  2.75|\n|    500|Left Coast Brewin...| Trestles|12 ounce bottle i...|6.8|   4.0|\n|    500|Left Coast Brewin...| Trestles|Poured from a bro...|6.8|   3.5|\n|    500|Left Coast Brewin...| Trestles|Most excedingly e...|6.8|  4.25|\n|    500|Left Coast Brewin...| Trestles|Had on tap at Sma...|6.8|  3.75|\n|    500|Left Coast Brewin...| Trestles|Pours a sickly me...|6.8|  3.75|\n|    500|Left Coast Brewin...| Trestles|22oz bottle $5.49...|6.8|  3.25|\n|    499|Independence Brew...|Stash IPA|Just what you wou...|7.0|  4.25|\n|    499|Independence Brew...|Stash IPA|Been my standard ...|7.0|   2.5|\n|    499|Independence Brew...|Stash IPA|I like to taste a...|7.0|   2.5|\n|    499|Independence Brew...|Stash IPA|Pours a slightly ...|7.0|   3.5|\n+-------+--------------------+---------+--------------------+---+------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mcleanBeerReviewsDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [beer_id: int, brewer: string ... 4 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d39"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d40"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896377_37007653",
+      "id": "paragraph_1627560801081_659554009",
+      "dateCreated": "2021-08-13 07:31:36.377",
+      "dateStarted": "2021-08-25 14:45:54.329",
+      "dateFinished": "2021-08-25 14:45:54.931",
+      "status": "FINISHED"
+    },
+    {
+      "title": "SQLはどうですか？",
+      "text": "cleanBeerReviewsDf.createOrReplaceTempView(\"beer_reviews\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:55.030",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 12.0,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896377_282050087",
+      "id": "paragraph_1627561552665_1320806986",
+      "dateCreated": "2021-08-13 07:31:36.377",
+      "dateStarted": "2021-08-25 14:45:55.064",
+      "dateFinished": "2021-08-25 14:45:55.296",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\n\nSELECT * \nFROM beer_reviews\nORDER BY brewer, beer_name, rating DESC\nLIMIT 10",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:55.364",
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 12.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "beer_id": "string",
+                      "brewer": "string",
+                      "beer_name": "string",
+                      "review": "string",
+                      "abv": "string",
+                      "rating": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "beer_id\tbrewer\tbeer_name\treview\tabv\trating\n384\t(512) Brewing Company\t512 IPA\tFantastic IPA! Not overly hopped but still acceptable to the hophead. This is an extremely drinkable IPA comparable to any of the great IPAs available on the market. This was the first beer I\u0027ve had by the Austin based brewer but I will be sure to try more.\t7.2\t5.0\n384\t(512) Brewing Company\t512 IPA\thad this beer at the Draft Pick American Grill on Tap. nice rich color and good lacing as I progressed down the pint. had a decent resinous taste that did not linger to long but just enough to make me want more. A very decent local IPA.\t7.2\t4.75\n384\t(512) Brewing Company\t512 IPA\tIf i see this brew on tap you can guarantee im ordering it. AtX represent!!\t7.2\t4.75\n384\t(512) Brewing Company\t512 IPA\tIt is a solid beer. Not what I expected though my pallet is conditioned for Northwest IPAs but it has a good mouthfeel and is a good beer overall. Definitely one you should try.\t7.2\t4.5\n384\t(512) Brewing Company\t512 IPA\tIt pours a golden amber with plenty of hops on the nose. The taste veers more towards the citrusy hops, which could be why I like it so much. The (512) IPA starts with strong hops which gives way to a slightly sweet bready maltiness and ends with a good hop bitterness. It is a very smooth and well balanced IPA with a deep profile that makes this a highly drinkable brew. I can\u0027t hide that this is my favorite local core brew and IPA. Even better that it is easy to find on tap in Austin.\t7.2\t4.5\n384\t(512) Brewing Company\t512 IPA\tReally liked this IPA. A totally different take on an IPA. The vanilla really shines through and it\u0027s just the right amount of bitterness. Excellent!\t7.2\t4.25\n384\t(512) Brewing Company\t512 IPA\tVery nice IPA. This is absolutely the best Texas beer i\u0027ve had. The bartender says that 512 is in a class by themselves in TX. This IPA has a Northern CA feel and smell to it. If you like what comes from the northern coastal area you\u0027ll like this one. To the eye it looks like a typical IPA/Amber, but the nose and taste are first class. Slightly bitter but that\u0027s why it\u0027s not a BIC brew.\t7.2\t4.25\n384\t(512) Brewing Company\t512 IPA\tCloudy orange pour. Strong hoppy flavor upfront. Nice floral taste with bits of pine, citrus, and grass. Body has a strong malt backbone as well with biscuit and bread flavors standing out. Finishes with a lingering flowery bitterness.\t7.2\t4.25\n384\t(512) Brewing Company\t512 IPA\tDecent beer, not real hoppy but has a full mouth taste. Some caramel and grain cereal. Not much going on in the smell, but looks the part. Nice head with lacing throughout, bronze with slight bubbles. I enjoyed it and would happily dring it again. In Texas for business, haven\u0027t seen this in Florida so may not get a chance or I missed it.\t7.2\t4.25\n384\t(512) Brewing Company\t512 IPA\tIt\u0027s a good beer. Nice taste.\t7.2\t4.0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d41"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d42"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896378_544726514",
+      "id": "paragraph_1627564199279_267862960",
+      "dateCreated": "2021-08-13 07:31:36.378",
+      "dateStarted": "2021-08-25 14:45:55.382",
+      "dateFinished": "2021-08-25 14:45:55.806",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\n\nSELECT MAX(abv), MIN(abv)\nFROM beer_reviews",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:55.883",
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "max(abv)": "string",
+                      "min(abv)": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "max(abv)\tmin(abv)\n9.1\t2.7\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d43"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d44"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896379_1081948442",
+      "id": "paragraph_1627571341202_1617090813",
+      "dateCreated": "2021-08-13 07:31:36.380",
+      "dateStarted": "2021-08-25 14:45:55.903",
+      "dateFinished": "2021-08-25 14:45:56.295",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\n\nSELECT ROUND(abv, 2) AS abv, ROUND(AVG(rating), 2) AS avg_rating, COUNT(rating) AS review_count\nFROM beer_reviews\nGROUP BY abv\nHAVING review_count \u003e 20\nORDER BY abv ASC\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-25 14:45:56.304",
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 12.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "lineChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "round(rating, 2)": "string",
+                      "round(abv, 2)": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "abv",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "avg_rating",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "abv\tavg_rating\treview_count\n2.7\t3.48\t25\n3.8\t3.73\t79\n4.0\t3.69\t165\n4.2\t2.78\t24\n4.3\t3.65\t54\n4.4\t3.92\t57\n4.5\t3.57\t495\n4.6\t3.64\t59\n4.7\t3.62\t147\n4.8\t3.73\t234\n4.9\t3.76\t137\n5.0\t3.68\t182\n5.3\t3.87\t51\n5.5\t3.62\t250\n5.6\t3.73\t67\n5.7\t3.71\t213\n5.75\t3.82\t34\n5.8\t3.69\t262\n5.9\t3.52\t272\n5.95\t3.46\t33\n6.0\t3.59\t1235\n6.1\t3.63\t387\n6.2\t3.67\t1102\n6.25\t4.34\t51\n6.3\t3.75\t544\n6.4\t3.97\t324\n6.43\t3.83\t62\n6.5\t3.75\t2260\n6.6\t3.8\t448\n6.66\t3.39\t36\n6.7\t3.7\t1067\n6.75\t3.72\t42\n6.8\t3.82\t1715\n6.9\t3.73\t727\n7.0\t3.83\t3054\n7.1\t3.78\t506\n7.12\t3.55\t25\n7.2\t3.89\t1475\n7.25\t3.81\t235\n7.3\t3.85\t619\n7.4\t4.06\t205\n7.5\t4.02\t1341\n7.6\t4.16\t130\n7.7\t3.86\t270\n7.77\t3.66\t56\n8.0\t3.93\t108\n8.6\t4.0\t57\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d45"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d46"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628839896380_74779009",
+      "id": "paragraph_1627569772880_1143909108",
+      "dateCreated": "2021-08-13 07:31:36.380",
+      "dateStarted": "2021-08-25 14:45:56.331",
+      "dateFinished": "2021-08-25 14:45:57.843",
+      "status": "FINISHED"
+    }
+  ],
+  "name": "1. Intro to Apache Spark 1",
+  "id": "2GFRZWAD8",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0-preview2",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {
+    "isRunning": false
+  }
+}
