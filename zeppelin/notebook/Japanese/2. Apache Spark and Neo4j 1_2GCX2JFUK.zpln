@@ -349,9 +349,9 @@
     },
     {
       "title": "",
-      "text": "/**\n * 演習: 各レビュアーのカウントDESCでソートしたレビュー数を表示します\n * \n * ヒント:　複雑な列名は、「source.name」のようにバックティックで囲む必要があります\n */\nmovieReviewsDf.select(\"`source.name`\")\n    .groupBy(\"`source.name`\")\n    .count()\n    .show()",
+      "text": "/**\n * 演習: 各レビュアーのカウントDESCでソートしたレビュー数を表示します\n * \n * ヒント:　複雑な列名は、「source.name」のようにバックティックで囲む必要があります\n */",
       "user": "anonymous",
-      "dateUpdated": "2021-08-24 09:28:04.042",
+      "dateUpdated": "2021-09-13 14:23:15.771",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -372,15 +372,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "+----------------+-----+\n|     source.name|count|\n+----------------+-----+\n|Jessica Thompson|    6|\n|  James Thompson|    2|\n|    Angela Scope|    1|\n+----------------+-----+\n\n"
-          }
-        ]
-      },
       "apps": [],
       "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
@@ -390,9 +381,9 @@
       "status": "READY"
     },
     {
-      "text": "/**\n * 演習: 「クエリ」モードを使用してNeo4jからデータを読み取ります\n * \n * ドキュメント: https://neo4j.com/developer/spark/reading/#bookmark-read-query\n */\nspark.read.format(\"org.neo4j.spark.DataSource\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"password\")\n    .option(\"query\", \"MATCH ()-[rel:REVIEWED]-\u003e() RETURN AVG(rel.rating)\")\n    .load()\n    .show()",
+      "text": "/**\n * 演習: 「クエリ」モードを使用してNeo4jからデータを読み取ります\n * \n * ドキュメント: https://neo4j.com/developer/spark/reading/#bookmark-read-query\n */",
       "user": "anonymous",
-      "dateUpdated": "2021-08-24 09:29:14.352",
+      "dateUpdated": "2021-09-13 14:25:58.024",
       "config": {
         "tableHide": false,
         "editorSetting": {

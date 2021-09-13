@@ -381,9 +381,9 @@
     },
     {
       "title": "",
-      "text": "/**\n * Exercise: show the review count for each reviewer, sorted by count DESC\n * \n * Hint: complex column names must be sorrounded a backtick, for example `source.name`\n */\nmovieReviewsDf.select(\"`source.name`\")\n    .groupBy(\"`source.name`\")\n    .count()\n    .show()",
+      "text": "/**\n * Exercise: show the review count for each reviewer, sorted by count DESC\n * \n * Hint: complex column names must be sorrounded a backtick, for example `source.name`\n */",
       "user": "anonymous",
-      "dateUpdated": "2021-08-18 08:10:22.950",
+      "dateUpdated": "2021-09-13 14:22:59.657",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -404,30 +404,8 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "+----------------+-----+\n|     source.name|count|\n+----------------+-----+\n|Jessica Thompson|    6|\n|  James Thompson|    2|\n|    Angela Scope|    1|\n+----------------+-----+\n\n"
-          }
-        ]
-      },
       "apps": [],
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d26"
-            }
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
+      "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1606387537218_-1162086901",
       "id": "paragraph_1606387537218_-1162086901",
@@ -437,9 +415,9 @@
       "status": "FINISHED"
     },
     {
-      "text": "/**\n * Exercise: read data from Neo4j using the \"query\" mode\n * \n * Docs: https://neo4j.com/developer/spark/reading/#bookmark-read-query\n */\nspark.read.format(\"org.neo4j.spark.DataSource\")\n    .option(\"url\", \"bolt://neo4j:7687\")\n    .option(\"authentication.basic.username\", \"neo4j\")\n    .option(\"authentication.basic.password\", \"password\")\n    .option(\"query\", \"MATCH ()-[rel:REVIEWED]-\u003e() RETURN AVG(rel.rating)\")\n    .load()\n    .show()",
+      "text": "/**\n * Exercise: read data from Neo4j using the \"query\" mode\n * \n * Docs: https://neo4j.com/developer/spark/reading/#bookmark-read-query\n */",
       "user": "anonymous",
-      "dateUpdated": "2021-08-18 08:10:24.072",
+      "dateUpdated": "2021-09-13 14:25:48.580",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,

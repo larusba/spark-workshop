@@ -3,7 +3,7 @@
     {
       "text": "%md\n\n\u003cimg src\u003d\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Apache_Spark_logo.svg/1200px-Apache_Spark_logo.svg.png\" style\u003d\"width: 300px; margin: 20px auto\" /\u003e\n\n# Apache Spark何ですか?\n\nApache Sparkはビッグデータと機械学習に超高速の統合分析エンジンです。ノードのクラスターに対して操作を実行することにより、データ処理を並行して実行できます。 \n\nSparkのコアデータ構造は** DataFrame **です。これは基本的に固定スキーマのテーブルであり、静的データとストリーミングデータの両方をサポートし、データはSQLまたはAPIを使用したクエリにすることができます。\n\nSparkもPolyglotであり、Scala、Java、R、およびPythonで使用できます。\n\u003cimg src\u003d\"https://i.imgur.com/nxf5ZJu.png\" style\u003d\"margin: 30px auto; width: 600px\" /\u003e\n\nSparkは、すべての主要なビッグデータテクノロジーとネイティブに統合するか、サードパーティのライブラリを使用して統合します。\n\u003cimg src\u003d\"https://databricks.com/wp-content/uploads/2019/02/largest-open-source-apache-spark.png\" style\u003d\"margin: 0px auto; width: 600px\" /\u003e",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:42.908",
+      "dateUpdated": "2021-09-13 14:18:47.241",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -38,15 +38,15 @@
       "jobName": "paragraph_1628839896358_671089039",
       "id": "20201123-104809_1829268030",
       "dateCreated": "2021-08-13 07:31:36.359",
-      "dateStarted": "2021-08-25 14:45:42.930",
-      "dateFinished": "2021-08-25 14:45:42.952",
+      "dateStarted": "2021-09-13 14:18:47.257",
+      "dateFinished": "2021-09-13 14:18:47.270",
       "status": "FINISHED"
     },
     {
       "title": "それはどのように機能しますか？",
       "text": "%md\n\u003cimg src\u003d\"https://s7.orientaltrading.com/is/image/OrientalTrading/FXBanner_808/mandms-milk-chocolate-candies-jar-62-oz~13966317-a02.jpg\" style\u003d\"height: 450px; margin: 30px auto\" /\u003e",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:43.029",
+      "dateUpdated": "2021-09-13 14:18:47.356",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -82,15 +82,15 @@
       "jobName": "paragraph_1628839896367_819024266",
       "id": "20201123-105747_1467713703",
       "dateCreated": "2021-08-13 07:31:36.369",
-      "dateStarted": "2021-08-25 14:45:43.045",
-      "dateFinished": "2021-08-25 14:45:43.056",
+      "dateStarted": "2021-09-13 14:18:47.371",
+      "dateFinished": "2021-09-13 14:18:47.378",
       "status": "FINISHED"
     },
     {
       "title": "Sparkアーキテクチャ",
-      "text": "%md\n\n\u003cimg src\u003d\"https://spark.apache.org/docs/3.1.2/img/cluster-overview.png\" style\u003d\"margin: 30px auto\" /\u003e",
+      "text": "%md\n\n\u003cimg src\u003d\"https://camo.githubusercontent.com/ff576334adf04316f86d91b4ea5b383ca570b1d6f79f1b3487a5598735aee574/687474703a2f2f747261696e696e672e64617461627269636b732e636f6d2f64617461627269636b735f67756964652f67656e746c655f696e74726f64756374696f6e2f766964656f73735f6c6f676f2e706e67\" style\u003d\"margin: 0 auto\" /\u003e\n\n--- \n\n### ジョブ構造\n\n* 各Sparkジョブは、いくつかのステージに分けられます。\n* 各ステージは、いくつかのタスクに分割されます。\n\n\u003cimg src\u003d\"https://i.stack.imgur.com/zxbzi.png\" style\u003d\"margin: 20px auto;\" /\u003e\n\nステージ境界は、ノード間でデータを交換する必要がある場合に発生します。 これはシャッフルと呼ばれます。",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:43.145",
+      "dateUpdated": "2021-09-13 14:18:47.472",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -116,7 +116,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cimg src\u003d\"https://spark.apache.org/docs/3.1.2/img/cluster-overview.png\" style\u003d\"margin: 30px auto\" /\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cimg src\u003d\"https://camo.githubusercontent.com/ff576334adf04316f86d91b4ea5b383ca570b1d6f79f1b3487a5598735aee574/687474703a2f2f747261696e696e672e64617461627269636b732e636f6d2f64617461627269636b735f67756964652f67656e746c655f696e74726f64756374696f6e2f766964656f73735f6c6f676f2e706e67\" style\u003d\"margin: 0 auto\" /\u003e\n\u003chr/\u003e\n\u003ch3\u003eジョブ構造\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003e各Sparkジョブは、いくつかのステージに分けられます。\u003c/li\u003e\n  \u003cli\u003e各ステージは、いくつかのタスクに分割されます。\u003c/li\u003e\n\u003c/ul\u003e\n\u003cimg src\u003d\"https://i.stack.imgur.com/zxbzi.png\" style\u003d\"margin: 20px auto;\" /\u003e\n\u003cp\u003eステージ境界は、ノード間でデータを交換する必要がある場合に発生します。 これはシャッフルと呼ばれます。\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -126,15 +126,15 @@
       "jobName": "paragraph_1628839896369_579589030",
       "id": "paragraph_1606650436833_121092905",
       "dateCreated": "2021-08-13 07:31:36.369",
-      "dateStarted": "2021-08-25 14:45:43.163",
-      "dateFinished": "2021-08-25 14:45:43.175",
+      "dateStarted": "2021-09-13 14:18:47.499",
+      "dateFinished": "2021-09-13 14:18:47.511",
       "status": "FINISHED"
     },
     {
       "title": "パーティション",
-      "text": "%md\n\n\u003cimg src\u003d\"https://images.squarespace-cdn.com/content/v1/58a3db0903596e0fdbb27391/1502484724596-T4IEBESUF806VN5CZOEZ/image-asset.png?format\u003d1000w\" style\u003d\"margin: 0 auto\" /\u003e\n",
+      "text": "%md\n\n\u003cimg src\u003d\"https://iamluminousmen-media.s3.amazonaws.com/media/spark-partitions/spark-partitions-2.jpg\" style\u003d\"margin: 0 auto; width: 800px\" /\u003e\n",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:43.263",
+      "dateUpdated": "2021-09-13 14:18:47.598",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -160,7 +160,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cimg src\u003d\"https://images.squarespace-cdn.com/content/v1/58a3db0903596e0fdbb27391/1502484724596-T4IEBESUF806VN5CZOEZ/image-asset.png?format\u003d1000w\" style\u003d\"margin: 0 auto\" /\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cimg src\u003d\"https://iamluminousmen-media.s3.amazonaws.com/media/spark-partitions/spark-partitions-2.jpg\" style\u003d\"margin: 0 auto; width: 800px\" /\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -170,15 +170,15 @@
       "jobName": "paragraph_1628839896369_356238963",
       "id": "paragraph_1627473080724_830519811",
       "dateCreated": "2021-08-13 07:31:36.369",
-      "dateStarted": "2021-08-25 14:45:43.281",
-      "dateFinished": "2021-08-25 14:45:43.296",
+      "dateStarted": "2021-09-13 14:18:47.620",
+      "dateFinished": "2021-09-13 14:18:47.628",
       "status": "FINISHED"
     },
     {
       "title": "キャンディーでいっぱいの瓶を作成します",
       "text": "import scala.util.Random\n\nval colors: Seq[String] \u003d Seq(\"Blue\", \"Green\", \"Yellow\", \"Red\", \"Brown\")\n\nval random \u003d scala.util.Random\n\nval mmsJar \u003d Seq\n    .tabulate(random.nextInt(250000 - 120000))(n \u003d\u003e colors(random.nextInt(colors.size)))\n    .toDF(\"color\")\n\nmmsJar.show()",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:43.380",
+      "dateUpdated": "2021-09-13 14:18:47.720",
       "config": {
         "lineNumbers": false,
         "tableHide": false,
@@ -205,7 +205,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "+------+\n| color|\n+------+\n|Yellow|\n| Brown|\n|  Blue|\n|   Red|\n| Green|\n| Green|\n| Brown|\n|Yellow|\n| Green|\n|  Blue|\n| Green|\n| Green|\n| Brown|\n|Yellow|\n| Green|\n|   Red|\n|Yellow|\n| Green|\n| Green|\n| Brown|\n+------+\nonly showing top 20 rows\n\nimport scala.util.Random\n\u001b[1m\u001b[34mcolors\u001b[0m: \u001b[1m\u001b[32mSeq[String]\u001b[0m \u003d List(Blue, Green, Yellow, Red, Brown)\n\u001b[1m\u001b[34mrandom\u001b[0m: \u001b[1m\u001b[32mutil.Random.type\u001b[0m \u003d scala.util.Random$@58ab2f14\n\u001b[1m\u001b[34mmmsJar\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [color: string]\n"
+            "data": "+------+\n| color|\n+------+\n| Green|\n|   Red|\n| Green|\n|   Red|\n| Brown|\n|  Blue|\n| Green|\n| Brown|\n|  Blue|\n|Yellow|\n| Brown|\n|Yellow|\n|   Red|\n|Yellow|\n| Brown|\n| Green|\n|   Red|\n| Green|\n|  Blue|\n|  Blue|\n+------+\nonly showing top 20 rows\n\nimport scala.util.Random\n\u001b[1m\u001b[34mcolors\u001b[0m: \u001b[1m\u001b[32mSeq[String]\u001b[0m \u003d List(Blue, Green, Yellow, Red, Brown)\n\u001b[1m\u001b[34mrandom\u001b[0m: \u001b[1m\u001b[32mutil.Random.type\u001b[0m \u003d scala.util.Random$@58d64a73\n\u001b[1m\u001b[34mmmsJar\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [color: string]\n"
           }
         ]
       },
@@ -215,15 +215,15 @@
       "jobName": "paragraph_1628839896369_1258553238",
       "id": "20201123-111339_1936980039",
       "dateCreated": "2021-08-13 07:31:36.370",
-      "dateStarted": "2021-08-25 14:45:43.408",
-      "dateFinished": "2021-08-25 14:45:44.838",
+      "dateStarted": "2021-09-13 14:18:47.737",
+      "dateFinished": "2021-09-13 14:18:48.737",
       "status": "FINISHED"
     },
     {
       "title": "キャンディーを数えましょう",
       "text": "mmsJar.count()",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:44.912",
+      "dateUpdated": "2021-09-13 14:18:48.747",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -249,7 +249,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\u001b[1m\u001b[34mres14\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m \u003d 34488\n"
+            "data": "\u001b[1m\u001b[34mres55\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m \u003d 50528\n"
           }
         ]
       },
@@ -262,7 +262,7 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d23"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d62"
             }
           ],
           "interpreterSettingId": "spark"
@@ -272,14 +272,14 @@
       "jobName": "paragraph_1628839896370_461502501",
       "id": "20201124-175747_594954951",
       "dateCreated": "2021-08-13 07:31:36.370",
-      "dateStarted": "2021-08-25 14:45:44.946",
-      "dateFinished": "2021-08-25 14:45:46.029",
+      "dateStarted": "2021-09-13 14:18:48.801",
+      "dateFinished": "2021-09-13 14:18:49.623",
       "status": "FINISHED"
     },
     {
-      "text": "%md \n\n# RDD vs DataFrame vs Dataset\n\nSparkは、異なる時期に導入された3つの異なるAPIを使用します:\n\n* **Resilient Distributed Dataset** (RDD): クラスター内の多くのマシンに分散したデータ要素の分散コレクションです。 RDDは、データを表すJavaまたはScalaオブジェクトのセットです。\n* **DataFrame**:　名前付き列に編成されたデータの分散コレクションです。　概念的には、リレーショナルデータベースのテーブルと同じです。\n* **Dataset**:これは、DataFrame APIの拡張であり、— type-safeの機能、RDD APIの オブジェクト指向プログラミングインターフェイスと、Catalystクエリオプティマイザのパフォーマンス上の利点、およびDataFrameAPIのオフヒープストレージメカニズムを提供します。\n\n\n\u003cimg src\u003d\"https://databricks.com/wp-content/uploads/2018/05/rdd.png\" style\u003d\"margin: 30px auto; height: 340px\" /\u003e\nから画像 https://databricks.com/glossary/what-is-rdd\n\n追加リソース：\n\n* https://medium.com/analytics-vidhya/datasets-vs-dataframes-vs-rdds-d3c2dba2d0b4\n* https://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html",
+      "text": "%md \n\n# RDD vs DataFrame\n\nSparkは、異なる時期に導入された2つの異なるAPIを使用します:\n\n* **Resilient Distributed Dataset** (RDD): クラスター内の多くのマシンに分散したデータ要素の分散コレクションです。 RDDは、データを表すJavaまたはScalaオブジェクトのセットです。\n* **DataFrame**:　名前付き列に編成されたデータの分散コレクションです。　概念的には、リレーショナルデータベースのテーブルと同じです。\n\n\n\u003cimg src\u003d\"https://camo.githubusercontent.com/44d04aeb644069dd6136456fae3a2b0e84b7138e/68747470733a2f2f66696c65732e747261696e696e672e64617461627269636b732e636f6d2f696d616765732f3130352f7264642d76732d646174616672616d65732e706e67\" style\u003d\"margin: 30px auto; width: 600px\"\u003e\n\n\n追加リソース：\n\n* https://medium.com/analytics-vidhya/datasets-vs-dataframes-vs-rdds-d3c2dba2d0b4\n* https://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html\n* https://databricks.com/glossary/what-is-rdd",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:46.048",
+      "dateUpdated": "2021-09-13 14:18:49.701",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -304,7 +304,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eRDD vs DataFrame vs Dataset\u003c/h1\u003e\n\u003cp\u003eSparkは、異なる時期に導入された3つの異なるAPIを使用します:\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003e\u003cstrong\u003eResilient Distributed Dataset\u003c/strong\u003e (RDD): クラスター内の多くのマシンに分散したデータ要素の分散コレクションです。 RDDは、データを表すJavaまたはScalaオブジェクトのセットです。\u003c/li\u003e\n  \u003cli\u003e\u003cstrong\u003eDataFrame\u003c/strong\u003e:　名前付き列に編成されたデータの分散コレクションです。　概念的には、リレーショナルデータベースのテーブルと同じです。\u003c/li\u003e\n  \u003cli\u003e\u003cstrong\u003eDataset\u003c/strong\u003e:これは、DataFrame APIの拡張であり、— type-safeの機能、RDD APIの オブジェクト指向プログラミングインターフェイスと、Catalystクエリオプティマイザのパフォーマンス上の利点、およびDataFrameAPIのオフヒープストレージメカニズムを提供します。\u003c/li\u003e\n\u003c/ul\u003e\n\u003cimg src\u003d\"https://databricks.com/wp-content/uploads/2018/05/rdd.png\" style\u003d\"margin: 30px auto; height: 340px\" /\u003e\n\u003cp\u003eから画像 \u003ca href\u003d\"https://databricks.com/glossary/what-is-rdd\"\u003ehttps://databricks.com/glossary/what-is-rdd\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003e追加リソース：\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003e\u003ca href\u003d\"https://medium.com/analytics-vidhya/datasets-vs-dataframes-vs-rdds-d3c2dba2d0b4\"\u003ehttps://medium.com/analytics-vidhya/datasets-vs-dataframes-vs-rdds-d3c2dba2d0b4\u003c/a\u003e\u003c/li\u003e\n  \u003cli\u003e\u003ca href\u003d\"https://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html\"\u003ehttps://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eRDD vs DataFrame\u003c/h1\u003e\n\u003cp\u003eSparkは、異なる時期に導入された2つの異なるAPIを使用します:\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003e\u003cstrong\u003eResilient Distributed Dataset\u003c/strong\u003e (RDD): クラスター内の多くのマシンに分散したデータ要素の分散コレクションです。 RDDは、データを表すJavaまたはScalaオブジェクトのセットです。\u003c/li\u003e\n  \u003cli\u003e\u003cstrong\u003eDataFrame\u003c/strong\u003e:　名前付き列に編成されたデータの分散コレクションです。　概念的には、リレーショナルデータベースのテーブルと同じです。\u003c/li\u003e\n\u003c/ul\u003e\n\u003cimg src\u003d\"https://camo.githubusercontent.com/44d04aeb644069dd6136456fae3a2b0e84b7138e/68747470733a2f2f66696c65732e747261696e696e672e64617461627269636b732e636f6d2f696d616765732f3130352f7264642d76732d646174616672616d65732e706e67\" style\u003d\"margin: 30px auto; width: 600px\"\u003e\n\u003cp\u003e追加リソース：\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003e\u003ca href\u003d\"https://medium.com/analytics-vidhya/datasets-vs-dataframes-vs-rdds-d3c2dba2d0b4\"\u003ehttps://medium.com/analytics-vidhya/datasets-vs-dataframes-vs-rdds-d3c2dba2d0b4\u003c/a\u003e\u003c/li\u003e\n  \u003cli\u003e\u003ca href\u003d\"https://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html\"\u003ehttps://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html\u003c/a\u003e\u003c/li\u003e\n  \u003cli\u003e\u003ca href\u003d\"https://databricks.com/glossary/what-is-rdd\"\u003ehttps://databricks.com/glossary/what-is-rdd\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -314,15 +314,15 @@
       "jobName": "paragraph_1628839896370_630190013",
       "id": "paragraph_1606658378173_1654727123",
       "dateCreated": "2021-08-13 07:31:36.370",
-      "dateStarted": "2021-08-25 14:45:46.084",
-      "dateFinished": "2021-08-25 14:45:46.116",
+      "dateStarted": "2021-09-13 14:18:49.740",
+      "dateFinished": "2021-09-13 14:18:49.764",
       "status": "FINISHED"
     },
     {
       "title": "",
       "text": "val groupedMmsJar \u003d mmsJar\n    .groupBy(\"color\")\n    .count()\n\ngroupedMmsJar.show()",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:46.183",
+      "dateUpdated": "2021-09-13 14:18:49.837",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -348,7 +348,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "+------+-----+\n| color|count|\n+------+-----+\n| Green| 6839|\n|  Blue| 6947|\n| Brown| 6869|\n|Yellow| 6856|\n|   Red| 6977|\n+------+-----+\n\n\u001b[1m\u001b[34mgroupedMmsJar\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [color: string, count: bigint]\n"
+            "data": "+------+-----+\n| color|count|\n+------+-----+\n| Green|10163|\n|  Blue|10105|\n| Brown|10005|\n|Yellow|10127|\n|   Red|10128|\n+------+-----+\n\n\u001b[1m\u001b[34mgroupedMmsJar\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [color: string, count: bigint]\n"
           }
         ]
       },
@@ -361,19 +361,19 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d24"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d63"
             },
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d25"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d64"
             },
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d26"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d65"
             },
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d27"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d66"
             },
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d28"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d67"
             }
           ],
           "interpreterSettingId": "spark"
@@ -383,15 +383,15 @@
       "jobName": "paragraph_1628839896371_802936216",
       "id": "20201123-151051_1373271501",
       "dateCreated": "2021-08-13 07:31:36.371",
-      "dateStarted": "2021-08-25 14:45:46.216",
-      "dateFinished": "2021-08-25 14:45:48.006",
+      "dateStarted": "2021-09-13 14:18:49.862",
+      "dateFinished": "2021-09-13 14:18:51.535",
       "status": "FINISHED"
     },
     {
       "title": "演習: groupedMmsJarをカウントdescで並べ替え、結果を表示します",
       "text": "/* ここにコードを書いてください */",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:48.020",
+      "dateUpdated": "2021-09-13 14:18:51.567",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -420,15 +420,15 @@
       "jobName": "paragraph_1628839896371_965672840",
       "id": "paragraph_1606989391393_1850225338",
       "dateCreated": "2021-08-13 07:31:36.371",
-      "dateStarted": "2021-08-25 14:45:48.059",
-      "dateFinished": "2021-08-25 14:45:48.251",
+      "dateStarted": "2021-09-13 14:18:51.582",
+      "dateFinished": "2021-09-13 14:18:51.727",
       "status": "FINISHED"
     },
     {
       "title": "列を参照する方法",
-      "text": "val myNewDf \u003d Seq(\n        (1, \"Davide\", \"Fantuzzi\", \"Data Engineer\", \"LARUS Business Automation\"),\n        (2, \"Sofia\", \"Conton\", \"Internationalization Program Assistant\", \"LARUS Business Automation\"),\n        (3, \"Jeff\", \"Bezos\", \"Executive Chairman\", \"Amazon\")\n    ).toDF(\"id\", \"firstname\", \"lastname\", \"role\", \"company\")\n    \nmyNewDf.show(truncate \u003d false)",
+      "text": "val myNewDf \u003d Seq(\n        (1, \"Davide\", \"Fantuzzi\", \"Data Engineer\", \"LARUS Business Automation\"),\n        (2, \"Sofia\", \"Conton\", \"Internationalization Program Assistant\", \"LARUS Business Automation\"),\n        (3, \"Jeff\", \"Bezos\", \"Executive Chairman\", \"Amazon\")\n    ).toDF(\"id\", \"firstname\", \"lastname\", \"role\", \"company\")\n    \nmyNewDf.show(truncate \u003d false)\n\n\nmyNewDf.select(\"id\").show()\n\n// myNewDf.select($\"firstname\").show()\n// myNewDf.select(col(\"lastname\")).show()\n// myNewDf.select(myNewDf(\"role\")).show()\n",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:48.259",
+      "dateUpdated": "2021-09-13 14:18:51.783",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -452,7 +452,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "+---+---------+--------+--------------------------------------+-------------------------+\n|id |firstname|lastname|role                                  |company                  |\n+---+---------+--------+--------------------------------------+-------------------------+\n|1  |Davide   |Fantuzzi|Data Engineer                         |LARUS Business Automation|\n|2  |Sofia    |Conton  |Internationalization Program Assistant|LARUS Business Automation|\n|3  |Jeff     |Bezos   |Executive Chairman                    |Amazon                   |\n+---+---------+--------+--------------------------------------+-------------------------+\n\n\u001b[1m\u001b[34mmyNewDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [id: int, firstname: string ... 3 more fields]\n"
+            "data": "+---+---------+--------+--------------------------------------+-------------------------+\n|id |firstname|lastname|role                                  |company                  |\n+---+---------+--------+--------------------------------------+-------------------------+\n|1  |Davide   |Fantuzzi|Data Engineer                         |LARUS Business Automation|\n|2  |Sofia    |Conton  |Internationalization Program Assistant|LARUS Business Automation|\n|3  |Jeff     |Bezos   |Executive Chairman                    |Amazon                   |\n+---+---------+--------+--------------------------------------+-------------------------+\n\n+---+\n| id|\n+---+\n|  1|\n|  2|\n|  3|\n+---+\n\n\u001b[1m\u001b[34mmyNewDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [id: int, firstname: string ... 3 more fields]\n"
           }
         ]
       },
@@ -462,14 +462,14 @@
       "jobName": "paragraph_1628839896372_1088458462",
       "id": "paragraph_1627544979375_693150416",
       "dateCreated": "2021-08-13 07:31:36.372",
-      "dateStarted": "2021-08-25 14:45:48.296",
-      "dateFinished": "2021-08-25 14:45:48.849",
+      "dateStarted": "2021-09-13 14:18:51.798",
+      "dateFinished": "2021-09-13 14:18:52.278",
       "status": "FINISHED"
     },
     {
       "text": "%md\n\nColumnクラスで使用可能なメソッド https://spark.apache.org/docs/latest/api/java/org/apache/spark/sql/Column.html",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:48.897",
+      "dateUpdated": "2021-09-13 14:18:52.299",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -504,15 +504,15 @@
       "jobName": "paragraph_1628839896372_1694442050",
       "id": "paragraph_1606664140848_-2143398861",
       "dateCreated": "2021-08-13 07:31:36.373",
-      "dateStarted": "2021-08-25 14:45:48.933",
-      "dateFinished": "2021-08-25 14:45:48.949",
+      "dateStarted": "2021-09-13 14:18:52.315",
+      "dateFinished": "2021-09-13 14:18:52.323",
       "status": "FINISHED"
     },
     {
       "title": "CSVファイルからDataFrameを作成する",
       "text": "val beerDf \u003d spark.read\n    .format(\"csv\")\n    .option(\"header\", true)\n    .option(\"inferSchema\", true)\n    .load(\"./spark-warehouse/beer_info.csv\")\n\nbeerDf.show(truncate \u003d false)",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:49.032",
+      "dateUpdated": "2021-09-13 14:18:52.415",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -551,13 +551,13 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d29"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d68"
             },
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d30"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d69"
             },
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d31"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d70"
             }
           ],
           "interpreterSettingId": "spark"
@@ -567,15 +567,15 @@
       "jobName": "paragraph_1628839896373_1226059908",
       "id": "paragraph_1627548709487_419896112",
       "dateCreated": "2021-08-13 07:31:36.373",
-      "dateStarted": "2021-08-25 14:45:49.054",
-      "dateFinished": "2021-08-25 14:45:49.606",
+      "dateStarted": "2021-09-13 14:18:52.430",
+      "dateFinished": "2021-09-13 14:18:52.904",
       "status": "FINISHED"
     },
     {
       "title": "APIを使用してデータを探索する",
       "text": "beerDf.select(\"brewer\")\n    .groupBy(\"brewer\")\n    .count()\n    .orderBy($\"count\".desc)\n    .show(truncate \u003d false)",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:49.654",
+      "dateUpdated": "2021-09-13 14:18:52.930",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -599,7 +599,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "+----------------------------------+-----+\n|brewer                            |count|\n+----------------------------------+-----+\n|Boston Beer Company (Samuel Adams)|10   |\n|Ballast Point Brewing Company     |9    |\n|Sierra Nevada Brewing Co.         |9    |\n|Dogfish Head Craft Brewery        |8    |\n|Stone Brewing                     |7    |\n|Terrapin Beer Company             |6    |\n|Green Flash Brewing Co.           |5    |\n|Toppling Goliath Brewing Company  |5    |\n|Revolution Brewing                |5    |\n|Lawson\u0027s Finest Liquids           |5    |\n|Magic Hat Brewing Company         |5    |\n|Cigar City Brewing                |5    |\n|Deschutes Brewery                 |5    |\n|Mikkeller ApS                     |4    |\n|Tröegs Brewing Company            |4    |\n|Half Acre Beer Company            |4    |\n|SweetWater Brewing Company        |4    |\n|Short\u0027s Brewing Company           |4    |\n|New Belgium Brewing               |4    |\n|Boulevard Brewing Co.             |4    |\n+----------------------------------+-----+\nonly showing top 20 rows\n\n"
+            "data": "+----------------------------------+-----+\n|brewer                            |count|\n+----------------------------------+-----+\n|Boston Beer Company (Samuel Adams)|10   |\n|Ballast Point Brewing Company     |9    |\n|Sierra Nevada Brewing Co.         |9    |\n|Dogfish Head Craft Brewery        |8    |\n|Stone Brewing                     |7    |\n|Terrapin Beer Company             |6    |\n|Deschutes Brewery                 |5    |\n|Toppling Goliath Brewing Company  |5    |\n|Revolution Brewing                |5    |\n|Green Flash Brewing Co.           |5    |\n|Magic Hat Brewing Company         |5    |\n|Lawson\u0027s Finest Liquids           |5    |\n|Cigar City Brewing                |5    |\n|Short\u0027s Brewing Company           |4    |\n|Half Acre Beer Company            |4    |\n|Boulevard Brewing Co.             |4    |\n|SweetWater Brewing Company        |4    |\n|Founders Brewing Company          |4    |\n|New Belgium Brewing               |4    |\n|Alpine Beer Company               |4    |\n+----------------------------------+-----+\nonly showing top 20 rows\n\n"
           }
         ]
       },
@@ -612,7 +612,7 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d32"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d71"
             }
           ],
           "interpreterSettingId": "spark"
@@ -622,15 +622,15 @@
       "jobName": "paragraph_1628839896375_70330165",
       "id": "paragraph_1627551227323_27747364",
       "dateCreated": "2021-08-13 07:31:36.375",
-      "dateStarted": "2021-08-25 14:45:49.684",
-      "dateFinished": "2021-08-25 14:45:51.134",
+      "dateStarted": "2021-09-13 14:18:52.948",
+      "dateFinished": "2021-09-13 14:18:53.963",
       "status": "FINISHED"
     },
     {
       "title": "より複雑な例",
       "text": "beerDf.select(\"brewer\", \"abv\")\n    .groupBy(\"brewer\")\n    .agg(\n        count($\"abv\").as(\"beers\"), \n        round(avg($\"abv\"), 2).as(\"abv_avg\")\n    )\n    .orderBy(\n        $\"beers\".desc, \n        $\"abv_avg\".desc\n    )\n    .show(10, truncate \u003d false)\n    ",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:51.192",
+      "dateUpdated": "2021-09-13 14:18:54.050",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -667,7 +667,7 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d33"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d72"
             }
           ],
           "interpreterSettingId": "spark"
@@ -677,15 +677,57 @@
       "jobName": "paragraph_1628839896375_196479825",
       "id": "paragraph_1627552256429_1174387766",
       "dateCreated": "2021-08-13 07:31:36.375",
-      "dateStarted": "2021-08-25 14:45:51.219",
-      "dateFinished": "2021-08-25 14:45:52.818",
+      "dateStarted": "2021-09-13 14:18:54.068",
+      "dateFinished": "2021-09-13 14:18:55.137",
+      "status": "FINISHED"
+    },
+    {
+      "title": "The Spark Catalyst Query Optimizer",
+      "text": "val queryOpt \u003d beerDf.orderBy(\"beer_name\")\n    .where(\"beer_name LIKE \u0027%IPA\u0027\")\n\nqueryOpt.explain\n\nval queryNotOpt \u003d beerDf\n    .where(\"beer_name LIKE \u0027%IPA\u0027\")\n    .orderBy(\"beer_name\")\n    \nqueryNotOpt.explain",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-13 14:18:55.173",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003d\u003d Physical Plan \u003d\u003d\n*(2) Sort [beer_name#1272 ASC NULLS FIRST], true, 0\n+- Exchange rangepartitioning(beer_name#1272 ASC NULLS FIRST, 200)\n   +- *(1) Project [beer_id#1270, brewer#1271, beer_name#1272, abv#1273]\n      +- *(1) Filter (isnotnull(beer_name#1272) \u0026\u0026 EndsWith(beer_name#1272, IPA))\n         +- *(1) FileScan csv [beer_id#1270,brewer#1271,beer_name#1272,abv#1273] Batched: false, Format: CSV, Location: InMemoryFileIndex[file:/zeppelin/spark-warehouse/beer_info.csv], PartitionFilters: [], PushedFilters: [IsNotNull(beer_name), StringEndsWith(beer_name,IPA)], ReadSchema: struct\u003cbeer_id:int,brewer:string,beer_name:string,abv:double\u003e\n\u003d\u003d Physical Plan \u003d\u003d\n*(2) Sort [beer_name#1272 ASC NULLS FIRST], true, 0\n+- Exchange rangepartitioning(beer_name#1272 ASC NULLS FIRST, 200)\n   +- *(1) Project [beer_id#1270, brewer#1271, beer_name#1272, abv#1273]\n      +- *(1) Filter (isnotnull(beer_name#1272) \u0026\u0026 EndsWith(beer_name#1272, IPA))\n         +- *(1) FileScan csv [beer_id#1270,brewer#1271,beer_name#1272,abv#1273] Batched: false, Format: CSV, Location: InMemoryFileIndex[file:/zeppelin/spark-warehouse/beer_info.csv], PartitionFilters: [], PushedFilters: [IsNotNull(beer_name), StringEndsWith(beer_name,IPA)], ReadSchema: struct\u003cbeer_id:int,brewer:string,beer_name:string,abv:double\u003e\n\u001b[1m\u001b[34mqueryOpt\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m \u003d [beer_id: int, brewer: string ... 2 more fields]\n\u001b[1m\u001b[34mqueryNotOpt\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m \u003d [beer_id: int, brewer: string ... 2 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1631542343863_1365642620",
+      "id": "paragraph_1631542343863_1365642620",
+      "dateCreated": "2021-09-13 14:12:23.863",
+      "dateStarted": "2021-09-13 14:18:55.187",
+      "dateFinished": "2021-09-13 14:18:55.478",
       "status": "FINISHED"
     },
     {
       "title": "演習: beer_reviews.csvファイルをロードする",
-      "text": "val fileName \u003d \"./spark-warehouse/beer_reviews.csv\"\n\nval reviewDf \u003d spark.read.format(\"csv\")\n    .option(\"inferSchema\", true)\n    .option(\"header\", true)\n    .load(fileName)\n\nreviewDf.show()",
+      "text": "val fileName \u003d \"./spark-warehouse/beer_reviews.csv\"\n\n/* ここにコードを書いてください */\n",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:52.825",
+      "dateUpdated": "2021-09-13 14:19:56.847",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -722,13 +764,13 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d34"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d73"
             },
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d35"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d74"
             },
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d36"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d75"
             }
           ],
           "interpreterSettingId": "spark"
@@ -738,15 +780,15 @@
       "jobName": "paragraph_1628839896376_1413128623",
       "id": "paragraph_1627552648175_1108330480",
       "dateCreated": "2021-08-13 07:31:36.376",
-      "dateStarted": "2021-08-25 14:45:52.855",
-      "dateFinished": "2021-08-25 14:45:53.522",
+      "dateStarted": "2021-09-13 14:18:55.515",
+      "dateFinished": "2021-09-13 14:18:55.972",
       "status": "FINISHED"
     },
     {
       "title": "データフレームに参加する",
       "text": "val beerReviewsDf \u003d beerDf\n    .join(\n        reviewDf, \n        reviewDf(\"beer_id\") \u003d\u003d\u003d beerDf(\"beer_id\"), \n        \"inner\"\n    )\n    .select(beerDf(\"beer_id\"), $\"brewer\", $\"beer_name\", $\"rating\", $\"review\", $\"abv\")\n    \nbeerReviewsDf.show()",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:53.557",
+      "dateUpdated": "2021-09-13 14:18:56.015",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -783,10 +825,10 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d37"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d76"
             },
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d38"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d77"
             }
           ],
           "interpreterSettingId": "spark"
@@ -796,15 +838,15 @@
       "jobName": "paragraph_1628839896376_645091515",
       "id": "paragraph_1627555104668_2035518545",
       "dateCreated": "2021-08-13 07:31:36.376",
-      "dateStarted": "2021-08-25 14:45:53.584",
-      "dateFinished": "2021-08-25 14:45:54.271",
+      "dateStarted": "2021-09-13 14:18:56.031",
+      "dateFinished": "2021-09-13 14:18:56.530",
       "status": "FINISHED"
     },
     {
       "title": "クリーンなデータ",
       "text": "val cleanBeerReviewsDf \u003d beerReviewsDf\n    .where($\"rating\".cast(\"float\").isNotNull)\n    .withColumn(\"clean_rating\", $\"rating\".cast(\"float\"))\n    .drop(\"rating\")\n    .withColumnRenamed(\"clean_rating\", \"rating\")\n    \ncleanBeerReviewsDf.show()",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:54.285",
+      "dateUpdated": "2021-09-13 14:18:56.534",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -841,10 +883,10 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d39"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d78"
             },
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d40"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d79"
             }
           ],
           "interpreterSettingId": "spark"
@@ -854,15 +896,15 @@
       "jobName": "paragraph_1628839896377_37007653",
       "id": "paragraph_1627560801081_659554009",
       "dateCreated": "2021-08-13 07:31:36.377",
-      "dateStarted": "2021-08-25 14:45:54.329",
-      "dateFinished": "2021-08-25 14:45:54.931",
+      "dateStarted": "2021-09-13 14:18:56.579",
+      "dateFinished": "2021-09-13 14:18:57.001",
       "status": "FINISHED"
     },
     {
       "title": "SQLはどうですか？",
       "text": "cleanBeerReviewsDf.createOrReplaceTempView(\"beer_reviews\")",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:55.030",
+      "dateUpdated": "2021-09-13 14:18:57.080",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -891,14 +933,14 @@
       "jobName": "paragraph_1628839896377_282050087",
       "id": "paragraph_1627561552665_1320806986",
       "dateCreated": "2021-08-13 07:31:36.377",
-      "dateStarted": "2021-08-25 14:45:55.064",
-      "dateFinished": "2021-08-25 14:45:55.296",
+      "dateStarted": "2021-09-13 14:18:57.093",
+      "dateFinished": "2021-09-13 14:18:57.225",
       "status": "FINISHED"
     },
     {
       "text": "%sql\n\nSELECT * \nFROM beer_reviews\nORDER BY brewer, beer_name, rating DESC\nLIMIT 10",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:55.364",
+      "dateUpdated": "2021-09-13 14:18:57.294",
       "config": {
         "editorSetting": {
           "language": "sql",
@@ -967,10 +1009,10 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d41"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d80"
             },
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d42"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d81"
             }
           ],
           "interpreterSettingId": "spark"
@@ -980,14 +1022,14 @@
       "jobName": "paragraph_1628839896378_544726514",
       "id": "paragraph_1627564199279_267862960",
       "dateCreated": "2021-08-13 07:31:36.378",
-      "dateStarted": "2021-08-25 14:45:55.382",
-      "dateFinished": "2021-08-25 14:45:55.806",
+      "dateStarted": "2021-09-13 14:18:57.314",
+      "dateFinished": "2021-09-13 14:18:57.570",
       "status": "FINISHED"
     },
     {
       "text": "%sql\n\nSELECT MAX(abv), MIN(abv)\nFROM beer_reviews",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:55.883",
+      "dateUpdated": "2021-09-13 14:18:57.614",
       "config": {
         "editorSetting": {
           "language": "sql",
@@ -1052,10 +1094,10 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d43"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d82"
             },
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d44"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d83"
             }
           ],
           "interpreterSettingId": "spark"
@@ -1065,14 +1107,14 @@
       "jobName": "paragraph_1628839896379_1081948442",
       "id": "paragraph_1627571341202_1617090813",
       "dateCreated": "2021-08-13 07:31:36.380",
-      "dateStarted": "2021-08-25 14:45:55.903",
-      "dateFinished": "2021-08-25 14:45:56.295",
+      "dateStarted": "2021-09-13 14:18:57.629",
+      "dateFinished": "2021-09-13 14:18:57.896",
       "status": "FINISHED"
     },
     {
       "text": "%sql\n\nSELECT ROUND(abv, 2) AS abv, ROUND(AVG(rating), 2) AS avg_rating, COUNT(rating) AS review_count\nFROM beer_reviews\nGROUP BY abv\nHAVING review_count \u003e 20\nORDER BY abv ASC\n",
       "user": "anonymous",
-      "dateUpdated": "2021-08-25 14:45:56.304",
+      "dateUpdated": "2021-09-13 14:18:57.929",
       "config": {
         "editorSetting": {
           "language": "sql",
@@ -1171,10 +1213,10 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d45"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d84"
             },
             {
-              "jobUrl": "http://localhost:4040/jobs/job?id\u003d46"
+              "jobUrl": "http://localhost:4040/jobs/job?id\u003d85"
             }
           ],
           "interpreterSettingId": "spark"
@@ -1184,8 +1226,8 @@
       "jobName": "paragraph_1628839896380_74779009",
       "id": "paragraph_1627569772880_1143909108",
       "dateCreated": "2021-08-13 07:31:36.380",
-      "dateStarted": "2021-08-25 14:45:56.331",
-      "dateFinished": "2021-08-25 14:45:57.843",
+      "dateStarted": "2021-09-13 14:18:57.945",
+      "dateFinished": "2021-09-13 14:18:59.103",
       "status": "FINISHED"
     }
   ],
